@@ -1,0 +1,7 @@
+tags
+Session.vim
+plugged/*
+session/*
+!*.keep
+plug.vim
+plug.vim.old
