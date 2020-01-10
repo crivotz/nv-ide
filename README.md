@@ -78,6 +78,7 @@ Thanks to the developers of these plugins/color schemes
 * [drzel/vim-line-no-indicator](https://github.com/drzel/vim-line-no-indicator): Simple and expressive line number indicator  
 * [ranger.vim](https://github.com/francoiscabrol/ranger.vim): Ranger integration.  
 * [Vista](https://github.com/liuchengxu/vista.vim): Viewer & Finder for LSP symbols and tags  
+* [Vim-doge](https://github.com/kkoomen/vim-doge): Documentation Generator  
 
 **COLOR SCHEMES**
 

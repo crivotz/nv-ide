@@ -84,6 +84,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 Plug 'liuchengxu/vista.vim'
+Plug 'kkoomen/vim-doge'
 call plug#end()
 
 " =============================================================================
