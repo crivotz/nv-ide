@@ -56,7 +56,7 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/goyo.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'osyo-manga/vim-anzu'
 Plug 'rhysd/committia.vim'
@@ -201,7 +201,7 @@ hi! SignifySignChange guibg=NONE
 " =============================================================================
 let g:ranger_map_keys = 0
 let g:ranger_replace_netrw = 1
-let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+let g:ranger_command_override = 'ranger.py --cmd "set show_hidden=true"'
 
 " =============================================================================
 " FZF
