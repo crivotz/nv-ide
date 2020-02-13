@@ -41,7 +41,6 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-obsession'
 Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
@@ -55,7 +54,6 @@ Plug 'benmills/vimux'
 Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
-Plug 'junegunn/goyo.vim'
 Plug 'junegunn/fzf.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'osyo-manga/vim-anzu'
@@ -63,28 +61,22 @@ Plug 'rhysd/committia.vim'
 Plug 'rhysd/devdocs.vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'chrisbra/NrrwRgn'
 Plug 'dyng/ctrlsf.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'moll/vim-node'
-Plug 'mattn/gist-vim'
-Plug 'mattn/webapi-vim'
 Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'alok/notational-fzf-vim'
-Plug 'dhruvasagar/vim-zoom'
-Plug 'rbong/vim-flog'
-Plug 'zplugin/zplugin-vim-syntax'
+Plug 'zinit-zsh/zplugin-vim-syntax'
 Plug 'vitalk/vim-simple-todo'
 Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'francoiscabrol/ranger.vim' | Plug 'rbgrouleff/bclose.vim'
 Plug 'liuchengxu/vista.vim'
-Plug 'kkoomen/vim-doge'
 call plug#end()
 
 " =============================================================================
@@ -109,10 +101,10 @@ if has('unix')
   if s:uname == "Darwin\n"
     " Do Mac stuff here
     set guifont=FuraCode\ Nerd\ Font\ Mono\:h11
-    set rtp+=/usr/local/opt/fzf
+    set rtp+=~/.zinit/plugins/junegunn---fzf
   else
     set guifont=FuraCode\ Nerd\ Font\ Mono\ 8
-    set rtp+=~/.fzf
+    set rtp+=~/.zinit/plugins/junegunn---fzf
   endif
 elseif has('win32') || has('win64')
   behave mswin
@@ -141,7 +133,8 @@ set softtabstop=2
 set signcolumn=yes
 set shortmess+=c
 set noshowmode                            " Don't dispay mode in command line
-set nonumber                              " Row number
+set number                                " Row number
+set relativenumber                        " Relative number
 set hidden                                " allow hidden buffer
 set splitright                            " Open vertical splits to the right
 set splitbelow                            " Open horizontal splits to the bottom
@@ -188,13 +181,8 @@ hi! SignifySignAdd guibg=NONE
 hi! SignifySignDelete guibg=NONE
 hi! SignifySignChange guibg=NONE
 
-" =============================================================================
-" COMMENTED SETTINGS
-" =============================================================================
-" set textwidth=80 " use a different bground color after
-" execute "set colorcolumn=" . join(range(81,335), ',') " Highlight from column 81
-" set cursorcolumn " highlight the column the cursor is on
-" set cursorline " highlight the line the cursor is on
+highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+set cursorline
 
 " =============================================================================
 " RANGER
@@ -206,7 +194,6 @@ let g:ranger_command_override = 'ranger.py --cmd "set show_hidden=true"'
 " =============================================================================
 " FZF
 " =============================================================================
-let $FZF_DEFAULT_OPTS=' --layout=reverse --margin=1,4'
 let g:fzf_colors =
       \ { 'fg':      ['fg', 'Normal'],
       \ 'bg':      ['bg', 'Normal'],
@@ -222,30 +209,7 @@ let g:fzf_colors =
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
 
-" Using the custom window creation function
-let g:fzf_layout = { 'window': 'call FloatingFZF()' }
-
-" Function to create the custom floating window
-function! FloatingFZF()
-   let buf = nvim_create_buf(v:false, v:true)
-  call setbufvar(buf, '&signcolumn', 'no')
-
-  let height = float2nr(20)
-  let width = float2nr(160)
-  let horizontal = float2nr((&columns - width) / 2)
-  let vertical = 15
-
-  let opts = {
-        \ 'relative': 'editor',
-        \ 'row': vertical,
-        \ 'col': horizontal,
-        \ 'width': width,
-        \ 'height': height,
-        \ 'style': 'minimal'
-        \ }
-
-  call nvim_open_win(buf, v:true, opts)
-endfunction
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'rounded': v:false } }
 
 " =============================================================================
 " VIM-STARTIFY
@@ -278,7 +242,6 @@ let g:startify_custom_header = [
       \'     \__/           |__| |_______/ |_______|',
       \ ]
 let g:startify_lists = [
-      \ { 'type': 'sessions',  'header': ["  Sessions"]       },
       \ { 'type': 'bookmarks', 'header': ["  Bookmarks"]      },
       \ { 'type': 'files',     'header': ["  MRU Files"]            },
       \ { 'type': 'dir',       'header': ["  MRU Files in ". getcwd()] },
@@ -292,7 +255,8 @@ endfunction
 " CTRLSF
 " =============================================================================
 let g:ctrlsf_ackprg = 'rg'
-let g:ctrlsf_default_view_mode = 'compact'
+let g:ctrls_auto_preview = 1
+let g:ctrlsf_search_mode = 'async'
 let g:ctrlsf_auto_focus = {
       \ "at": "start"
       \ }
@@ -347,9 +311,9 @@ let g:lightline = {
       \ 'colorscheme': 'nord',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
-      \             [ 'gitbranch', 'readonly', 'filename' ],
-      \             ['zoom'] ],
-      \   'right':  [ ['linenoindicator'],
+      \             [ 'gitbranch', 'readonly', 'filename' ] ],
+      \   'right':  [ ['lineinfo'],
+      \             [ 'linenoindicator' ],
       \             [ 'rvm' ],
       \             [ 'fileformat' ],
       \             [ 'fileencoding' ],
@@ -357,7 +321,6 @@ let g:lightline = {
       \ },
       \ 'component_function': {
       \   'gitbranch': 'Lightlinegit',
-      \   'zoom': 'Lightlinezoom',
       \   'filetype': 'MyFiletype',
       \   'fileformat': 'MyFileformat',
       \   'rvm': 'rvm#statusline',
@@ -451,9 +414,6 @@ function! Lightlinegit()
   return l:branch ==# '' ? '' : ' ' . l:branch
 endfunction
 
-function! Lightlinezoom()
-  return zoom#statusline()
-endfunction
 
 function! NearestMethodOrFunction() abort
   return get(b:, 'vista_nearest_method_or_function', '')
@@ -461,11 +421,6 @@ endfunction
 
 autocmd User CocDiagnosticChange call lightline#update()
 autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
-
-" =============================================================================
-" VIM-ZOOM
-" =============================================================================
-let g:zoom#statustext = ' ZOOM'
 
 " =============================================================================
 " VIM-HEXOKINASE
@@ -584,7 +539,6 @@ let g:vista_fzf_preview = []
 "<F1> open help
 nnoremap <F2> :set invnumber<CR>
 nnoremap <F3> :set number! relativenumber!<CR>
-nmap <F4> :Goyo<CR>
 nmap <F5> :set list! list?<CR>
 nmap <silent> <F7> :Ranger<CR>
 nmap <F8> :Vista<CR>
@@ -600,8 +554,8 @@ nmap <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--promp
 nmap <Leader>r :Rg<CR>
 nmap <Leader>l :Lines 
 nmap <Leader>v :Vista finder<CR>
-nmap <Leader>g :20G<CR> 
-nmap <Leader>gg :GFiles?<CR> 
+nmap <Leader>g :GFiles?<CR> 
+nmap <Leader>gg :20G<CR> 
 nmap <Leader>xx :VimuxPromptCommand<CR>
 nmap <silent> <Leader>sp :set spell!<CR>
 nmap K <Plug>(devdocs-under-cursor)
@@ -617,6 +571,6 @@ nmap # <Plug>(anzu-sharp-with-echo)
 nmap <C-F>f <Plug>CtrlSFPrompt
 vmap <C-F>f <Plug>CtrlSFVwordExec
 nmap <C-F>n <Plug>CtrlSFCwordExec
+nnoremap <C-F>t :CtrlSFToggle<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-nnoremap <C-F>t :CtrlSFToggle<CR>
