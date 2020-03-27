@@ -45,7 +45,7 @@ Plug 'tpope/vim-sleuth'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
-Plug 'easymotion/vim-easymotion'
+Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'kshenoy/vim-signature'
 Plug 'yggdroot/indentline'
@@ -80,6 +80,7 @@ Plug 'camspiers/animate.vim'
 Plug 'camspiers/lens.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " =============================================================================
@@ -193,8 +194,8 @@ set cursorline
 let g:vista#renderer#enable_icon = 1
 let g:vista#finders = ['fzf']
 let g:vista_executive_for = {
-  \ 'ruby': 'coc',
-  \ }
+      \ 'ruby': 'coc',
+      \ }
 let g:vista_fzf_preview = []
 
 " =============================================================================
@@ -520,9 +521,23 @@ let g:devdocs_filetype_map = {
 let g:polyglot_disabled = []
 
 " ============================================================================
-" VIM-EASYMOTION
+" VIM-SNEAK
 " =============================================================================
-let g:EasyMotion_smartcase = 1
+
+" case sensitivity
+let g:sneak#use_ic_scs = 1
+
+" clever repetition
+let g:sneak#s_next = 1
+let g:sneak#f_reset = 1
+let g:sneak#t_reset = 1
+" let g:sneak#absolute_dir = 1
+
+" target selection
+let g:sneak#label = 1
+let g:sneak#prompt = 'Sneak: '
+let g:sneak#label_esc = "\<CR>"
+let g:sneak#target_labels = 'aoeuidhtnspyfgcrlqjkxbmwvzAOEUIDHTNSPYFGCRLQJKXBMWVZ'
 
 " ============================================================================
 " VIM-GUTENTAGS
@@ -567,11 +582,6 @@ nmap <Leader>gg :20G<CR>
 nmap <Leader>xx :VimuxPromptCommand<CR>
 nmap <silent> <Leader>sp :set spell!<CR>
 nmap K <Plug>(devdocs-under-cursor)
-map <Leader> <Plug>(easymotion-prefix)
-nmap f <Plug>(easymotion-s2)
-nmap t <Plug>(easymotion-t2)
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
 map  n <Plug>(anzu-n-with-echo)
 map  N <Plug>(anzu-N-with-echo)
 nmap * <Plug>(anzu-star-with-echo)
