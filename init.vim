@@ -55,6 +55,7 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'osyo-manga/vim-anzu'
 Plug 'rhysd/committia.vim'
@@ -81,6 +82,7 @@ Plug 'camspiers/lens.vim'
 Plug 'preservim/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'machakann/vim-highlightedyank'
 call plug#end()
 
 " =============================================================================
@@ -578,6 +580,7 @@ nmap <Leader>r :Rg<CR>
 nmap <Leader>l :Lines 
 nmap <Leader>v :Vista finder<CR>
 nmap <Leader>g :GFiles?<CR> 
+nmap <Leader>gv :GV<CR> 
 nmap <Leader>gg :20G<CR> 
 nmap <Leader>xx :VimuxPromptCommand<CR>
 nmap <silent> <Leader>sp :set spell!<CR>
