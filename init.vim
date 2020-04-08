@@ -42,6 +42,7 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-sleuth'
+Plug 'tpope/vim-rhubarb'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -77,10 +78,9 @@ Plug 'vitalk/vim-simple-todo'
 Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'liuchengxu/vista.vim'
-Plug 'camspiers/animate.vim'
-Plug 'camspiers/lens.vim'
-Plug 'preservim/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'lambdalisue/fern.vim'
+Plug 'lambdalisue/fern-renderer-devicons.vim'
+Plug 'lambdalisue/fern-mapping-project-top.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 call plug#end()
@@ -221,11 +221,6 @@ let g:fzf_colors =
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'rounded': v:false } }
 
 " =============================================================================
-" LENS
-" =============================================================================
-let g:lens#disabled_filetypes = ['nerdtree', 'fzf']
-
-" =============================================================================
 " VIM-STARTIFY
 " =============================================================================
 let g:startify_files_number = 8
@@ -364,7 +359,7 @@ function! LightlineMode()
   return &filetype ==# 'vista' ? 'VISTA' :
         \ &filetype ==# 'ctrlsf' ? 'CTRLSF' :
         \ &filetype ==# 'fugitive' ? 'FUGITIVE' :
-        \ &filetype ==# 'nerdtree' ? 'NERDTREE' :
+        \ &filetype ==# 'fern' ? 'FERN' :
         \ &filetype ==# 'fzf' ? 'FZF' :
         \ lightline#mode()
 endfunction
@@ -489,7 +484,7 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " =============================================================================
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '|'
-let g:indentLine_fileTypeExclude = [ 'startify' ]
+let g:indentLine_fileTypeExclude = [ 'startify', 'fern' ]
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " let g:indentLine_char = '·'
 " let g:indentLine_leadingSpaceEnabled = 1
@@ -555,17 +550,16 @@ let g:gutentags_ctags_extra_args = ['--fields=+l']
 let g:gutentags_add_default_project_roots = 0
 
 " ============================================================================
-" NERDTREE
+" FERN
 " =============================================================================
-let NERDTreeShowBookmarks=1
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:fern#renderer = "devicons"
 
 " =============================================================================
 "<F1> open help
 nnoremap <F2> :set invnumber<CR>
 nnoremap <F3> :set number! relativenumber!<CR>
 nmap <F5> :set list! list?<CR>
-nmap <silent> <F7> :NERDTreeToggle<CR>
+nmap <silent> <F7> :Fern . -drawer -toggle -width=50<CR>
 nmap <F8> :Vista<CR>
 autocmd FileType ruby nmap <F10> :call RunWith("ruby")<cr>
 autocmd FileType json nmap <F10> :%!python -m json.tool<cr>
