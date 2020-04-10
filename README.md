@@ -11,10 +11,10 @@ But I hope that it will be useful to other
 
 Thanks to the developers of these plugins/color schemes
 
-![v-ide startify](https://raw.githubusercontent.com/crivotz/nv-ide/master/v-ide_screenshot.png)
-![v-ide + fern + coc](https://raw.githubusercontent.com/crivotz/nv-ide/master/v-ide_screenshot_1.png)
-![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/v-ide_screenshot_2.png)
-![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/v-ide_screenshot_3.png)
+![v-ide startify](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot.png)
+![v-ide + fern + coc](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_1.png)
+![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_2.png)
+![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_3.png)
 
 ---
 
@@ -104,5 +104,6 @@ vim
 * [liuchengxu/vista.vim](https:/github.com/liuchengxu/vista.vim): 🌵 Viewer & Finder for LSP symbols and tags  
 * [lambdalisue/fern.vim](https:/github.com/lambdalisue/fern.vim): 🌿 General purpose asynchrnonous tree viewer written in Pure Vim script  
 * [lambdalisue/fern-renderer-devicons.vim](https:/github.com/lambdalisue/fern-renderer-devicons.vim): 🌿 fern.vim plugin which add file type icon through vim-devicons  
+* [lambdalisue/fern-mapping-project-top.vim](https:/github.com/lambdalisue/fern-mapping-project-top.vim): No description provided  
 * [christoomey/vim-tmux-navigator](https:/github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [machakann/vim-highlightedyank](https:/github.com/machakann/vim-highlightedyank): Make the yanked region apparent!  
