@@ -278,11 +278,11 @@ let g:nv_search_paths = ['~/Note', '~/ToDo']
 " =============================================================================
 " NETRW
 " =============================================================================
-" let g:netrw_banner = 0
-" let g:netrw_liststyle = 3
-" let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
-" let g:netrw_preview = 1
-" let g:netrw_alto = 0
+let g:netrw_banner = 0
+let g:netrw_liststyle = 3
+let g:netrw_list_hide = '\(^\|\s\s\)\zs\.\S\+'
+let g:netrw_preview = 1
+let g:netrw_alto = 0
 
 " =============================================================================
 " VIM-SIGNATURE
@@ -533,9 +533,13 @@ let g:sneak#t_reset = 1
 
 " target selection
 let g:sneak#label = 1
-let g:sneak#prompt = 'Sneak: '
+let g:sneak#prompt = 'λ -> '
 let g:sneak#label_esc = "\<CR>"
 let g:sneak#target_labels = 'aoeuidhtnspyfgcrlqjkxbmwvzAOEUIDHTNSPYFGCRLQJKXBMWVZ'
+"Nord color for sneak
+hi Sneak gui=bold guifg=#D8Dee9 guibg=#5E81AC
+hi SneakScope  guifg=#2E3440 guibg=#EBCB8B
+hi SneakLabelMask guifg=#5E81AC guibg=#5E81AC
 
 " ============================================================================
 " VIM-GUTENTAGS
@@ -590,3 +594,7 @@ nmap <C-F>n <Plug>CtrlSFCwordExec
 nnoremap <C-F>t :CtrlSFToggle<CR>
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
