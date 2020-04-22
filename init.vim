@@ -84,6 +84,7 @@ Plug 'lambdalisue/fern-renderer-devicons.vim'
 Plug 'lambdalisue/fern-mapping-project-top.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
+Plug 'editorconfig/editorconfig-vim'
 call plug#end()
 
 " =============================================================================
@@ -161,6 +162,8 @@ set smartcase                             " Search with caps - override ignoreca
 set noerrorbells                          " do not use errorbells
 set nojoinspaces                          " two spaces after a period on join
 set title                                 " show window title
+set cursorline
+set nolist listchars=tab:▸\ ,trail:·,precedes:←,extends:→,eol:↲,nbsp:␣
 
 " jump to the last known cursor position
 autocmd BufReadPost *
@@ -172,6 +175,9 @@ autocmd BufReadPost *
 au WinLeave * set nocursorcolumn
 au WinEnter * set cursorcolumn
 
+" ============================================================================
+" HIGHLIGHT
+" =============================================================================
 " Make background transparent for many things
 hi! Normal ctermbg=NONE guibg=NONE
 hi! NonText ctermbg=NONE guibg=NONE
@@ -182,14 +188,18 @@ hi! StatusLineNC guifg=NONE guibg=NONE
 " Try to hide vertical spit and end of buffer symbol
 hi! VertSplit gui=NONE guifg=NONE guibg=NONE
 hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-
 " Make background color transparent for git changes
 hi! SignifySignAdd guibg=NONE
 hi! SignifySignDelete guibg=NONE
 hi! SignifySignChange guibg=NONE
-
-highlight CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
-set cursorline
+hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+" For list
+hi NonText ctermfg=16 guifg=#EBCB8B
+hi SpecialKey ctermfg=16 guifg=#EBCB8B
+"Nord color for sneak
+hi Sneak gui=bold guifg=#D8Dee9 guibg=#5E81AC
+hi SneakScope  guifg=#2E3440 guibg=#EBCB8B
+hi SneakLabelMask guifg=#5E81AC guibg=#5E81AC
 
 " ============================================================================
 " VISTA
@@ -536,10 +546,6 @@ let g:sneak#label = 1
 let g:sneak#prompt = 'λ -> '
 let g:sneak#label_esc = "\<CR>"
 let g:sneak#target_labels = 'aoeuidhtnspyfgcrlqjkxbmwvzAOEUIDHTNSPYFGCRLQJKXBMWVZ'
-"Nord color for sneak
-hi Sneak gui=bold guifg=#D8Dee9 guibg=#5E81AC
-hi SneakScope  guifg=#2E3440 guibg=#EBCB8B
-hi SneakLabelMask guifg=#5E81AC guibg=#5E81AC
 
 " ============================================================================
 " VIM-GUTENTAGS
@@ -558,6 +564,11 @@ let g:gutentags_add_default_project_roots = 0
 " FERN
 " =============================================================================
 let g:fern#renderer = "devicons"
+
+" ============================================================================
+" EDITORCONFIG
+" =============================================================================
+let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " =============================================================================
 "<F1> open help

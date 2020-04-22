@@ -107,3 +107,4 @@ vim
 * [lambdalisue/fern-mapping-project-top.vim](https:/github.com/lambdalisue/fern-mapping-project-top.vim): No description provided  
 * [christoomey/vim-tmux-navigator](https:/github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [machakann/vim-highlightedyank](https:/github.com/machakann/vim-highlightedyank): Make the yanked region apparent!  
+* [editorconfig/editorconfig-vim](https:/github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
