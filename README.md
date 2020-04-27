@@ -108,3 +108,4 @@ vim
 * [christoomey/vim-tmux-navigator](https:/github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [machakann/vim-highlightedyank](https:/github.com/machakann/vim-highlightedyank): Make the yanked region apparent!  
 * [editorconfig/editorconfig-vim](https:/github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
+* [jeffkreeftmeijer/vim-numbertoggle](https:/github.com/jeffkreeftmeijer/vim-numbertoggle): Toggles between hybrid and absolute line numbers automatically  

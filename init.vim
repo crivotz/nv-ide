@@ -85,6 +85,7 @@ Plug 'lambdalisue/fern-mapping-project-top.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'jeffkreeftmeijer/vim-numbertoggle'
 call plug#end()
 
 " =============================================================================
@@ -564,6 +565,13 @@ let g:gutentags_add_default_project_roots = 0
 " FERN
 " =============================================================================
 let g:fern#renderer = "devicons"
+function! s:init_fern() abort
+  set nonumber
+endfunction
+augroup fern-custom
+  autocmd! *
+  autocmd FileType fern call s:init_fern()
+augroup END
 
 " ============================================================================
 " EDITORCONFIG
@@ -572,7 +580,6 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 
 " =============================================================================
 "<F1> open help
-nnoremap <F2> :set invnumber<CR>
 nnoremap <F3> :set number! relativenumber!<CR>
 nmap <F5> :set list! list?<CR>
 nmap <silent> <F7> :Fern . -drawer -toggle -width=50<CR>
