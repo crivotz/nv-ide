@@ -81,8 +81,8 @@ vim
 * [junegunn/vim-easy-align](https:/github.com/junegunn/vim-easy-align): 🌻 A Vim alignment plugin  
 * [junegunn/fzf.vim](https:/github.com/junegunn/fzf.vim): fzf ❤️ vim  
 * [junegunn/gv.vim](https:/github.com/junegunn/gv.vim): A git commit browser in Vim  
+* [junegunn/vim-slash](https:/github.com/junegunn/vim-slash): Enhancing in-buffer search experience  
 * [terryma/vim-multiple-cursors](https:/github.com/terryma/vim-multiple-cursors): True Sublime Text style multiple selections for Vim  
-* [osyo-manga/vim-anzu](https:/github.com/osyo-manga/vim-anzu): Vim search status.  
 * [rhysd/committia.vim](https:/github.com/rhysd/committia.vim): A Vim plugin for more pleasant editing on commit messages  
 * [rhysd/devdocs.vim](https:/github.com/rhysd/devdocs.vim): Open devdocs.io from Vim  
 * [ryanoasis/vim-devicons](https:/github.com/ryanoasis/vim-devicons): Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more  
@@ -102,9 +102,6 @@ vim
 * [arcticicestudio/nord-vim](https:/github.com/arcticicestudio/nord-vim): An arctic, north-bluish clean and elegant Vim theme.  
 * [drzel/vim-line-no-indicator](https:/github.com/drzel/vim-line-no-indicator): Simple and expressive line number indicator.  
 * [liuchengxu/vista.vim](https:/github.com/liuchengxu/vista.vim): 🌵 Viewer & Finder for LSP symbols and tags  
-* [lambdalisue/fern.vim](https:/github.com/lambdalisue/fern.vim): 🌿 General purpose asynchrnonous tree viewer written in Pure Vim script  
-* [lambdalisue/fern-renderer-devicons.vim](https:/github.com/lambdalisue/fern-renderer-devicons.vim): 🌿 fern.vim plugin which add file type icon through vim-devicons  
-* [lambdalisue/fern-mapping-project-top.vim](https:/github.com/lambdalisue/fern-mapping-project-top.vim): No description provided  
 * [christoomey/vim-tmux-navigator](https:/github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [machakann/vim-highlightedyank](https:/github.com/machakann/vim-highlightedyank): Make the yanked region apparent!  
 * [editorconfig/editorconfig-vim](https:/github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
