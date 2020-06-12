@@ -79,9 +79,6 @@ Plug 'vitalk/vim-simple-todo'
 Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'liuchengxu/vista.vim'
-Plug 'lambdalisue/fern.vim'
-Plug 'lambdalisue/fern-renderer-devicons.vim'
-Plug 'lambdalisue/fern-mapping-project-top.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
@@ -306,7 +303,7 @@ let g:SignatureMarkerTextHLDynamic = 1
 " COC
 " =============================================================================
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:coc_global_extensions = ['coc-solargraph', 'coc-highlight', 'coc-python', 'coc-yaml', 'coc-html', 'coc-css', 'coc-json', 'coc-snippets', 'coc-tsserver', 'coc-prettier', 'coc-flutter']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-highlight', 'coc-python', 'coc-yaml', 'coc-html', 'coc-css', 'coc-json', 'coc-snippets', 'coc-tsserver', 'coc-prettier', 'coc-flutter', 'coc-explorer']
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -322,6 +319,29 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
+
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\      'position': 'floating',
+\   },
+\   'floatingTop': {
+\     'position': 'floating',
+\     'floating-position': 'center-top',
+\   },
+\   'floatingLeftside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 50,
+\   },
+\   'floatingRightside': {
+\      'position': 'floating',
+\      'floating-position': 'left-center',
+\      'floating-width': 50,
+\   },
+\   'simplify': {
+\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+\   }
+\ }
 
 " =============================================================================
 " LIGHTLINE AND LIGHTLINE-BUFFERLINE
@@ -372,7 +392,6 @@ function! LightlineMode()
   return &filetype ==# 'vista' ? 'VISTA' :
         \ &filetype ==# 'ctrlsf' ? 'CTRLSF' :
         \ &filetype ==# 'fugitive' ? 'FUGITIVE' :
-        \ &filetype ==# 'fern' ? 'FERN' :
         \ &filetype ==# 'fzf' ? 'FZF' :
         \ lightline#mode()
 endfunction
@@ -497,7 +516,7 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " =============================================================================
 " let g:indentLine_setColors = 0
 let g:indentLine_char = '|'
-let g:indentLine_fileTypeExclude = [ 'startify', 'fern' ]
+let g:indentLine_fileTypeExclude = [ 'startify' ]
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " let g:indentLine_char = '·'
 " let g:indentLine_leadingSpaceEnabled = 1
@@ -563,18 +582,6 @@ let g:gutentags_ctags_extra_args = ['--fields=+l']
 let g:gutentags_add_default_project_roots = 0
 
 " ============================================================================
-" FERN
-" =============================================================================
-let g:fern#renderer = "devicons"
-function! s:init_fern() abort
-  set nonumber
-endfunction
-augroup fern-custom
-  autocmd! *
-  autocmd FileType fern call s:init_fern()
-augroup END
-
-" ============================================================================
 " EDITORCONFIG
 " =============================================================================
 let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
@@ -582,8 +589,9 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 " =============================================================================
 "<F1> open help
 nnoremap <F3> :set number! relativenumber!<CR>
-nmap <F5> :set list! list?<CR>
-nmap <silent> <F7> :Fern . -drawer -toggle -width=50<CR>
+nmap <F4> :set list! list?<CR>
+nmap <silent><F7> :CocCommand explorer --preset .vim<CR>
+nmap <silent><F6> :CocCommand explorer --preset floating<CR>
 nmap <F8> :Vista<CR>
 autocmd FileType ruby nmap <F10> :call RunWith("ruby")<cr>
 autocmd FileType json nmap <F10> :%!python -m json.tool<cr>
