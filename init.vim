@@ -485,6 +485,7 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd BufNewFile,BufRead /tmp/mutt-* set filetype=mail
 autocmd BufNewFile,BufRead /*.rasi setf css
+autocmd BufEnter * if (winnr("$") == 1 && &filetype == 'coc-explorer') | q | endif
 " autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 " autocmd FileType ruby,eruby let g:rubycomplete_load_gemfile=1
 " autocmd FileType ruby,eruby let g:rubycomplete_use_bundler=1
