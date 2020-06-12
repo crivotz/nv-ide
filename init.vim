@@ -58,8 +58,8 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
+Plug 'junegunn/vim-slash'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'osyo-manga/vim-anzu'
 Plug 'rhysd/committia.vim'
 Plug 'rhysd/devdocs.vim'
 Plug 'ryanoasis/vim-devicons'
@@ -271,6 +271,7 @@ let g:startify_lists = [
 function! StartifyEntryFormat()
   return 'WebDevIconsGetFileTypeSymbol(absolute_path) ." ". entry_path'
 endfunction
+
 " =============================================================================
 " CTRLSF
 " =============================================================================
@@ -595,6 +596,9 @@ nmap <Leader>nv :NV<CR>
 nmap <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt ""'}, 'right:70%'))<CR>
 nmap <Leader>r :Rg<CR>
 nmap <Leader>l :Lines 
+nmap <Leader>h :History<CR>
+nmap <Leader>tc :Colors<CR>
+nmap <Leader>m :Marks<CR>
 nmap <Leader>v :Vista finder<CR>
 nmap <Leader>g :GFiles?<CR> 
 nmap <Leader>gv :GV<CR> 
@@ -602,10 +606,6 @@ nmap <Leader>gg :20G<CR>
 nmap <Leader>xx :VimuxPromptCommand<CR>
 nmap <silent> <Leader>sp :set spell!<CR>
 nmap K <Plug>(devdocs-under-cursor)
-map  n <Plug>(anzu-n-with-echo)
-map  N <Plug>(anzu-N-with-echo)
-nmap * <Plug>(anzu-star-with-echo)
-nmap # <Plug>(anzu-sharp-with-echo)
 nmap <C-F>f <Plug>CtrlSFPrompt
 vmap <C-F>f <Plug>CtrlSFVwordExec
 nmap <C-F>n <Plug>CtrlSFCwordExec
