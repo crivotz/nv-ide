@@ -75,7 +75,6 @@ Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'alok/notational-fzf-vim'
 Plug 'zinit-zsh/zplugin-vim-syntax'
-Plug 'vitalk/vim-simple-todo'
 Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'liuchengxu/vista.vim'
@@ -83,6 +82,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
+Plug 'wincent/scalpel'
 call plug#end()
 
 " =============================================================================
@@ -282,7 +282,7 @@ let g:ctrlsf_auto_focus = {
 " =============================================================================
 " NOTATIONAL VIM
 " =============================================================================
-let g:nv_search_paths = ['~/Note', '~/ToDo']
+let g:nv_search_paths = ['~/Note']
 
 " =============================================================================
 " NETRW
@@ -303,7 +303,7 @@ let g:SignatureMarkerTextHLDynamic = 1
 " COC
 " =============================================================================
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:coc_global_extensions = ['coc-solargraph', 'coc-highlight', 'coc-python', 'coc-yaml', 'coc-html', 'coc-css', 'coc-json', 'coc-snippets', 'coc-tsserver', 'coc-prettier', 'coc-flutter', 'coc-explorer']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-highlight', 'coc-python', 'coc-yaml', 'coc-html', 'coc-css', 'coc-json',  'coc-xml', 'coc-snippets', 'coc-tsserver', 'coc-prettier', 'coc-flutter', 'coc-explorer', 'coc-markdownlint', 'coc-db']
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -321,6 +321,8 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 
 let g:coc_explorer_global_presets = {
+\   '.vim': {
+\   },
 \   'floating': {
 \      'position': 'floating',
 \   },
@@ -581,6 +583,8 @@ let g:gutentags_ctags_tagfile = '.git/tags'
 let g:gutentags_project_root = ['.git']
 let g:gutentags_ctags_extra_args = ['--fields=+l']
 let g:gutentags_add_default_project_roots = 0
+let g:gutentags_ctags_executable_ruby = 'ripper-tags'
+let g:gutentags_ctags_extra_args = ['--ignore-unsupported-options', '--recursive']
 
 " ============================================================================
 " EDITORCONFIG
@@ -604,6 +608,7 @@ nmap <Leader>nm :Dispatch npm start<CR>
 nmap <Leader>nv :NV<CR>
 nmap <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt ""'}, 'right:70%'))<CR>
 nmap <Leader>r :Rg<CR>
+nmap <Leader>tt :Rg todo<CR>
 nmap <Leader>l :Lines 
 nmap <Leader>h :History<CR>
 nmap <Leader>tc :Colors<CR>

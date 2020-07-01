@@ -98,7 +98,6 @@ vim
 * [mhinz/vim-startify](https:/github.com/mhinz/vim-startify): 🔗 The fancy start screen for Vim.  
 * [alok/notational-fzf-vim](https:/github.com/alok/notational-fzf-vim): Notational velocity for vim.  
 * [zinit-zsh/zplugin-vim-syntax](https:/github.com/zinit-zsh/zplugin-vim-syntax): A Vim syntax definition for Zinit commands in any ft=zsh file  
-* [vitalk/vim-simple-todo](https:/github.com/vitalk/vim-simple-todo): Mappings to manage GitHub-like task lists  
 * [arcticicestudio/nord-vim](https:/github.com/arcticicestudio/nord-vim): An arctic, north-bluish clean and elegant Vim theme.  
 * [drzel/vim-line-no-indicator](https:/github.com/drzel/vim-line-no-indicator): Simple and expressive line number indicator.  
 * [liuchengxu/vista.vim](https:/github.com/liuchengxu/vista.vim): 🌵 Viewer & Finder for LSP symbols and tags  
@@ -106,3 +105,4 @@ vim
 * [machakann/vim-highlightedyank](https:/github.com/machakann/vim-highlightedyank): Make the yanked region apparent!  
 * [editorconfig/editorconfig-vim](https:/github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
 * [jeffkreeftmeijer/vim-numbertoggle](https:/github.com/jeffkreeftmeijer/vim-numbertoggle): Toggles between hybrid and absolute line numbers automatically  
+* [wincent/scalpel](https:/github.com/wincent/scalpel): 🔪 Fast within-file word replacement for Vim  
