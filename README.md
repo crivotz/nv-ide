@@ -106,3 +106,4 @@ vim
 * [editorconfig/editorconfig-vim](https:/github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
 * [jeffkreeftmeijer/vim-numbertoggle](https:/github.com/jeffkreeftmeijer/vim-numbertoggle): Toggles between hybrid and absolute line numbers automatically  
 * [wincent/scalpel](https:/github.com/wincent/scalpel): 🔪 Fast within-file word replacement for Vim  
+* [AndrewRadev/tagalong.vim](https:/github.com/AndrewRadev/tagalong.vim): Change an HTML(ish) opening tag and take the closing one along as well  
