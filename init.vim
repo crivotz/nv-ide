@@ -83,6 +83,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'wincent/scalpel'
+Plug 'AndrewRadev/tagalong.vim'
 call plug#end()
 
 " =============================================================================
