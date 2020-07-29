@@ -84,6 +84,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'wincent/scalpel'
 Plug 'AndrewRadev/tagalong.vim'
+Plug 'jmckiern/vim-venter'
 call plug#end()
 
 " =============================================================================
@@ -322,8 +323,6 @@ let g:coc_status_error_sign = '•'
 let g:coc_status_warning_sign = '•'
 
 let g:coc_explorer_global_presets = {
-\   '.vim': {
-\   },
 \   'floating': {
 \      'position': 'floating',
 \   },
@@ -596,9 +595,10 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 "<F1> open help
 nnoremap <F3> :set number! relativenumber!<CR>
 nmap <F4> :set list! list?<CR>
-nmap <silent><F7> :CocCommand explorer --preset .vim<CR>
+nmap <silent><F7> :CocCommand explorer --width 80<CR>
 nmap <silent><F6> :CocCommand explorer --preset floating<CR>
 nmap <F8> :Vista<CR>
+nmap <F9> :VenterToggle<CR>
 autocmd FileType ruby nmap <F10> :call RunWith("ruby")<cr>
 autocmd FileType json nmap <F10> :%!python -m json.tool<cr>
 nmap <Leader>bda :bd <C-a> <CR>
