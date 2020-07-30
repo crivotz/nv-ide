@@ -1,6 +1,6 @@
 {
   // explorer
-  "explorer.width": 50,
+  "explorer.width": 80,
   "explorer.icon.enableNerdfont": true,
   "explorer.previewAction.onHover": false,
   "explorer.icon.enableVimDevicons": false,
@@ -8,6 +8,19 @@
     "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
     "v": "open:vsplit"
   },
+
+  "suggest.completionItemKindLabels": {
+    "text": "t",
+    "method": "m",
+    "function": ""
+  },
+
+  "coc.preferences.snippets.enable": true,
+  "coc.preferences.snippetStatusText": "SNIPPET",
+  "coc.preferences.formatOnType": false,
+  "coc.preferences.hoverTarget": "float",
+  "codeLens.enable": true,
+  "suggest.echodocSupport": true,
 
   // list
   "list.indicator": ">",
@@ -18,6 +31,29 @@
   "diagnostic.warningSign": " ",
   "diagnostic.infoSign": "",
   "diagnostic.hintSign": " ",
+  "diagnostic.enable": true,
+  "diagnostic.signOffset": 9999999,
+  "diagnostic.highlightOffset": 9999999,
+  "diagnostic.refreshOnInsertMode": true,
+
+  // suggest
+  "suggest.detailField": "abbr",
+  "suggest.detailMaxLength": 30,
+  "suggest.maxCompleteItemCount": 50,
+  "suggest.maxPreviewWidth": 80,
+  "suggest.triggerAfterInsertEnter": false,
+
+  // snippets
+  "snippets.extends": {
+    "scss": ["css"],
+    "sass": ["css"],
+    "less": ["css"],
+    "xml": ["xml"],
+    "vim": ["vim"],
+    "snippets": ["snippets"],
+    "typescript": ["javascript", "angulartypescript"],
+    "html": ["angularhtml", "angularmaterial", "angularflexlayout"]
+  },
 
   // autoformat
   "coc.preferences.formatOnSaveFiletypes": [
@@ -26,18 +62,23 @@
     "javascript",
     "graphql",
     "html",
+    "html",
     "yaml",
     "json",
     "python"
   ],
-  "coc.preferences.hoverTarget": "float",
 
   // html
   "html.autoClosingTags": true,
+  "html.suggest.ionic": true,
 
   // python config
   "python.linting.enabled": true,
   "python.linting.pylintEnabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "/usr/local/bin/black",
+  "python.sortImports.path": "~/.local/bin/isort",
 
   // solargraph
   "solargraph.diagnostics": true,

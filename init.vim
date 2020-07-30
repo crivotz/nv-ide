@@ -250,6 +250,7 @@ let g:startify_bookmarks = [
       \ {'d': '~/Dev'},
       \ {'w': '~/DevWeb'},
       \ {'c': '~/.config/nvim/init.vim'},
+      \ {'s': '~/.config/nvim/coc-settings.json'},
       \ {'z': '~/.zshrc'}
       \ ]
 let g:startify_custom_header = [
@@ -319,8 +320,8 @@ function! s:check_back_space() abort
 endfunction
 
 let g:coc_snippet_next = '<tab>'
-let g:coc_status_error_sign = '•'
-let g:coc_status_warning_sign = '•'
+let g:coc_status_error_sign = ' '
+let g:coc_status_warning_sign = ' '
 
 let g:coc_explorer_global_presets = {
 \   'floating': {
