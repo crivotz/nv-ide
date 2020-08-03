@@ -85,6 +85,7 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'wincent/scalpel'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'jmckiern/vim-venter'
+Plug 'svermeulen/vim-yoink'
 call plug#end()
 
 " =============================================================================
@@ -301,6 +302,14 @@ let g:netrw_alto = 0
 " =============================================================================
 let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkerTextHLDynamic = 1
+
+" =============================================================================
+" VIM-YOINK
+" =============================================================================
+nmap <c-n> <plug>(YoinkPostPasteSwapBack)
+nmap <c-p> <plug>(YoinkPostPasteSwapForward)
+nmap p <plug>(YoinkPaste_p)
+nmap P <plug>(YoinkPaste_P)
 
 " =============================================================================
 " COC
@@ -536,7 +545,7 @@ let g:vimrubocop_confi = '.rubocop.yml'
 " VIM-ROOTER
 " =============================================================================
 let g:rooter_silent_chdir = 1
-let g:rooter_use_lcd = 1
+let g:rooter_cd_cmd = 'lcd'
 let g:rooter_resolve_links = 1
 let g:rooter_patterns = ['.git', '.git/']
 

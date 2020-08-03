@@ -19,6 +19,9 @@
   "coc.preferences.snippetStatusText": "SNIPPET",
   "coc.preferences.formatOnType": false,
   "coc.preferences.hoverTarget": "float",
+  "diagnostic.virtualText": true,
+  "diagnostic.virtualTextCurrentLineOnly": true,
+  "diagnostic.messageTarget": "echo",
   "codeLens.enable": true,
   "suggest.echodocSupport": true,
 
