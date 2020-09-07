@@ -65,11 +65,11 @@
     "javascript",
     "graphql",
     "html",
-    "html",
     "yaml",
     "json",
     "python"
   ],
+  "coc.preferences.hoverTarget": "float",
 
   // html
   "html.autoClosingTags": true,
