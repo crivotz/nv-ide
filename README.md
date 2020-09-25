@@ -109,3 +109,4 @@ vim
 * [AndrewRadev/tagalong.vim](https:/github.com/AndrewRadev/tagalong.vim): Change an HTML(ish) opening tag and take the closing one along as well  
 * [jmckiern/vim-venter](https:/github.com/jmckiern/vim-venter): Vim plugin that horizontally centers the current window(s)  
 * [svermeulen/vim-yoink](https:/github.com/svermeulen/vim-yoink): Vim plugin that maintains a yank history to cycle between when pasting  
+* [voldikss/vim-floaterm](https:/github.com/voldikss/vim-floaterm): 🌟 Use nvim/vim's builtin terminal in the floating/popup window  
