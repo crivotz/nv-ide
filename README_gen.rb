@@ -19,7 +19,7 @@ File.open('init.vim').each do |line|
   github_repository = line.scan(/Plug '(.*?)'/)[0][0]
   github_page = Nokogiri::HTML(URI.open('https://github.com/' + github_repository))
   github_about = github_page.xpath('//div[.//h2[contains(text(), "About")]]/p').text  || 'No description provided'
-  vim_plugin_information = "* [#{github_repository}](https:/github.com/#{github_repository}): #{github_about.strip}  \n"
+  vim_plugin_information = "* [#{github_repository}](https://github.com/#{github_repository}): #{github_about.strip}  \n"
   puts '👾 Adding ' + github_repository
   File.write('README.md', vim_plugin_information, mode: 'a')
 end
