@@ -5,3 +5,4 @@ session/*
 !*.keep
 plug.vim
 plug.vim.old
+.netrwhist

@@ -38,7 +38,6 @@ Plug 'tpope/vim-rvm'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dadbod'
-Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-rhubarb'
@@ -70,7 +69,6 @@ Plug 'honza/vim-snippets'
 Plug 'RRethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'sheerun/vim-polyglot'
 Plug 'moll/vim-node'
-Plug 'mattn/emmet-vim'
 Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'alok/notational-fzf-vim'
@@ -87,6 +85,7 @@ Plug 'AndrewRadev/tagalong.vim'
 Plug 'jmckiern/vim-venter'
 Plug 'svermeulen/vim-yoink'
 Plug 'voldikss/vim-floaterm'
+Plug 'lambdalisue/suda.vim'
 call plug#end()
 
 " =============================================================================
