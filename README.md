@@ -61,7 +61,6 @@ vim
 * [tpope/vim-commentary](https://github.com/tpope/vim-commentary): commentary.vim: comment stuff out  
 * [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch): dispatch.vim: Asynchronous build and test dispatcher  
 * [tpope/vim-dadbod](https://github.com/tpope/vim-dadbod): dadbod.vim: Modern database interface for Vim  
-* [tpope/vim-eunuch](https://github.com/tpope/vim-eunuch): eunuch.vim: Helpers for UNIX  
 * [tpope/vim-jdaddy](https://github.com/tpope/vim-jdaddy): jdaddy.vim: JSON manipulation and pretty printing  
 * [tpope/vim-sleuth](https://github.com/tpope/vim-sleuth): sleuth.vim: Heuristically set buffer options  
 * [tpope/vim-rhubarb](https://github.com/tpope/vim-rhubarb): rhubarb.vim: GitHub extension for fugitive.vim  
@@ -93,7 +92,6 @@ vim
 * [RRethy/vim-hexokinase](https://github.com/RRethy/vim-hexokinase): hexokinase.vim - The fastest (Neo)Vim plugin for asynchronously displaying the colours in the file (#rrggbb, #rgb, rgb(a)? functions, hsl(a)? functions, web colours, custom patterns)  
 * [sheerun/vim-polyglot](https://github.com/sheerun/vim-polyglot): A solid language pack for Vim.  
 * [moll/vim-node](https://github.com/moll/vim-node): Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.  
-* [mattn/emmet-vim](https://github.com/mattn/emmet-vim): emmet for vim: http://emmet.io/  
 * [mhinz/vim-signify](https://github.com/mhinz/vim-signify): ➕ Show a diff using Vim its sign column.  
 * [mhinz/vim-startify](https://github.com/mhinz/vim-startify): 🔗 The fancy start screen for Vim.  
 * [alok/notational-fzf-vim](https://github.com/alok/notational-fzf-vim): Notational velocity for vim.  
@@ -102,11 +100,11 @@ vim
 * [drzel/vim-line-no-indicator](https://github.com/drzel/vim-line-no-indicator): Simple and expressive line number indicator.  
 * [liuchengxu/vista.vim](https://github.com/liuchengxu/vista.vim): 🌵 Viewer & Finder for LSP symbols and tags  
 * [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
-* [machakann/vim-highlightedyank](https://github.com/machakann/vim-highlightedyank): Make the yanked region apparent!  
 * [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
 * [jeffkreeftmeijer/vim-numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle): Toggles between hybrid and absolute line numbers automatically  
 * [wincent/scalpel](https://github.com/wincent/scalpel): 🔪 Fast within-file word replacement for Vim  
 * [AndrewRadev/tagalong.vim](https://github.com/AndrewRadev/tagalong.vim): Change an HTML(ish) opening tag and take the closing one along as well  
 * [jmckiern/vim-venter](https://github.com/jmckiern/vim-venter): Vim plugin that horizontally centers the current window(s)  
-* [svermeulen/vim-yoink](https://github.com/svermeulen/vim-yoink): Vim plugin that maintains a yank history to cycle between when pasting  
 * [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm): 🌟 Use nvim/vim's builtin terminal in the floating/popup window  
+* [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
+* [psliwka/vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right🥤  
