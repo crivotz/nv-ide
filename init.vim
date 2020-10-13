@@ -77,15 +77,14 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'liuchengxu/vista.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'machakann/vim-highlightedyank'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'wincent/scalpel'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'jmckiern/vim-venter'
-Plug 'svermeulen/vim-yoink'
 Plug 'voldikss/vim-floaterm'
 Plug 'lambdalisue/suda.vim'
+Plug 'psliwka/vim-smoothie'
 call plug#end()
 
 " =============================================================================
@@ -306,18 +305,10 @@ let g:SignatureMarkTextHLDynamic = 1
 let g:SignatureMarkerTextHLDynamic = 1
 
 " =============================================================================
-" VIM-YOINK
-" =============================================================================
-nmap <c-n> <plug>(YoinkPostPasteSwapBack)
-nmap <c-p> <plug>(YoinkPostPasteSwapForward)
-nmap p <plug>(YoinkPaste_p)
-nmap P <plug>(YoinkPaste_P)
-
-" =============================================================================
 " COC
 " =============================================================================
 command! -nargs=0 Prettier :CocCommand prettier.formatFile
-let g:coc_global_extensions = ['coc-solargraph', 'coc-highlight', 'coc-python', 'coc-yaml', 'coc-html', 'coc-css', 'coc-json',  'coc-xml', 'coc-snippets', 'coc-tsserver', 'coc-prettier', 'coc-flutter', 'coc-explorer', 'coc-markdownlint', 'coc-db']
+let g:coc_global_extensions = ['coc-solargraph', 'coc-highlight', 'coc-python', 'coc-yaml', 'coc-html', 'coc-css', 'coc-json',  'coc-xml', 'coc-snippets', 'coc-tsserver', 'coc-prettier', 'coc-flutter', 'coc-explorer', 'coc-markdownlint', 'coc-db', 'coc-yank']
 autocmd CursorHold * silent call CocActionAsync('highlight')
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? coc#_select_confirm() :
@@ -653,3 +644,4 @@ map                        f <Plug>Sneak_f
 map                        F <Plug>Sneak_F
 map                        t <Plug>Sneak_t
 map                        T <Plug>Sneak_T
+nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
