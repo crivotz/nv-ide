@@ -74,7 +74,6 @@ vim
 * [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature): Plugin to toggle, display and navigate marks  
 * [yggdroot/indentline](https://github.com/yggdroot/indentline): A vim plugin to display the indention levels with thin vertical lines  
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter): Changes Vim working directory to project root.  
-* [benmills/vimux](https://github.com/benmills/vimux): vim plugin to interact with tmux  
 * [chaoren/vim-wordmotion](https://github.com/chaoren/vim-wordmotion): More useful word motions for Vim  
 * [junegunn/vim-peekaboo](https://github.com/junegunn/vim-peekaboo): 👀 " / @ / CTRL-R  
 * [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align): 🌻 A Vim alignment plugin  
@@ -102,7 +101,6 @@ vim
 * [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
 * [jeffkreeftmeijer/vim-numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle): Toggles between hybrid and absolute line numbers automatically  
-* [wincent/scalpel](https://github.com/wincent/scalpel): 🔪 Fast within-file word replacement for Vim  
 * [AndrewRadev/tagalong.vim](https://github.com/AndrewRadev/tagalong.vim): Change an HTML(ish) opening tag and take the closing one along as well  
 * [jmckiern/vim-venter](https://github.com/jmckiern/vim-venter): Vim plugin that horizontally centers the current window(s)  
 * [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm): 🌟 Use nvim/vim's builtin terminal in the floating/popup window  

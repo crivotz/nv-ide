@@ -51,7 +51,6 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'kshenoy/vim-signature'
 Plug 'yggdroot/indentline'
 Plug 'airblade/vim-rooter'
-Plug 'benmills/vimux'
 Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
@@ -79,7 +78,6 @@ Plug 'liuchengxu/vista.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'wincent/scalpel'
 Plug 'AndrewRadev/tagalong.vim'
 Plug 'jmckiern/vim-venter'
 Plug 'voldikss/vim-floaterm'
@@ -631,7 +629,6 @@ nmap                       <Leader>g :GFiles?<CR>
 nmap                       <Leader>gv :GV<CR> 
 nmap                       <Leader>gg :FloatermNew lazygit<CR> 
 nmap                       <Leader>gf :20G<CR> 
-nmap                       <Leader>xx :VimuxPromptCommand<CR>
 nmap       <silent>        <Leader>sp :set spell!<CR>
 nmap                       K <Plug>(devdocs-under-cursor)
 nmap                       <C-F>f <Plug>CtrlSFPrompt
