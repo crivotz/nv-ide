@@ -10,6 +10,11 @@ language messages C
 set langmenu=en_US.UTF-8
 
 " =============================================================================
+" VIM-POLYGLOT
+" =============================================================================
+let g:polyglot_disabled = ['markdown']
+
+" =============================================================================
 " VIM-PLUG
 " =============================================================================
 let vimplug_exists=expand('~/.config/nvim/autoload/plug.vim')
@@ -39,7 +44,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-sleuth'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'sodapopcan/vim-twiggy'
@@ -547,11 +551,6 @@ let g:devdocs_filetype_map = {
       \   'ruby': 'rails',
       \   'javascript.js': 'jquery',
       \ }
-
-" =============================================================================
-" VIM-POLYGLOT
-" =============================================================================
-let g:polyglot_disabled = ['markdown']
 
 " ============================================================================
 " VIM-SNEAK
