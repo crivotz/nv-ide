@@ -8,6 +8,7 @@
     "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
     "v": "open:vsplit"
   },
+  "explorer.file.autoReveal": true,
 
   "suggest.completionItemKindLabels": {
     "text": "t",

@@ -87,6 +87,7 @@ Plug 'jmckiern/vim-venter'
 Plug 'voldikss/vim-floaterm'
 Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 " =============================================================================
@@ -101,7 +102,8 @@ if has("termguicolors")
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   endif
 endif
-color nord
+let g:gruvbox_italic=1
+color gruvbox
 
 " =============================================================================
 " CHECK OS
@@ -165,6 +167,7 @@ set noerrorbells                          " do not use errorbells
 set nojoinspaces                          " two spaces after a period on join
 set title                                 " show window title
 set cursorline
+set lazyredraw
 set nolist listchars=tab:▸\ ,trail:·,precedes:←,extends:→,eol:↲,nbsp:␣
 
 " jump to the last known cursor position
@@ -195,15 +198,26 @@ hi! SignifySignAdd guibg=NONE
 hi! SignifySignDelete guibg=NONE
 hi! SignifySignChange guibg=NONE
 hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+" Gruvbox
 " For list
-hi NonText ctermfg=16 guifg=#EBCB8B
-hi SpecialKey ctermfg=16 guifg=#EBCB8B
-"Nord color for sneak
-hi Sneak gui=bold guifg=#D8Dee9 guibg=#5E81AC
-hi SneakScope  guifg=#2E3440 guibg=#EBCB8B
-hi SneakLabelMask guifg=#5E81AC guibg=#5E81AC
-"Nord floaterm
-hi FloatermBorder guifg=#EBCB8B
+hi NonText ctermfg=16 guifg=#FABD2F
+hi SpecialKey ctermfg=16 guifg=#FBCB8B
+"Gruvbox color for sneak
+hi Sneak gui=bold guifg=#1d2021 guibg=#FABD2F
+hi SneakScope  guifg=#1d2021 guibg=#FABD2F
+hi SneakLabelMask guifg=#FABD2F guibg=#FABD2F
+" Gruvbox floaterm
+hi FloatermBorder guifg=#83a598
+
+" " Nord
+" hi NonText ctermfg=16 guifg=#EBCB8B
+" hi SpecialKey ctermfg=16 guifg=#EBCB8B
+" " Nord color for sneak
+" hi Sneak gui=bold guifg=#D8Dee9 guibg=#5E81AC
+" hi SneakScope  guifg=#2E3440 guibg=#EBCB8B
+" hi SneakLabelMask guifg=#5E81AC guibg=#5E81AC
+" " Nord floaterm
+" hi FloatermBorder guifg=#EBCB8B
 
 " ============================================================================
 " VISTA
@@ -356,7 +370,7 @@ let g:coc_explorer_global_presets = {
 let g:lightline#bufferline#show_number  = 1
 let g:lightline#bufferline#enable_devicons = 1
 let g:lightline = {
-      \ 'colorscheme': 'nord',
+      \ 'colorscheme': 'gruvbox',
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],
       \             [ 'gitbranch', 'readonly', 'filename' ] ],
