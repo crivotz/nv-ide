@@ -59,6 +59,7 @@ Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/vim-peekaboo'
 Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/vim-slash'
 Plug 'terryma/vim-multiple-cursors'
@@ -95,8 +96,8 @@ call plug#end()
 " =============================================================================
 set t_Co=256
 if has("termguicolors")
-  set termguicolors
   " set Vim-specific sequences for RGB colors
+  set termguicolors
   if exists('$TMUX')
     let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
     let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
@@ -113,10 +114,8 @@ if has('unix')
   if s:uname == "Darwin\n"
     " Do Mac stuff here
     set guifont=FuraCode\ Nerd\ Font\ Mono\:h11
-    set rtp+=~/.zinit/plugins/junegunn---fzf
   else
     set guifont=FuraCode\ Nerd\ Font\ Mono\ 8
-    set rtp+=~/.zinit/plugins/junegunn---fzf
   endif
 elseif has('win32') || has('win64')
   behave mswin
@@ -208,7 +207,6 @@ hi SneakScope  guifg=#1d2021 guibg=#FABD2F
 hi SneakLabelMask guifg=#FABD2F guibg=#FABD2F
 " Gruvbox floaterm
 hi FloatermBorder guifg=#83a598
-
 " " Nord
 " hi NonText ctermfg=16 guifg=#EBCB8B
 " hi SpecialKey ctermfg=16 guifg=#EBCB8B
@@ -247,7 +245,7 @@ let g:fzf_colors =
       \ 'spinner': ['fg', 'Label'],
       \ 'header':  ['fg', 'Comment'] }
 
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Todo', 'rounded': v:false } }
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'FloatermBorder' } }
 
 " =============================================================================
 " VIM-STARTIFY
@@ -490,8 +488,8 @@ autocmd BufWritePost,TextChanged,TextChangedI * call lightline#update()
 " =============================================================================
 let g:Hexokinase_ftAutoload = ['*']
 let g:Hexokinase_highlighters = ['sign_column']
-" let g:Hexokinase_refreshEvents = ['BufWritePost']
 let g:Hexokinase_optInPatterns = ['full_hex', 'triple_hex', 'rgb', 'rgba']
+" let g:Hexokinase_refreshEvents = ['BufWritePost']
 
 " =============================================================================
 " FILETYPE
@@ -536,9 +534,9 @@ au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 " =============================================================================
 " INDENTLINE
 " =============================================================================
-" let g:indentLine_setColors = 0
 let g:indentLine_char = '|'
 let g:indentLine_fileTypeExclude = [ 'startify' ]
+" let g:indentLine_setColors = 0
 " let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 " let g:indentLine_char = '·'
 " let g:indentLine_leadingSpaceEnabled = 1
@@ -569,17 +567,10 @@ let g:devdocs_filetype_map = {
 " ============================================================================
 " VIM-SNEAK
 " =============================================================================
-
-" case sensitivity
 let g:sneak#use_ic_scs = 1
-
-" clever repetition
 let g:sneak#s_next = 1
 let g:sneak#f_reset = 1
 let g:sneak#t_reset = 1
-" let g:sneak#absolute_dir = 1
-
-" target selection
 let g:sneak#label = 1
 let g:sneak#prompt = 'λ -> '
 let g:sneak#label_esc = "\<CR>"
@@ -630,10 +621,10 @@ nmap                       <Leader>bp :bp<CR>
 nmap                       <Leader>bb :Buffers<CR>
 nmap                       <Leader>nm :Dispatch npm start<CR>
 nmap                       <Leader>nv :NV<CR>
-nmap                       <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt ""'}, 'right:70%'))<CR>
+nmap                       <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt "λ -> "'}))<CR>
 nmap                       <Leader>r :Rg<CR>
 nmap                       <Leader>tt :Rg todo<CR>
-nmap                       <Leader>l :Lines 
+nmap                       <Leader>l :Lines<CR>
 nmap                       <Leader>h :History<CR>
 nmap                       <Leader>tc :Colors<CR>
 nmap                       <Leader>m :Marks<CR>
