@@ -196,7 +196,7 @@ hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 hi! SignifySignAdd guibg=NONE
 hi! SignifySignDelete guibg=NONE
 hi! SignifySignChange guibg=NONE
-hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
+" hi CursorLine cterm=NONE ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 " Gruvbox
 " For list
 hi NonText ctermfg=16 guifg=#FABD2F
@@ -621,7 +621,7 @@ nmap                       <Leader>bp :bp<CR>
 nmap                       <Leader>bb :Buffers<CR>
 nmap                       <Leader>nm :Dispatch npm start<CR>
 nmap                       <Leader>nv :NV<CR>
-nmap                       <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt "λ -> "'}))<CR>
+nmap      <silent>         <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt "λ -> "'}))<CR>
 nmap                       <Leader>r :Rg<CR>
 nmap                       <Leader>tt :Rg todo<CR>
 nmap                       <Leader>l :Lines<CR>
