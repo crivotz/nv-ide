@@ -77,8 +77,9 @@ vim
 * [junegunn/vim-peekaboo](https://github.com/junegunn/vim-peekaboo): 👀 " / @ / CTRL-R  
 * [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align): 🌻 A Vim alignment plugin  
 * [junegunn/fzf.vim](https://github.com/junegunn/fzf.vim): fzf ❤️ vim  
+* [junegunn/fzf](https://github.com/junegunn/fzf): 🌸 A command-line fuzzy finder  
 * [junegunn/gv.vim](https://github.com/junegunn/gv.vim): A git commit browser in Vim  
-* [junegunn/vim-slash](https://github.com/junegunn/vim-slash): Enhancing in-buffer search experience  
+* [haya14busa/is.vim](https://github.com/haya14busa/is.vim): incremental search improved - successor of incsearch.vim  
 * [terryma/vim-multiple-cursors](https://github.com/terryma/vim-multiple-cursors): True Sublime Text style multiple selections for Vim  
 * [rhysd/committia.vim](https://github.com/rhysd/committia.vim): A Vim plugin for more pleasant editing on commit messages  
 * [rhysd/devdocs.vim](https://github.com/rhysd/devdocs.vim): Open devdocs.io from Vim  
@@ -105,3 +106,4 @@ vim
 * [voldikss/vim-floaterm](https://github.com/voldikss/vim-floaterm): 🌟 Use nvim/vim's builtin terminal in the floating/popup window  
 * [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
 * [psliwka/vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right🥤  
+* [gruvbox-community/gruvbox](https://github.com/gruvbox-community/gruvbox): Retro groove color scheme for Vim - community maintained edition  
