@@ -31,6 +31,9 @@ if !filereadable(vimplug_exists)
 endif
 
 call plug#begin(expand('~/.config/nvim/plugged'))
+" =============================================================================
+" PLUGINS
+" =============================================================================
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-rails'
 Plug 'tpope/vim-abolish'
@@ -46,7 +49,6 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
-Plug 'sodapopcan/vim-twiggy'
 Plug 'jiangmiao/auto-pairs'
 Plug 'itchyny/lightline.vim'
 Plug 'mengelbrecht/lightline-bufferline'
@@ -61,6 +63,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'junegunn/gv.vim'
+Plug 'stsewd/fzf-checkout.vim'
 Plug 'haya14busa/is.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'rhysd/committia.vim'
@@ -77,7 +80,6 @@ Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'alok/notational-fzf-vim'
 Plug 'zinit-zsh/zplugin-vim-syntax'
-Plug 'arcticicestudio/nord-vim'
 Plug 'drzel/vim-line-no-indicator'
 Plug 'liuchengxu/vista.vim'
 Plug 'christoomey/vim-tmux-navigator'
@@ -88,22 +90,26 @@ Plug 'jmckiern/vim-venter'
 Plug 'voldikss/vim-floaterm'
 Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
+" =============================================================================
+" COLORSCHEME
+" =============================================================================
+Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 " =============================================================================
 " SET THE GUI COLOR SCHEME
 " =============================================================================
-set t_Co=256
-if has("termguicolors")
-  " set Vim-specific sequences for RGB colors
+if (has("nvim"))
+  let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+endif
+if exists('+termguicolors')
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
-  if exists('$TMUX')
-    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  endif
 endif
 let g:gruvbox_italic=1
+set bg=dark
 color gruvbox
 
 " =============================================================================
@@ -126,7 +132,7 @@ endif
 " =============================================================================
 " SETTINGS
 " =============================================================================
-set fillchars+=vert:.                     " Change vertical split character
+set fillchars+=vert:\                      " Change vertical split character
 set guioptions=aAce                       " GUI options
 set showtabline=2
 set so=10                                 " Row after cursor
@@ -143,6 +149,7 @@ set spelllang=it                          " set default spell to it
 set softtabstop=2
 set signcolumn=yes
 set shortmess+=c
+set shortmess-=S
 set noshowmode                            " Don't dispay mode in command line
 set number                                " Row number
 set relativenumber                        " Relative number
@@ -190,7 +197,7 @@ hi! SignColumn ctermfg=NONE guibg=NONE
 hi! StatusLine guifg=NONE guibg=NONE
 hi! StatusLineNC guifg=NONE guibg=NONE
 " Try to hide vertical spit and end of buffer symbol
-hi! VertSplit gui=NONE guifg=NONE guibg=NONE
+hi! VertSplit gui=NONE guifg=NONE guibg=NONE cterm=NONE
 hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=NONE guifg=NONE
 " Make background color transparent for git changes
 hi! SignifySignAdd guibg=NONE
@@ -340,27 +347,27 @@ let g:coc_status_error_sign = ' '
 let g:coc_status_warning_sign = ' '
 
 let g:coc_explorer_global_presets = {
-\   'floating': {
-\      'position': 'floating',
-\   },
-\   'floatingTop': {
-\     'position': 'floating',
-\     'floating-position': 'center-top',
-\   },
-\   'floatingLeftside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 50,
-\   },
-\   'floatingRightside': {
-\      'position': 'floating',
-\      'floating-position': 'left-center',
-\      'floating-width': 50,
-\   },
-\   'simplify': {
-\     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
-\   }
-\ }
+      \   'floating': {
+      \      'position': 'floating',
+      \   },
+      \   'floatingTop': {
+      \     'position': 'floating',
+      \     'floating-position': 'center-top',
+      \   },
+      \   'floatingLeftside': {
+      \      'position': 'floating',
+      \      'floating-position': 'left-center',
+      \      'floating-width': 50,
+      \   },
+      \   'floatingRightside': {
+      \      'position': 'floating',
+      \      'floating-position': 'left-center',
+      \      'floating-width': 50,
+      \   },
+      \   'simplify': {
+      \     'file-child-template': '[selection | clip | 1] [indent][icon | 1] [filename omitCenter 1]'
+      \   }
+      \ }
 
 " =============================================================================
 " LIGHTLINE AND LIGHTLINE-BUFFERLINE
@@ -629,7 +636,7 @@ nmap                       <Leader>h :History<CR>
 nmap                       <Leader>tc :Colors<CR>
 nmap                       <Leader>m :Marks<CR>
 nmap                       <Leader>v :Vista finder<CR>
-nmap                       <Leader>g :GFiles?<CR> 
+nmap      <silent>         <Leader>g :GFiles?<CR>
 nmap                       <Leader>gv :GV<CR> 
 nmap                       <Leader>gg :FloatermNew lazygit<CR> 
 nmap                       <Leader>gf :20G<CR> 
