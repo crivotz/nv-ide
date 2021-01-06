@@ -12,7 +12,10 @@ set langmenu=en_US.UTF-8
 " =============================================================================
 " VIM-POLYGLOT
 " =============================================================================
-let g:polyglot_disabled = ['markdown']
+" let g:polyglot_disabled = ['markdown']
+let g:vim_json_syntax_conceal = 0
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
 
 " =============================================================================
 " VIM-PLUG
@@ -90,6 +93,8 @@ Plug 'jmckiern/vim-venter'
 Plug 'voldikss/vim-floaterm'
 Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
+Plug 'chrisbra/NrrwRgn'
+Plug 'Konfekt/FastFold'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================
@@ -141,9 +146,9 @@ set tabstop=2                             " N space for tab
 set mouse=a                               " Mouse enabled
 set colorcolumn=+1                        " Highlight column 81
 set backupcopy=yes
-set foldmethod=indent
+" set foldmethod=indent
 set foldlevel=1
-set foldnestmax=10
+" set foldnestmax=10
 set undolevels=1000 						          " n of changes that can be undone
 set spelllang=it                          " set default spell to it
 set softtabstop=2
@@ -253,6 +258,14 @@ let g:fzf_colors =
       \ 'header':  ['fg', 'Comment'] }
 
 let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'FloatermBorder' } }
+
+command! -bang GIssue call fzf#run(fzf#wrap({
+  \ 'source': 'gh issue list',
+  \ 'options': [
+  \   '--preview', 'gh issue view {1}',
+  \   '--prompt', 'λ -> ',
+  \ ]}, <bang>0))
+
 
 " =============================================================================
 " VIM-STARTIFY
@@ -609,6 +622,22 @@ let g:EditorConfig_exclude_patterns = ['fugitive://.*', 'scp://.*']
 let g:floaterm_autoclose = 2
 let g:floaterm_title = 'λ -> $1..$2'
 
+" ============================================================================
+" FASTFOLD
+" =============================================================================
+let g:markdown_folding = 1
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:xml_syntax_folding = 1
+let g:javaScript_fold = 1
+let g:sh_fold_enabled= 7
+let g:ruby_fold = 1
+let g:perl_fold = 1
+let g:perl_fold_blocks = 1
+let g:r_syntax_folding = 1
+let g:rust_fold = 1
+let g:php_folding = 1
+
 " =============================================================================
 "<F1> open help
 nnoremap                   <F3> :set number! relativenumber!<CR>
@@ -640,6 +669,7 @@ nmap      <silent>         <Leader>g :GFiles?<CR>
 nmap                       <Leader>gv :GV<CR> 
 nmap                       <Leader>gg :FloatermNew lazygit<CR> 
 nmap                       <Leader>gf :20G<CR> 
+nmap                       <Leader>gi :GIssue<CR> 
 nmap       <silent>        <Leader>sp :set spell!<CR>
 nmap                       K <Plug>(devdocs-under-cursor)
 nmap                       <C-F>f <Plug>CtrlSFPrompt
