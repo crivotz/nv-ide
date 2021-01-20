@@ -95,6 +95,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'chrisbra/NrrwRgn'
 Plug 'Konfekt/FastFold'
+Plug 'benwainwright/fzf-project'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================
@@ -103,7 +104,7 @@ Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
 " =============================================================================
-" SET THE GUI COLOR SCHEME
+" SET TRUECOLORS
 " =============================================================================
 if (has("nvim"))
   let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -638,6 +639,14 @@ let g:r_syntax_folding = 1
 let g:rust_fold = 1
 let g:php_folding = 1
 
+" ============================================================================
+" FZF-PROJECT
+" =============================================================================
+let g:fzfSwitchProjectProjects = [ '~/DevWeb' ]
+let g:fzfSwitchProjectProjectDepth = 2
+let g:fzfSwitchProjectGitInitBehavior = 'none'
+let g:fzfSwitchProjectAlwaysChooseFile = 1
+
 " =============================================================================
 "<F1> open help
 nnoremap                   <F3> :set number! relativenumber!<CR>
@@ -671,6 +680,7 @@ nmap                       <Leader>gg :FloatermNew lazygit<CR>
 nmap                       <Leader>gf :20G<CR> 
 nmap                       <Leader>gi :GIssue<CR> 
 nmap       <silent>        <Leader>sp :set spell!<CR>
+nmap       <silent>        <Leader>pr :FzfSwitchProject<CR>
 nmap                       K <Plug>(devdocs-under-cursor)
 nmap                       <C-F>f <Plug>CtrlSFPrompt
 vmap                       <C-F>f <Plug>CtrlSFVwordExec
