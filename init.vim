@@ -93,13 +93,12 @@ Plug 'jmckiern/vim-venter'
 Plug 'voldikss/vim-floaterm'
 Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
-Plug 'chrisbra/NrrwRgn'
-Plug 'Konfekt/FastFold'
 Plug 'benwainwright/fzf-project'
+Plug 'kovetskiy/vim-autoresize'
+Plug 'andymass/vim-matchup'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================
-Plug 'arcticicestudio/nord-vim'
 Plug 'gruvbox-community/gruvbox'
 call plug#end()
 
@@ -147,9 +146,9 @@ set tabstop=2                             " N space for tab
 set mouse=a                               " Mouse enabled
 set colorcolumn=+1                        " Highlight column 81
 set backupcopy=yes
-" set foldmethod=indent
+set foldmethod=indent
 set foldlevel=1
-" set foldnestmax=10
+set foldnestmax=10
 set undolevels=1000 						          " n of changes that can be undone
 set spelllang=it                          " set default spell to it
 set softtabstop=2
@@ -234,11 +233,14 @@ hi FloatermBorder guifg=#83a598
 " VISTA
 " =============================================================================
 let g:vista#renderer#enable_icon = 1
+let g:vista#executives = ['coc', 'ctags', 'lcn', 'vim_lsc', 'vim_lsp']
 let g:vista#finders = ['fzf']
 let g:vista_executive_for = {
       \ 'ruby': 'coc',
       \ }
 let g:vista_fzf_preview = []
+let g:vista_close_on_jump = 1
+let g:vista_close_on_fzf_select = 1
 
 " =============================================================================
 " FZF
@@ -624,22 +626,6 @@ let g:floaterm_autoclose = 2
 let g:floaterm_title = 'λ -> $1..$2'
 
 " ============================================================================
-" FASTFOLD
-" =============================================================================
-let g:markdown_folding = 1
-let g:tex_fold_enabled = 1
-let g:vimsyn_folding = 'af'
-let g:xml_syntax_folding = 1
-let g:javaScript_fold = 1
-let g:sh_fold_enabled= 7
-let g:ruby_fold = 1
-let g:perl_fold = 1
-let g:perl_fold_blocks = 1
-let g:r_syntax_folding = 1
-let g:rust_fold = 1
-let g:php_folding = 1
-
-" ============================================================================
 " FZF-PROJECT
 " =============================================================================
 let g:fzfSwitchProjectProjects = [ '~/DevWeb' ]
@@ -668,7 +654,7 @@ nmap                       <Leader>nm :Dispatch npm start<CR>
 nmap                       <Leader>nv :NV<CR>
 nmap      <silent>         <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt "λ -> "'}))<CR>
 nmap                       <Leader>r :Rg<CR>
-nmap                       <Leader>tt :Rg todo<CR>
+nmap                       <Leader>tt :Rg TODO:<CR>
 nmap                       <Leader>l :Lines<CR>
 nmap                       <Leader>h :History<CR>
 nmap                       <Leader>tc :Colors<CR>
