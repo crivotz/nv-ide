@@ -15,6 +15,7 @@ let g:startify_bookmarks = [
       \ {'w': '~/DevWeb'},
       \ {'c': '~/.config/nvim/init.vim'},
       \ {'s': '~/.config/nvim/coc-settings.json'},
+      \ {'p': '~/.config/nvim/conf/vim-plug.vim'},
       \ {'z': '~/.zshrc'}
       \ ]
 let g:startify_custom_header = [

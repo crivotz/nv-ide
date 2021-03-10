@@ -4,7 +4,7 @@ nnoremap   <silent>        <F5>    :FloatermToggle<CR>
 tnoremap   <silent>        <F5>    <C-\><C-n>:FloatermToggle<CR>
 nnoremap   <silent>        <F6>    :FloatermNext<CR>
 tnoremap   <silent>        <F6>    <C-\><C-n>:FloatermNext<CR>
-nmap       <silent>        <F7> :CocCommand explorer --width 80<CR>
+nmap       <silent>        <F7> :NvimTreeToggle<CR>
 nmap                       <F8> :Vista<CR>
 nmap                       <F9> :VenterToggle<CR>
 autocmd FileType ruby nmap <F10> :call RunWith("ruby")<cr>

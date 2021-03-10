@@ -1,15 +1,4 @@
 {
-  // explorer
-  "explorer.width": 80,
-  "explorer.icon.enableNerdfont": true,
-  "explorer.previewAction.onHover": false,
-  "explorer.icon.enableVimDevicons": false,
-  "explorer.keyMappings.global": {
-    "<cr>": ["expandable?", ["expanded?", "collapse", "expand"], "open"],
-    "v": "open:vsplit"
-  },
-  "explorer.file.autoReveal": true,
-
   "suggest.completionItemKindLabels": {
     "text": "t",
     "method": "m",

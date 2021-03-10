@@ -29,7 +29,7 @@ gls.left[1] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
-      local mode_color = {n = colors.orange, 
+      local mode_color = {n = colors.yellow,
                           i = colors.green,
                           v = colors.blue,
                           [''] = colors.blue,
@@ -43,9 +43,9 @@ gls.left[1] = {
                           R = colors.red,
                           Rv = colors.red,
                           cv = colors.red,
-                          ce=colors.red, 
+                          ce=colors.red,
                           r = colors.cyan,
-                          rm = colors.cyan, 
+                          rm = colors.cyan,
                           ['r?'] = colors.cyan,
                           ['!']  = colors.red,
                           t = colors.red}
