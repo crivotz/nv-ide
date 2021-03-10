@@ -261,7 +261,7 @@ gls.short_line_left[2] = {
       return fname
     end,
     condition = buffer_not_empty,
-    highlight = {colors.grey, colors.purple, "bold"}
+    highlight = {colors.yellow, colors.bg, "bold"}
   }
 }
 
@@ -270,6 +270,6 @@ gls.short_line_left[1] = {
     provider = 'FileTypeName',
     separator = ' ',
     separator_highlight = {colors.purple,colors.bg},
-    highlight = {colors.grey,colors.purple}
+    highlight = {colors.bg,colors.yellow,'bold'}
   }
 }

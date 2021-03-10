@@ -9,9 +9,9 @@ nmap                       <F8> :Vista<CR>
 nmap                       <F9> :VenterToggle<CR>
 autocmd FileType ruby nmap <F10> :call RunWith("ruby")<cr>
 autocmd FileType json nmap <F10> :%!python -m json.tool<cr>
-nmap                       <Leader>bda :bd <C-a><CR>
-nmap                       <Leader>bn :bn<CR>
-nmap                       <Leader>bp :bp<CR>
+nmap                       <Leader>bda :BufferCloseAllButCurrent<CR>
+nmap                       <Leader>bn :bnext<CR>
+nmap                       <Leader>bp :bprevious<CR>
 nmap                       <Leader>bb :Buffers<CR>
 nmap                       <Leader>nm :Dispatch npm start<CR>
 nmap                       <Leader>nv :NV<CR>
