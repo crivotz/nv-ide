@@ -1,4 +1,4 @@
--- require'nvim-web-devicons'.setup()
+require'nvim-web-devicons'.setup()
 
 local gl = require('galaxyline')
 local gls = gl.section
@@ -30,25 +30,25 @@ gls.left[1] = {
     provider = function()
       -- auto change color according the vim mode
       local mode_color = {n = colors.yellow,
-                          i = colors.green,
-                          v = colors.blue,
-                          [''] = colors.blue,
-                          V = colors.blue,
-                          c = colors.purple,
-                          no = colors.magenta,
-                          s = colors.orange,
-                          S = colors.orange,
-                          [''] = colors.orange,
-                          ic = colors.yellow,
-                          R = colors.red,
-                          Rv = colors.red,
-                          cv = colors.red,
-                          ce=colors.red,
-                          r = colors.cyan,
-                          rm = colors.cyan,
-                          ['r?'] = colors.cyan,
-                          ['!']  = colors.red,
-                          t = colors.red}
+      i = colors.green,
+      v = colors.blue,
+      [''] = colors.blue,
+      V = colors.blue,
+      c = colors.purple,
+      no = colors.magenta,
+      s = colors.orange,
+      S = colors.orange,
+      [''] = colors.orange,
+      ic = colors.yellow,
+      R = colors.red,
+      Rv = colors.red,
+      cv = colors.red,
+      ce=colors.red,
+      r = colors.cyan,
+      rm = colors.cyan,
+      ['r?'] = colors.cyan,
+      ['!']  = colors.red,
+      t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
       return '  NV-IDE '
     end,
@@ -65,7 +65,10 @@ gls.left[1] = {
 
 gls.left[2] = {
   FileName = {
-    provider = 'FileName',
+    -- provider = 'FileName',
+    provider = function()
+      return vim.fn.expand("%:F")
+    end,
     condition = buffer_not_empty,
     separator = ' ',
     separator_highlight = {colors.gray,colors.bg},
@@ -235,19 +238,38 @@ gls.right[8] = {
     highlight = {colors.yellow,colors.bg, 'bold'},
   }
 }
- gls.short_line_left[1] = {
-   BufferType = {
-     provider = 'FileTypeName',
-     separator = ' ',
-     separator_highlight = {colors.purple,colors.bg},
-     highlight = {colors.grey,colors.purple}
-   }
- }
- gls.short_line_right[1] = {
-   BufferIcon = {
-     provider= 'BufferIcon',
-     separator = ' ',
-     separator_highlight = {colors.purple,colors.bg},
-     highlight = {colors.grey,colors.purple}
-   }
- }
+
+gls.short_line_left[1] = {
+  BufferType = {
+    provider = "FileIcon",
+    separator = " ",
+    separator_highlight = {"NONE", colors.bg},
+    highlight = {colors.grey, colors.bg, "bold"}
+  }
+}
+
+gls.short_line_left[2] = {
+  SFileName = {
+    provider = function()
+      local fileinfo = require("galaxyline.provider_fileinfo")
+      local fname = fileinfo.get_current_file_name()
+      for _, v in ipairs(gl.short_line_list) do
+        if v == vim.bo.filetype then
+          return ""
+        end
+      end
+      return fname
+    end,
+    condition = buffer_not_empty,
+    highlight = {colors.grey, colors.purple, "bold"}
+  }
+}
+
+gls.short_line_left[1] = {
+  BufferType = {
+    provider = 'FileTypeName',
+    separator = ' ',
+    separator_highlight = {colors.purple,colors.bg},
+    highlight = {colors.grey,colors.purple}
+  }
+}
