@@ -25,7 +25,7 @@ local buffer_not_empty = function()
   return false
 end
 
-gls.left[1] = {
+gls.left[2] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
@@ -63,7 +63,7 @@ gls.left[1] = {
   },
 }
 
-gls.left[2] = {
+gls.left[3] = {
   FileName = {
     -- provider = 'FileName',
     provider = function()
@@ -75,14 +75,14 @@ gls.left[2] = {
     highlight = {colors.gray,colors.bg, 'bold'}
   }
 }
-gls.left[3] = {
+gls.left[4] = {
   GitIcon = {
     provider = function() return ' ' end,
     condition = buffer_not_empty,
     highlight = {colors.orange,colors.bg},
   }
 }
-gls.left[4] = {
+gls.left[5] = {
   GitBranch = {
     provider = 'GitBranch',
     separator = ' ',
@@ -100,7 +100,7 @@ local checkwidth = function()
   return false
 end
 
-gls.left[5] = {
+gls.left[6] = {
   DiffAdd = {
     provider = 'DiffAdd',
     condition = checkwidth,
@@ -110,7 +110,7 @@ gls.left[5] = {
     highlight = {colors.green,colors.bg, 'bold'},
   }
 }
-gls.left[6] = {
+gls.left[7] = {
   DiffModified = {
     provider = 'DiffModified',
     condition = checkwidth,
@@ -120,7 +120,7 @@ gls.left[6] = {
     highlight = {colors.blue,colors.bg, 'bold'},
   }
 }
-gls.left[7] = {
+gls.left[8] = {
   DiffRemove = {
     provider = 'DiffRemove',
     condition = checkwidth,
@@ -130,7 +130,7 @@ gls.left[7] = {
     highlight = {colors.red,colors.bg, 'bold'},
   }
 }
-gls.left[8] = {
+gls.left[9] = {
   LeftEnd = {
     provider = function() return ' ' end,
     separator = ' ',
@@ -138,33 +138,33 @@ gls.left[8] = {
     highlight = {colors.purple,colors.bg, 'bold'}
   }
 }
-gls.left[9] = {
+gls.left[10] = {
   DiagnosticError = {
     provider = 'DiagnosticError',
     icon = '  ',
     highlight = {colors.red,colors.bg, 'bold'}
   }
 }
-gls.left[10] = {
+gls.left[11] = {
   Space = {
     provider = function () return '' end
   }
 }
-gls.left[11] = {
+gls.left[12] = {
   DiagnosticWarn = {
     provider = 'DiagnosticWarn',
     icon = '  ',
     highlight = {colors.yellow,colors.bg, 'bold'},
   }
 }
-gls.left[12] = {
+gls.left[13] = {
   DiagnosticHint = {
     provider = 'DiagnosticHint',
     icon = '   ',
     highlight = {colors.blue,colors.bg, 'bold'},
   }
 }
-gls.left[13] = {
+gls.left[14] = {
   DiagnosticInfo = {
     provider = 'DiagnosticInfo',
     icon = '   ',

@@ -60,7 +60,6 @@ set undolevels=1000 						          " n of changes that can be undone
 set spelllang=it                          " set default spell to it
 set softtabstop=2
 set signcolumn=yes
-set shortmess+=c
 set shortmess-=S
 set noshowmode                            " Don't dispay mode in command line
 set number                                " Row number
@@ -97,3 +96,5 @@ autocmd BufReadPost *
 " Set cursor position
 au WinLeave * set nocursorcolumn
 au WinEnter * set cursorcolumn
+" Highlight yanked text
+au TextYankPost * lua vim.highlight.on_yank {on_visual = false}
