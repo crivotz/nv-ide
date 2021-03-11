@@ -179,56 +179,58 @@ gls.right[1] ={
     separator = ' ',
     provider = 'FileIcon',
     condition = buffer_not_empty,
-    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg},
-    separator_highlight = {colors.darkblue,colors.bg},
+    highlight = {require('galaxyline.provider_fileinfo').get_file_icon_color,colors.bg, 'bold'},
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
   },
 }
 gls.right[2] = {
   FileSize = {
     provider = 'FileSize',
     condition = buffer_not_empty,
-    separator = ' ',
-    separator_highlight = {colors.darkblue,colors.bg},
-    highlight = {colors.magenta,colors.bg, 'bold'}
+    separator = ' | ',
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
+    highlight = {colors.darkblue,colors.bg, 'bold'}
   }
 }
 gls.right[3] ={
   Ruby = {
-    separator = '  %{rvm#statusline()}',
-    provider = function() return '' end,
-    highlight = {colors.magenta,colors.bg},
-    separator_highlight = {colors.red,colors.bg, 'bold'}
+    separator = ' | ',
+    provider = function()
+      return ' '..vim.fn['rvm#string']()
+    end,
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
+    highlight = {colors.red,colors.bg, 'bold'}
   },
 }
 gls.right[4]= {
   FileEncode = {
+    separator = ' | ',
     provider = 'FileEncode',
-    separator = '  ',
-    separator_highlight = {colors.darkblue,colors.bg},
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
   }
 }
 gls.right[5]= {
   FileFormat = {
+    separator = ' | ',
     provider = 'FileFormat',
-    separator = '  ',
-    separator_highlight = {colors.darkblue,colors.bg},
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
   }
 }
 gls.right[6] = {
   LineInfo = {
+    separator = ' | ',
     provider = 'LineColumn',
-    separator = '  ',
-    separator_highlight = {colors.darkblue,colors.bg},
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
   },
 }
 gls.right[7] = {
   PerCent = {
     provider = 'LinePercent',
-    separator = ' ',
-    separator_highlight = {colors.darkblue,colors.bg},
+    separator = ' | ',
+    separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
   }
 }
@@ -243,7 +245,7 @@ gls.short_line_left[1] = {
   BufferType = {
     provider = "FileIcon",
     separator = " ",
-    separator_highlight = {"NONE", colors.bg},
+    separator_highlight = {"NONE", colors.bg, 'bold'},
     highlight = {colors.grey, colors.bg, "bold"}
   }
 }
@@ -269,7 +271,7 @@ gls.short_line_left[1] = {
   BufferType = {
     provider = 'FileTypeName',
     separator = ' ',
-    separator_highlight = {colors.purple,colors.bg},
+    separator_highlight = {colors.purple,colors.bg, 'bold'},
     highlight = {colors.bg,colors.yellow,'bold'}
   }
 }

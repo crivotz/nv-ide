@@ -1,41 +1,41 @@
 " =============================================================================
 " PLUGINS
 " =============================================================================
-source ~/.nv-ide/conf/vim-plug.vim
+source ~/.nv-ide/config/vim-plug.vim
 
 " =============================================================================
 " GENERIC CONFIGURATION
 " =============================================================================
-source ~/.nv-ide/conf/settings.vim
-source ~/.nv-ide/conf/highlight.vim
-source ~/.nv-ide/conf/filetype.vim
-source ~/.nv-ide/conf/keymap.vim
-source ~/.nv-ide/conf/custom_functions.vim
+source ~/.nv-ide/config/settings.vim
+source ~/.nv-ide/config/highlight.vim
+source ~/.nv-ide/config/filetype.vim
+source ~/.nv-ide/config/keymap.vim
+source ~/.nv-ide/config/custom_functions.vim
 
 " =============================================================================
 " PLUGINS CONFIGURATION
 " =============================================================================
-source ~/.nv-ide/plugins-conf/fzf.vim
-source ~/.nv-ide/plugins-conf/vista.vim
-source ~/.nv-ide/plugins-conf/coc.vim
-source ~/.nv-ide/plugins-conf/ctrlsf.vim
-source ~/.nv-ide/plugins-conf/devdocs.vim
-source ~/.nv-ide/plugins-conf/editorconfig.vim
-source ~/.nv-ide/plugins-conf/vim-floaterm.vim
-source ~/.nv-ide/plugins-conf/indentline.vim
-source ~/.nv-ide/plugins-conf/netrw.vim
-source ~/.nv-ide/plugins-conf/notational-fzf.vim
-source ~/.nv-ide/plugins-conf/vim-gutentags.vim
-source ~/.nv-ide/plugins-conf/vim-rooter.vim
-source ~/.nv-ide/plugins-conf/vim-rubocop.vim
-source ~/.nv-ide/plugins-conf/vim-signature.vim
-source ~/.nv-ide/plugins-conf/vim-sneak.vim
-source ~/.nv-ide/plugins-conf/vim-startify.vim
+source ~/.nv-ide/config/plugins/fzf.vim
+source ~/.nv-ide/config/plugins/vista.vim
+source ~/.nv-ide/config/plugins/coc.vim
+source ~/.nv-ide/config/plugins/ctrlsf.vim
+source ~/.nv-ide/config/plugins/devdocs.vim
+source ~/.nv-ide/config/plugins/editorconfig.vim
+source ~/.nv-ide/config/plugins/vim-floaterm.vim
+source ~/.nv-ide/config/plugins/indentline.vim
+source ~/.nv-ide/config/plugins/netrw.vim
+source ~/.nv-ide/config/plugins/notational-fzf.vim
+source ~/.nv-ide/config/plugins/vim-gutentags.vim
+source ~/.nv-ide/config/plugins/vim-rooter.vim
+source ~/.nv-ide/config/plugins/vim-rubocop.vim
+source ~/.nv-ide/config/plugins/vim-signature.vim
+source ~/.nv-ide/config/plugins/vim-sneak.vim
+source ~/.nv-ide/config/plugins/vim-startify.vim
 
 " =============================================================================
 " PLUGINS LUA CONFIGURATION
 " =============================================================================
-luafile ~/.nv-ide/lua/plugins-conf/galaxyline.lua
-luafile ~/.nv-ide/lua/plugins-conf/treesitter.lua
-luafile ~/.nv-ide/lua/plugins-conf/colorizer.lua
-luafile ~/.nv-ide/lua/plugins-conf/nvimtree.lua
+luafile ~/.nv-ide/config/lua/plugins/galaxyline.lua
+luafile ~/.nv-ide/config/lua/plugins/treesitter.lua
+luafile ~/.nv-ide/config/lua/plugins/colorizer.lua
+luafile ~/.nv-ide/config/lua/plugins/nvimtree.lua
