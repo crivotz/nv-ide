@@ -1,6 +1,4 @@
 local nvim_lsp = require('lspconfig')
-lspfuzzy = require 'lspfuzzy'
-lspfuzzy.setup {}
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
