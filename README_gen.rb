@@ -13,7 +13,7 @@ puts '🗒️ Start plugins...'
 # Start plugins
 File.write('README.md', "\n**PLUGINS**  \n\n", mode: 'a')
 # Fill plugins
-File.open('conf/vim-plug.vim').each do |line|
+File.open('config/vim-plug.vim').each do |line|
   next unless line.match(/Plug '(.*?)'/)
 
   github_repository = line.scan(/Plug '(.*?)'/)[0][0]
