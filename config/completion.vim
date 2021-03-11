@@ -8,7 +8,7 @@ set completeopt=menuone,noinsert,noselect
 " Avoid showing message extra message when using completion
 set shortmess+=c
 
-let g:completion_enable_snippet = 'snippets.nvim'
+let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_chain_complete_list = [
     \{'complete_items': ['lsp', 'tags', 'snippet', 'buffers', 'ts']},
     \{'mode': '<c-p>'},

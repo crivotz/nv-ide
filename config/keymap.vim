@@ -40,4 +40,12 @@ map                        f <Plug>Sneak_f
 map                        F <Plug>Sneak_F
 map                        t <Plug>Sneak_t
 map                        T <Plug>Sneak_T
-nnoremap <silent> <space>y  :<C-u>CocList -A --normal yank<cr>
+nnoremap <silent> <space>, <cmd>lua vim.lsp.diagnostic.goto_prev()<CR>
+nnoremap <silent> <space>; <cmd>lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <silent> <space>a <cmd>lua vim.lsp.buf.code_action()<CR>
+nnoremap <silent> <space>d <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent> <space>f <cmd>lua vim.lsp.buf.formatting()<CR>
+nnoremap <silent> <space>h <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap <silent> <space>m <cmd>lua vim.lsp.buf.rename()<CR>
+nnoremap <silent> <space>r <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap <silent> <space>s <cmd>lua vim.lsp.buf.document_symbol()<CR>
