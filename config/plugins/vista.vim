@@ -7,3 +7,5 @@ let g:vista_executive_for = {
 let g:vista_fzf_preview = []
 let g:vista_close_on_jump = 1
 let g:vista_close_on_fzf_select = 1
+
+autocmd VimEnter * call vista#RunForNearestMethodOrFunction()
