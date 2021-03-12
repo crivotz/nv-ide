@@ -33,7 +33,7 @@ if has('unix')
     " Do Mac stuff here
     set guifont=FuraCode\ Nerd\ Font\ Mono\:h11
   else
-    set guifont=FuraCode\ Nerd\ Font\ Mono\ 8
+    set guifont=FiraCode\ Nerd\ Font\ Mono\ 8
   endif
 elseif has('win32') || has('win64')
   behave mswin

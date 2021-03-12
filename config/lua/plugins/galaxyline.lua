@@ -25,10 +25,17 @@ local buffer_not_empty = function()
   return false
 end
 
-gls.left[2] = {
+gls.left[1] = {
   ViMode = {
     provider = function()
       -- auto change color according the vim mode
+      local mode_text = {n = '<|',
+      i = '|>',
+      v = '<>',
+      [''] = '<>',
+      V = '<>',
+      }
+
       local mode_color = {n = colors.yellow,
       i = colors.green,
       v = colors.blue,
@@ -50,7 +57,8 @@ gls.left[2] = {
       ['!']  = colors.red,
       t = colors.red}
       vim.api.nvim_command('hi GalaxyViMode guibg='..mode_color[vim.fn.mode()])
-      return '  NV-IDE '
+      -- vim.api.nvim_command('hi GalaxyViMode guifg='..mode_color[vim.fn.mode()])
+      return '  NV-IDE '--..mode_text[vim.fn.mode()]
     end,
     separator = ' ',
     separator_highlight = {colors.yellow,function()
@@ -60,7 +68,46 @@ gls.left[2] = {
       return colors.bg
     end},
     highlight = {colors.bg,colors.bg,'bold'},
-  },
+  }
+}
+
+gls.left[2] = {
+  SymbolMode = {
+    provider = function()
+      -- auto change color according the vim mode
+      local mode_text = {n = '<|',
+      i = '|>',
+      v = '<>',
+      [''] = '<>',
+      V = '<>',
+      }
+
+      local mode_color = {n = colors.yellow,
+      i = colors.green,
+      v = colors.blue,
+      [''] = colors.blue,
+      V = colors.blue,
+      c = colors.purple,
+      no = colors.magenta,
+      s = colors.orange,
+      S = colors.orange,
+      [''] = colors.orange,
+      ic = colors.yellow,
+      R = colors.red,
+      Rv = colors.red,
+      cv = colors.red,
+      ce=colors.red,
+      r = colors.cyan,
+      rm = colors.cyan,
+      ['r?'] = colors.cyan,
+      ['!']  = colors.red,
+      t = colors.red}
+      vim.api.nvim_command('hi GalaxySymbolMode guifg='..mode_color[vim.fn.mode()])
+      return mode_text[vim.fn.mode()]
+    end,
+    separator = ' ',
+    highlight = {colors.bg,colors.bg,'bold'},
+  }
 }
 
 gls.left[3] = {

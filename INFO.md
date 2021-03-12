@@ -12,7 +12,6 @@ But I hope that it will be useful to other
 Thanks to the developers of these plugins/color schemes
 
 ![v-ide startify](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot.png)
-![v-ide + fern + coc](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_1.png)
 ![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_2.png)
 ![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_3.png)
 

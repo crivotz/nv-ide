@@ -14,7 +14,6 @@ let g:startify_bookmarks = [
       \ {'d': '~/Dev'},
       \ {'w': '~/DevWeb'},
       \ {'c': '~/.config/nvim/init.vim'},
-      \ {'s': '~/.config/nvim/coc-settings.json'},
       \ {'p': '~/.config/nvim/conf/vim-plug.vim'},
       \ {'z': '~/.zshrc'}
       \ ]

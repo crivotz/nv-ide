@@ -7,11 +7,11 @@ source ~/.nv-ide/config/vim-plug.vim
 " GENERIC CONFIGURATION
 " =============================================================================
 source ~/.nv-ide/config/settings.vim
-source ~/.nv-ide/config/completion.vim
 source ~/.nv-ide/config/highlight.vim
 source ~/.nv-ide/config/filetype.vim
 source ~/.nv-ide/config/keymap.vim
 source ~/.nv-ide/config/custom_functions.vim
+source ~/.nv-ide/config/completion.vim
 " =============================================================================
 " PLUGINS CONFIGURATION
 " =============================================================================
