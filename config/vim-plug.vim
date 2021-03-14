@@ -59,7 +59,6 @@ Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'moll/vim-node'
-Plug 'mhinz/vim-signify'
 Plug 'mhinz/vim-startify'
 Plug 'alok/notational-fzf-vim'
 Plug 'zinit-zsh/zplugin-vim-syntax'
@@ -78,10 +77,10 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'neovim/nvim-lspconfig'
 Plug 'ojroques/nvim-lspfuzzy'
-Plug 'nvim-lua/completion-nvim'
-Plug 'kristijanhusak/completion-tags'
-Plug 'nvim-treesitter/completion-treesitter'
-Plug 'steelsojka/completion-buffers'
+Plug 'hrsh7th/nvim-compe'
+Plug 'onsails/lspkind-nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================

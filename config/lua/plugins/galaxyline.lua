@@ -244,14 +244,14 @@ gls.right[2] = {
   FileSize = {
     provider = 'FileSize',
     condition = buffer_not_empty,
-    separator = ' | ',
+    separator = ' ',
     separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.darkblue,colors.bg, 'bold'}
   }
 }
 gls.right[3] ={
   Ruby = {
-    separator = ' | ',
+    separator = ' ',
     provider = function()
       return ' '..vim.fn['rvm#string']()
     end,
@@ -261,7 +261,7 @@ gls.right[3] ={
 }
 gls.right[4]= {
   FileEncode = {
-    separator = ' | ',
+    separator = ' ',
     provider = 'FileEncode',
     separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
@@ -269,7 +269,7 @@ gls.right[4]= {
 }
 gls.right[5]= {
   FileFormat = {
-    separator = ' | ',
+    separator = ' ',
     provider = 'FileFormat',
     separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
@@ -277,7 +277,7 @@ gls.right[5]= {
 }
 gls.right[6] = {
   LineInfo = {
-    separator = ' | ',
+    separator = ' ',
     provider = 'LineColumn',
     separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
@@ -286,7 +286,7 @@ gls.right[6] = {
 gls.right[7] = {
   PerCent = {
     provider = 'LinePercent',
-    separator = ' | ',
+    separator = ' ',
     separator_highlight = {colors.yellow,colors.bg, 'bold'},
     highlight = {colors.grey,colors.bg, 'bold'},
   }
