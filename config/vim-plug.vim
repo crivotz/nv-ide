@@ -33,9 +33,6 @@ Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
-Plug 'jiangmiao/auto-pairs'
-Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
-Plug 'romgrk/barbar.nvim'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'kshenoy/vim-signature'
@@ -51,13 +48,11 @@ Plug 'stsewd/fzf-checkout.vim'
 Plug 'haya14busa/is.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'rhysd/committia.vim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'ryanoasis/vim-devicons'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'dyng/ctrlsf.vim'
 Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'moll/vim-node'
 Plug 'mhinz/vim-startify'
 Plug 'alok/notational-fzf-vim'
@@ -73,6 +68,11 @@ Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'kovetskiy/vim-autoresize'
 Plug 'andymass/vim-matchup'
+" LUA
+Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
+Plug 'romgrk/barbar.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'neovim/nvim-lspconfig'
@@ -81,6 +81,7 @@ Plug 'hrsh7th/nvim-compe'
 Plug 'onsails/lspkind-nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'windwp/nvim-autopairs'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================

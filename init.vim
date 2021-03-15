@@ -40,3 +40,4 @@ luafile ~/.nv-ide/config/lua/plugins/colorizer.lua
 luafile ~/.nv-ide/config/lua/plugins/nvimtree.lua
 luafile ~/.nv-ide/config/lua/plugins/lspfuzzy.lua
 luafile ~/.nv-ide/config/lua/plugins/gitsigns.lua
+luafile ~/.nv-ide/config/lua/plugins/nvim-autopairs.lua
