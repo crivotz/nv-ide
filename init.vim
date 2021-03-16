@@ -30,6 +30,7 @@ source ~/.nv-ide/config/plugins/vim-rubocop.vim
 source ~/.nv-ide/config/plugins/vim-signature.vim
 source ~/.nv-ide/config/plugins/vim-sneak.vim
 source ~/.nv-ide/config/plugins/vim-startify.vim
+source ~/.nv-ide/config/plugins/peekaboo.vim
 " =============================================================================
 " PLUGINS LUA CONFIGURATION
 " =============================================================================

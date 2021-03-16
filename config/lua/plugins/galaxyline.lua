@@ -317,7 +317,7 @@ gls.short_line_left[2] = {
   }
 }
 
-gl.short_line_list = {'Nvimtree','vista','fzf', 'startify'}
+gl.short_line_list = {'Nvimtree','vista','fzf', 'startify', '__CtrlSF__'}
 
 gls.short_line_right[1] = {
   SFileName = {

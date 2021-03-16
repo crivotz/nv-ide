@@ -1,7 +1,6 @@
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
+" autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 " autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 " autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 " autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
@@ -9,7 +8,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global=1
 " autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 " autocmd BufRead,BufNewFile *.md setlocal spell
 
-set completeopt=menuone,noselect
 
 let g:compe = {}
 let g:compe.enabled = v:true
@@ -37,3 +35,8 @@ let g:compe.source.ultisnips = v:true
 " let g:compe.source.calc = v:true
 
 set shortmess+=c
+set completeopt=menu,menuone,noselect
+
+" add TAB autocomplete
+inoremap <silent><expr> <TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
