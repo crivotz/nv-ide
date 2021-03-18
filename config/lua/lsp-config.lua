@@ -37,3 +37,5 @@ require'lspconfig'.yamlls.setup{
 }
 require'lspconfig'.vimls.setup{
 }
+require'lspconfig'.dartls.setup{
+}
