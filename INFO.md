@@ -11,11 +11,11 @@ But I hope that it will be useful to other
 
 Thanks to the developers of these plugins/color schemes
 
-![nv-ide + startify](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot.png)
-![nv-ide + nvim-compe + nvimtree ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_1.png)
-![v-ide + fzf + delta ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_2.png)
-![v-ide + fzf + GH cli ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_3.png)
-![v-ide + fzf + vista ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/v-ide_screenshot_5.png)
+![nv-ide + startify](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot.png)
+![nv-ide + nvim-compe + nvimtree ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_1.png)
+![v-ide + fzf + delta ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_2.png)
+![v-ide + fzf + GH cli ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_3.png)
+![v-ide + fzf + vista ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_5.png)
 
 ---
 
