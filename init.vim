@@ -41,5 +41,6 @@ luafile ~/.nv-ide/config/lua/plugins/colorizer.lua
 luafile ~/.nv-ide/config/lua/plugins/lspfuzzy.lua
 luafile ~/.nv-ide/config/lua/plugins/gitsigns.lua
 luafile ~/.nv-ide/config/lua/plugins/nvim-autopairs.lua
-source ~/.nv-ide/config/lua/plugins/nvimtree.vim
-source ~/.nv-ide/config/lua/plugins/indent-blankline.vim
+luafile ~/.nv-ide/config/lua/plugins/nvim-ts-rainbow.lua
+luafile ~/.nv-ide/config/lua/plugins/nvimtree.lua
+luafile ~/.nv-ide/config/lua/plugins/indent-blankline.lua

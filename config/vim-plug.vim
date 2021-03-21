@@ -82,6 +82,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'windwp/nvim-autopairs'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
+Plug 'p00f/nvim-ts-rainbow'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================
