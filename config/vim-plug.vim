@@ -36,7 +36,6 @@ Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'kshenoy/vim-signature'
-Plug 'yggdroot/indentline'
 Plug 'airblade/vim-rooter'
 Plug 'chaoren/vim-wordmotion'
 Plug 'junegunn/vim-peekaboo'
@@ -82,6 +81,7 @@ Plug 'onsails/lspkind-nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'lewis6991/gitsigns.nvim'
 Plug 'windwp/nvim-autopairs'
+Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 " =============================================================================
 " COLORSCHEME
 " =============================================================================

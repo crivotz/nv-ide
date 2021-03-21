@@ -31,7 +31,6 @@ source ~/.nv-ide/config/plugins/vim-signature.vim
 source ~/.nv-ide/config/plugins/vim-sneak.vim
 source ~/.nv-ide/config/plugins/vim-startify.vim
 source ~/.nv-ide/config/plugins/peekaboo.vim
-source ~/.nv-ide/config/plugins/nvimtree.vim
 " =============================================================================
 " PLUGINS LUA CONFIGURATION
 " =============================================================================
@@ -42,3 +41,5 @@ luafile ~/.nv-ide/config/lua/plugins/colorizer.lua
 luafile ~/.nv-ide/config/lua/plugins/lspfuzzy.lua
 luafile ~/.nv-ide/config/lua/plugins/gitsigns.lua
 luafile ~/.nv-ide/config/lua/plugins/nvim-autopairs.lua
+source ~/.nv-ide/config/lua/plugins/nvimtree.vim
+source ~/.nv-ide/config/lua/plugins/indent-blankline.vim
