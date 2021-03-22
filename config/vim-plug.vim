@@ -67,6 +67,7 @@ Plug 'lambdalisue/suda.vim'
 Plug 'psliwka/vim-smoothie'
 Plug 'kovetskiy/vim-autoresize'
 Plug 'andymass/vim-matchup'
+Plug 'chrisbra/csv.vim'
 " LUA
 Plug 'glepnir/galaxyline.nvim' , {'branch': 'main'}
 Plug 'romgrk/barbar.nvim'
