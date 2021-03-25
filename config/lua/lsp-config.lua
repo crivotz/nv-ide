@@ -39,3 +39,30 @@ require'lspconfig'.vimls.setup{
 }
 require'lspconfig'.dartls.setup{
 }
+require("flutter-tools").setup{} -- use defaults
+
+-- alternatively you can override the default configs
+require("flutter-tools").setup {
+  experimental = { -- map of feature flags
+    lsp_derive_paths = true, -- EXPERIMENTAL: Attempt to find the user's flutter SDK
+  },
+  debugger = { -- EXPERIMENTAL: integrate with nvim dap
+    enabled = false,
+  },
+  widget_guides = {
+    enabled = false,
+  },
+  closing_tags = {
+    highlight = "ErrorMsg",
+    prefix = ">"
+  },
+  dev_log = {
+    open_cmd = "tabedit",
+  },
+  outline = {
+    open_cmd = "30vnew",
+  },
+  lsp = {
+    capabilities = capabilities -- e.g. lsp_status capabilities
+  }
+}
