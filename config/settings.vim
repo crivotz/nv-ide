@@ -22,7 +22,7 @@ if exists('+termguicolors')
 endif
 let g:gruvbox_italic=1
 set bg=dark
-color gruvbox
+color gruvbox-material
 
 " =============================================================================
 " CHECK OS
