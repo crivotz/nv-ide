@@ -6,16 +6,16 @@ gl.short_line_list = {'LuaTree','vista','dbui'}
 
 local colors = {
   bg = '#282828',
-  yellow = '#d79921',
-  cyan = '#83a598',
-  darkblue = '#458588',
-  green = '#b8bb26',
-  orange = '#d65d0e',
-  purple = '#b16286',
-  magenta = '#d3869b',
+  yellow = '#d8a657',
+  cyan = '#89b482',
+  darkblue = '#45707a',
+  green = '#a9b665',
+  orange = '#e78a4e',
+  purple = '#d3869b',
+  magenta = '#c14a4a',
   grey = '#a89984',
-  blue = '#076678',
-  red = '#cc241d'
+  blue = '#7daea3',
+  red = '#ea6962'
 }
 
 local buffer_not_empty = function()
