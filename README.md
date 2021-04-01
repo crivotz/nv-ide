@@ -5,17 +5,20 @@
     ██║ ╚████║ ╚████╔╝       ██║██████╔╝███████╗  
     ╚═╝  ╚═══╝  ╚═══╝        ╚═╝╚═════╝ ╚══════╝  
 
-Vim custom configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
-I use this repository mainly to keep track of the changes that I made on my Vim configuration.  
-But I hope that it will be useful to other
+[Neovim](https://neovim.io/) custom configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
+I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other
+The project is constantly changing  
+You can find old less-lua and coc version under branch `old_coc_version`
 
 Thanks to the developers of these plugins/color schemes
 
-![nv-ide + startify](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot.png)
-![nv-ide + nvim-compe + nvimtree ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_1.png)
-![v-ide + fzf + delta ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_2.png)
-![v-ide + fzf + GH cli ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_3.png)
-![v-ide + fzf + vista ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/v-ide_screenshot_5.png)
+![nv-ide + startify](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_0.png)
+![nv-ide + nvim-compe + nvimtree ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_1.png)
+![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_2.png)
+![v-ide + fzf + delta ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_3.png)
+![v-ide + fzf + vista ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_4.png)
+![v-ide + lazygit ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_5.png)
+![v-ide + fzf + GH cli ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_6.png)
 
 ---
 
@@ -42,12 +45,13 @@ vim
 * [Universal-ctags](https://github.com/universal-ctags/ctags) with JSON format
 * [FZF](https://github.com/junegunn/fzf)
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
-* [Prettier](https://prettier.io)
-* Rippertag
+* Ripper-tags
+* Needed LSP, show `lsp-config.lua`
 
 **SUGGESTION**
 
 * Font: [Fira Code Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+* [dot_files](https://github.com/crivotz/dot_files)
 
 **PLUGINS**  
 
@@ -64,12 +68,10 @@ vim
 * [tpope/vim-dispatch](https://github.com/tpope/vim-dispatch): dispatch.vim: Asynchronous build and test dispatcher  
 * [tpope/vim-dadbod](https://github.com/tpope/vim-dadbod): dadbod.vim: Modern database interface for Vim  
 * [tpope/vim-jdaddy](https://github.com/tpope/vim-jdaddy): jdaddy.vim: JSON manipulation and pretty printing  
-* [tpope/vim-rhubarb](https://github.com/tpope/vim-rhubarb): rhubarb.vim: GitHub extension for fugitive.vim  
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive): fugitive.vim: A Git wrapper so awesome, it should be illegal  
 * [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak): The missing motion for Vim 👟  
 * [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags): A Vim plugin that manages your tag files  
 * [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature): Plugin to toggle, display and navigate marks  
-* [yggdroot/indentline](https://github.com/yggdroot/indentline): A vim plugin to display the indention levels with thin vertical lines  
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter): Changes Vim working directory to project root.  
 * [chaoren/vim-wordmotion](https://github.com/chaoren/vim-wordmotion): More useful word motions for Vim  
 * [junegunn/vim-peekaboo](https://github.com/junegunn/vim-peekaboo): 👀 " / @ / CTRL-R  
@@ -101,6 +103,7 @@ vim
 * [psliwka/vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right🥤  
 * [kovetskiy/vim-autoresize](https://github.com/kovetskiy/vim-autoresize): The dead-simple autoresize plugin for Vim.  
 * [andymass/vim-matchup](https://github.com/andymass/vim-matchup): vim match-up: even better % 👊 navigate and highlight matching words 👊 modern matchit and matchparen replacement  
+* [chrisbra/csv.vim](https://github.com/chrisbra/csv.vim): A Filetype plugin for csv files  
 * [glepnir/galaxyline.nvim](https://github.com/glepnir/galaxyline.nvim): neovim statusline plugin written in lua  
 * [romgrk/barbar.nvim](https://github.com/romgrk/barbar.nvim): A neovim tabline plugin.  
 * [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons): lua `fork` of vim-web-devicons for neovim  
@@ -114,4 +117,8 @@ vim
 * [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim): plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.  
 * [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): Git signs written in pure lua  
 * [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs): autopairs for neovim written by lua  
-* [gruvbox-community/gruvbox](https://github.com/gruvbox-community/gruvbox): Retro groove color scheme for Vim - community maintained edition  
+* [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Indent guides for Neovim  
+* [p00f/nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow): 🌈 Rainbow parentheses for neovim using tree-sitter 🌈  
+* [akinsho/flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim): Tools to help create flutter apps in neovim using the native lsp  
+* [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.  
+* [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material): Gruvbox with Material Palette  
