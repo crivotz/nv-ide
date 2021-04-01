@@ -12,13 +12,13 @@ You can find old less-lua and coc version under branch `old_coc_version`
 
 Thanks to the developers of these plugins/color schemes
 
-![nv-ide + startify](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_0.png)
-![nv-ide + nvim-compe + nvimtree ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_1.png)
-![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_2.png)
-![v-ide + fzf + delta ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_3.png)
-![v-ide + fzf + vista ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_4.png)
-![v-ide + lazygit ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_5.png)
-![v-ide + fzf + GH cli ](https://raw.githubusercontent.com/crivotz/nv-ide/more_lua/screenshots/nv-ide_screenshot_6.png)
+![nv-ide + startify](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_0.png)
+![nv-ide + nvim-compe + nvimtree ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_1.png)
+![v-ide + fzf ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_2.png)
+![v-ide + fzf + delta ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_3.png)
+![v-ide + fzf + vista ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_4.png)
+![v-ide + lazygit ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_5.png)
+![v-ide + fzf + GH cli ](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_6.png)
 
 ---
 
