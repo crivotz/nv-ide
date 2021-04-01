@@ -31,7 +31,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-dadbod'
 Plug 'tpope/vim-jdaddy'
-Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-fugitive'
 Plug 'justinmk/vim-sneak'
 Plug 'ludovicchabant/vim-gutentags'
@@ -85,6 +84,7 @@ Plug 'windwp/nvim-autopairs'
 Plug 'lukas-reineke/indent-blankline.nvim', { 'branch': 'lua' }
 Plug 'p00f/nvim-ts-rainbow'
 Plug 'akinsho/flutter-tools.nvim'
+Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================
