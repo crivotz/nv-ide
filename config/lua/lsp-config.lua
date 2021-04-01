@@ -12,6 +12,7 @@ vim.cmd('sign define LspDiagnosticsSignHint text=●')
 vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
 require'lspconfig'.html.setup {
+    filetypes = {"html", "eruby"},
   capabilities = capabilities,
 }
 require'lspconfig'.tsserver.setup{

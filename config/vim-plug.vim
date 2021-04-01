@@ -88,5 +88,5 @@ Plug 'JoosepAlviste/nvim-ts-context-commentstring'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================
-Plug 'gruvbox-community/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()

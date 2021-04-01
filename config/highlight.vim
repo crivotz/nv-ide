@@ -22,4 +22,4 @@ hi SneakScope  guifg=#1d2021 guibg=#FABD2F
 hi SneakLabelMask guifg=#FABD2F guibg=#FABD2F
 " Gruvbox floaterm
 hi FloatermBorder guifg=#83a598
-hi IndentLine guifg=#3c3836 ctermfg=246 guibg=NONE ctermbg=NONE
+hi IndentBlanklineChar guifg=#3c3836 gui=nocombine
