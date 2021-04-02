@@ -52,8 +52,8 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 nnoremap <leader>m <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>t <cmd>lua require('telescope.builtin').treesitter()<cr>
 nnoremap <leader>p <cmd>lua require('plugins.telescope').project_files()<cr>
-nnoremap <leader>g <cmd>lua require('plugins.telescope').my_git_commits()<cr>
-nnoremap <leader>c <cmd>lua require('plugins.telescope').my_git_status()<cr>
+nnoremap <leader>c <cmd>lua require('plugins.telescope').my_git_commits()<cr>
+nnoremap <leader>g <cmd>lua require('plugins.telescope').my_git_status()<cr>
 nnoremap <leader>b <cmd>lua require('plugins.telescope').my_git_bcommits()<cr>
 nnoremap <leader>gc :Octo issue create<cr>
 nnoremap <leader>i :Octo issue list<cr>
