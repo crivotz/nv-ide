@@ -55,12 +55,6 @@ nnoremap <leader>p <cmd>lua require('plugins.telescope').project_files()<cr>
 nnoremap <leader>c <cmd>lua require('plugins.telescope').my_git_commits()<cr>
 nnoremap <leader>g <cmd>lua require('plugins.telescope').my_git_status()<cr>
 nnoremap <leader>b <cmd>lua require('plugins.telescope').my_git_bcommits()<cr>
+nnoremap <leader>n <cmd>lua require('plugins.telescope').my_note()<cr>
 nnoremap <leader>gc :Octo issue create<cr>
 nnoremap <leader>i :Octo issue list<cr>
-" FZF
-nmap                       <Leader>nv :NV<CR>
-" nmap      <silent>         <Leader>p :call fzf#vim#files('', fzf#vim#with_preview({'options': '--prompt "λ -> "'}))<CR>
-" nmap                       <Leader>r :Rg<CR>
-" nmap                       <Leader>bb :Buffers<CR>
-" nmap                       <Leader>m :Marks<CR>
-" nmap      <silent>         <Leader>g :GFiles?<CR>

@@ -64,6 +64,10 @@ M.my_git_status = function(opts)
   builtin.git_status(opts)
 end
 
+M.my_note = function(opts)
+  builtin.live_grep { prompt_title = ' Note ', cwd = '~/Note' }
+end
+
 M.project_files = function()
   local opts = {} -- define here if you want to define something
   local ok = pcall(require'telescope.builtin'.git_files, opts)

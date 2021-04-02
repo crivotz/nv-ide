@@ -22,7 +22,6 @@ source ~/.nv-ide/vim-plug/editorconfig.vim
 source ~/.nv-ide/vim-plug/vim-floaterm.vim
 source ~/.nv-ide/vim-plug/indentline.vim
 source ~/.nv-ide/vim-plug/netrw.vim
-source ~/.nv-ide/vim-plug/notational-fzf.vim
 source ~/.nv-ide/vim-plug/vim-gutentags.vim
 source ~/.nv-ide/vim-plug/vim-rooter.vim
 source ~/.nv-ide/vim-plug/vim-rubocop.vim
