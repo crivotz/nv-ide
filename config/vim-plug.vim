@@ -82,6 +82,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'windwp/nvim-spectre'
 Plug 'kdheepak/lazygit.nvim'
 Plug 'pwntester/octo.nvim'
+Plug 'nacro90/numb.nvim'
 " =============================================================================
 " COLORSCHEME
 " =============================================================================

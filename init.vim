@@ -43,3 +43,4 @@ luafile ~/.nv-ide/lua/plugins/nvim-ts-rainbow.lua
 luafile ~/.nv-ide/lua/plugins/nvimtree.lua
 luafile ~/.nv-ide/lua/plugins/indent-blankline.lua
 luafile ~/.nv-ide/lua/plugins/telescope.lua
+luafile ~/.nv-ide/lua/plugins/numb.lua
