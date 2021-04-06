@@ -2,8 +2,20 @@ require('telescope').setup{
   defaults = {
     prompt_prefix = "λ -> ",
     selection_caret = "|> ",
+  },
+  extensions = {
+    fzy_native = {
+      override_generic_sorter = false,
+      override_file_sorter = true,
+    }
   }
 }
+
+-- Extensions
+
+require('telescope').load_extension('octo')
+require('telescope').load_extension('fzy_native')
+
 -- No normal mode
 
 local actions = require('telescope.actions')
@@ -16,9 +28,6 @@ require('telescope').setup{
     },
   }
 }
-
--- Octo
-require('telescope').load_extension('octo')
 
 -- Implement delta as previewer for diffs
 
