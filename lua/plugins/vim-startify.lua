@@ -8,7 +8,7 @@ vim.g.startify_change_to_dir = 1
 vim.g.startify_fortune_use_unicode = 1
 vim.g.startify_session_sort = 1
 vim.api.nvim_exec(
-'let startify_bookmarks = [ {\'d\': \'~/Dev\'}, {\'w\': \'~/DevWeb\'}, {\'c\': \'~/.config/nvim/init.vim\'}, {\'p\': \'~/.config/nvim/config/vim-plug.vim\'}, {\'z\': \'~/.zshrc\'}]',
+'let startify_bookmarks = [ {\'d\': \'~/Dev\'}, {\'w\': \'~/DevWeb\'}, {\'c\': \'~/.config/nvim/init.lua\'}, {\'p\': \'~/.config/nvim/lua/plugins.lua\'}, {\'z\': \'~/.zshrc\'}]',
 true
 )
 vim.g.startify_custom_header = {
