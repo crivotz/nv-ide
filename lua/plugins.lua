@@ -103,7 +103,7 @@ return require('packer').startup(function(use)
   use 'christoomey/vim-tmux-navigator'
 
   -- Colorschema
-use 'sainnhe/gruvbox-material'
+  use 'sainnhe/gruvbox-material'
 
   -- General Plugins
   use 'airblade/vim-rooter'
