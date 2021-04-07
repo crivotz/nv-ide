@@ -1,10 +1,14 @@
+-- Packer
 require('plugins')
+-- Config
 require('settings')
-require('completion')
-require('filetype')
-require('highlight')
-require('keymap')
-require('lsp-config')
+require('settings.completion')
+require('settings.filetype')
+require('settings.highlight')
+require('settings.keymap')
+-- LSP Config
+require('lsp')
+-- Plugins config
 require('plugins.galaxyline')
 require('plugins.treesitter')
 require('plugins.colorizer')

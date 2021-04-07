@@ -11,7 +11,6 @@ vim.g.gruvbox_italic=1
 vim.cmd 'color gruvbox-material'
 
 -- CHECK OS
--- TODO:
 if vim.fn.has('unix') == 1 then
   local uname = vim.fn.system('uname')
   if uname == "Darwin\n" then
