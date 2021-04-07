@@ -32,9 +32,9 @@ return require('packer').startup(function(use)
   use 'andymass/vim-matchup'
 
   -- Treesitter
-  use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use 'p00f/nvim-ts-rainbow'
-  use {'lukas-reineke/indent-blankline.nvim', branch = 'lua'}
+  use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
 
   -- Syntax
@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
-  use {'pwntester/octo.nvim', requires = {{'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}}}
+  use { 'pwntester/octo.nvim', requires = {{'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}} }
 
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
@@ -66,7 +66,7 @@ return require('packer').startup(function(use)
   use 'norcalli/nvim-colorizer.lua'
 
   -- Git
-  use {'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}}
+  use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
   use 'kdheepak/lazygit.nvim'
   use 'rhysd/committia.vim'
 
