@@ -1,4 +1,4 @@
-tags
+tags*
 Session.vim
 plugged/*
 session/*
@@ -6,3 +6,5 @@ session/*
 plug.vim
 plug.vim.old
 .netrwhist
+pack/
+plugin/
