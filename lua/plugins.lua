@@ -20,7 +20,6 @@ return require('packer').startup(function(use)
 
   -- LSP
   use 'neovim/nvim-lspconfig'
-  use 'ojroques/nvim-lspfuzzy'
   use 'onsails/lspkind-nvim'
 
   -- Autocomplete

@@ -1,6 +1,3 @@
--- NO COMPATIBILITY
-vim.o.compatible = false
-
 -- SET TRUECOLORS
 if vim.fn.has("termguicolors") == 1 then
   vim.o.t_8f = "[[38;2;%lu;%lu;%lum"
@@ -48,6 +45,10 @@ vim.o.lazyredraw = true
 vim.o.listchars = 'tab:▸ ,trail:·,precedes:←,extends:→,eol:↲,nbsp:␣'
 vim.o.encoding = 'UTF-8'
 vim.o.completeopt = 'menu,menuone,noselect'
+vim.o.swapfile = false
+vim.o.signcolumn = 'yes'
+vim.o.undofile = false
+vim.o.clipboard = 'unnamedplus'
 -- Buffer
 vim.bo.fileformat = 'unix'
 vim.bo.tabstop = 2
