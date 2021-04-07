@@ -13,14 +13,17 @@ puts '🗒️ Start plugins...'
 # Start plugins
 File.write('README.md', "\n**PLUGINS**  \n\n", mode: 'a')
 # Fill plugins
-File.open('config/vim-plug.vim').each do |line|
-  next unless line.match(/Plug '(.*?)'/)
-
-  github_repository = line.scan(/Plug '(.*?)'/)[0][0]
+File.open('lua/plugins.lua').each do |line|
+  next unless line.match(/use '(.*?)'/) || line.match(/use { '(.*?)'/)
+  if line.match(/use '(.*?)'/)
+    github_repository = line.scan(/use '(.*?)'/)[0][0]
+  else
+    github_repository = line.scan(/use { '(.*?)'/)[0][0]
+  end
   github_page = Nokogiri::HTML(URI.open('https://github.com/' + github_repository))
   github_about = github_page.xpath('//div[.//h2[contains(text(), "About")]]/p').text  || 'No description provided'
   vim_plugin_information = "* [#{github_repository}](https://github.com/#{github_repository}): #{github_about.strip}  \n"
-  puts '👾 Adding ' + github_repository
+    puts '👾 Adding ' + github_repository
   File.write('README.md', vim_plugin_information, mode: 'a')
 end
 puts '✅ Plugins added'

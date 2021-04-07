@@ -5,7 +5,7 @@
     ██║ ╚████║ ╚████╔╝       ██║██████╔╝███████╗  
     ╚═╝  ╚═══╝  ╚═══╝        ╚═╝╚═════╝ ╚══════╝  
 
-[Neovim](https://neovim.io/) custom configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
+[Neovim](https://neovim.io/) LUA configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
 I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other
 The project is constantly changing  
 You can find old less-lua and coc version under branch `old_coc_version`
@@ -31,13 +31,15 @@ Check [tree-sitter](https://github.com/tree-sitter/tree-sitter) for full list.
 git clone git://github.com:crivotz/nv-ide.git ~/.nv-ide
 cd ~/.config
 ln -s ~/.nv-ide nvim
-vim
-:PlugInstall
+nvim
+:PackerInstall
+:PackerSync
 ```
 **UPDATE**
 ```console
-vim
-:PlugUpdate
+nvim
+:PackerUpdate
+:PackerSync
 ```
 **DEPENDENCIES**
 
@@ -46,7 +48,7 @@ vim
 * [FZF](https://github.com/junegunn/fzf)
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
 * Ripper-tags
-* Needed LSP, show `lsp-config.lua`
+* Needed LSP, show `lsp/init.lua`
 
 **SUGGESTION**
 
