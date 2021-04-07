@@ -45,10 +45,25 @@ vim.o.lazyredraw = true
 vim.o.listchars = 'tab:▸ ,trail:·,precedes:←,extends:→,eol:↲,nbsp:␣'
 vim.o.encoding = 'UTF-8'
 vim.o.completeopt = 'menu,menuone,noselect'
-vim.o.swapfile = false
-vim.o.signcolumn = 'yes'
-vim.o.undofile = false
 vim.o.clipboard = 'unnamedplus'
+-- From buffer
+vim.o.fileformat = vim.bo.fileformat
+vim.o.tabstop = vim.bo.tabstop
+vim.o.spelllang = vim.bo.spelllang
+vim.o.softtabstop = vim.bo.softtabstop
+vim.o.swapfile = vim.bo.swapfile
+vim.o.undofile = vim.bo.undofile
+-- From window
+vim.o.number = vim.wo.number
+vim.o.colorcolumn = vim.wo.colorcolumn
+vim.o.foldmethod = vim.wo.foldmethod
+vim.o.foldlevel = vim.wo.foldlevel
+vim.o.foldnestmax = vim.wo.foldnestmax
+vim.o.signcolumn = vim.wo.signcolumn
+vim.o.list = vim.wo.list
+vim.o.relativenumber = vim.wo.relativenumber
+vim.o.foldenable = vim.wo.foldenable
+vim.o.cursorline = vim.wo.cursorline
 -- Buffer
 vim.bo.fileformat = 'unix'
 vim.bo.tabstop = 2
