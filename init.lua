@@ -2,6 +2,8 @@
 require('plugins')
 -- Config
 require('settings')
+require('settings.color')
+require('settings.font')
 require('settings.completion')
 require('settings.filetype')
 require('settings.highlight')

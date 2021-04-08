@@ -1,23 +1,3 @@
--- SET TRUECOLORS
-if vim.fn.has("termguicolors") == 1 then
-  vim.o.t_8f = "[[38;2;%lu;%lu;%lum"
-  vim.o.t_8b = "[[48;2;%lu;%lu;%lum"
-  vim.o.termguicolors = true
-end
-vim.g.gruvbox_italic=1
-vim.cmd 'color gruvbox-material'
-
--- CHECK OS
-if vim.fn.has('unix') == 1 then
-  local uname = vim.fn.system('uname')
-  if uname == "Darwin\n" then
-    vim.o.guifont = 'FuraCode Nerd Font Mono:h11'
-  else
-    vim.o.guifont = 'FiraCode Nerd Font Mono 8'
-  end
-end
-
--- SETTINGS
 -- Global
 vim.o.fillchars = vim.o.fillchars .. 'vert: '
 vim.o.showtabline = 2
