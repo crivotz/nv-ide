@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
+  use 'fhill2/telescope-ultisnips.nvim'
   use { 'pwntester/octo.nvim', requires = {{'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}} }
 
   -- Explorer
@@ -116,5 +117,6 @@ return require('packer').startup(function(use)
   use 'jmckiern/vim-venter'
   use 'lambdalisue/suda.vim'
   use 'psliwka/vim-smoothie'
+  use 'dstein64/nvim-scrollview'
 
 end)
