@@ -35,6 +35,7 @@ return require('packer').startup(function(use)
   use 'p00f/nvim-ts-rainbow'
   use { 'lukas-reineke/indent-blankline.nvim', branch = 'lua' }
   use 'JoosepAlviste/nvim-ts-context-commentstring'
+  use 'romgrk/nvim-treesitter-context'
 
   -- Syntax
   use 'moll/vim-node'
@@ -74,7 +75,7 @@ return require('packer').startup(function(use)
   use 'akinsho/flutter-tools.nvim'
 
   -- Registers
-  use 'junegunn/vim-peekaboo'
+  use 'tversteeg/registers.nvim'
 
   -- Search and replace
   use 'windwp/nvim-spectre'
@@ -104,6 +105,7 @@ return require('packer').startup(function(use)
 
   -- Colorschema
   use 'sainnhe/gruvbox-material'
+  use 'sainnhe/sonokai'
 
   -- General Plugins
   use 'airblade/vim-rooter'

@@ -1,7 +1,14 @@
+local actions = require('telescope.actions')
 require('telescope').setup{
   defaults = {
     prompt_prefix = "λ -> ",
     selection_caret = "|> ",
+    -- Don't pass to normal mode with ESC, problem with telescope-project
+    mappings = {
+      i = {
+        ["<esc>"] = actions.close,
+      },
+    },
   },
   extensions = {
     fzy_native = {
@@ -16,19 +23,6 @@ require('telescope').setup{
 require('telescope').load_extension('octo')
 require('telescope').load_extension('fzy_native')
 require('telescope').load_extension('ultisnips')
-
--- No normal mode
-
-local actions = require('telescope.actions')
-require('telescope').setup{
-  defaults = {
-    mappings = {
-      i = {
-        ["<esc>"] = actions.close
-      },
-    },
-  }
-}
 
 -- Implement delta as previewer for diffs
 
