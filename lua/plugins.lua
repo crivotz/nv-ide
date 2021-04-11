@@ -120,5 +120,6 @@ return require('packer').startup(function(use)
   use 'lambdalisue/suda.vim'
   use 'psliwka/vim-smoothie'
   use 'dstein64/nvim-scrollview'
+  use 'npxbr/glow.nvim'
 
 end)

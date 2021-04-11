@@ -6,9 +6,9 @@
     ╚═╝  ╚═══╝  ╚═══╝        ╚═╝╚═════╝ ╚══════╝  
 
 [Neovim](https://neovim.io/) LUA configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
-I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other
+I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other  
 The project is constantly changing  
-You can find old less-lua and coc version under branch `old_coc_version`
+You can find old no-lua and coc version under branch `old_coc_version`
 
 Thanks to the developers of these plugins/color schemes
 
@@ -49,6 +49,7 @@ nvim
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
 * Ripper-tags
 * Needed LSP, show `lsp/init.lua`
+* Glow, you can install it with :Glowinstall
 
 **SUGGESTION**
 
@@ -126,3 +127,4 @@ nvim
 * [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
 * [psliwka/vim-smoothie](https://github.com/psliwka/vim-smoothie): Smooth scrolling for Vim done right🥤  
 * [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview): 📍 A Neovim plugin that displays interactive scrollbars.  
+* [npxbr/glow.nvim](https://github.com/npxbr/glow.nvim): A markdown preview directly in your neovim.  
