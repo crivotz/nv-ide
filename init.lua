@@ -6,7 +6,6 @@ require('settings.color')
 require('settings.font')
 require('settings.completion')
 require('settings.filetype')
-require('settings.highlight')
 require('settings.keymap')
 -- LSP Config
 require('lsp')

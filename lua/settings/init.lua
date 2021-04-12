@@ -1,7 +1,7 @@
 -- Global
 vim.o.fillchars = vim.o.fillchars .. 'vert: '
 vim.o.showtabline = 2
-vim.o.scrolloff = 10
+vim.o.scrolloff = 5
 vim.o.mouse = 'a'
 vim.o.backupcopy = 'yes'
 vim.o.undolevels = 1000
