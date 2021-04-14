@@ -43,13 +43,13 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'chrisbra/csv.vim'
 
-
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
   use 'ryanoasis/vim-devicons'
 
   -- Status Line and Bufferline
-  use { 'glepnir/galaxyline.nvim', branch = 'main' }
+  -- use { 'glepnir/galaxyline.nvim', branch = 'main' }
+  use { 'famiu/feline.nvim' }
   use 'romgrk/barbar.nvim'
 
   -- Telescope

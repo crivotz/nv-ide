@@ -10,7 +10,8 @@ require('settings.keymap')
 -- LSP Config
 require('lsp')
 -- Plugins config
-require('plugins.galaxyline')
+-- require('plugins.galaxyline')
+require('plugins.feline')
 require('plugins.treesitter')
 require('plugins.colorizer')
 require('plugins.gitsigns')
