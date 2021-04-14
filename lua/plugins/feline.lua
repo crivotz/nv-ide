@@ -133,26 +133,25 @@ components.left.active[3] = {
   provider = function()
     return vim.fn.expand("%:F")
   end,
-  enabled = buffer_not_empty,
   hl = {
     fg = gruvbox.white,
     bg = gruvbox.bg,
     style = 'bold'
-  }
+  },
+  right_sep = ' '
 }
 -- gitIcon
 components.left.active[4] = {
-  provider = function() return ' ' end,
-  enabled = buffer_not_empty(),
+  provider = function() return '' end,
   hl = {
     fg = gruvbox.orange,
     bg = gruvbox.bg
-  }
+  },
+  right_sep = ''
 }
 -- gitBranch
 components.left.active[5] = {
   provider = 'git_branch',
-  enabled = buffer_not_empty(),
   hl = {
     fg = gruvbox.yellow,
     bg = gruvbox.bg,
@@ -162,7 +161,6 @@ components.left.active[5] = {
 -- diffAdd
 components.left.active[6] = {
   provider = 'git_diff_added',
-  enabled = checkwidth(),
   hl = {
     fg = gruvbox.green,
     bg = gruvbox.black,
@@ -172,7 +170,6 @@ components.left.active[6] = {
 -- diffModfified
 components.left.active[7] = {
   provider = 'git_diff_changed',
-  enabled = checkwidth(),
   hl = {
     fg = gruvbox.orange,
     bg = gruvbox.black,
@@ -182,7 +179,6 @@ components.left.active[7] = {
 -- diffRemove
 components.left.active[8] = {
   provider = 'git_diff_removed',
-  enabled = checkwidth(),
   hl = {
     fg = gruvbox.red,
     bg = gruvbox.black,
@@ -233,18 +229,49 @@ components.right.active[1] = {
   provider = function()
     local filename = vim.fn.expand('%:t')
     local extension = vim.fn.expand('%:e')
-    local icon  = require'nvim-web-devicons'.get_icon(filename, extension, { default = true })
+    local icon  = require'nvim-web-devicons'.get_icon(filename, extension)
+    if icon == nil then
+      icon = ''
+    end
     return icon
   end,
-  hl = {
-    fg = gruvbox.white,
-    bg = gruvbox.bg,
-    style = 'bold'
-  },
+  hl = function()
+    local val = {}
+    local filename = vim.fn.expand('%:t')
+    local extension = vim.fn.expand('%:e')
+    local icon, name  = require'nvim-web-devicons'.get_icon(filename, extension)
+    if icon ~= nil then
+      val.fg = vim.fn.synIDattr(vim.fn.hlID(name), 'fg')
+    else
+      val.fg = gruvbox.white
+    end
+    val.bg = gruvbox.bg
+    val.style = 'bold'
+    return val
+  end,
+  right_sep = ' '
+}
+-- fileType
+components.right.active[2] = {
+  provider = 'file_type',
+  hl = function()
+    local val = {}
+    local filename = vim.fn.expand('%:t')
+    local extension = vim.fn.expand('%:e')
+    local icon, name  = require'nvim-web-devicons'.get_icon(filename, extension)
+    if icon ~= nil then
+      val.fg = vim.fn.synIDattr(vim.fn.hlID(name), 'fg')
+    else
+      val.fg = gruvbox.white
+    end
+    val.bg = gruvbox.bg
+    val.style = 'bold'
+    return val
+  end,
   right_sep = ' '
 }
 -- fileSize
-components.right.active[2] = {
+components.right.active[3] = {
   provider = 'file_size',
   enabled = function() return vim.fn.getfsize(vim.fn.expand('%:t')) > 0 end,
   hl = {
@@ -255,7 +282,7 @@ components.right.active[2] = {
   right_sep = ' '
 }
 -- rubyVersion
-components.right.active[3] = {
+components.right.active[6] = {
   provider = function()
     return ' '..vim.fn['rvm#string']()
   end,
@@ -267,10 +294,10 @@ components.right.active[3] = {
   right_sep = ' '
 }
 -- fileEncode
-components.right.active[4] = {
+components.right.active[5] = {
   provider = function ()
     local encode = vim.bo.fenc ~= '' and vim.bo.fenc or vim.o.enc
-    return ' ' .. encode:upper()
+    return '' .. encode:upper() .. ''
   end,
   hl = {
     fg = gruvbox.white,
@@ -280,8 +307,8 @@ components.right.active[4] = {
   right_sep = ' '
 }
 -- fileFormat
-components.right.active[5] = {
-  provider = function() return vim.bo.fileformat:upper() end,
+components.right.active[4] = {
+  provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
   hl = {
     fg = gruvbox.white,
     bg = gruvbox.bg,
@@ -290,7 +317,7 @@ components.right.active[5] = {
   right_sep = ' '
 }
 -- lineInfo
-components.right.active[6] = {
+components.right.active[7] = {
   provider = 'position',
   hl = {
     fg = gruvbox.white,
@@ -300,7 +327,7 @@ components.right.active[6] = {
   right_sep = ' '
 }
 -- linePercent
-components.right.active[7] = {
+components.right.active[8] = {
   provider = 'line_percentage',
   hl = {
     fg = gruvbox.white,
@@ -310,7 +337,7 @@ components.right.active[7] = {
   right_sep = ' '
 }
 -- scrollBar
-components.right.active[8] = {
+components.right.active[9] = {
   provider = 'scroll_bar',
   hl = {
     fg = gruvbox.yellow,
@@ -318,12 +345,39 @@ components.right.active[8] = {
   },
 }
 
+-- INACTIVE
+
+-- fileType
+components.left.inactive[1] = {
+  provider = 'file_type',
+  hl = {
+    fg = gruvbox.bg,
+    bg = gruvbox.cyan,
+    style = 'bold'
+  },
+  left_sep = {
+    str = ' ',
+    hl = {
+      fg = 'NONE',
+      bg = gruvbox.cyan
+    }
+  },
+  right_sep = {
+    {
+      str = ' ',
+      hl = {
+        fg = 'NONE',
+        bg = gruvbox.cyan
+      }
+    },
+    ' '
+  }
+}
+
 require('feline').setup({
-  colors = gruvbox,
   default_bg = gruvbox.bg,
   default_fg = gruvbox.fg,
   vi_mode_colors = vi_mode_colors,
-  vi_mode_text = vi_mode_text,
   components = components,
   properties = properties,
 })
