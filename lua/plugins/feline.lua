@@ -138,19 +138,10 @@ components.left.active[3] = {
     bg = gruvbox.bg,
     style = 'bold'
   },
-  right_sep = ' '
-}
--- gitIcon
-components.left.active[4] = {
-  provider = function() return '' end,
-  hl = {
-    fg = gruvbox.orange,
-    bg = gruvbox.bg
-  },
   right_sep = ''
 }
 -- gitBranch
-components.left.active[5] = {
+components.left.active[4] = {
   provider = 'git_branch',
   hl = {
     fg = gruvbox.yellow,
@@ -159,7 +150,7 @@ components.left.active[5] = {
   }
 }
 -- diffAdd
-components.left.active[6] = {
+components.left.active[5] = {
   provider = 'git_diff_added',
   hl = {
     fg = gruvbox.green,
@@ -168,7 +159,7 @@ components.left.active[6] = {
   }
 }
 -- diffModfified
-components.left.active[7] = {
+components.left.active[6] = {
   provider = 'git_diff_changed',
   hl = {
     fg = gruvbox.orange,
@@ -177,7 +168,7 @@ components.left.active[7] = {
   }
 }
 -- diffRemove
-components.left.active[8] = {
+components.left.active[7] = {
   provider = 'git_diff_removed',
   hl = {
     fg = gruvbox.red,
@@ -186,7 +177,7 @@ components.left.active[8] = {
   }
 }
 -- diagnosticErrors
-components.left.active[9] = {
+components.left.active[8] = {
   provider = 'diagnostic_errors',
   enabled = function() return lsp.diagnostics_exist('Error') end,
   hl = {
@@ -195,7 +186,7 @@ components.left.active[9] = {
   }
 }
 -- diagnosticWarn
-components.left.active[10] = {
+components.left.active[9] = {
   provider = 'diagnostic_warnings',
   enabled = function() return lsp.diagnostics_exist('Warning') end,
   hl = {
@@ -204,7 +195,7 @@ components.left.active[10] = {
   }
 }
 -- diagnosticHint
-components.left.active[11] = {
+components.left.active[10] = {
   provider = 'diagnostic_hints',
   enabled = function() return lsp.diagnostics_exist('Hint') end,
   hl = {
@@ -213,7 +204,7 @@ components.left.active[11] = {
   }
 }
 -- diagnosticInfo
-components.left.active[12] = {
+components.left.active[11] = {
   provider = 'diagnostic_info',
   enabled = function() return lsp.diagnostics_exist('Information') end,
   hl = {
@@ -281,13 +272,11 @@ components.right.active[3] = {
   },
   right_sep = ' '
 }
--- rubyVersion
-components.right.active[6] = {
-  provider = function()
-    return ' '..vim.fn['rvm#string']()
-  end,
+-- fileFormat
+components.right.active[4] = {
+  provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
   hl = {
-    fg = gruvbox.red,
+    fg = gruvbox.white,
     bg = gruvbox.bg,
     style = 'bold'
   },
@@ -295,10 +284,7 @@ components.right.active[6] = {
 }
 -- fileEncode
 components.right.active[5] = {
-  provider = function ()
-    local encode = vim.bo.fenc ~= '' and vim.bo.fenc or vim.o.enc
-    return '' .. encode:upper() .. ''
-  end,
+  provider = 'file_encoding',
   hl = {
     fg = gruvbox.white,
     bg = gruvbox.bg,
@@ -306,11 +292,13 @@ components.right.active[5] = {
   },
   right_sep = ' '
 }
--- fileFormat
-components.right.active[4] = {
-  provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
+-- rubyVersion
+components.right.active[6] = {
+  provider = function()
+    return ' '..vim.fn['rvm#string']()
+  end,
   hl = {
-    fg = gruvbox.white,
+    fg = gruvbox.red,
     bg = gruvbox.bg,
     style = 'bold'
   },
