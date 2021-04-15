@@ -306,12 +306,13 @@ components.right.active[6] = {
 }
 -- rubyVersion
 components.right.active[7] = {
-  provider = function()
-    for _, client in pairs(vim.lsp.buf_get_clients()) do
-      if client then return ' ' .. client.name end
-    end
-    return ''
-  end,
+  provider = 'lsp_client_names',
+  -- function()
+  --   for _, client in pairs(vim.lsp.buf_get_clients()) do
+  --     if client then return ' ' .. client.name end
+  --   end
+  --   return ''
+  -- end,
   hl = {
     fg = gruvbox.yellow,
     bg = gruvbox.bg,
