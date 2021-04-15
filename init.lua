@@ -6,11 +6,9 @@ require('settings.color')
 require('settings.font')
 require('settings.completion')
 require('settings.filetype')
-require('settings.keymap')
 -- LSP Config
 require('lsp')
 -- Plugins config
--- require('plugins.galaxyline')
 require('plugins.feline')
 require('plugins.treesitter')
 require('plugins.colorizer')
@@ -30,3 +28,5 @@ require('plugins.vim-rubocop')
 require('plugins.vim-signature')
 require('plugins.vim-sneak')
 require('plugins.lspkind')
+-- Keymap
+require('settings.keymap')

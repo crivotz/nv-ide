@@ -292,7 +292,7 @@ components.right.active[5] = {
   },
   right_sep = ' '
 }
--- rubyVersion
+-- LspName
 components.right.active[6] = {
   provider = function()
     return ' '..vim.fn['rvm#string']()
@@ -304,8 +304,23 @@ components.right.active[6] = {
   },
   right_sep = ' '
 }
--- lineInfo
+-- rubyVersion
 components.right.active[7] = {
+  provider = function()
+    for _, client in pairs(vim.lsp.buf_get_clients()) do
+      if client then return ' ' .. client.name end
+    end
+    return ''
+  end,
+  hl = {
+    fg = gruvbox.yellow,
+    bg = gruvbox.bg,
+    style = 'bold'
+  },
+  right_sep = ' '
+}
+-- lineInfo
+components.right.active[8] = {
   provider = 'position',
   hl = {
     fg = gruvbox.white,
@@ -315,7 +330,7 @@ components.right.active[7] = {
   right_sep = ' '
 }
 -- linePercent
-components.right.active[8] = {
+components.right.active[9] = {
   provider = 'line_percentage',
   hl = {
     fg = gruvbox.white,
@@ -325,7 +340,7 @@ components.right.active[8] = {
   right_sep = ' '
 }
 -- scrollBar
-components.right.active[9] = {
+components.right.active[10] = {
   provider = 'scroll_bar',
   hl = {
     fg = gruvbox.yellow,
