@@ -20,7 +20,7 @@ local components = {
   }
 }
 
-local gruvbox = {
+local colors = {
   bg = '#282828',
   black = '#282828',
   yellow = '#d8a657',
@@ -37,20 +37,20 @@ local gruvbox = {
 }
 
 local vi_mode_colors = {
-  NORMAL = gruvbox.green,
-  OP = gruvbox.green,
-  INSERT = gruvbox.red,
-  VISUAL = gruvbox.skyblue,
-  BLOCK = gruvbox.skyblue,
-  REPLACE = gruvbox.violet,
-  ['V-REPLACE'] = gruvbox.violet,
-  ENTER = gruvbox.cyan,
-  MORE = gruvbox.cyan,
-  SELECT = gruvbox.orange,
-  COMMAND = gruvbox.green,
-  SHELL = gruvbox.green,
-  TERM = gruvbox.green,
-  NONE = gruvbox.yellow
+  NORMAL = 'green',
+  OP = 'green',
+  INSERT = 'red',
+  VISUAL = 'skyblue',
+  BLOCK = 'skyblue',
+  REPLACE = 'violet',
+  ['V-REPLACE'] = 'violet',
+  ENTER = 'cyan',
+  MORE = 'cyan',
+  SELECT = 'orange',
+  COMMAND = 'green',
+  SHELL = 'green',
+  TERM = 'green',
+  NONE = 'yellow'
 }
 
 local vi_mode_text = {
@@ -107,7 +107,7 @@ components.left.active[1] = {
     local val = {}
 
     val.bg = vi_mode_utils.get_mode_color()
-    val.fg = gruvbox.bg
+    val.fg = 'black'
     val.style = 'bold'
 
     return val
@@ -122,7 +122,7 @@ components.left.active[2] = {
   hl = function()
     local val = {}
     val.fg = vi_mode_utils.get_mode_color()
-    val.bg = gruvbox.bg
+    val.bg = 'bg'
     val.style = 'bold'
     return val
   end,
@@ -134,8 +134,8 @@ components.left.active[3] = {
     return vim.fn.expand("%:F")
   end,
   hl = {
-    fg = gruvbox.white,
-    bg = gruvbox.bg,
+    fg = 'white',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ''
@@ -144,8 +144,8 @@ components.left.active[3] = {
 components.left.active[4] = {
   provider = 'git_branch',
   hl = {
-    fg = gruvbox.yellow,
-    bg = gruvbox.bg,
+    fg = 'yellow',
+    bg = 'bg',
     style = 'bold'
   }
 }
@@ -153,8 +153,8 @@ components.left.active[4] = {
 components.left.active[5] = {
   provider = 'git_diff_added',
   hl = {
-    fg = gruvbox.green,
-    bg = gruvbox.black,
+    fg = 'green',
+    bg = 'bg',
     style = 'bold'
   }
 }
@@ -162,8 +162,8 @@ components.left.active[5] = {
 components.left.active[6] = {
   provider = 'git_diff_changed',
   hl = {
-    fg = gruvbox.orange,
-    bg = gruvbox.black,
+    fg = 'orange',
+    bg = 'bg',
     style = 'bold'
   }
 }
@@ -171,8 +171,8 @@ components.left.active[6] = {
 components.left.active[7] = {
   provider = 'git_diff_removed',
   hl = {
-    fg = gruvbox.red,
-    bg = gruvbox.black,
+    fg = 'red',
+    bg = 'bg',
     style = 'bold'
   }
 }
@@ -181,7 +181,7 @@ components.left.active[8] = {
   provider = 'diagnostic_errors',
   enabled = function() return lsp.diagnostics_exist('Error') end,
   hl = {
-    fg = gruvbox.red,
+    fg = 'red',
     style = 'bold'
   }
 }
@@ -190,7 +190,7 @@ components.left.active[9] = {
   provider = 'diagnostic_warnings',
   enabled = function() return lsp.diagnostics_exist('Warning') end,
   hl = {
-    fg = gruvbox.yellow,
+    fg = 'yellow',
     style = 'bold'
   }
 }
@@ -199,7 +199,7 @@ components.left.active[10] = {
   provider = 'diagnostic_hints',
   enabled = function() return lsp.diagnostics_exist('Hint') end,
   hl = {
-    fg = gruvbox.cyan,
+    fg = 'cyan',
     style = 'bold'
   }
 }
@@ -208,7 +208,7 @@ components.left.active[11] = {
   provider = 'diagnostic_info',
   enabled = function() return lsp.diagnostics_exist('Information') end,
   hl = {
-    fg = gruvbox.skyblue,
+    fg = 'skyblue',
     style = 'bold'
   }
 }
@@ -234,9 +234,9 @@ components.right.active[1] = {
     if icon ~= nil then
       val.fg = vim.fn.synIDattr(vim.fn.hlID(name), 'fg')
     else
-      val.fg = gruvbox.white
+      val.fg = 'white'
     end
-    val.bg = gruvbox.bg
+    val.bg = 'bg'
     val.style = 'bold'
     return val
   end,
@@ -253,9 +253,9 @@ components.right.active[2] = {
     if icon ~= nil then
       val.fg = vim.fn.synIDattr(vim.fn.hlID(name), 'fg')
     else
-      val.fg = gruvbox.white
+      val.fg = 'white'
     end
-    val.bg = gruvbox.bg
+    val.bg = 'bg'
     val.style = 'bold'
     return val
   end,
@@ -266,8 +266,8 @@ components.right.active[3] = {
   provider = 'file_size',
   enabled = function() return vim.fn.getfsize(vim.fn.expand('%:t')) > 0 end,
   hl = {
-    fg = gruvbox.skyblue,
-    bg = gruvbox.bg,
+    fg = 'skyblue',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -276,8 +276,8 @@ components.right.active[3] = {
 components.right.active[4] = {
   provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
   hl = {
-    fg = gruvbox.white,
-    bg = gruvbox.bg,
+    fg = 'white',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -286,8 +286,8 @@ components.right.active[4] = {
 components.right.active[5] = {
   provider = 'file_encoding',
   hl = {
-    fg = gruvbox.white,
-    bg = gruvbox.bg,
+    fg = 'white',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -298,8 +298,8 @@ components.right.active[6] = {
     return ' '..vim.fn['rvm#string']()
   end,
   hl = {
-    fg = gruvbox.red,
-    bg = gruvbox.bg,
+    fg = 'red',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -307,15 +307,9 @@ components.right.active[6] = {
 -- rubyVersion
 components.right.active[7] = {
   provider = 'lsp_client_names',
-  -- function()
-  --   for _, client in pairs(vim.lsp.buf_get_clients()) do
-  --     if client then return ' ' .. client.name end
-  --   end
-  --   return ''
-  -- end,
   hl = {
-    fg = gruvbox.yellow,
-    bg = gruvbox.bg,
+    fg = 'yellow',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -324,8 +318,8 @@ components.right.active[7] = {
 components.right.active[8] = {
   provider = 'position',
   hl = {
-    fg = gruvbox.white,
-    bg = gruvbox.bg,
+    fg = 'white',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -334,8 +328,8 @@ components.right.active[8] = {
 components.right.active[9] = {
   provider = 'line_percentage',
   hl = {
-    fg = gruvbox.white,
-    bg = gruvbox.bg,
+    fg = 'white',
+    bg = 'bg',
     style = 'bold'
   },
   right_sep = ' '
@@ -344,8 +338,8 @@ components.right.active[9] = {
 components.right.active[10] = {
   provider = 'scroll_bar',
   hl = {
-    fg = gruvbox.yellow,
-    bg = gruvbox.bg,
+    fg = 'yellow',
+    bg = 'bg',
   },
 }
 
@@ -355,15 +349,15 @@ components.right.active[10] = {
 components.left.inactive[1] = {
   provider = 'file_type',
   hl = {
-    fg = gruvbox.bg,
-    bg = gruvbox.cyan,
+    fg = 'black',
+    bg = 'cyan',
     style = 'bold'
   },
   left_sep = {
     str = ' ',
     hl = {
       fg = 'NONE',
-      bg = gruvbox.cyan
+      bg = 'cyan'
     }
   },
   right_sep = {
@@ -371,7 +365,7 @@ components.left.inactive[1] = {
       str = ' ',
       hl = {
         fg = 'NONE',
-        bg = gruvbox.cyan
+        bg = 'cyan'
       }
     },
     ' '
@@ -379,8 +373,9 @@ components.left.inactive[1] = {
 }
 
 require('feline').setup({
-  default_bg = gruvbox.bg,
-  default_fg = gruvbox.fg,
+  colors = colors,
+  default_bg = bg,
+  default_fg = fg,
   vi_mode_colors = vi_mode_colors,
   components = components,
   properties = properties,
