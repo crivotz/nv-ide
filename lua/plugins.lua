@@ -81,7 +81,6 @@ return require('packer').startup(function(use)
   -- Move & Search & replace
   use 'windwp/nvim-spectre'
   use 'nacro90/numb.nvim'
-  use 'haya14busa/is.vim'
   use 'dyng/ctrlsf.vim'
   use 'kevinhwang91/nvim-hlslens'
   use 'justinmk/vim-sneak'
