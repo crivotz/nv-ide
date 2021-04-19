@@ -42,6 +42,7 @@ return require('packer').startup(function(use)
   use 'zinit-zsh/zplugin-vim-syntax'
   use 'editorconfig/editorconfig-vim'
   use 'chrisbra/csv.vim'
+  use 'npxbr/glow.nvim'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -77,11 +78,17 @@ return require('packer').startup(function(use)
   -- Registers
   use 'tversteeg/registers.nvim'
 
-  -- Search and replace
+  -- Move & Search & replace
   use 'windwp/nvim-spectre'
   use 'nacro90/numb.nvim'
   use 'haya14busa/is.vim'
   use 'dyng/ctrlsf.vim'
+  use 'kevinhwang91/nvim-hlslens'
+  use 'justinmk/vim-sneak'
+  use 'kshenoy/vim-signature'
+  use 'psliwka/vim-smoothie'
+  use 'dstein64/nvim-scrollview'
+  use 'chaoren/vim-wordmotion'
 
   -- Tim Pope docet
   use 'tpope/vim-sensible'
@@ -107,19 +114,15 @@ return require('packer').startup(function(use)
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/sonokai'
 
+  -- Tags
+  use 'ludovicchabant/vim-gutentags'
+
   -- General Plugins
   use 'airblade/vim-rooter'
-  use 'justinmk/vim-sneak'
-  use 'ludovicchabant/vim-gutentags'
-  use 'kshenoy/vim-signature'
-  use 'chaoren/vim-wordmotion'
   use 'junegunn/vim-easy-align'
   use 'mhinz/vim-startify'
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'jmckiern/vim-venter'
   use 'lambdalisue/suda.vim'
-  use 'psliwka/vim-smoothie'
-  use 'dstein64/nvim-scrollview'
-  use 'npxbr/glow.nvim'
 
 end)

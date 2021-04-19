@@ -10,14 +10,9 @@ local properties = {
 }
 
 local components = {
-  left = {
-    active = {},
-    inactive = {}
-  },
-  right = {
-    active = {},
-    inactive = {}
-  }
+  left = {active = {}, inactive = {}},
+  mid = {active = {}, inactive = {}},
+  right = {active = {}, inactive = {}}
 }
 
 local colors = {
@@ -176,8 +171,21 @@ components.left.active[7] = {
     style = 'bold'
   }
 }
+
+-- MID
+
+-- LspName
+components.mid.active[1] = {
+  provider = 'lsp_client_names',
+  hl = {
+    fg = 'yellow',
+    bg = 'bg',
+    style = 'bold'
+  },
+  right_sep = ' '
+}
 -- diagnosticErrors
-components.left.active[8] = {
+components.mid.active[2] = {
   provider = 'diagnostic_errors',
   enabled = function() return lsp.diagnostics_exist('Error') end,
   hl = {
@@ -186,7 +194,7 @@ components.left.active[8] = {
   }
 }
 -- diagnosticWarn
-components.left.active[9] = {
+components.mid.active[3] = {
   provider = 'diagnostic_warnings',
   enabled = function() return lsp.diagnostics_exist('Warning') end,
   hl = {
@@ -195,7 +203,7 @@ components.left.active[9] = {
   }
 }
 -- diagnosticHint
-components.left.active[10] = {
+components.mid.active[4] = {
   provider = 'diagnostic_hints',
   enabled = function() return lsp.diagnostics_exist('Hint') end,
   hl = {
@@ -204,7 +212,7 @@ components.left.active[10] = {
   }
 }
 -- diagnosticInfo
-components.left.active[11] = {
+components.mid.active[5] = {
   provider = 'diagnostic_info',
   enabled = function() return lsp.diagnostics_exist('Information') end,
   hl = {
@@ -292,7 +300,7 @@ components.right.active[5] = {
   },
   right_sep = ' '
 }
--- LspName
+-- rubyVersion
 components.right.active[6] = {
   provider = function()
     return ' '..vim.fn['rvm#string']()
@@ -304,18 +312,8 @@ components.right.active[6] = {
   },
   right_sep = ' '
 }
--- rubyVersion
-components.right.active[7] = {
-  provider = 'lsp_client_names',
-  hl = {
-    fg = 'yellow',
-    bg = 'bg',
-    style = 'bold'
-  },
-  right_sep = ' '
-}
 -- lineInfo
-components.right.active[8] = {
+components.right.active[7] = {
   provider = 'position',
   hl = {
     fg = 'white',
@@ -325,7 +323,7 @@ components.right.active[8] = {
   right_sep = ' '
 }
 -- linePercent
-components.right.active[9] = {
+components.right.active[8] = {
   provider = 'line_percentage',
   hl = {
     fg = 'white',
@@ -335,7 +333,7 @@ components.right.active[9] = {
   right_sep = ' '
 }
 -- scrollBar
-components.right.active[10] = {
+components.right.active[9] = {
   provider = 'scroll_bar',
   hl = {
     fg = 'yellow',
