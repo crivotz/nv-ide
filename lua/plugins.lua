@@ -123,5 +123,5 @@ return require('packer').startup(function(use)
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'jmckiern/vim-venter'
   use 'lambdalisue/suda.vim'
-
+  use 'numtostr/FTerm.nvim'
 end)

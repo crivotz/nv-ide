@@ -129,3 +129,4 @@ nvim
 * [jeffkreeftmeijer/vim-numbertoggle](https://github.com/jeffkreeftmeijer/vim-numbertoggle): Toggles between hybrid and absolute line numbers automatically  
 * [jmckiern/vim-venter](https://github.com/jmckiern/vim-venter): Vim plugin that horizontally centers the current window(s)  
 * [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
+* [numtostr/FTerm.nvim](https://github.com/numtostr/FTerm.nvim): 🔥 No-nonsense floating terminal written in lua 🔥  
