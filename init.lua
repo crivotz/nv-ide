@@ -30,5 +30,6 @@ require('plugins.vim-rubocop')
 require('plugins.vim-signature')
 require('plugins.vim-sneak')
 require('plugins.lspkind')
+require('plugins.neoscroll')
 -- Keymap
 require('settings.keymap')
