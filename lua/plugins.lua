@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'chrisbra/csv.vim'
   use 'npxbr/glow.nvim'
+  use 'b3nj5m1n/kommentary'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -99,7 +100,6 @@ return require('packer').startup(function(use)
   use 'tpope/vim-repeat'
   use 'tpope/vim-endwise'
   use 'tpope/vim-rvm'
-  use 'tpope/vim-commentary'
   use 'tpope/vim-dispatch'
   use 'tpope/vim-dadbod'
   use 'tpope/vim-jdaddy'
