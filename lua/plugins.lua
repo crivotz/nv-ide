@@ -43,7 +43,6 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'chrisbra/csv.vim'
   use 'npxbr/glow.nvim'
-  use 'b3nj5m1n/kommentary'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -104,6 +103,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-dadbod'
   use 'tpope/vim-jdaddy'
   use 'tpope/vim-fugitive'
+  use 'tpope/vim-commentary'
 
   -- Tmux
   use 'tmux-plugins/vim-tmux-focus-events'
