@@ -124,4 +124,5 @@ return require('packer').startup(function(use)
   use 'jmckiern/vim-venter'
   use 'lambdalisue/suda.vim'
   use 'numtostr/FTerm.nvim'
+  use 'wfxr/minimap.vim'
 end)

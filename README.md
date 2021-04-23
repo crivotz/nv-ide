@@ -50,6 +50,7 @@ nvim
 * Ripper-tags
 * Needed LSP, show `lsp/init.lua`
 * Glow, you can install it with :Glowinstall
+* [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
 
 **SUGGESTION**
 
@@ -130,3 +131,4 @@ nvim
 * [jmckiern/vim-venter](https://github.com/jmckiern/vim-venter): Vim plugin that horizontally centers the current window(s)  
 * [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
 * [numtostr/FTerm.nvim](https://github.com/numtostr/FTerm.nvim): 🔥 No-nonsense floating terminal written in lua 🔥  
+* [wfxr/minimap.vim](https://github.com/wfxr/minimap.vim): 📡 Blazing fast minimap / scrollbar for vim, powered by code-minimap written in Rust.  
