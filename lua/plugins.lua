@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   use 'windwp/nvim-autopairs'
-  use 'AndrewRadev/tagalong.vim'
+  use 'windwp/nvim-ts-autotag'
   use 'andymass/vim-matchup'
 
   -- Treesitter
