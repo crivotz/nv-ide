@@ -27,7 +27,7 @@ return require('packer').startup(function(use)
   use 'SirVer/ultisnips'
   use 'honza/vim-snippets'
   use 'windwp/nvim-autopairs'
-  use 'windwp/nvim-ts-autotag'
+  use 'AndrewRadev/tagalong.vim'
   use 'andymass/vim-matchup'
 
   -- Treesitter
@@ -43,6 +43,7 @@ return require('packer').startup(function(use)
   use 'editorconfig/editorconfig-vim'
   use 'chrisbra/csv.vim'
   use 'npxbr/glow.nvim'
+  use 'junegunn/vim-easy-align'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -118,10 +119,8 @@ return require('packer').startup(function(use)
 
   -- General Plugins
   use 'airblade/vim-rooter'
-  use 'junegunn/vim-easy-align'
   use 'mhinz/vim-startify'
   use 'jeffkreeftmeijer/vim-numbertoggle'
-  use 'jmckiern/vim-venter'
   use 'lambdalisue/suda.vim'
   use 'numtostr/FTerm.nvim'
   use 'wfxr/minimap.vim'
