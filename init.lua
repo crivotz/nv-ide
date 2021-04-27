@@ -32,6 +32,5 @@ require('plugins.vim-sneak')
 require('plugins.lspkind')
 require('plugins.neoscroll')
 require('plugins.minimap')
-require('plugins.nvimtsautotag')
 -- Keymap
 require('settings.keymap')
