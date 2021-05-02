@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
   use 'kdheepak/lazygit.nvim'
   use 'rhysd/committia.vim'
+  use 'sindrets/diffview.nvim'
 
   -- Flutter
   use 'akinsho/flutter-tools.nvim'

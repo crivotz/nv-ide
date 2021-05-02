@@ -32,5 +32,6 @@ require('plugins.vim-sneak')
 require('plugins.lspkind')
 require('plugins.neoscroll')
 require('plugins.minimap')
+require('plugins.diffview')
 -- Keymap
 require('settings.keymap')
