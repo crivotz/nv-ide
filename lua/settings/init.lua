@@ -33,6 +33,8 @@ vim.o.spelllang = vim.bo.spelllang
 vim.o.softtabstop = vim.bo.softtabstop
 vim.o.swapfile = vim.bo.swapfile
 vim.o.undofile = vim.bo.undofile
+vim.o.expandtab = vim.bo.expandtab
+vim.o.shiftwidth = vim.bo.shiftwidth
 -- From window
 vim.o.number = vim.wo.number
 vim.o.colorcolumn = vim.wo.colorcolumn
@@ -51,6 +53,8 @@ vim.bo.spelllang = 'it'
 vim.bo.softtabstop = 2
 vim.bo.swapfile = false
 vim.bo.undofile = false
+vim.bo.expandtab = true
+vim.bo.shiftwidth = 2
 -- Window
 vim.wo.number = true
 vim.wo.colorcolumn = vim.wo.colorcolumn .. '+' .. 1

@@ -125,4 +125,5 @@ return require('packer').startup(function(use)
   use 'lambdalisue/suda.vim'
   use 'numtostr/FTerm.nvim'
   use 'wfxr/minimap.vim'
+  use 'folke/todo-comments.nvim'
 end)

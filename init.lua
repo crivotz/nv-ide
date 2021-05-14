@@ -33,5 +33,6 @@ require('plugins.lspkind')
 require('plugins.neoscroll')
 require('plugins.minimap')
 require('plugins.diffview')
+require('plugins.todo-comments')
 -- Keymap
 require('settings.keymap')
