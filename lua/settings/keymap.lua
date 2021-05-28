@@ -8,7 +8,7 @@ vim.api.nvim_set_keymap('n', '<leader>bn', ':bnext<CR>', {noremap = false, silen
 vim.api.nvim_set_keymap('n', '<leader>bp', ':bprevious<CR>', {noremap = false, silent = false})
 -- Git
 vim.api.nvim_set_keymap('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = false})
-vim.api.nvim_set_keymap('n', '<leader>g', ':LazyGit<CR>', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', '<leader>gg', ':LazyGit<CR>', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', '<leader>gd', ':DiffviewOpen<CR>', {noremap = false, silent = false})
 -- Ctrlsf
 vim.api.nvim_set_keymap('n', '<C-F>f', '<Plug>CtrlSFPrompt', {noremap = false, silent = false})
@@ -47,7 +47,7 @@ vim.api.nvim_set_keymap('n', '<leader>l', ":lua require('telescope.builtin').cur
 vim.api.nvim_set_keymap('n', '<leader>f', ":lua require('plugins.telescope').project_files()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>p', ":lua require('telescope').extensions.project.project{}<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>c', ":lua require('plugins.telescope').my_git_commits()<CR>", {noremap = true, silent = true})
-vim.api.nvim_set_keymap('n', '<leader>gg', ":lua require('plugins.telescope').my_git_status()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>g', ":lua require('plugins.telescope').my_git_status()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>b', ":lua require('plugins.telescope').my_git_bcommits()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>n', ":lua require('plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>nn', ":e ~/Note/", {noremap = true, silent = false})
