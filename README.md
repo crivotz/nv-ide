@@ -61,7 +61,7 @@ nvim
 
 * [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim): A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config  
 * [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Quickstart configurations for the Nvim LSP client  
-* [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim): Pictograms for lsp completion items  
+* [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim): vscode-like pictograms for neovim lsp completion items  
 * [hrsh7th/nvim-compe](https://github.com/hrsh7th/nvim-compe): Auto completion plugin for nvim that written in Lua.  
 * [SirVer/ultisnips](https://github.com/SirVer/ultisnips): UltiSnips - The ultimate snippet solution for Vim. Send pull requests to SirVer/ultisnips!  
 * [honza/vim-snippets](https://github.com/honza/vim-snippets): vim-snipmate default snippets (Previously snipmate-snippets)  
@@ -95,14 +95,14 @@ nvim
 * [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): Git signs written in pure lua  
 * [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim): Plugin for calling lazygit from within neovim.  
 * [rhysd/committia.vim](https://github.com/rhysd/committia.vim): A Vim plugin for more pleasant editing on commit messages  
-* [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim): Single tabpage interface to easily cycle through diffs for all modified files for any git rev.  
+* [sindrets/diffview.nvim](https://github.com/sindrets/diffview.nvim): Single tabpage interface for easily cycling through diffs for all modified files for any git rev.  
 * [akinsho/flutter-tools.nvim](https://github.com/akinsho/flutter-tools.nvim): Tools to help create flutter apps in neovim using the native lsp  
-* [tversteeg/registers.nvim](https://github.com/tversteeg/registers.nvim): ®️ NeoVim plugin to preview the contents of the registers  
+* [tversteeg/registers.nvim](https://github.com/tversteeg/registers.nvim): 📑 NeoVim plugin to preview the contents of the registers  
 * [windwp/nvim-spectre](https://github.com/windwp/nvim-spectre): Find the enemy and replace them with dark power.  
 * [nacro90/numb.nvim](https://github.com/nacro90/numb.nvim): Peek lines just when you intend  
-* [dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim): An ack.vim alternative mimics Ctrl-Shift-F on Sublime Text 2  
+* [dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim): A text searching plugin mimics Ctrl-Shift-F on Sublime Text 2  
 * [kevinhwang91/nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens): Hlsearch Lens for Neovim  
-* [justinmk/vim-sneak](https://github.com/justinmk/vim-sneak): The missing motion for Vim 👟  
+* [ggandor/lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim): Reach on-screen targets with unparalleled speed  
 * [kshenoy/vim-signature](https://github.com/kshenoy/vim-signature): Plugin to toggle, display and navigate marks  
 * [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim): Smooth scrolling neovim plugin written in lua  
 * [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview): 📍 A Neovim plugin that displays interactive scrollbars.  
@@ -121,7 +121,6 @@ nvim
 * [tpope/vim-jdaddy](https://github.com/tpope/vim-jdaddy): jdaddy.vim: JSON manipulation and pretty printing  
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive): fugitive.vim: A Git wrapper so awesome, it should be illegal  
 * [tpope/vim-commentary](https://github.com/tpope/vim-commentary): commentary.vim: comment stuff out  
-* [tmux-plugins/vim-tmux-focus-events](https://github.com/tmux-plugins/vim-tmux-focus-events): Make terminal vim and tmux work better together.  
 * [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material): Gruvbox with Material Palette  
 * [sainnhe/sonokai](https://github.com/sainnhe/sonokai): High Contrast & Vivid Color Scheme based on Monokai Pro  
