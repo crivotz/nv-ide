@@ -18,11 +18,11 @@ vim.api.nvim_set_keymap('n', '<C-F>t', ':CtrlSFToggle<CR>', {noremap = true, sil
 -- Easy-align
 vim.api.nvim_set_keymap('x', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
--- Vim-sneak
-vim.api.nvim_set_keymap('n', 'f', '<Plug>Sneak_f', {noremap = false, silent = false})
-vim.api.nvim_set_keymap('n', 'F', '<Plug>Sneak_F', {noremap = false, silent = false})
-vim.api.nvim_set_keymap('n', 't', '<Plug>Sneak_t', {noremap = false, silent = false})
-vim.api.nvim_set_keymap('n', 'T', '<Plug>Sneak_T', {noremap = false, silent = false})
+-- Lightspeed
+vim.api.nvim_set_keymap('n', 'f', '<Plug>Lightspeed_f', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', 'F', '<Plug>Lightspeed_F', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', 't', '<Plug>Lightspeed_t', {noremap = false, silent = false})
+vim.api.nvim_set_keymap('n', 'T', '<Plug>Lightspeed_T', {noremap = false, silent = false})
 -- LSP
 vim.api.nvim_set_keymap('n', '<space>,', ':lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<space>;', ':lua vim.lsp.diagnostic.goto_next()<CR>', {noremap = true, silent = true})

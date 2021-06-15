@@ -85,7 +85,7 @@ return require('packer').startup(function(use)
   use 'nacro90/numb.nvim'
   use 'dyng/ctrlsf.vim'
   use 'kevinhwang91/nvim-hlslens'
-  use 'justinmk/vim-sneak'
+  use 'ggandor/lightspeed.nvim'
   use 'kshenoy/vim-signature'
   use 'karb94/neoscroll.nvim'
   use 'dstein64/nvim-scrollview'
