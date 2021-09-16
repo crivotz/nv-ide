@@ -1,12 +1,10 @@
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
 
-local properties = {
-  force_inactive = {
+local force_inactive = {
     filetypes = {},
     buftypes = {},
     bufnames = {}
-  }
 }
 
 local components = {
@@ -79,7 +77,7 @@ local checkwidth = function()
   return false
 end
 
-properties.force_inactive.filetypes = {
+force_inactive.filetypes = {
   'NvimTree',
   'dbui',
   'packer',
@@ -88,7 +86,7 @@ properties.force_inactive.filetypes = {
   'fugitiveblame'
 }
 
-properties.force_inactive.buftypes = {
+force_inactive.buftypes = {
   'terminal'
 }
 
@@ -375,6 +373,6 @@ require('feline').setup({
   default_fg = fg,
   vi_mode_colors = vi_mode_colors,
   components = components,
-  properties = properties,
+  force_inactive = force_inactive,
 })
 

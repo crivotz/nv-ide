@@ -113,6 +113,7 @@ return require('packer').startup(function(use)
   -- Colorschema
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/sonokai'
+  use 'projekt0n/github-nvim-theme'
 
   -- Tags
   use 'ludovicchabant/vim-gutentags'
