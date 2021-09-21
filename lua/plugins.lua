@@ -128,4 +128,5 @@ return require('packer').startup(function(use)
   use 'numtostr/FTerm.nvim'
   use 'wfxr/minimap.vim'
   use 'folke/todo-comments.nvim'
+  use 'GustavoKatel/sidebar.nvim'
 end)
