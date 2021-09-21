@@ -66,7 +66,6 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
   use 'nvim-telescope/telescope-project.nvim'
-  use 'fhill2/telescope-ultisnips.nvim'
   use { 'pwntester/octo.nvim', requires = {{'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}} }
 
   -- Explorer
@@ -79,10 +78,6 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
   use 'kdheepak/lazygit.nvim'
   use 'rhysd/committia.vim'
-  use 'sindrets/diffview.nvim'
-
-  -- Flutter
-  use 'akinsho/flutter-tools.nvim'
 
   -- Registers
   use 'tversteeg/registers.nvim'

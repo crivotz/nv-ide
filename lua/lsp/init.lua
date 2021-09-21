@@ -13,17 +13,19 @@ vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
 require'lspconfig'.html.setup {
     filetypes = {"html", "eruby"},
-  capabilities = capabilities,
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.tsserver.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.solargraph.setup{
-  capabilities = capabilities,
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.cssls.setup{
-  capabilities = capabilities,
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.dockerls.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.jsonls.setup{
   commands = {
@@ -32,38 +34,15 @@ require'lspconfig'.jsonls.setup{
         vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
       end
     }
-  }
+  },
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.yamlls.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.vimls.setup{
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.dartls.setup{
-}
-require("flutter-tools").setup{} -- use defaults
-
--- alternatively you can override the default configs
-require("flutter-tools").setup {
-  experimental = { -- map of feature flags
-    lsp_derive_paths = true, -- EXPERIMENTAL: Attempt to find the user's flutter SDK
-  },
-  debugger = { -- EXPERIMENTAL: integrate with nvim dap
-    enabled = false,
-  },
-  widget_guides = {
-    enabled = false,
-  },
-  closing_tags = {
-    highlight = "ErrorMsg",
-    prefix = ">"
-  },
-  dev_log = {
-    open_cmd = "tabedit",
-  },
-  outline = {
-    open_cmd = "30vnew",
-  },
-  lsp = {
-    capabilities = capabilities -- e.g. lsp_status capabilities
-  }
+  capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
