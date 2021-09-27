@@ -51,6 +51,7 @@ nvim
 * Needed LSP, show `lsp/init.lua`
 * Glow, you can install it with :Glowinstall
 * [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
+* [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim  
 
 **SUGGESTION**
 

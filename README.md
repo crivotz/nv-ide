@@ -51,6 +51,7 @@ nvim
 * Needed LSP, show `lsp/init.lua`
 * Glow, you can install it with :Glowinstall
 * [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
+* [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim  
 
 **SUGGESTION**
 
@@ -79,6 +80,7 @@ nvim
 * [chrisbra/csv.vim](https://github.com/chrisbra/csv.vim): A Filetype plugin for csv files  
 * [npxbr/glow.nvim](https://github.com/npxbr/glow.nvim): A markdown preview directly in your neovim.  
 * [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align): 🌻 A Vim alignment plugin  
+* [mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim):   
 * [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons): lua `fork` of vim-web-devicons for neovim  
 * [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons): Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more  
 * [famiu/feline.nvim](https://github.com/famiu/feline.nvim): A minimal, stylish and customizable statusline for Neovim written in Lua  
@@ -124,6 +126,7 @@ nvim
 * [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material): Gruvbox with Material Palette  
 * [sainnhe/sonokai](https://github.com/sainnhe/sonokai): High Contrast & Vivid Color Scheme based on Monokai Pro  
+* [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme): Github theme for Neovim, kitty, iTerm, Konsole, tmux and Alacritty written in Lua  
 * [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags): A Vim plugin that manages your tag files  
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter): Changes Vim working directory to project root.  
 * [mhinz/vim-startify](https://github.com/mhinz/vim-startify): 🔗 The fancy start screen for Vim.  

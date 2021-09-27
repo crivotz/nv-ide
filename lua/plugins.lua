@@ -44,6 +44,7 @@ return require('packer').startup(function(use)
   use 'chrisbra/csv.vim'
   use 'npxbr/glow.nvim'
   use 'junegunn/vim-easy-align'
+  use 'mhartington/formatter.nvim'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
