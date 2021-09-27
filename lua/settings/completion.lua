@@ -10,39 +10,44 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " autocmd BufRead,BufNewFile *.md setlocal spell
 ]], true)
 
-require'compe'.setup {
-  enabled = true,
-  autocomplete = true,
-  debug = false,
-  min_length = 1,
-  preselect = 'enable',
-  throttle_time = 80,
-  source_timeout = 200,
-  incomplete_delay = 400,
-  max_abbr_width = 100,
-  max_kind_width = 100,
-  max_menu_width = 100,
-  documentation = true,
+local cmp = require'cmp'
 
-  source = {
-    path = true,
-    treesitter = true,
-    nvim_lsp = true,
-    omni = false,
-    buffer = true,
-    tags = true,
-    spell = false,
-    calc = false,
-    ultisnips =  true
-  }
-}
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
+    end,
+  },
+  mapping = {
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+    { name = 'buffer' },
+    { name = 'path' },
+    { name = 'calc' },
+    { name = 'treesitter' },
+    { name = 'tags' },
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      -- fancy icons and a name of kind
+      vim_item.kind = require("lspkind").presets.default[vim_item.kind] .. " " .. vim_item.kind
 
-local function t(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
-
-function _G.smart_tab()
-  return vim.fn.pumvisible() == 1 and t'<C-n>' or t'<Tab>'
-end
-
-vim.api.nvim_set_keymap('i', '<Tab>', 'v:lua.smart_tab()', {expr = true, noremap = true})
+      -- set a name for each source
+      vim_item.menu = ({
+        buffer = "[Buffer]",
+        nvim_lsp = "[LSP]",
+        luasnip = "[LuaSnip]",
+        nvim_lua = "[Lua]",
+        latex_symbols = "[Latex]",
+      })[entry.source.name]
+      return vim_item
+    end,
+  },
+})

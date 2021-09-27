@@ -1,3 +1,4 @@
+vim.api.nvim_set_keymap('n', '<F2>', ':SidebarNvimToggle<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<F3>', ':set number! relativenumber!<CR>', {noremap = true, silent = false})
 vim.api.nvim_set_keymap('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', '<F7>', ':NvimTreeToggle<CR>', {noremap = false, silent = true})

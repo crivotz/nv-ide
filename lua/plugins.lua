@@ -23,9 +23,16 @@ return require('packer').startup(function(use)
   use 'onsails/lspkind-nvim'
 
   -- Autocomplete
-  use 'hrsh7th/nvim-compe'
-  use 'SirVer/ultisnips'
-  use 'honza/vim-snippets'
+  use 'hrsh7th/nvim-cmp'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-calc'
+  use 'ray-x/cmp-treesitter'
+  use 'quangnguyen30192/cmp-nvim-tags'
+  use "rafamadriz/friendly-snippets"
   use 'windwp/nvim-autopairs'
   use 'AndrewRadev/tagalong.vim'
   use 'andymass/vim-matchup'
@@ -60,8 +67,9 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
   use 'nvim-telescope/telescope-project.nvim'
-  use 'fhill2/telescope-ultisnips.nvim'
-  use { 'pwntester/octo.nvim', requires = {{'nvim-lua/plenary.nvim'}, {'nvim-lua/popup.nvim'}} }
+  use {'pwntester/octo.nvim', config=function()
+    require"octo".setup()
+  end}
 
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
@@ -73,10 +81,6 @@ return require('packer').startup(function(use)
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'} }
   use 'kdheepak/lazygit.nvim'
   use 'rhysd/committia.vim'
-  use 'sindrets/diffview.nvim'
-
-  -- Flutter
-  use 'akinsho/flutter-tools.nvim'
 
   -- Registers
   use 'tversteeg/registers.nvim'
@@ -127,4 +131,5 @@ return require('packer').startup(function(use)
   use 'numtostr/FTerm.nvim'
   use 'wfxr/minimap.vim'
   use 'folke/todo-comments.nvim'
+  use 'GustavoKatel/sidebar.nvim'
 end)

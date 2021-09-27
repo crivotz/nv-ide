@@ -34,5 +34,6 @@ require('plugins.neoscroll')
 require('plugins.minimap')
 require('plugins.todo-comments')
 require('plugins.formatter')
+require('plugins.sidebar')
 -- Keymap
 require('settings.keymap')
