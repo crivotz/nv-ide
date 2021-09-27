@@ -26,7 +26,7 @@ require("gitsigns").setup {
     ['o ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>',
     ['x ih'] = ':<C-U>lua require"gitsigns".text_object()<CR>'
   },
-  watch_index = {
+  watch_gitdir = {
     interval = 1000
   },
   sign_priority = 6,
