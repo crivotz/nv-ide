@@ -1,5 +1,4 @@
 vim.g.nvim_tree_indent_markers = 1
-vim.g.nvim_tree_follow = 1 -- "0 by default, this option allows the cursor to be updated when entering a buffer
 vim.g.nvim_tree_auto_ignore_ft = 'startify'
 vim.g.nvim_tree_icons = {
   default = '',
@@ -28,6 +27,8 @@ require'nvim-tree'.setup {
     -- allow to open the tree if it was previously closed
     auto_open = true,
   },
+  -- 0 by default, this option allows the cursor to be updated when entering a buffer
+  nvim_tree_follow = 1,
   -- hijack the cursor in the tree to put it at the start of the filename
   hijack_cursor       = false,
   -- updates the root directory of the tree on `DirChanged` (when your run `:cd` usually)
