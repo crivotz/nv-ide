@@ -7,4 +7,5 @@ augroup ruby_subtypes
   autocmd BufNewFile,BufRead *.pdf.erb set filetype=eruby
 augroup END
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
+au BufRead,BufNewFile *.ejs setfiletype html
 ]], true)
