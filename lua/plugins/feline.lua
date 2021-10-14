@@ -33,6 +33,7 @@ local vi_mode_colors = {
   OP = 'green',
   INSERT = 'red',
   VISUAL = 'skyblue',
+  LINES = 'skyblue',
   BLOCK = 'skyblue',
   REPLACE = 'violet',
   ['V-REPLACE'] = 'violet',
@@ -50,6 +51,7 @@ local vi_mode_text = {
   OP = '<|',
   INSERT = '|>',
   VISUAL = '<>',
+  LINES = '<>',
   BLOCK = '<>',
   REPLACE = '<>',
   ['V-REPLACE'] = '<>',
@@ -130,7 +132,7 @@ components.active[1][3] = {
     bg = 'bg',
     style = 'bold'
   },
-  right_sep = ''
+  right_sep = ' '
 }
 -- gitBranch
 components.active[1][4] = {
