@@ -76,7 +76,7 @@ return require('packer').startup(function(use)
   use 'kyazdani42/nvim-tree.lua'
 
   -- Color
-  use 'norcalli/nvim-colorizer.lua'
+  use 'crivotz/nvim-colorizer.lua'
   use 'lpinilla/vim-codepainter'
 
   -- Git
