@@ -35,5 +35,6 @@ require('plugins.minimap')
 require('plugins.todo-comments')
 require('plugins.formatter')
 require('plugins.sidebar')
+require('plugins.stabilize')
 -- Keymap
 require('settings.keymap')

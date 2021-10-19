@@ -134,4 +134,5 @@ return require('packer').startup(function(use)
   use 'wfxr/minimap.vim'
   use 'folke/todo-comments.nvim'
   use 'GustavoKatel/sidebar.nvim'
+  use 'luukvbaal/stabilize.nvim'
 end)
