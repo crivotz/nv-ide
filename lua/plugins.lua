@@ -37,6 +37,7 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'AndrewRadev/tagalong.vim'
   use 'andymass/vim-matchup'
+  -- use 'github/copilot.vim'
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
