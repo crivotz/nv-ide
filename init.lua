@@ -34,7 +34,7 @@ require('plugins.neoscroll')
 require('plugins.minimap')
 require('plugins.todo-comments')
 require('plugins.formatter')
-require('plugins.sidebar')
 require('plugins.stabilize')
+require('plugins.nvim-neoclip')
 -- Keymap
 require('settings.keymap')
