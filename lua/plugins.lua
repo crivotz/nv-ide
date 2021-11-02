@@ -113,6 +113,8 @@ return require('packer').startup(function(use)
   use 'tpope/vim-jdaddy'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
+  use 'github/copilot.vim'
+
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
@@ -121,6 +123,7 @@ return require('packer').startup(function(use)
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/sonokai'
   use 'projekt0n/github-nvim-theme'
+  use 'folke/tokyonight.nvim'
 
   -- Tags
   use 'ludovicchabant/vim-gutentags'
