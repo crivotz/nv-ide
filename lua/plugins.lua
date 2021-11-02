@@ -48,7 +48,6 @@ return require('packer').startup(function(use)
 
   -- Syntax
   use 'moll/vim-node'
-  use 'zinit-zsh/zplugin-vim-syntax'
   use 'editorconfig/editorconfig-vim'
   use 'chrisbra/csv.vim'
   use 'npxbr/glow.nvim'
@@ -85,11 +84,11 @@ return require('packer').startup(function(use)
   use 'kdheepak/lazygit.nvim'
   use 'rhysd/committia.vim'
 
-  -- Registers
+  -- Registers & clipboard
   use 'tversteeg/registers.nvim'
+  use 'AckslD/nvim-neoclip.lua'
 
   -- Move & Search & replace
-  use 'windwp/nvim-spectre'
   use 'nacro90/numb.nvim'
   use 'dyng/ctrlsf.vim'
   use 'kevinhwang91/nvim-hlslens'
@@ -114,6 +113,7 @@ return require('packer').startup(function(use)
   use 'tpope/vim-jdaddy'
   use 'tpope/vim-fugitive'
   use 'tpope/vim-commentary'
+  use 'github/copilot.vim'
 
   -- Tmux
   use 'christoomey/vim-tmux-navigator'
@@ -122,6 +122,7 @@ return require('packer').startup(function(use)
   use 'sainnhe/gruvbox-material'
   use 'sainnhe/sonokai'
   use 'projekt0n/github-nvim-theme'
+  use 'folke/tokyonight.nvim'
 
   -- Tags
   use 'ludovicchabant/vim-gutentags'
@@ -134,6 +135,5 @@ return require('packer').startup(function(use)
   use 'numtostr/FTerm.nvim'
   use 'wfxr/minimap.vim'
   use 'folke/todo-comments.nvim'
-  use 'GustavoKatel/sidebar.nvim'
   use 'luukvbaal/stabilize.nvim'
 end)
