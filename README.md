@@ -76,18 +76,19 @@ nvim
 * [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs): autopairs for neovim written by lua  
 * [AndrewRadev/tagalong.vim](https://github.com/AndrewRadev/tagalong.vim): Change an HTML(ish) opening tag and take the closing one along as well  
 * [andymass/vim-matchup](https://github.com/andymass/vim-matchup): vim match-up: even better % 👊 navigate and highlight matching words 👊 modern matchit and matchparen  
+* [github/copilot.vim](https://github.com/github/copilot.vim): Neovim plugin for GitHub Copilot  
 * [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Nvim Treesitter configurations and abstraction layer  
 * [p00f/nvim-ts-rainbow](https://github.com/p00f/nvim-ts-rainbow): 🌈 Rainbow parentheses for neovim using tree-sitter 🌈  
 * [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Indent guides for Neovim  
 * [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.  
 * [romgrk/nvim-treesitter-context](https://github.com/romgrk/nvim-treesitter-context): Show code context  
 * [moll/vim-node](https://github.com/moll/vim-node): Tools and environment to make Vim superb for developing with Node.js. Like Rails.vim for Node.  
-* [zinit-zsh/zplugin-vim-syntax](https://github.com/zinit-zsh/zplugin-vim-syntax): A Vim syntax definition for Zinit commands in any ft=zsh file  
 * [editorconfig/editorconfig-vim](https://github.com/editorconfig/editorconfig-vim): EditorConfig plugin for Vim  
 * [chrisbra/csv.vim](https://github.com/chrisbra/csv.vim): A Filetype plugin for csv files  
 * [npxbr/glow.nvim](https://github.com/npxbr/glow.nvim): A markdown preview directly in your neovim.  
 * [junegunn/vim-easy-align](https://github.com/junegunn/vim-easy-align): 🌻 A Vim alignment plugin  
 * [mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim):   
+* [zdharma-continuum/zinit-vim-syntax](https://github.com/zdharma-continuum/zinit-vim-syntax):   
 * [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons): lua `fork` of vim-web-devicons for neovim  
 * [ryanoasis/vim-devicons](https://github.com/ryanoasis/vim-devicons): Adds file type icons to Vim plugins such as: NERDTree, vim-airline, CtrlP, unite, Denite, lightline, vim-startify and many more  
 * [famiu/feline.nvim](https://github.com/famiu/feline.nvim): A minimal, stylish and customizable statusline for Neovim written in Lua  
@@ -98,13 +99,13 @@ nvim
 * [nvim-telescope/telescope-fzy-native.nvim](https://github.com/nvim-telescope/telescope-fzy-native.nvim): FZY style sorter that is compiled  
 * [nvim-telescope/telescope-project.nvim](https://github.com/nvim-telescope/telescope-project.nvim):   
 * [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua): A file explorer tree for neovim written in lua  
-* [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua): The fastest Neovim colorizer.  
+* [crivotz/nvim-colorizer.lua](https://github.com/crivotz/nvim-colorizer.lua): The fastest Neovim colorizer.  
 * [lpinilla/vim-codepainter](https://github.com/lpinilla/vim-codepainter): A plugin for Vim to color different parts of code making the use of Text Properties  
-* [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): Git signs written in pure lua  
+* [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): Git integration for buffers  
 * [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim): Plugin for calling lazygit from within neovim.  
 * [rhysd/committia.vim](https://github.com/rhysd/committia.vim): A Vim plugin for more pleasant editing on commit messages  
 * [tversteeg/registers.nvim](https://github.com/tversteeg/registers.nvim): 📑 NeoVim plugin to preview the contents of the registers  
-* [windwp/nvim-spectre](https://github.com/windwp/nvim-spectre): Find the enemy and replace them with dark power.  
+* [AckslD/nvim-neoclip.lua](https://github.com/AckslD/nvim-neoclip.lua): Clipboard manager neovim plugin with telescope integration  
 * [nacro90/numb.nvim](https://github.com/nacro90/numb.nvim): Peek lines just when you intend  
 * [dyng/ctrlsf.vim](https://github.com/dyng/ctrlsf.vim): A text searching plugin mimics Ctrl-Shift-F on Sublime Text 2  
 * [kevinhwang91/nvim-hlslens](https://github.com/kevinhwang91/nvim-hlslens): Hlsearch Lens for Neovim  
@@ -127,10 +128,12 @@ nvim
 * [tpope/vim-jdaddy](https://github.com/tpope/vim-jdaddy): jdaddy.vim: JSON manipulation and pretty printing  
 * [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive): fugitive.vim: A Git wrapper so awesome, it should be illegal  
 * [tpope/vim-commentary](https://github.com/tpope/vim-commentary): commentary.vim: comment stuff out  
+* [github/copilot.vim](https://github.com/github/copilot.vim): Neovim plugin for GitHub Copilot  
 * [christoomey/vim-tmux-navigator](https://github.com/christoomey/vim-tmux-navigator): Seamless navigation between tmux panes and vim splits  
 * [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material): Gruvbox with Material Palette  
 * [sainnhe/sonokai](https://github.com/sainnhe/sonokai): High Contrast & Vivid Color Scheme based on Monokai Pro  
 * [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme): Github theme for Neovim, kitty, iTerm, Konsole, tmux and Alacritty written in Lua  
+* [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim): 🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish.  
 * [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags): A Vim plugin that manages your tag files  
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter): Changes Vim working directory to project root.  
 * [mhinz/vim-startify](https://github.com/mhinz/vim-startify): 🔗 The fancy start screen for Vim.  
@@ -139,5 +142,4 @@ nvim
 * [numtostr/FTerm.nvim](https://github.com/numtostr/FTerm.nvim): 🔥 No-nonsense floating terminal plugin for neovim 🔥  
 * [wfxr/minimap.vim](https://github.com/wfxr/minimap.vim): 📡 Blazing fast minimap / scrollbar for vim, powered by code-minimap written in Rust.  
 * [folke/todo-comments.nvim](https://github.com/folke/todo-comments.nvim): ✅ Highlight, list and search todo comments in your projects  
-* [GustavoKatel/sidebar.nvim](https://github.com/GustavoKatel/sidebar.nvim): A generic and modular lua sidebar for Neovim  
 * [luukvbaal/stabilize.nvim](https://github.com/luukvbaal/stabilize.nvim): Neovim plugin to stabilize window open/close events.  
