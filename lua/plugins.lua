@@ -53,6 +53,7 @@ return require('packer').startup(function(use)
   use 'npxbr/glow.nvim'
   use 'junegunn/vim-easy-align'
   use 'mhartington/formatter.nvim'
+  use 'zdharma-continuum/zinit-vim-syntax'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
