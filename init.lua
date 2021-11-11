@@ -37,5 +37,6 @@ require('plugins.formatter')
 require('plugins.stabilize')
 require('plugins.nvim-neoclip')
 require('plugins.nvim-gps')
+require('plugins.copilot')
 -- Keymap
 require('settings.keymap')

@@ -61,3 +61,5 @@ vim.api.nvim_set_keymap('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", 
 vim.api.nvim_set_keymap('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
 -- Todo-comments
 vim.api.nvim_set_keymap('n', '<leader>to', ':TodoTelescope<CR>', {noremap = true, silent = false})
+-- Copilot
+vim.api.nvim_set_keymap('i', '<C-J>', 'copilot#Accept()', {noremap = true, silent = true, expr = true})
