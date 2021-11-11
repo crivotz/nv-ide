@@ -45,6 +45,7 @@ return require('packer').startup(function(use)
   use 'lukas-reineke/indent-blankline.nvim'
   use 'JoosepAlviste/nvim-ts-context-commentstring'
   use 'romgrk/nvim-treesitter-context'
+  use 'SmiteshP/nvim-gps'
 
   -- Syntax
   use 'moll/vim-node'

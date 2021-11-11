@@ -36,5 +36,6 @@ require('plugins.todo-comments')
 require('plugins.formatter')
 require('plugins.stabilize')
 require('plugins.nvim-neoclip')
+require('plugins.nvim-gps')
 -- Keymap
 require('settings.keymap')

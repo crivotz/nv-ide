@@ -1,10 +1,11 @@
 local lsp = require('feline.providers.lsp')
 local vi_mode_utils = require('feline.providers.vi_mode')
+local gps = require("nvim-gps")
 
 local force_inactive = {
-    filetypes = {},
-    buftypes = {},
-    bufnames = {}
+  filetypes = {},
+  buftypes = {},
+  bufnames = {}
 }
 
 local components = {
@@ -132,10 +133,30 @@ components.active[1][3] = {
     bg = 'bg',
     style = 'bold'
   },
-  right_sep = ' '
+  right_sep = {
+    str = ' > ',
+    hl = {
+      fg = 'white',
+      bg = 'bg',
+      style = 'bold'
+    },
+  }
 }
--- gitBranch
+-- nvimGps
 components.active[1][4] = {
+  provider = function() return gps.get_location() end,
+  enabled = function() return gps.is_available() end,
+  hl = {
+    fg = 'white',
+    bg = 'bg',
+    style = 'bold'
+  }
+}
+
+-- MID
+
+-- gitBranch
+components.active[2][1] = {
   provider = 'git_branch',
   hl = {
     fg = 'yellow',
@@ -144,7 +165,7 @@ components.active[1][4] = {
   }
 }
 -- diffAdd
-components.active[1][5] = {
+components.active[2][2] = {
   provider = 'git_diff_added',
   hl = {
     fg = 'green',
@@ -153,7 +174,7 @@ components.active[1][5] = {
   }
 }
 -- diffModfified
-components.active[1][6] = {
+components.active[2][3] = {
   provider = 'git_diff_changed',
   hl = {
     fg = 'orange',
@@ -162,29 +183,16 @@ components.active[1][6] = {
   }
 }
 -- diffRemove
-components.active[1][7] = {
+components.active[2][4] = {
   provider = 'git_diff_removed',
   hl = {
     fg = 'red',
     bg = 'bg',
     style = 'bold'
-  }
-}
-
--- MID
-
--- LspName
-components.active[2][1] = {
-  provider = 'lsp_client_names',
-  hl = {
-    fg = 'yellow',
-    bg = 'bg',
-    style = 'bold'
   },
-  right_sep = ' '
 }
 -- diagnosticErrors
-components.active[2][2] = {
+components.active[2][5] = {
   provider = 'diagnostic_errors',
   enabled = function() return lsp.diagnostics_exist('Error') end,
   hl = {
@@ -193,7 +201,7 @@ components.active[2][2] = {
   }
 }
 -- diagnosticWarn
-components.active[2][3] = {
+components.active[2][6] = {
   provider = 'diagnostic_warnings',
   enabled = function() return lsp.diagnostics_exist('Warning') end,
   hl = {
@@ -202,7 +210,7 @@ components.active[2][3] = {
   }
 }
 -- diagnosticHint
-components.active[2][4] = {
+components.active[2][7] = {
   provider = 'diagnostic_hints',
   enabled = function() return lsp.diagnostics_exist('Hint') end,
   hl = {
@@ -211,7 +219,7 @@ components.active[2][4] = {
   }
 }
 -- diagnosticInfo
-components.active[2][5] = {
+components.active[2][8] = {
   provider = 'diagnostic_info',
   enabled = function() return lsp.diagnostics_exist('Information') end,
   hl = {
@@ -249,8 +257,18 @@ components.active[3][1] = {
   end,
   right_sep = ' '
 }
--- fileType
+-- LspName
 components.active[3][2] = {
+  provider = 'lsp_client_names',
+  hl = {
+    fg = 'yellow',
+    bg = 'bg',
+    style = 'bold'
+  },
+  right_sep = ' '
+}
+-- fileType
+components.active[3][3] = {
   provider = 'file_type',
   hl = function()
     local val = {}
@@ -269,7 +287,7 @@ components.active[3][2] = {
   right_sep = ' '
 }
 -- fileSize
-components.active[3][3] = {
+components.active[3][4] = {
   provider = 'file_size',
   enabled = function() return vim.fn.getfsize(vim.fn.expand('%:t')) > 0 end,
   hl = {
@@ -280,7 +298,7 @@ components.active[3][3] = {
   right_sep = ' '
 }
 -- fileFormat
-components.active[3][4] = {
+components.active[3][5] = {
   provider = function() return '' .. vim.bo.fileformat:upper() .. '' end,
   hl = {
     fg = 'white',
@@ -290,7 +308,7 @@ components.active[3][4] = {
   right_sep = ' '
 }
 -- fileEncode
-components.active[3][5] = {
+components.active[3][6] = {
   provider = 'file_encoding',
   hl = {
     fg = 'white',
@@ -300,7 +318,7 @@ components.active[3][5] = {
   right_sep = ' '
 }
 -- rubyVersion
-components.active[3][6] = {
+components.active[3][7] = {
   provider = function()
     return ' '..vim.fn['rvm#string']()
   end,
@@ -312,7 +330,7 @@ components.active[3][6] = {
   right_sep = ' '
 }
 -- lineInfo
-components.active[3][7] = {
+components.active[3][8] = {
   provider = 'position',
   hl = {
     fg = 'white',
@@ -322,7 +340,7 @@ components.active[3][7] = {
   right_sep = ' '
 }
 -- linePercent
-components.active[3][8] = {
+components.active[3][9] = {
   provider = 'line_percentage',
   hl = {
     fg = 'white',
@@ -332,7 +350,7 @@ components.active[3][8] = {
   right_sep = ' '
 }
 -- scrollBar
-components.active[3][9] = {
+components.active[3][10] = {
   provider = 'scroll_bar',
   hl = {
     fg = 'yellow',
