@@ -19,13 +19,17 @@ cmp.setup({
     end,
   },
   mapping = {
-    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-    ['<C-f>'] = cmp.mapping.scroll_docs(4),
-    ['<C-Space>'] = cmp.mapping.complete(),
-    ['<C-e>'] = cmp.mapping.close(),
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+    ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-y>'] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+    ['<C-e>'] = cmp.mapping({
+      i = cmp.mapping.abort(),
+      c = cmp.mapping.close(),
+    }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
   },
-  sources = {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
     { name = 'buffer' },
@@ -33,7 +37,7 @@ cmp.setup({
     { name = 'calc' },
     { name = 'treesitter' },
     { name = 'tags' },
-  },
+  }),
   formatting = {
     format = function(entry, vim_item)
       -- fancy icons and a name of kind
@@ -50,4 +54,19 @@ cmp.setup({
       return vim_item
     end,
   },
+})
+-- Use buffer source for '/'
+cmp.setup.cmdline('/', {
+  sources = {
+    { name = 'buffer' }
+  }
+})
+
+-- Use cmdline & path source for ':'
+cmp.setup.cmdline(':', {
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+    { name = 'cmdline' }
+  })
 })
