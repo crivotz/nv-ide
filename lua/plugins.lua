@@ -56,6 +56,7 @@ return require('packer').startup(function(use)
   use 'junegunn/vim-easy-align'
   use 'mhartington/formatter.nvim'
   use 'zdharma-continuum/zinit-vim-syntax'
+  use 'rust-lang/rust.vim'
 
   -- Icons
   use 'kyazdani42/nvim-web-devicons'
@@ -123,9 +124,6 @@ return require('packer').startup(function(use)
 
   -- Colorschema
   use 'sainnhe/gruvbox-material'
-  use 'sainnhe/sonokai'
-  use 'projekt0n/github-nvim-theme'
-  use 'folke/tokyonight.nvim'
 
   -- Tags
   use 'ludovicchabant/vim-gutentags'
