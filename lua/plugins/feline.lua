@@ -230,8 +230,18 @@ components.active[2][8] = {
 
 -- RIGHT
 
--- fileIcon
+-- LspName
 components.active[3][1] = {
+  provider = 'lsp_client_names',
+  hl = {
+    fg = 'yellow',
+    bg = 'bg',
+    style = 'bold'
+  },
+  right_sep = ' '
+}
+-- fileIcon
+components.active[3][2] = {
   provider = function()
     local filename = vim.fn.expand('%:t')
     local extension = vim.fn.expand('%:e')
@@ -255,16 +265,6 @@ components.active[3][1] = {
     val.style = 'bold'
     return val
   end,
-  right_sep = ' '
-}
--- LspName
-components.active[3][2] = {
-  provider = 'lsp_client_names',
-  hl = {
-    fg = 'yellow',
-    bg = 'bg',
-    style = 'bold'
-  },
   right_sep = ' '
 }
 -- fileType
