@@ -97,7 +97,7 @@ return require('packer').startup(function(use)
   use 'dyng/ctrlsf.vim'
   use 'kevinhwang91/nvim-hlslens'
   use 'ggandor/lightspeed.nvim'
-  use 'kshenoy/vim-signature'
+  use 'chentau/marks.nvim'
   use 'karb94/neoscroll.nvim'
   use 'dstein64/nvim-scrollview'
   use 'chaoren/vim-wordmotion'
