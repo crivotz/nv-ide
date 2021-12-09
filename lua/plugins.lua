@@ -33,6 +33,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-calc'
   use 'hrsh7th/cmp-cmdline'
   use 'ray-x/cmp-treesitter'
+  use 'lukas-reineke/cmp-rg'
   use 'quangnguyen30192/cmp-nvim-tags'
   use "rafamadriz/friendly-snippets"
   use 'windwp/nvim-autopairs'

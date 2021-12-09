@@ -37,6 +37,7 @@ cmp.setup({
     { name = 'calc' },
     { name = 'treesitter' },
     { name = 'tags' },
+    { name = 'rg' },
   }),
   formatting = {
     format = function(entry, vim_item)
