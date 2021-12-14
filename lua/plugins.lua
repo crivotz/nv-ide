@@ -102,6 +102,7 @@ return require('packer').startup(function(use)
   use 'karb94/neoscroll.nvim'
   use 'dstein64/nvim-scrollview'
   use 'chaoren/vim-wordmotion'
+  use 'fedepujol/move.nvim'
 
   -- Tim Pope docet
   use 'tpope/vim-sensible'

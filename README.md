@@ -115,6 +115,7 @@ nvim
 * [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim): Smooth scrolling neovim plugin written in lua  
 * [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview): 📍 A Neovim plugin that displays interactive vertical scrollbars.  
 * [chaoren/vim-wordmotion](https://github.com/chaoren/vim-wordmotion): More useful word motions for Vim  
+* [fedepujol/move.nvim](https://github.com/fedepujol/move.nvim): Gain the power to move lines and blocks!  
 * [tpope/vim-sensible](https://github.com/tpope/vim-sensible): sensible.vim: Defaults everyone can agree on  
 * [tpope/vim-rails](https://github.com/tpope/vim-rails): rails.vim: Ruby on Rails power tools  
 * [tpope/vim-abolish](https://github.com/tpope/vim-abolish): abolish.vim: easily search for, substitute, and abbreviate multiple variants of a word  
