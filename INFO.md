@@ -25,7 +25,7 @@ Check [tree-sitter](https://github.com/tree-sitter/tree-sitter) for full list.
 
 **INSTALLATION**
 ```console
-git clone git://github.com:crivotz/nv-ide.git ~/.nv-ide
+git clone git@github.com:crivotz/nv-ide.git ~/.nv-ide
 cd ~/.config
 ln -s ~/.nv-ide nvim
 nvim
