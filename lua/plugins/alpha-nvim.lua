@@ -8,15 +8,11 @@ local function button(sc, txt, keybind, keybind_opts)
   return b
 end
 
-local function pick_color()
-  local colors = {"String", "Identifier", "Keyword", "Number"}
-  return colors[math.random(#colors)]
-end
-
 local function footer()
   local total_plugins = #vim.tbl_keys(packer_plugins)
-  local datetime = os.date("%d-%m-%Y  %H:%M:%S")
-  return total_plugins .. " plugins  " .. datetime
+  local date = os.date("%d-%m-%Y")
+  local time = os.date("%H:%M:%S")
+  return "[ " .. total_plugins .. " plugins] [ " .. date .. "] [ " .. time .. "]"
 end
 
 dashboard.section.header.val = {
@@ -27,21 +23,19 @@ dashboard.section.header.val = {
   [[    ██║ ╚████║ ╚████╔╝       ██║██████╔╝███████╗ ]],
   [[    ╚═╝  ╚═══╝  ╚═══╝        ╚═╝╚═════╝ ╚══════╝ ]]
 }
-dashboard.section.header.opts.hl = pick_color()
 
 dashboard.section.buttons.val = {
   button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-  button("o", "  Recently opened files", ":Telescope oldfiles<CR>"),
-  button("f", "  Find file", ":lua require('plugins.telescope').project_files()<CR>"),
-  button("p", "  Find project", ":lua require('telescope').extensions.project.project{}<CR>"),
-  button("r", "  Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
-  button("g", "  Find modified file", ":lua require('telescope.builtin').my_git_status()<CR>"),
+  button("o", "ﭯ  Recently opened files", ":Telescope oldfiles<CR>"),
+  button("f", "  Find file", ":lua require('plugins.telescope').project_files()<CR>"),
+  button("p", "  Find project", ":lua require('telescope').extensions.project.project{}<CR>"),
+  button("r", "  Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
+  button("g", "  Find modified file", ":lua require('plugins.telescope').my_git_status()<CR>"),
   button("s", "  NV-IDE plugins", ":e ~/.config/nvim/lua/plugins.lua<CR>"),
   button("u", "  Sync plugins", ":PackerSync<CR>"),
   button("q", "  Quit", "<Cmd>qa<CR>")
 }
-
--- dashboard.section.footer.val = footer()
+dashboard.section.footer.val = footer()
 dashboard.section.footer.opts.hl = "Constant"
 
 require"alpha".setup(dashboard.opts)
