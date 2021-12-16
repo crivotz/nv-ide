@@ -11,7 +11,6 @@ end
 
 vim.cmd 'autocmd BufWritePost plugins.lua PackerCompile' -- Auto compile when there are changes in plugins.lua
 
--- require('packer').init({display = {non_interactive = true}})
 require('packer').init({display = {auto_clean = false}})
 
 return require('packer').startup(function(use)
@@ -39,7 +38,6 @@ return require('packer').startup(function(use)
   use 'windwp/nvim-autopairs'
   use 'AndrewRadev/tagalong.vim'
   use 'andymass/vim-matchup'
-  -- use 'github/copilot.vim'
 
   -- Treesitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
@@ -73,9 +71,7 @@ return require('packer').startup(function(use)
   use 'nvim-telescope/telescope.nvim'
   use 'nvim-telescope/telescope-fzy-native.nvim'
   use 'nvim-telescope/telescope-project.nvim'
-  use {'pwntester/octo.nvim', config=function()
-    require"octo".setup()
-  end}
+  use 'pwntester/octo.nvim'
 
   -- Explorer
   use 'kyazdani42/nvim-tree.lua'
@@ -131,12 +127,15 @@ return require('packer').startup(function(use)
   use 'ludovicchabant/vim-gutentags'
 
   -- General Plugins
+  use 'rcarriga/nvim-notify'
   use 'airblade/vim-rooter'
   use 'mhinz/vim-startify'
+  use 'goolord/alpha-nvim'
   use 'jeffkreeftmeijer/vim-numbertoggle'
   use 'lambdalisue/suda.vim'
   use 'numtostr/FTerm.nvim'
   use 'wfxr/minimap.vim'
   use 'folke/todo-comments.nvim'
+  use 'folke/which-key.nvim'
   use 'luukvbaal/stabilize.nvim'
 end)
