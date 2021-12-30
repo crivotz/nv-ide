@@ -31,6 +31,7 @@ dashboard.section.buttons.val = {
   button("p", "  Find project", ":lua require('telescope').extensions.project.project{}<CR>"),
   button("r", "  Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
   button("g", "  Find modified file", ":lua require('plugins.telescope').my_git_status()<CR>"),
+  button("t", "  Show todo", ":TodoTelescope<CR>"),
   button("s", "  NV-IDE plugins", ":e ~/.config/nvim/lua/plugins.lua<CR>"),
   button("u", "  Sync plugins", ":PackerSync<CR>"),
   button("q", "  Quit", "<Cmd>qa<CR>")
