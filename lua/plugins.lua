@@ -100,7 +100,7 @@ return require('packer').startup(function(use)
   use { 'dyng/ctrlsf.vim', config = lua_path"ctrlsf" }
   use { 'kevinhwang91/nvim-hlslens', config = lua_path"hlslens" }
   use { 'ggandor/lightspeed.nvim', config = lua_path"lightspeed" }
-  use { 'chentau/marks.nvim', config = lua_path"marks" }
+  use { 'ThePrimeagen/harpoon', config = lua_path"harpoon" }
   use { 'karb94/neoscroll.nvim', config = lua_path"neoscroll" }
   use { 'dstein64/nvim-scrollview' }
   use { 'chaoren/vim-wordmotion' }
