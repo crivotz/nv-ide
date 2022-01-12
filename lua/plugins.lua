@@ -143,4 +143,5 @@ return require('packer').startup(function(use)
   use { 'wfxr/minimap.vim', config = lua_path"minimap" }
   use { 'folke/todo-comments.nvim', config = lua_path"todo-comments" }
   use { 'luukvbaal/stabilize.nvim', config = lua_path"stabilize" }
+  use { "beauwilliams/focus.nvim", config = lua_path"focus" }
 end)
