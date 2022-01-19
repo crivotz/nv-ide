@@ -1,7 +1,8 @@
 -- <F1> help
 -- <F2> vim-codepainter
-vim.api.nvim_set_keymap('n', '<F3>', ':set number! relativenumber!<CR>', {noremap = true, silent = false})
-vim.api.nvim_set_keymap('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = false})
+-- <F3> vim-codepainter navigate
+vim.api.nvim_set_keymap('n', '<F4>', ':set number! relativenumber!<CR>', {noremap = true, silent = false})
+vim.api.nvim_set_keymap('n', '<F5>', ':set list! list?<CR>', {noremap = false, silent = false})
 vim.api.nvim_set_keymap('n', '<F6>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<F6>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('n', '<F7>', ':NvimTreeToggle<CR>', {noremap = false, silent = true})
