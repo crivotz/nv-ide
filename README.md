@@ -52,7 +52,7 @@ nvim
 
 **SUGGESTION**
 
-* Font: [Fira Code Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+* Font: [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 * [dot_files](https://github.com/crivotz/dot_files)
 
 **PLUGINS**  
@@ -114,7 +114,7 @@ nvim
 * [ggandor/lightspeed.nvim](https://github.com/ggandor/lightspeed.nvim): 🌌 Next-generation motion plugin with incremental input processing, allowing for unparalleled speed with near-zero cognitive effort  
 * [ThePrimeagen/harpoon](https://github.com/ThePrimeagen/harpoon):   
 * [karb94/neoscroll.nvim](https://github.com/karb94/neoscroll.nvim): Smooth scrolling neovim plugin written in lua  
-* [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview): 📍 A Neovim plugin that displays interactive vertical scrollbars.  
+* [dstein64/nvim-scrollview](https://github.com/dstein64/nvim-scrollview): 📜📶 A Neovim plugin that displays interactive vertical scrollbars.  
 * [chaoren/vim-wordmotion](https://github.com/chaoren/vim-wordmotion): More useful word motions for Vim  
 * [fedepujol/move.nvim](https://github.com/fedepujol/move.nvim): Gain the power to move lines and blocks!  
 * [tpope/vim-sensible](https://github.com/tpope/vim-sensible): sensible.vim: Defaults everyone can agree on  

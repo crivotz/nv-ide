@@ -52,5 +52,5 @@ nvim
 
 **SUGGESTION**
 
-* Font: [Fira Code Nerd fonts](https://github.com/ryanoasis/nerd-fonts)
+* Font: [JetBrains Mono](https://www.jetbrains.com/lp/mono/)
 * [dot_files](https://github.com/crivotz/dot_files)
