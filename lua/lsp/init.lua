@@ -2,8 +2,6 @@ local nvim_lsp = require('lspconfig')
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
-require('lspkind').init()
-
 -- Diagnostics symbols for display in the sign column.
 local signs = { Error = "", Warn = "", Hint = "", Info = "" }
 for type, icon in pairs(signs) do

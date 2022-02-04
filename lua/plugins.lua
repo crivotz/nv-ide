@@ -25,7 +25,7 @@ return require('packer').startup(function(use)
 
   -- LSP
   use { 'neovim/nvim-lspconfig' }
-  use { 'onsails/lspkind-nvim', config = lua_path"lspkind" }
+  use { 'onsails/lspkind-nvim' }
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
 
   -- Autocomplete
