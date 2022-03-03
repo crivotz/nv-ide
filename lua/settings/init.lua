@@ -47,12 +47,17 @@ vim.opt.relativenumber = true
 vim.opt.foldenable = false
 vim.opt.cursorline = true
 
-vim.cmd[[autocmd BufReadPost * lua goto_last_pos()]]
-function goto_last_pos()
-  local last_pos = vim.fn.line("'\"")
-  if last_pos > 0 and last_pos <= vim.fn.line("$") then
-    vim.api.nvim_win_set_cursor(0, {last_pos, 0})
-  end
-end
+vim.api.nvim_create_autocmd("BufReadPost", {
+  callback = function()
+    local last_pos = vim.fn.line("'\"")
+    if last_pos > 0 and last_pos <= vim.fn.line("$") then
+      vim.api.nvim_win_set_cursor(0, {last_pos, 0})
+    end
+  end,
+})
 
-vim.cmd 'au TextYankPost * silent! lua vim.highlight.on_yank()'
+vim.api.nvim_create_autocmd("TextYankPost", {
+  callback =  function()
+    vim.highlight.on_yank()
+  end,
+})
