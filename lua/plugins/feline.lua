@@ -317,18 +317,18 @@ components.active[3][6] = {
   },
   right_sep = ' '
 }
--- rubyVersion
-components.active[3][7] = {
-  provider = function()
-    return ' '..vim.fn['rvm#string']()
-  end,
-  hl = {
-    fg = 'red',
-    bg = 'bg',
-    style = 'bold'
-  },
-  right_sep = ' '
-}
+-- RVMrubyVersion
+-- components.active[3][7] = {
+--   provider = function()
+--     return ' '..vim.fn['rvm#string']()
+--   end,
+--   hl = {
+--     fg = 'red',
+--     bg = 'bg',
+--     style = 'bold'
+--   },
+--   right_sep = ' '
+-- }
 -- lineInfo
 components.active[3][8] = {
   provider = 'position',

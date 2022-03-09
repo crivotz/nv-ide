@@ -118,7 +118,6 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-capslock' }
   use { 'tpope/vim-repeat' }
   use { 'tpope/vim-endwise' }
-  use { 'tpope/vim-rvm' }
   use { 'tpope/vim-dispatch' }
   use { 'tpope/vim-dadbod' }
   use { 'tpope/vim-jdaddy' }
