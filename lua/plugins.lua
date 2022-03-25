@@ -83,7 +83,9 @@ return require('packer').startup(function(use)
   use { 'pwntester/octo.nvim', config = lua_path"octo" }
 
   -- Explorer
-  use { 'kyazdani42/nvim-tree.lua', config = lua_path"nvimtree" }
+  -- use { 'kyazdani42/nvim-tree.lua', config = lua_path"nvimtree" }
+  use { 'MunifTanjim/nui.nvim' }
+  use { 'nvim-neo-tree/neo-tree.nvim', config = lua_path"neotree" }
 
   -- Color
   use { 'crivotz/nvim-colorizer.lua', config = lua_path"colorizer" }

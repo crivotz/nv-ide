@@ -1,6 +1,5 @@
 -- Packer
 require('plugins')
--- Config
 require('settings')
 require('settings.color')
 require('settings.font')
