@@ -1,7 +1,8 @@
+-- Init
+require('settings')
 -- Packer
 require('plugins')
 -- Config
-require('settings')
 require('settings.color')
 require('settings.font')
 require('settings.completion')
