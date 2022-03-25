@@ -3,7 +3,7 @@ vim.g.nvim_tree_auto_ignore_ft = 'startify'
 vim.g.nvim_tree_icons = {
   default = '',
   symlink = '',
-  git = {unstaged = "", staged = "✓", unmerged = "", renamed = "➜", untracked = ""},
+  git = {unstaged = "", staged = "", unmerged = "", renamed = "", untracked = "", deleted = "✖", ignored = ""},
   folder = {default = "", open = "", empty = "", empty_open = "", symlink = ""}
 }
 -- following options are the default
