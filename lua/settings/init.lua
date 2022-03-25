@@ -1,5 +1,5 @@
 -- Global
-vim.opt.fillchars = { vert = ' ' }
+-- vim.opt.fillchars = { vert = ' ' }
 vim.opt.showtabline = 2
 vim.opt.scrolloff = 5
 vim.opt.mouse = 'a'
@@ -26,6 +26,7 @@ vim.opt.encoding = 'UTF-8'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
+vim.opt.laststatus = 3
 -- Buffer
 vim.opt.fileformat = 'unix'
 vim.opt.tabstop = 2

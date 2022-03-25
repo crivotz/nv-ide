@@ -110,7 +110,6 @@ return require('packer').startup(function(use)
   use { 'fedepujol/move.nvim' }
 
   -- Tim Pope docet
-  use { 'tpope/vim-sensible' }
   use { 'tpope/vim-rails' }
   use { 'tpope/vim-abolish' }
   use { 'tpope/vim-surround' }
