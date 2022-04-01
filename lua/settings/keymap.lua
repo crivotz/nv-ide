@@ -39,6 +39,7 @@ vim.api.nvim_set_keymap('n', '<space>r', ':lua vim.lsp.buf.references()<CR>', {n
 vim.api.nvim_set_keymap('n', '<space>s', ':lua vim.lsp.buf.document_symbol()<CR>', {noremap = true, silent = true})
 -- Telescope
 vim.api.nvim_set_keymap('n', '<leader>r', ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
+vim.api.nvim_set_keymap('n', '<leader>#', ":lua require('telescope.builtin').grep_string()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>bb', ":lua require('telescope.builtin').buffers()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>h', ":lua require('harpoon.mark').add_file()<CR>", {noremap = true, silent = true})
 vim.api.nvim_set_keymap('n', '<leader>m', ":Telescope harpoon marks<CR>", {noremap = true, silent = true})

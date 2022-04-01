@@ -3,6 +3,9 @@ require('telescope').setup{
   defaults = {
     prompt_prefix = "λ -> ",
     selection_caret = "|> ",
+    winblend = 20,
+    show_line = false,
+    set_env = { ["COLORTERM"] = "truecolor" },
     -- Don't pass to normal mode with ESC, problem with telescope-project
     -- mappings = {
     --   i = {
