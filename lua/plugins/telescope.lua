@@ -1,5 +1,7 @@
 local actions = require('telescope.actions')
-require('telescope').setup{
+local trouble = require("trouble.providers.telescope")
+local telescope = require("telescope")
+telescope.setup{
   defaults = {
     prompt_prefix = "λ -> ",
     selection_caret = "|> ",
@@ -12,6 +14,10 @@ require('telescope').setup{
     --     ["<esc>"] = actions.close,
     --   },
     -- },
+    mappings = {
+      i = { ["<c-t>"] = trouble.open_with_trouble },
+      n = { ["<c-t>"] = trouble.open_with_trouble },
+    },
   },
   extensions = {
     fzy_native = {
@@ -23,12 +29,12 @@ require('telescope').setup{
 
 -- Extensions
 
--- require('telescope').load_extension('octo')
-require('telescope').load_extension('fzy_native')
-require('telescope').load_extension('project')
-require('telescope').load_extension('neoclip')
-require("telescope").load_extension("notify")
-require("telescope").load_extension("harpoon")
+-- telescope.load_extension('octo')
+telescope.load_extension('fzy_native')
+telescope.load_extension('project')
+telescope.load_extension('neoclip')
+telescope.load_extension("notify")
+telescope.load_extension("harpoon")
 
 -- Implement delta as previewer for diffs
 
