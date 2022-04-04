@@ -33,6 +33,7 @@ local vi_mode_colors = {
   NORMAL = 'green',
   OP = 'green',
   INSERT = 'red',
+  CONFIRM = 'red',
   VISUAL = 'skyblue',
   LINES = 'skyblue',
   BLOCK = 'skyblue',
@@ -62,7 +63,8 @@ local vi_mode_text = {
   COMMAND = '<|',
   SHELL = '<|',
   TERM = '<|',
-  NONE = '<>'
+  NONE = '<>',
+  CONFIRM = '|>'
 }
 
 local buffer_not_empty = function()
