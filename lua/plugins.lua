@@ -60,7 +60,6 @@ return require('packer').startup(function(use)
   use { 'moll/vim-node' }
   use { 'editorconfig/editorconfig-vim', config = lua_path"editorconfig" }
   use { 'chrisbra/csv.vim' }
-  use { 'npxbr/glow.nvim' }
   use { 'junegunn/vim-easy-align' }
   use { 'mhartington/formatter.nvim', config = lua_path"formatter" }
   use { 'zdharma-continuum/zinit-vim-syntax' }
