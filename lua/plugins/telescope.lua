@@ -33,8 +33,9 @@ telescope.setup{
 telescope.load_extension('fzy_native')
 telescope.load_extension('project')
 telescope.load_extension('neoclip')
-telescope.load_extension("notify")
-telescope.load_extension("harpoon")
+telescope.load_extension('notify')
+telescope.load_extension('harpoon')
+telescope.load_extension('dap')
 
 -- Implement delta as previewer for diffs
 

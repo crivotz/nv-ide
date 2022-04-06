@@ -85,3 +85,9 @@ vim.api.nvim_set_keymap("n", "<leader>xd", "<cmd>Trouble document_diagnostics<cr
 vim.api.nvim_set_keymap("n", "<leader>xl", "<cmd>Trouble loclist<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "<leader>xq", "<cmd>Trouble quickfix<cr>", {silent = true, noremap = true})
 vim.api.nvim_set_keymap("n", "gR", "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
+-- Nvim-dap
+vim.api.nvim_set_keymap("n", "<leader>db", ":lua require('dap').toggle_breakpoint()<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>ds", ":lua require('dap').continue()<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>dl", ":lua require('dap').step_over()<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>dj", ":lua require('dap').step_into()<cr>", {silent = true, noremap = true})
+vim.api.nvim_set_keymap("n", "<leader>du", ":lua require('dapui').toggle()<cr>", {silent = true, noremap = true})

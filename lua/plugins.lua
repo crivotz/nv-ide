@@ -79,6 +79,7 @@ return require('packer').startup(function(use)
   use { 'nvim-telescope/telescope.nvim', config = lua_path"telescope" }
   use { 'nvim-telescope/telescope-fzy-native.nvim' }
   use { 'nvim-telescope/telescope-project.nvim' }
+  use { 'nvim-telescope/telescope-dap.nvim' }
   use { 'pwntester/octo.nvim', config = lua_path"octo" }
 
   -- Explorer
@@ -131,6 +132,10 @@ return require('packer').startup(function(use)
 
   -- Tags
   use { 'ludovicchabant/vim-gutentags', config = lua_path"vim-gutentags" }
+
+  -- Debugger
+  use { 'mfussenegger/nvim-dap', config = lua_path"nvim-dap" }
+  use { 'rcarriga/nvim-dap-ui', config = lua_path"nvim-dap-ui" }
 
   -- General Plugins
   use { 'rcarriga/nvim-notify', config = lua_path"nvim-notify" }
