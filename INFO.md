@@ -40,15 +40,15 @@ nvim
 ```
 **DEPENDENCIES**
 
-* NVim
+* Neovim
 * [Universal-ctags](https://github.com/universal-ctags/ctags) with JSON format
 * [FZF](https://github.com/junegunn/fzf)
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
-* Ripper-tags
-* Needed LSP, show `lsp/init.lua`
-* Glow, you can install it with :Glowinstall
+* [Ripper-tags](https://github.com/tmm1/ripper-tags)
 * [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
 * [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim  
+* Needed DAP, show `lua/plugins/nvim-dap.lua`
+* Needed LSP, show `lua/lsp/init.lua`
 
 **SUGGESTION**
 

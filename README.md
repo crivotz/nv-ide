@@ -40,15 +40,15 @@ nvim
 ```
 **DEPENDENCIES**
 
-* NVim
+* Neovim
 * [Universal-ctags](https://github.com/universal-ctags/ctags) with JSON format
 * [FZF](https://github.com/junegunn/fzf)
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
-* Ripper-tags
-* Needed LSP, show `lsp/init.lua`
-* Glow, you can install it with :Glowinstall
+* [Ripper-tags](https://github.com/tmm1/ripper-tags)
 * [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
 * [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim  
+* Needed DAP, show `lua/plugins/nvim-dap.lua`
+* Needed LSP, show `lua/lsp/init.lua`
 
 **SUGGESTION**
 
@@ -135,6 +135,7 @@ nvim
 * [ludovicchabant/vim-gutentags](https://github.com/ludovicchabant/vim-gutentags): A Vim plugin that manages your tag files  
 * [mfussenegger/nvim-dap](https://github.com/mfussenegger/nvim-dap): Debug Adapter Protocol client implementation for Neovim (>= 0.5)  
 * [rcarriga/nvim-dap-ui](https://github.com/rcarriga/nvim-dap-ui): A UI for nvim-dap  
+* [theHamsta/nvim-dap-virtual-text](https://github.com/theHamsta/nvim-dap-virtual-text):   
 * [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify): A fancy, configurable, notification manager for NeoVim  
 * [airblade/vim-rooter](https://github.com/airblade/vim-rooter): Changes Vim working directory to project root.  
 * [mhinz/vim-startify](https://github.com/mhinz/vim-startify): 🔗 The fancy start screen for Vim.  
