@@ -53,7 +53,7 @@ return require('packer').startup(function(use)
   use { 'p00f/nvim-ts-rainbow', config = lua_path"nvim-ts-rainbow" }
   use { 'lukas-reineke/indent-blankline.nvim', config = lua_path"indent-blankline" }
   use { 'JoosepAlviste/nvim-ts-context-commentstring' }
-  use { 'romgrk/nvim-treesitter-context' }
+  use { 'lewis6991/nvim-treesitter-context' }
   use { 'SmiteshP/nvim-gps', config = lua_path"nvim-gps" }
 
   -- Syntax
