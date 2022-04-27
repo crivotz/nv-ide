@@ -31,7 +31,7 @@ telescope.setup{
 
 -- telescope.load_extension('octo')
 telescope.load_extension('fzy_native')
-telescope.load_extension('project')
+telescope.load_extension('repo')
 telescope.load_extension('neoclip')
 telescope.load_extension('notify')
 telescope.load_extension('harpoon')

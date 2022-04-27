@@ -178,7 +178,7 @@ local buttons = {
     dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
     dashboard.button("o", "ﭯ  Recently opened files", ":Telescope oldfiles<CR>"),
     dashboard.button("f", "  Find file", ":lua require('plugins.telescope').project_files()<CR>"),
-    dashboard.button("p", "  Find project", ":lua require('telescope').extensions.project.project{}<CR>"),
+    dashboard.button("p", "  Find project", ":Telescope repo list<CR>"),
     dashboard.button("r", "  Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
     dashboard.button("g", "  Find modified file", ":lua require('plugins.telescope').my_git_status()<CR>"),
     dashboard.button("m", "  Show mark", ":Telescope harpoon marks<CR>"),

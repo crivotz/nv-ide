@@ -78,7 +78,7 @@ return require('packer').startup(function(use)
   use { 'nvim-lua/plenary.nvim' }
   use { 'nvim-telescope/telescope.nvim', config = lua_path"telescope" }
   use { 'nvim-telescope/telescope-fzy-native.nvim' }
-  use { 'nvim-telescope/telescope-project.nvim' }
+  use { 'cljoly/telescope-repo.nvim' }
   use { 'nvim-telescope/telescope-dap.nvim' }
   use { 'pwntester/octo.nvim', config = lua_path"octo" }
 
