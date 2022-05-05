@@ -64,6 +64,7 @@ return require('packer').startup(function(use)
   use { 'mhartington/formatter.nvim', config = lua_path"formatter" }
   use { 'zdharma-continuum/zinit-vim-syntax' }
   use { 'rust-lang/rust.vim' }
+  use { 'numToStr/Comment.nvim', config = lua_path"comment"}
 
   -- Icons
   use { 'kyazdani42/nvim-web-devicons' }
@@ -121,7 +122,6 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-dadbod' }
   use { 'tpope/vim-jdaddy' }
   use { 'tpope/vim-fugitive' }
-  use { 'tpope/vim-commentary' }
   use { 'github/copilot.vim', config = lua_path"copilot" }
 
   -- Tmux

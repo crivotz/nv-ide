@@ -4,6 +4,7 @@ require'nvim-treesitter.configs'.setup {
     enable = true,              -- false will disable the whole extension
   },
   context_commentstring = {
-    enable = true
+    enable = true,
+    enable_autocmd = false,
   }
 }
