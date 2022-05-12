@@ -3,17 +3,40 @@ local trouble = require("trouble.providers.telescope")
 local telescope = require("telescope")
 telescope.setup{
   defaults = {
+    vimgrep_arguments = {
+      "rg",
+      "--color=never",
+      "--no-heading",
+      "--with-filename",
+      "--line-number",
+      "--column",
+      "--smart-case",
+    },
+    layout_strategy = "horizontal",
+    layout_config = {
+      horizontal = {
+        prompt_position = "bottom",
+        preview_width = 0.55,
+        results_width = 0.8,
+      },
+      vertical = {
+        mirror = false,
+      },
+      width = 0.87,
+      height = 0.80,
+      preview_cutoff = 120,
+    },
     prompt_prefix = "λ -> ",
     selection_caret = "|> ",
-    winblend = 20,
-    show_line = false,
+    winblend = 0,
+    border = {},
+    borderchars = {
+      prompt = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
+      preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+      results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+    },
+    path_display = { "truncate" },
     set_env = { ["COLORTERM"] = "truecolor" },
-    -- Don't pass to normal mode with ESC, problem with telescope-project
-    -- mappings = {
-    --   i = {
-    --     ["<esc>"] = actions.close,
-    --   },
-    -- },
     mappings = {
       i = { ["<c-t>"] = trouble.open_with_trouble },
       n = { ["<c-t>"] = trouble.open_with_trouble },
@@ -26,7 +49,18 @@ telescope.setup{
     }
   }
 }
-
+vim.cmd([[
+highlight! link TelescopePromptBorder Red
+highlight! link TelescopePreviewBorder Yellow
+highlight! link TelescopeResultsBorder Yellow
+highlight! link TelescopePromptTitle  Red
+highlight! link TelescopeResultsTitle Yellow
+highlight! link TelescopePreviewTitle Yellow
+highlight! link TelescopePromptPrefix   Red
+highlight! link TelescopeMatching       Green
+highlight! link TelescopePromptPrefix  Orange
+highlight! link TelescopeSelection  Orange
+]])
 -- Extensions
 
 -- telescope.load_extension('octo')
