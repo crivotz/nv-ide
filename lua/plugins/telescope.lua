@@ -26,7 +26,8 @@ telescope.setup{
       height = 0.80,
       preview_cutoff = 120,
     },
-    prompt_prefix = "λ -> ",
+    -- prompt_prefix = "λ -> ",
+    prompt_prefix = "   ",
     selection_caret = "|> ",
     winblend = 0,
     border = {},
@@ -54,12 +55,13 @@ highlight! link TelescopePromptBorder Red
 highlight! link TelescopePreviewBorder Yellow
 highlight! link TelescopeResultsBorder Yellow
 highlight! link TelescopePromptTitle  Red
+highlight! link TelescopePromptCounter  Yellow
 highlight! link TelescopeResultsTitle Yellow
 highlight! link TelescopePreviewTitle Yellow
 highlight! link TelescopePromptPrefix   Red
-highlight! link TelescopeMatching       Green
-highlight! link TelescopePromptPrefix  Orange
-highlight! link TelescopeSelection  Orange
+highlight! link TelescopeMatching       Orange
+highlight! link TelescopePromptPrefix  Yellow
+highlight! link TelescopeSelection  Yellow
 ]])
 -- Extensions
 
