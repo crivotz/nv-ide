@@ -8,4 +8,5 @@ augroup ruby_subtypes
 augroup END
 au BufRead,BufNewFile jquery.*.js set ft=javascript syntax=jquery
 au BufRead,BufNewFile *.ejs setfiletype html
+au FileType TelescopePrompt setlocal nocursorline
 ]], true)
