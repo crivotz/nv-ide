@@ -32,9 +32,11 @@ telescope.setup{
     winblend = 0,
     border = {},
     borderchars = {
-      prompt = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
-      preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
-      results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+      prompt = {" ", " ", " ", " ", " ", " ", " ", " "},
+      preview = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
+      results = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
+      -- preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+      -- results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
     },
     path_display = { "truncate" },
     set_env = { ["COLORTERM"] = "truecolor" },
@@ -50,19 +52,6 @@ telescope.setup{
     }
   }
 }
-vim.cmd([[
-highlight! link TelescopePromptBorder Red
-highlight! link TelescopePreviewBorder Yellow
-highlight! link TelescopeResultsBorder Yellow
-highlight! link TelescopePromptTitle  Red
-highlight! link TelescopePromptCounter  Yellow
-highlight! link TelescopeResultsTitle Yellow
-highlight! link TelescopePreviewTitle Yellow
-highlight! link TelescopePromptPrefix   Red
-highlight! link TelescopeMatching       Orange
-highlight! link TelescopePromptPrefix  Yellow
-highlight! link TelescopeSelection  Yellow
-]])
 -- Extensions
 
 -- telescope.load_extension('octo')
