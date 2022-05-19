@@ -130,7 +130,7 @@ M.my_git_status = function(opts)
 end
 
 M.my_note = function(opts)
-  builtin.live_grep { prompt_title = ' Note ', cwd = '~/Note' }
+  builtin.live_grep { prompt_title = ' Note ', cwd = '~/Notes' }
 end
 
 M.project_files = function()
