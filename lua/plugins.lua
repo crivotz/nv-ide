@@ -141,7 +141,6 @@ return require('packer').startup(function(use)
   -- General Plugins
   use { 'rcarriga/nvim-notify', config = lua_path"nvim-notify" }
   use { 'airblade/vim-rooter', config = lua_path"vim-rooter" }
-  use { 'mhinz/vim-startify' }
   use { 'goolord/alpha-nvim', config = lua_path"alpha-nvim" }
   use { 'jeffkreeftmeijer/vim-numbertoggle' }
   use { 'lambdalisue/suda.vim' }
