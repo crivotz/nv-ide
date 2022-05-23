@@ -1,0 +1,2 @@
+require('dressing').setup({
+})
