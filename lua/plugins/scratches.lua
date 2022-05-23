@@ -49,29 +49,34 @@ function M.open_scratch_file_floating(opts)
 
 	local bufnr = vim.api.nvim_get_current_buf()
 
-	local closing_keys = { "q", "<ESC>" }
-	local commit_keys = { "nc" }
+	local operation_keys = { "q", "<ESC>", "nc", "np" }
 
-	for _, key in ipairs(closing_keys) do
-		vim.keymap.set({ "n" }, key, function()
-			vim.api.nvim_command(":silent !mkdir -p ~/Notes")
-			vim.api.nvim_command(":w")
-			vim.api.nvim_command(":BufferDelete")
-			vim.api.nvim_win_close(0, true)
-			M._state.last_floating_window = nil
-		end, { buffer = bufnr })
-	end
-	for _, key in ipairs(commit_keys) do
-		vim.keymap.set({ "n" }, key, function()
-			vim.api.nvim_command(":Git pull")
-			vim.api.nvim_command(":w")
-			vim.api.nvim_command(":Gwrite")
-			vim.api.nvim_command(":Git commit -m WIP")
-			vim.api.nvim_command(":Git push")
-			vim.api.nvim_command(":BufferDelete")
-			vim.api.nvim_win_close(0, true)
-			M._state.last_floating_window = nil
-		end, { buffer = bufnr })
+	for _, key in ipairs(operation_keys) do
+    if key == "q" or key == "<ESC>" then
+      vim.keymap.set({ "n" }, key, function()
+        vim.api.nvim_command(":silent !mkdir -p ~/Notes")
+        vim.api.nvim_command(":w")
+        vim.api.nvim_command(":BufferDelete")
+        vim.api.nvim_win_close(0, true)
+        M._state.last_floating_window = nil
+      end, { buffer = bufnr })
+    elseif key == "nc" then
+      vim.keymap.set({ "n" }, key, function()
+        vim.api.nvim_command(":Git pull")
+        vim.api.nvim_command(":w")
+        vim.api.nvim_command(":Gwrite")
+        vim.api.nvim_command(":Git commit -m 'Some notes..'")
+        vim.api.nvim_command(":Git push")
+        vim.api.nvim_command(":BufferDelete")
+        vim.api.nvim_win_close(0, true)
+        M._state.last_floating_window = nil
+      end, { buffer = bufnr })
+    elseif key == "np" then
+      vim.keymap.set({ "n" }, key, function()
+        vim.api.nvim_command(":Git pull")
+      end, { buffer = bufnr })
+    else
+    end
 	end
 end
 vim.api.nvim_create_user_command("ScratchOpenFloat", M.open_scratch_file_floating, {})
