@@ -96,7 +96,7 @@ return require('packer').startup(function(use)
   use { 'rhysd/committia.vim' }
 
   -- Registers & clipboard
-  use { 'tversteeg/registers.nvim' }
+  use { 'tversteeg/registers.nvim', config = lua_path"registers" }
   use { 'AckslD/nvim-neoclip.lua', config = lua_path"nvim-neoclip" }
 
   -- Move & Search & replace
