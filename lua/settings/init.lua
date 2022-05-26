@@ -27,6 +27,7 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.clipboard = 'unnamedplus'
 vim.opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
 vim.opt.laststatus = 3
+vim.opt.timeoutlen = 500
 -- Buffer
 vim.opt.fileformat = 'unix'
 vim.opt.tabstop = 2

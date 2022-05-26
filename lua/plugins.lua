@@ -45,7 +45,7 @@ return require('packer').startup(function(use)
   use { 'quangnguyen30192/cmp-nvim-tags' }
   use { 'rafamadriz/friendly-snippets' }
   use { 'windwp/nvim-autopairs', config = lua_path"nvim-autopairs" }
-  use { 'AndrewRadev/tagalong.vim' }
+  use { 'windwp/nvim-ts-autotag', config = lua_path"nvim-ts-autotag" }
   use { 'andymass/vim-matchup' }
 
   -- Treesitter
@@ -57,13 +57,10 @@ return require('packer').startup(function(use)
   use { 'SmiteshP/nvim-gps', config = lua_path"nvim-gps" }
 
   -- Syntax
-  use { 'moll/vim-node' }
-  use { 'editorconfig/editorconfig-vim', config = lua_path"editorconfig" }
   use { 'chrisbra/csv.vim' }
   use { 'junegunn/vim-easy-align' }
   use { 'mhartington/formatter.nvim', config = lua_path"formatter" }
   use { 'zdharma-continuum/zinit-vim-syntax' }
-  use { 'rust-lang/rust.vim' }
   use { 'numToStr/Comment.nvim', config = lua_path"comment"}
 
   -- Icons
@@ -88,7 +85,6 @@ return require('packer').startup(function(use)
 
   -- Color
   use { 'crivotz/nvim-colorizer.lua', config = lua_path"colorizer" }
-  use { 'lpinilla/vim-codepainter' }
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, config = lua_path"gitsigns" }
@@ -96,7 +92,6 @@ return require('packer').startup(function(use)
   use { 'rhysd/committia.vim' }
 
   -- Registers & clipboard
-  use { 'tversteeg/registers.nvim', config = lua_path"registers" }
   use { 'AckslD/nvim-neoclip.lua', config = lua_path"nvim-neoclip" }
 
   -- Move & Search & replace
@@ -104,7 +99,6 @@ return require('packer').startup(function(use)
   use { 'dyng/ctrlsf.vim', config = lua_path"ctrlsf" }
   use { 'kevinhwang91/nvim-hlslens', config = lua_path"hlslens" }
   use { 'ggandor/lightspeed.nvim', config = lua_path"lightspeed" }
-  use { 'ThePrimeagen/harpoon', config = lua_path"harpoon" }
   use { 'karb94/neoscroll.nvim', config = lua_path"neoscroll" }
   use { 'dstein64/nvim-scrollview' }
   use { 'chaoren/vim-wordmotion' }
@@ -113,7 +107,7 @@ return require('packer').startup(function(use)
   -- Tim Pope docet
   use { 'tpope/vim-rails' }
   use { 'tpope/vim-abolish' }
-  use { 'tpope/vim-surround' }
+  use { 'tpope/vim-sleuth' }
   use { 'tpope/vim-bundler' }
   use { 'tpope/vim-capslock' }
   use { 'tpope/vim-repeat' }
@@ -123,6 +117,11 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-jdaddy' }
   use { 'tpope/vim-fugitive' }
   use { 'github/copilot.vim', config = lua_path"copilot" }
+  
+  -- Folke
+  use { 'folke/trouble.nvim' }
+  use { 'folke/todo-comments.nvim', config = lua_path"todo-comments" }
+  use { 'folke/which-key.nvim', config = lua_path"which-key" }
 
   -- Tmux
   use { 'christoomey/vim-tmux-navigator' }
@@ -140,6 +139,7 @@ return require('packer').startup(function(use)
   use { 'theHamsta/nvim-dap-virtual-text', config = lua_path"nvim-dap-virtual-text" }
 
   -- General Plugins
+  use { 'machakann/vim-sandwich', config = lua_path"sandwich" }
   use { 'rcarriga/nvim-notify', config = lua_path"nvim-notify" }
   use { 'airblade/vim-rooter', config = lua_path"vim-rooter" }
   use { 'goolord/alpha-nvim', config = lua_path"alpha-nvim" }
@@ -147,9 +147,7 @@ return require('packer').startup(function(use)
   use { 'lambdalisue/suda.vim' }
   use { 'numtostr/FTerm.nvim', config = lua_path"fterm" }
   use { 'wfxr/minimap.vim', config = lua_path"minimap" }
-  use { 'folke/todo-comments.nvim', config = lua_path"todo-comments" }
   use { 'luukvbaal/stabilize.nvim', config = lua_path"stabilize" }
   use { 'beauwilliams/focus.nvim', config = lua_path"focus" }
-  use { 'folke/trouble.nvim' }
   use { 'kevinhwang91/nvim-bqf' }
 end)

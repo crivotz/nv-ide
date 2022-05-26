@@ -181,7 +181,7 @@ local buttons = {
     dashboard.button("p", "  Find project", ":Telescope repo list<CR>"),
     dashboard.button("r", "  Find word", ":lua require('telescope.builtin').live_grep()<CR>"),
     dashboard.button("g", "  Find modified file", ":lua require('plugins.telescope').my_git_status()<CR>"),
-    dashboard.button("m", "  Show mark", ":Telescope harpoon marks<CR>"),
+    dashboard.button("m", "  Show mark", ":Telescope marks"),
     dashboard.button("t", "  Show todo", ":TodoTelescope<CR>"),
     dashboard.button("s", "  NV-IDE plugins", ":e ~/.config/nvim/lua/plugins.lua<CR>"),
     dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
