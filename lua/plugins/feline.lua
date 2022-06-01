@@ -325,7 +325,7 @@ winbar_components.active[1][1] = {
   provider = function() return gps.get_location() end,
   enabled = function() return gps.is_available() end,
   hl = {
-    fg = 'white',
+    fg = 'orange',
     style = 'bold'
   }
 }

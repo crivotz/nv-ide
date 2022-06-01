@@ -49,7 +49,7 @@ function M.open_scratch_file_floating(opts)
 
 	local bufnr = vim.api.nvim_get_current_buf()
 
-	local operation_keys = { "q", "<ESC>", "nc", "np" }
+	local operation_keys = { "q", "nc", "np" }
 
 	for _, key in ipairs(operation_keys) do
     if key == "q" or key == "<ESC>" then
