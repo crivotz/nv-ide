@@ -69,7 +69,7 @@ return require('packer').startup(function(use)
 
   -- Status Line and Bufferline
   use { 'famiu/feline.nvim', config = lua_path"feline" }
-  use { 'romgrk/barbar.nvim' }
+  use { 'noib3/nvim-cokeline', config = lua_path"nvim-cokeline" }
 
   -- Telescope
   use { 'nvim-lua/popup.nvim' }
