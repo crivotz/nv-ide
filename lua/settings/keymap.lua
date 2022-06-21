@@ -9,7 +9,9 @@ vim.keymap.set('n', '<F7>', ':NvimTreeToggle<CR>', {noremap = false, silent = tr
 vim.keymap.set('n', '<F8>', ':MinimapToggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = false})
 -- Buffers
-vim.keymap.set('n', '<leader>bda', ':BufferCloseAllButCurrent<CR>', {noremap = false, silent = false})
+vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = false})
+vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent = false})
+vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = false})
 vim.keymap.set('n', '<leader>bn', '<Plug>(cokeline-focus-next)', {noremap = false, silent = false})
 vim.keymap.set('n', '<leader>bp', '<Plug>(cokeline-focus-prev)', {noremap = false, silent = false})
 -- Git

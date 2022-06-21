@@ -23,6 +23,8 @@ local components = {
     text = function(buffer)
       return buffer.index ~= 1 and ' ' or ''
     end,
+    fg = '#282828',
+    bg = '#282828',
     truncation = { priority = 1 }
   },
 
@@ -88,8 +90,8 @@ local components = {
   diagnostics = {
     text = function(buffer)
       return
-        (buffer.diagnostics.errors ~= 0 and '  ' .. buffer.diagnostics.errors)
-        or (buffer.diagnostics.warnings ~= 0 and '  ' .. buffer.diagnostics.warnings)
+        (buffer.diagnostics.errors ~= 0 and '  ' .. buffer.diagnostics.errors)
+        or (buffer.diagnostics.warnings ~= 0 and '  ' .. buffer.diagnostics.warnings)
         or ''
         or ''
     end,
@@ -115,7 +117,7 @@ local components = {
 }
 
 require('cokeline').setup({
-  show_if_buffers_are_at_least = 1,
+  show_if_buffers_are_at_least = 2,
 
   buffers = {
     -- filter_valid = function(buffer) return buffer.type ~= 'terminal' end,
@@ -127,42 +129,33 @@ require('cokeline').setup({
     max_buffer_width = 30,
   },
 
-  -- default_hl = {
-  --   fg = function(buffer)
-  --     return
-  --       buffer.is_focused
-  --       and get_hex('Normal', 'fg')
-  --        or get_hex('Comment', 'fg')
-  --   end,
-  --   bg = get_hex('ColorColumn', 'bg'),
-  -- },
   default_hl = {
     fg = function(buffer)
       return
         buffer.is_focused
-        and get_hex('Normal', 'bg')
-         or get_hex('Comment', 'fg')
+        and '#282828'
+         or '#a89984'
     end,
     bg = function(buffer)
       return
         buffer.is_focused
-        and get_hex('Comment', 'fg')
-         or get_hex('Normal', 'bg')
-    end,
-  },
+        and '#89b482'
+        or '#4e4e4e'
+      end,
+    },
 
-  components = {
-    components.space,
-    components.separator,
-    components.space,
-    components.devicon,
-    -- components.space,
-    -- components.index,
-    -- components.unique_prefix,
-    components.filename,
-    components.diagnostics,
-    components.two_spaces,
-    components.close_or_unsaved,
-    components.space,
-  },
+    components = {
+      components.separator,
+      components.space,
+      -- components.space,
+      components.devicon,
+      -- components.space,
+      -- components.index,
+      components.unique_prefix,
+      components.filename,
+      components.diagnostics,
+      components.two_spaces,
+      components.close_or_unsaved,
+      components.space,
+    },
 })
