@@ -47,6 +47,7 @@ nvim
 * [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim  
 * Needed DAP, show `lua/plugins/nvim-dap.lua`
 * Needed LSP, show `lua/lsp/init.lua`
+* Terminal that supports ligatures for proper representation
 
 **SUGGESTION**
 
