@@ -44,9 +44,9 @@ nvim
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
 * [Ripper-tags](https://github.com/tmm1/ripper-tags)
 * [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
-* [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim  
-* Needed DAP, show `lua/plugins/nvim-dap.lua`
-* Needed LSP, show `lua/lsp/init.lua`
+* [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim install via Mason `MasonInstall prettierd`
+* Needed DAP, show `lua/plugins/nvim-dap.lua` install via Mason for `node` with `MasonInstall node-debug2-adapter`
+* Needed LSP, show `lua/lsp/init.lua` installed automatically with Mason
 * Terminal that supports ligatures for proper representation
 
 **SUGGESTION**
@@ -57,6 +57,8 @@ nvim
 **PLUGINS**  
 
 * [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim): A use-package inspired plugin manager for Neovim. Uses native packages, supports Luarocks dependencies, written in Lua, allows for expressive config  
+* [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim): Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.  
+* [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim): Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim  
 * [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig): Quickstart configs for Nvim LSP  
 * [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim): vscode-like pictograms for neovim lsp completion items  
 * [weilbith/nvim-code-action-menu](https://github.com/weilbith/nvim-code-action-menu): Pop-up menu for code actions to show meta-information and diff preview  

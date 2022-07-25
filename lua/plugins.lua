@@ -27,6 +27,9 @@ return require('packer').startup(function(use)
   use { 'wbthomason/packer.nvim' }
 
   -- LSP
+  use { 'williamboman/mason.nvim', config = lua_path"mason" }
+  use { 'williamboman/mason-lspconfig.nvim', config = lua_path"mason-lspconfig" }
+  use { "williamboman/mason-lspconfig.nvim" }
   use { 'neovim/nvim-lspconfig' }
   use { 'onsails/lspkind-nvim' }
   use { 'weilbith/nvim-code-action-menu', cmd = 'CodeActionMenu' }
