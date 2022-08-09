@@ -23,8 +23,12 @@ local components = {
     text = function(buffer)
       return buffer.index ~= 1 and ' ' or ''
     end,
+    -- Gruvbox
     fg = '#282828',
     bg = '#282828',
+    -- Catppuccin
+    -- fg = '#1e1e2e',
+    -- bg = '#1e1e2e',
     truncation = { priority = 1 }
   },
 
@@ -129,6 +133,7 @@ require('cokeline').setup({
     max_buffer_width = 30,
   },
 
+  -- Gruvbox
   default_hl = {
     fg = function(buffer)
       return
@@ -143,6 +148,22 @@ require('cokeline').setup({
         or '#4e4e4e'
       end,
     },
+  
+  -- Catpuccin
+  -- default_hl = {
+  --   fg = function(buffer)
+  --     return
+  --       buffer.is_focused
+  --       and '#1e1e2e'
+  --        or '#f5e0dc'
+  --   end,
+  --   bg = function(buffer)
+  --     return
+  --       buffer.is_focused
+  --       and '#a6e3a1'
+  --       or '#181825'
+  --     end,
+  --   },
 
     components = {
       components.separator,

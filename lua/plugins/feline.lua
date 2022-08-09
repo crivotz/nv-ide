@@ -18,7 +18,7 @@ local components = {
   inactive = {{}, {}, {}},
 }
 
-local colors = {
+local gruvbox = {
   bg = '#282828',
   black = '#282828',
   yellow = '#d8a657',
@@ -32,6 +32,22 @@ local colors = {
   fg = '#a89984',
   skyblue = '#7daea3',
   red = '#ea6962',
+}
+
+local catppuccin = {
+  bg = '#1e1e2e',
+  black = '#1e1e2e',
+  yellow = '#f9e2af',
+  cyan = '#94e2d5',
+  oceanblue = '#89b4fa',
+  green = '#a6e3a1',
+  orange = '#fab387',
+  violet = '#cba6f7',
+  magenta = '#eba0ac',
+  white = '#f5e0dc',
+  fg = '#f5e0dc',
+  skyblue = '#74c7ec',
+  red = '#f38ba8',
 }
 
 local vi_mode_colors = {
@@ -410,7 +426,7 @@ winbar_components.inactive[1][1] = {
 }
 
 require('feline').setup({
-  theme = colors,
+  theme = gruvbox,
   default_bg = bg,
   default_fg = fg,
   vi_mode_colors = vi_mode_colors,

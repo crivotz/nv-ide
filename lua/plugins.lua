@@ -130,6 +130,7 @@ return require('packer').startup(function(use)
 
   -- Colorschema
   use { 'sainnhe/gruvbox-material' }
+  use { 'catppuccin/nvim', as = "catppuccin" }
   use { 'stevearc/dressing.nvim', config = lua_path"dressing" }
 
   -- Tags
