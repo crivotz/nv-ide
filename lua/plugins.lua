@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   use { 'andymass/vim-matchup' }
 
   -- Treesitter
+  use { 'David-Kunz/markid' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = lua_path"treesitter" }
   use { 'p00f/nvim-ts-rainbow', config = lua_path"nvim-ts-rainbow" }
   use { 'lukas-reineke/indent-blankline.nvim', config = lua_path"indent-blankline" }
