@@ -88,7 +88,7 @@ return require('packer').startup(function(use)
   use { 'kyazdani42/nvim-tree.lua', config = lua_path"nvimtree" }
 
   -- Color
-  use { 'crivotz/nvim-colorizer.lua', config = lua_path"colorizer" }
+  use { 'nvchad/nvim-colorizer.lua', config = lua_path"colorizer" }
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, config = lua_path"gitsigns" }

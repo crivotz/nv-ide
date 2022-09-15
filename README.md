@@ -102,7 +102,7 @@ nvim
 * [nvim-telescope/telescope-dap.nvim](https://github.com/nvim-telescope/telescope-dap.nvim): Integration for nvim-dap with telescope.nvim  
 * [pwntester/octo.nvim](https://github.com/pwntester/octo.nvim): Edit and review GitHub issues and pull requests from the comfort of your favorite editor  
 * [kyazdani42/nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua): A file explorer tree for neovim written in lua  
-* [crivotz/nvim-colorizer.lua](https://github.com/crivotz/nvim-colorizer.lua): The fastest Neovim colorizer.  
+* [nvchad/nvim-colorizer.lua](https://github.com/nvchad/nvim-colorizer.lua): The fastest Neovim colorizer.  
 * [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): Git integration for buffers  
 * [kdheepak/lazygit.nvim](https://github.com/kdheepak/lazygit.nvim): Plugin for calling lazygit from within neovim.  
 * [rhysd/committia.vim](https://github.com/rhysd/committia.vim): A Vim plugin for more pleasant editing on commit messages  
