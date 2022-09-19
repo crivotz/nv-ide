@@ -26,6 +26,7 @@ vim.keymap.set('n', '<C-F>t', ':CtrlSFToggle<CR>', {noremap = true, silent = fal
 vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
 vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
 -- Lightspeed
+vim.keymap.set('n', 's', '<Plug>Lightspeed_omni_s', {noremap = false, silent = false})
 vim.keymap.set('n', 'f', '<Plug>Lightspeed_f', {noremap = false, silent = false})
 vim.keymap.set('n', 'F', '<Plug>Lightspeed_F', {noremap = false, silent = false})
 vim.keymap.set('n', 't', '<Plug>Lightspeed_t', {noremap = false, silent = false})

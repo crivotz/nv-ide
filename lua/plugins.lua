@@ -51,6 +51,7 @@ return require('packer').startup(function(use)
   use { 'andymass/vim-matchup' }
 
   -- Treesitter
+  use { 'David-Kunz/markid' }
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate', config = lua_path"treesitter" }
   use { 'p00f/nvim-ts-rainbow', config = lua_path"nvim-ts-rainbow" }
   use { 'lukas-reineke/indent-blankline.nvim', config = lua_path"indent-blankline" }
@@ -87,7 +88,7 @@ return require('packer').startup(function(use)
   use { 'kyazdani42/nvim-tree.lua', config = lua_path"nvimtree" }
 
   -- Color
-  use { 'crivotz/nvim-colorizer.lua', config = lua_path"colorizer" }
+  use { 'nvchad/nvim-colorizer.lua', config = lua_path"colorizer" }
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, config = lua_path"gitsigns" }
