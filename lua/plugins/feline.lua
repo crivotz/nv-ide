@@ -50,6 +50,38 @@ local catppuccin = {
   red = '#f38ba8',
 }
 
+local onedarkpro = {
+  bg = "#282c34",
+  black = "#282c34",
+  yellow = "#e5c07b",
+  cyan = "#56b6c2",
+  oceanblue = "#61afef",
+  green = "#98c379",
+  orange = "#d19a66",
+  violet = "#c678dd",
+  magenta = "#c678dd",
+  white = "#abb2bf",
+  fg = "#abb2bf",
+  skyblue = "#61afef",
+  red = "#e06c75",
+}
+
+local tokyonightstorm = {
+  bg = "#24283b",
+  black = "#24283b",
+  yellow = "#e0af68",
+  cyan = "#7dcfff",
+  oceanblue = "#7aa2f7",
+  green = "#9ece6a",
+  orange = "#e0af68",
+  violet = "#bb9af7",
+  magenta = "#bb9af7",
+  white = "#c0caf5",
+  fg = "#c0caf5",
+  skyblue = "#7dcfff",
+  red = "#f7768e",
+}
+
 local vi_mode_colors = {
   NORMAL = 'green',
   OP = 'green',
@@ -426,7 +458,7 @@ winbar_components.inactive[1][1] = {
 }
 
 require('feline').setup({
-  theme = gruvbox,
+  theme = tokyonightstorm,
   default_bg = bg,
   default_fg = fg,
   vi_mode_colors = vi_mode_colors,
