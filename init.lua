@@ -4,7 +4,7 @@ require('settings')
 require('settings.utils')
 require('settings.color')
 -- Select theme.lua fix feline and nvim-cokeline
-require('settings.tokyonight')
+require('settings.gruvbox')
 --
 require('settings.font')
 require('settings.completion')

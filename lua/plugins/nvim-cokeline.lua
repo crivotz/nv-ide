@@ -140,20 +140,20 @@ require('cokeline').setup({
   },
 
   -- Gruvbox
-  --[[ default_hl = { ]]
-  --[[   fg = function(buffer) ]]
-  --[[     return ]]
-  --[[       buffer.is_focused ]]
-  --[[       and '#282828' ]]
-  --[[        or '#a89984' ]]
-  --[[   end, ]]
-  --[[   bg = function(buffer) ]]
-  --[[     return ]]
-  --[[       buffer.is_focused ]]
-  --[[       and '#89b482' ]]
-  --[[       or '#4e4e4e' ]]
-  --[[     end, ]]
-  --[[   }, ]]
+  default_hl = {
+    fg = function(buffer)
+      return
+        buffer.is_focused
+        and '#282828'
+         or '#a89984'
+    end,
+    bg = function(buffer)
+      return
+        buffer.is_focused
+        and '#89b482'
+        or '#4e4e4e'
+      end,
+    },
   
  -- Catpuccin
   --[[ default_hl = { ]]
@@ -188,20 +188,20 @@ require('cokeline').setup({
   --[[    }, ]]
 
   -- Tokyonight-storm
-  default_hl = {
-     fg = function(buffer)
-       return
-         buffer.is_focused
-         and '#24283b'
-          or '#c0caf5'
-     end,
-     bg = function(buffer)
-       return
-         buffer.is_focused
-         and '#9ece6a'
-         or '#414868'
-       end,
-     },
+  --[[ default_hl = { ]]
+  --[[    fg = function(buffer) ]]
+  --[[      return ]]
+  --[[        buffer.is_focused ]]
+  --[[        and '#24283b' ]]
+  --[[         or '#c0caf5' ]]
+  --[[    end, ]]
+  --[[    bg = function(buffer) ]]
+  --[[      return ]]
+  --[[        buffer.is_focused ]]
+  --[[        and '#9ece6a' ]]
+  --[[        or '#414868' ]]
+  --[[      end, ]]
+  --[[    }, ]]
     components = {
       components.separator,
       components.space,

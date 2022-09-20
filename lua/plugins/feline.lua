@@ -458,7 +458,7 @@ winbar_components.inactive[1][1] = {
 }
 
 require('feline').setup({
-  theme = tokyonightstorm,
+  theme = gruvbox,
   default_bg = bg,
   default_fg = fg,
   vi_mode_colors = vi_mode_colors,
