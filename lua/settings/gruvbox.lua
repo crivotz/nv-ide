@@ -25,3 +25,6 @@ vim.cmd([[
 hi FloatBorder guifg=#f2594b guibg=#282828
 hi NormalFloat guibg=#282828
 ]])
+vim.cmd([[
+highlight NvimTreeNormal guibg=#141414
+]])
