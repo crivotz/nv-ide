@@ -156,4 +156,6 @@ return require('packer').startup(function(use)
   use { 'luukvbaal/stabilize.nvim', config = lua_path"stabilize" }
   use { 'beauwilliams/focus.nvim', config = lua_path"focus" }
   use { 'kevinhwang91/nvim-bqf' }
+  -- use { 'dstein64/vim-startuptime' }
+  use { 'lewis6991/impatient.nvim' }
 end)
