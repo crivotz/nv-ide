@@ -1,5 +1,7 @@
+-- Impatient
+local impatient_ok, impatient = pcall(require, "impatient")
+if impatient_ok then impatient.enable_profile() end
 -- Packer
-require('impatient')
 require('plugins')
 require('settings')
 require('settings.utils')
