@@ -135,6 +135,7 @@ return require('packer').startup(function(use)
   -- use { 'olimorris/onedarkpro.nvim' }
   -- use { 'folke/tokyonight.nvim' }
   use { 'stevearc/dressing.nvim', config = lua_path"dressing" }
+  use { 'MunifTanjim/nui.nvim' }
 
   -- Tags
   use { 'ludovicchabant/vim-gutentags', config = lua_path"vim-gutentags" }
@@ -147,6 +148,7 @@ return require('packer').startup(function(use)
   -- General Plugins
   use { 'machakann/vim-sandwich', config = lua_path"sandwich" }
   use { 'rcarriga/nvim-notify', config = lua_path"nvim-notify" }
+  use { 'folke/noice.nvim', config = lua_path"noice" }
   use { 'airblade/vim-rooter', config = lua_path"vim-rooter" }
   use { 'goolord/alpha-nvim', config = lua_path"alpha-nvim" }
   use { 'jeffkreeftmeijer/vim-numbertoggle' }
