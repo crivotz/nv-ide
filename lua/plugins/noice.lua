@@ -3,15 +3,19 @@ require("noice").setup({
     view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
     opts = { buf_options = { filetype = "vim" } }, -- enable syntax highlighting in the cmdline
     icons = {
-      ["/"] = { icon = " ", hl_group = "DiagnosticWarn",firstc = false },
-      ["?"] = { icon = " ", hl_group = "DiagnosticWarn", firstc = false },
-      [":"] = { icon = "|> ", hl_group = "DiagnosticInfo", firstc = false },
+      ["/"] = { icon = " ", hl_group = "red",firstc = false },
+      ["?"] = { icon = " ", hl_group = "red", firstc = false },
+      [":"] = { icon = "|> ", hl_group = "red", firstc = false },
     },
   },
   views = {
     cmdline_popup = {
+    size = {
+      height = "auto",
+      width = "90%",
+    },
       position = {
-        row = "80%",
+        row = "95%",
         col = "50%",
       },
       border = {
@@ -21,7 +25,7 @@ require("noice").setup({
         }
       },
       win_options = {
-        winhighlight = "Normal:IndentBlanklineContextChar,FloatBorder:float",
+        winhighlight = "Normal:Normal,FloatBorder:red",
       },
     },
   },
