@@ -121,11 +121,6 @@ return require('packer').startup(function(use)
   use { 'tpope/vim-jdaddy' }
   use { 'tpope/vim-fugitive' }
   
-  -- Folke
-  use { 'folke/trouble.nvim' }
-  use { 'folke/todo-comments.nvim', config = lua_path"todo-comments" }
-  use { 'folke/which-key.nvim', config = lua_path"which-key" }
-
   -- Tmux
   use { 'christoomey/vim-tmux-navigator' }
 
@@ -134,7 +129,7 @@ return require('packer').startup(function(use)
   -- use { 'catppuccin/nvim', as = "catppuccin" }
   -- use { 'olimorris/onedarkpro.nvim' }
   -- use { 'folke/tokyonight.nvim' }
-  use { 'stevearc/dressing.nvim', config = lua_path"dressing" }
+  -- use { 'stevearc/dressing.nvim', config = lua_path"dressing" }
   use { 'MunifTanjim/nui.nvim' }
 
   -- Tags
@@ -149,6 +144,9 @@ return require('packer').startup(function(use)
   use { 'machakann/vim-sandwich', config = lua_path"sandwich" }
   use { 'rcarriga/nvim-notify', config = lua_path"nvim-notify" }
   use { 'folke/noice.nvim', config = lua_path"noice" }
+  use { 'folke/trouble.nvim' }
+  use { 'folke/todo-comments.nvim', config = lua_path"todo-comments" }
+  use { 'folke/which-key.nvim', config = lua_path"which-key" }
   use { 'airblade/vim-rooter', config = lua_path"vim-rooter" }
   use { 'goolord/alpha-nvim', config = lua_path"alpha-nvim" }
   use { 'jeffkreeftmeijer/vim-numbertoggle' }
