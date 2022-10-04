@@ -33,26 +33,36 @@ require("tokyonight").setup({
   on_highlights = function(highlights, colors) end,
 })
 
+grpid = vim.api.nvim_create_augroup('custom_highlights_tokyonight', {})
+vim.api.nvim_create_autocmd('ColorScheme', {
+  group = grpid,
+  pattern = 'tokyonight',
+  command =
+  'hi NvimTreeNormal              guibg=#1a1b26 |' ..
+  'hi NvimTreeEndOfBuffer         guibg=#1a1b26 |' ..
+  'hi TelescopePromptBorder       guifg=#f7768e guibg=#24283b |' ..
+  'hi TelescopePromptNormal       guifg=#f7768e guibg=#24283b |' ..
+  'hi TelescopePromptTitle        guifg=#f7768e guibg=#24283b |' ..
+  'hi TelescopePromptPrefix       guifg=#f7768e guibg=#24283b |' ..
+  'hi TelescopePromptCounter      guifg=#f7768e guibg=#24283b |' ..
+  'hi TelescopePreviewTitle       guifg=#9ece6a guibg=#24283b |' ..
+  'hi TelescopePreviewBorder      guifg=#9ece6a guibg=#24283b |' ..
+  'hi TelescopeResultsTitle       guifg=#9ece6a guibg=#24283b |' ..
+  'hi TelescopeResultsBorder      guifg=#9ece6a guibg=#24283b |' ..
+  'hi TelescopeMatching           guifg=#e0af68 guibg=#24283b |' ..
+  'hi TelescopeSelection          guifg=#c0caf5 guibg=#1a1b26 |' ..
+  'hi FloatBorder                 guifg=#f7768e guibg=#24283b |' ..
+  'hi NormalFloat                 guibg=#282828 |' ..
+  'hi IndentBlanklineContextChar  guifg=#d3869b |' ..
+  'hi markid1                     guifg=#ff8f88 |' ..
+  'hi markid2                     guifg=#ffb074 |' ..
+  'hi markid3                     guifg=#cfdc8b |' ..
+  'hi markid4                     guifg=#a3d4c9 |' ..
+  'hi markid5                     guifg=#f9acc1 |' ..
+  'hi markid6                     guifg=#afdaa8 |' ..
+  'hi markid7                     guifg=#fecc7d |' ..
+  'hi markid8                     guifg=#eed8b2 |' ..
+  'hi markid9                     guifg=#ffedc7 |' ..
+  'hi markid10                    guifg=#cebfaa |'
+})
 vim.cmd [[colorscheme tokyonight]]
--- Telescope
-vim.cmd([[
-hi TelescopePromptBorder guifg=#f7768e guibg=#24283b
-hi TelescopePromptNormal  guifg=#f7768e guibg=#24283b
-hi TelescopePromptTitle  guifg=#f7768e guibg=#24283b
-hi TelescopePromptPrefix  guifg=#f7768e guibg=#24283b
-hi TelescopePromptCounter  guifg=#f7768e guibg=#24283b
-
-hi TelescopePreviewTitle  guifg=#9ece6a guibg=#24283b
-hi TelescopePreviewBorder guifg=#9ece6a guibg=#24283b
-
-hi TelescopeResultsTitle  guifg=#9ece6a guibg=#24283b
-hi TelescopeResultsBorder guifg=#9ece6a guibg=#24283b
-
-hi TelescopeMatching guifg=#e0af68 guibg=#24283b
-hi TelescopeSelection guifg=#c0caf5 guibg=#1a1b26
-]])
--- Term
-vim.cmd([[
-hi FloatBorder guifg=#f7768e guibg=#24283b
-hi NormalFloat guibg=#24283b
-]])

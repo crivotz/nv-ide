@@ -24,8 +24,8 @@ local components = {
       return buffer.index ~= 1 and ' ' or ''
     end,
     -- Gruvbox
-    -- fg = '#282828',
-    -- bg = '#282828',
+    fg = '#282828',
+    bg = '#282828',
     -- Catppuccin
     -- fg = '#1e1e2e',
     -- bg = '#1e1e2e',
@@ -33,8 +33,8 @@ local components = {
     -- fg = '#282c34',
     -- bg = '#282c34',
     -- Tokyonight
-    fg = '#24283b',
-    bg = '#24283b',
+    -- fg = '#24283b',
+    -- bg = '#24283b',
     truncation = { priority = 1 }
   },
 
