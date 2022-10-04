@@ -15,7 +15,7 @@ require("noice").setup({
       width = "90%",
     },
       position = {
-        row = "95%",
+        row = "90%",
         col = "50%",
       },
       border = {
