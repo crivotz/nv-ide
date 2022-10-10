@@ -153,7 +153,6 @@ return require('packer').startup(function(use)
   use { 'lambdalisue/suda.vim' }
   use { 'numtostr/FTerm.nvim', config = lua_path"fterm" }
   use { 'wfxr/minimap.vim', config = lua_path"minimap" }
-  use { 'luukvbaal/stabilize.nvim', config = lua_path"stabilize" }
   use { 'beauwilliams/focus.nvim', config = lua_path"focus" }
   use { 'kevinhwang91/nvim-bqf' }
   -- use { 'dstein64/vim-startuptime' }

@@ -149,7 +149,6 @@ nvim
 * [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
 * [numtostr/FTerm.nvim](https://github.com/numtostr/FTerm.nvim): 🔥 No-nonsense floating terminal plugin for neovim 🔥  
 * [wfxr/minimap.vim](https://github.com/wfxr/minimap.vim): 📡 Blazing fast minimap / scrollbar for vim, powered by code-minimap written in Rust.  
-* [luukvbaal/stabilize.nvim](https://github.com/luukvbaal/stabilize.nvim): Neovim plugin to stabilize window open/close events.  
 * [beauwilliams/focus.nvim](https://github.com/beauwilliams/focus.nvim): Auto-Focusing and Auto-Resizing Splits/Windows for Neovim written in Lua. A full suite of window management enhancements. Vim splits on steroids!  
 * [kevinhwang91/nvim-bqf](https://github.com/kevinhwang91/nvim-bqf): Better quickfix window in Neovim, polish old quickfix window.  
 * [dstein64/vim-startuptime](https://github.com/dstein64/vim-startuptime): ⏲️ A Vim plugin for profiling Vim's startup time.  
