@@ -21,7 +21,6 @@ vim.opt.smartcase = true
 vim.opt.errorbells = false
 vim.opt.joinspaces = false
 vim.opt.title = true
-vim.opt.lazyredraw = true
 vim.opt.encoding = 'UTF-8'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.clipboard = 'unnamedplus'
