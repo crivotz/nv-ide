@@ -129,7 +129,6 @@ return require('packer').startup(function(use)
   -- use { 'catppuccin/nvim', as = "catppuccin" }
   -- use { 'olimorris/onedarkpro.nvim' }
   -- use { 'folke/tokyonight.nvim' }
-  -- use { 'stevearc/dressing.nvim', config = lua_path"dressing" }
   use { 'MunifTanjim/nui.nvim' }
 
   -- Tags

@@ -11,14 +11,20 @@ end
 vim.cmd('setlocal omnifunc=v:lua.vim.lsp.omnifunc')
 
 require'lspconfig'.html.setup {
-  filetypes = {"html", "eruby"},
+  filetypes = {"html"},
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.tsserver.setup{
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
 }
 require'lspconfig'.solargraph.setup{
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  filetypes = {"ruby", "eruby"},
+  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
+  settings = {
+    solargraph = {
+      diagnostics = true
+    }
+  }
 }
 require'lspconfig'.cssls.setup{
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
