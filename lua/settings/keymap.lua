@@ -1,7 +1,7 @@
 -- <F1> help
 -- <F2> vim-codepainter
 -- <F3> vim-codepainter navigate
-vim.keymap.set('n', '<F4>', ':set number! relativenumber!<CR>', {noremap = true, silent = false})
+vim.keymap.set('n', '<F4>', ':set relativenumber!<CR>', {noremap = true, silent = false})
 vim.keymap.set('n', '<F5>', ':set list! list?<CR>', {noremap = false, silent = false})
 vim.keymap.set('n', '<F6>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.keymap.set('t', '<F6>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
