@@ -23,6 +23,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   'hi TelescopeMatching                  guifg=#d8a657 guibg=#282828 |' ..
   'hi TelescopeSelection                 guifg=#ffffff guibg=#32302f |' ..
   'hi FloatBorder                        guifg=#ea6962 guibg=#282828 |' ..
+  'hi BqfPreviewBorder                   guifg=#ea6962 guibg=#282828 |' ..
   'hi NormalFloat                        guibg=#282828 |' ..
   'hi IndentBlanklineContextChar         guifg=#d3869b |' ..
   'hi markid1                            guifg=#ff8f88 |' ..

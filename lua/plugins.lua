@@ -67,8 +67,8 @@ return require('packer').startup(function(use)
   use { 'numToStr/Comment.nvim', config = lua_path"comment"}
 
   -- Icons
-  use { 'kyazdani42/nvim-web-devicons' }
-  use { 'ryanoasis/vim-devicons' }
+  use { 'nvim-tree/nvim-web-devicons' }
+  -- use { 'ryanoasis/vim-devicons' }
 
   -- Status Line and Bufferline
   use { 'famiu/feline.nvim', config = lua_path"feline" }
@@ -104,7 +104,7 @@ return require('packer').startup(function(use)
   use { 'kevinhwang91/nvim-hlslens', config = lua_path"hlslens" }
   use { 'ggandor/lightspeed.nvim', config = lua_path"lightspeed" }
   use { 'karb94/neoscroll.nvim', config = lua_path"neoscroll" }
-  use { 'dstein64/nvim-scrollview' }
+  use { 'dstein64/nvim-scrollview', config = lua_path"nvim-scrollview" }
   use { 'chaoren/vim-wordmotion' }
   use { 'fedepujol/move.nvim' }
 
@@ -153,7 +153,7 @@ return require('packer').startup(function(use)
   use { 'numtostr/FTerm.nvim', config = lua_path"fterm" }
   use { 'wfxr/minimap.vim', config = lua_path"minimap" }
   use { 'beauwilliams/focus.nvim', config = lua_path"focus" }
-  use { 'kevinhwang91/nvim-bqf' }
+  use { 'kevinhwang91/nvim-bqf', config = lua_path"nvim-bqf" }
   -- use { 'dstein64/vim-startuptime' }
   use { 'lewis6991/impatient.nvim' }
 end)
