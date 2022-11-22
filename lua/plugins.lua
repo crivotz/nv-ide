@@ -100,12 +100,11 @@ return require('packer').startup(function(use)
 
   -- Move & Search & replace
   use { 'nacro90/numb.nvim', config = lua_path"numb" }
-  use { 'dyng/ctrlsf.vim', config = lua_path"ctrlsf" }
   use { 'kevinhwang91/nvim-hlslens', config = lua_path"hlslens" }
   use { 'ggandor/lightspeed.nvim', config = lua_path"lightspeed" }
   use { 'karb94/neoscroll.nvim', config = lua_path"neoscroll" }
-  use { 'dstein64/nvim-scrollview', config = lua_path"nvim-scrollview" }
   use { 'chaoren/vim-wordmotion' }
+  use { 'windwp/nvim-spectre' }
   use { 'fedepujol/move.nvim' }
 
   -- Tim Pope docet
