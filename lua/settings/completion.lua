@@ -13,7 +13,31 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 local cmp = require'cmp'
 local lspkind = require'lspkind'
 
+local function border(hl_name)
+  --[[ { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" }, ]]
+  --[[ {"─", "│", "─", "│", "┌", "┐", "┘", "└"}, ]]
+  return {
+    { "╭", hl_name },
+    { "─", hl_name },
+    { "╮", hl_name },
+    { "│", hl_name },
+    { "╯", hl_name },
+    { "─", hl_name },
+    { "╰", hl_name },
+    { "│", hl_name },
+  }
+end
+
 cmp.setup({
+  window = {
+    completion = {
+      border = border "FloatBorder",
+      winhighlight = "Normal:NormalFloat,CursorLine:PmenuSel,Search:None",
+    },
+    documentation = {
+      border = border "FloatBorder",
+    },
+  },
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` user.
