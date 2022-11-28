@@ -14,7 +14,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
   command = "source <afile> | PackerCompile",
 })
 
-require('packer').init({display = {auto_clean = false}})
+require('packer').init({display = {auto_clean = false}, max_jobs = 10})
 
 return require('packer').startup(function(use)
 
