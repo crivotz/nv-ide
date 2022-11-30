@@ -66,6 +66,22 @@ local onedarkpro = {
   red = "#e06c75",
 }
 
+local tokyonight = {
+  bg = "#1a1b26",
+  black = "#1a1b26",
+  yellow = "#e0af68",
+  cyan = "#7dcfff",
+  oceanblue = "#7aa2f7",
+  green = "#9ece6a",
+  orange = "#e0af68",
+  violet = "#bb9af7",
+  magenta = "#bb9af7",
+  white = "#c0caf5",
+  fg = "#c0caf5",
+  skyblue = "#7dcfff",
+  red = "#f7768e",
+}
+
 local tokyonightstorm = {
   bg = "#24283b",
   black = "#24283b",

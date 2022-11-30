@@ -1,7 +1,7 @@
 require("tokyonight").setup({
   -- your configuration comes here
   -- or leave it empty to use the default settings
-  style = "storm", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
+  style = "night", -- The theme comes in three styles, `storm`, `moon`, a darker variant `night` and `day`
   transparent = false, -- Enable this to disable setting the background color
   terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
   styles = {
@@ -15,7 +15,7 @@ require("tokyonight").setup({
     sidebars = "dark", -- style for sidebars, see below
     floats = "dark", -- style for floating windows
   },
-  sidebars = { "qf", "help" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
+  sidebars = { "qf", "help", "nvimtree" }, -- Set a darker background on sidebar-like windows. For example: `["qf", "vista_kind", "terminal", "packer"]`
   day_brightness = 0.3, -- Adjusts the brightness of the colors of the **Day** style. Number between 0 and 1, from dull to vibrant colors
   hide_inactive_statusline = false, -- Enabling this option, will hide inactive statuslines and replace them with a thin border instead. Should work with the standard **StatusLine** and **LuaLine**.
   dim_inactive = false, -- dims inactive windows
@@ -38,31 +38,32 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   group = grpid,
   pattern = 'tokyonight',
   command =
-  'hi NvimTreeNormal              guibg=#1a1b26 |' ..
-  'hi NvimTreeEndOfBuffer         guibg=#1a1b26 |' ..
-  'hi TelescopePromptBorder       guifg=#f7768e guibg=#24283b |' ..
-  'hi TelescopePromptNormal       guifg=#f7768e guibg=#24283b |' ..
-  'hi TelescopePromptTitle        guifg=#f7768e guibg=#24283b |' ..
-  'hi TelescopePromptPrefix       guifg=#f7768e guibg=#24283b |' ..
-  'hi TelescopePromptCounter      guifg=#f7768e guibg=#24283b |' ..
-  'hi TelescopePreviewTitle       guifg=#9ece6a guibg=#24283b |' ..
-  'hi TelescopePreviewBorder      guifg=#9ece6a guibg=#24283b |' ..
-  'hi TelescopeResultsTitle       guifg=#9ece6a guibg=#24283b |' ..
-  'hi TelescopeResultsBorder      guifg=#9ece6a guibg=#24283b |' ..
-  'hi TelescopeMatching           guifg=#e0af68 guibg=#24283b |' ..
-  'hi TelescopeSelection          guifg=#c0caf5 guibg=#1a1b26 |' ..
-  'hi FloatBorder                 guifg=#f7768e guibg=#24283b |' ..
-  'hi NormalFloat                 guibg=#282828 |' ..
-  'hi IndentBlanklineContextChar  guifg=#d3869b |' ..
-  'hi markid1                     guifg=#ff8f88 |' ..
-  'hi markid2                     guifg=#ffb074 |' ..
-  'hi markid3                     guifg=#cfdc8b |' ..
-  'hi markid4                     guifg=#a3d4c9 |' ..
-  'hi markid5                     guifg=#f9acc1 |' ..
-  'hi markid6                     guifg=#afdaa8 |' ..
-  'hi markid7                     guifg=#fecc7d |' ..
-  'hi markid8                     guifg=#eed8b2 |' ..
-  'hi markid9                     guifg=#ffedc7 |' ..
-  'hi markid10                    guifg=#cebfaa |'
+  'hi NvimTreeNormal                     guibg=#16161e |' ..
+  'hi NvimTreeEndOfBuffer                guibg=#16161e |' ..
+  'hi NoiceCmdlinePopupBorderCmdline     guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi TelescopePromptBorder              guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi TelescopePromptNormal              guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi TelescopePromptTitle               guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi TelescopePromptPrefix              guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi TelescopePromptCounter             guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi TelescopePreviewTitle              guifg=#9ece6a guibg=#1a1b26 |' ..
+  'hi TelescopePreviewBorder             guifg=#9ece6a guibg=#1a1b26 |' ..
+  'hi TelescopeResultsTitle              guifg=#9ece6a guibg=#1a1b26 |' ..
+  'hi TelescopeResultsBorder             guifg=#9ece6a guibg=#1a1b26 |' ..
+  'hi TelescopeMatching                  guifg=#e0af68 guibg=#1a1b26 |' ..
+  'hi TelescopeSelection                 guifg=#c0caf5 guibg=#1a1b26 |' ..
+  'hi FloatBorder                        guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi BqfPreviewBorder                   guifg=#f7768e guibg=#1a1b26 |' ..
+  'hi NormalFloat                        guibg=#1a1b26 |' ..
+  'hi markid1                            guifg=#ff90a8 |' ..
+  'hi markid2                            guifg=#ffb87e |' ..
+  'hi markid3                            guifg=#b8e884 |' ..
+  'hi markid4                            guifg=#94bcff |' ..
+  'hi markid5                            guifg=#f56565 |' ..
+  'hi markid6                            guifg=#97e9ff |' ..
+  'hi markid7                            guifg=#fac982 |' ..
+  'hi markid8                            guifg=#d5b4ff |' ..
+  'hi markid9                            guifg=#44ddf8 |' ..
+  'hi markid10                           guifg=#34d6b6 |'
 })
 vim.cmd [[colorscheme tokyonight]]

@@ -32,9 +32,12 @@ local components = {
     -- Onedarkpro
     -- fg = '#282c34',
     -- bg = '#282c34',
-    -- Tokyonight
+    -- TokyonightStorm
     -- fg = '#24283b',
     -- bg = '#24283b',
+    -- Tokyonight
+    -- fg = '#1a1b26',
+    -- bg = '#1a1b26',
     truncation = { priority = 1 }
   },
 
@@ -193,6 +196,22 @@ require('cokeline').setup({
   --[[      return ]]
   --[[        buffer.is_focused ]]
   --[[        and '#24283b' ]]
+  --[[         or '#c0caf5' ]]
+  --[[    end, ]]
+  --[[    bg = function(buffer) ]]
+  --[[      return ]]
+  --[[        buffer.is_focused ]]
+  --[[        and '#9ece6a' ]]
+  --[[        or '#414868' ]]
+  --[[      end, ]]
+  --[[    }, ]]
+ 
+  -- Tokyonight
+  --[[ default_hl = { ]]
+  --[[    fg = function(buffer) ]]
+  --[[      return ]]
+  --[[        buffer.is_focused ]]
+  --[[        and '#1a1b26' ]]
   --[[         or '#c0caf5' ]]
   --[[    end, ]]
   --[[    bg = function(buffer) ]]
