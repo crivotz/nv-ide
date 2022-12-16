@@ -92,7 +92,6 @@ return require('packer').startup(function(use)
 
   -- Git
   use { 'lewis6991/gitsigns.nvim', requires = {'nvim-lua/plenary.nvim'}, config = lua_path"gitsigns" }
-  use { 'kdheepak/lazygit.nvim' }
   use { 'rhysd/committia.vim' }
 
   -- Registers & clipboard

@@ -1,8 +1,9 @@
 -- <F1> help
 -- <F2> vim-codepainter
 -- <F3> vim-codepainter navigate
-vim.keymap.set('n', '<F4>', ':set relativenumber!<CR>', {noremap = true, silent = false})
-vim.keymap.set('n', '<F5>', ':set list! list?<CR>', {noremap = false, silent = false})
+vim.keymap.set('n', '<F3>', ':set relativenumber!<CR>', {noremap = true, silent = false})
+vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = false})
+vim.keymap.set('n', '<F5>', ":Ranger<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<F6>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.keymap.set('t', '<F6>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<F7>', ':NvimTreeToggle<CR>', {noremap = false, silent = true})
@@ -14,9 +15,11 @@ vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent
 vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = false})
 vim.keymap.set('n', '<leader>bn', '<Plug>(cokeline-focus-next)', {noremap = false, silent = false})
 vim.keymap.set('n', '<leader>bp', '<Plug>(cokeline-focus-prev)', {noremap = false, silent = false})
--- Git
+-- Git (Fugitive and Lazygit)
 vim.keymap.set('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = false})
-vim.keymap.set('n', '<leader>gg', ':LazyGit<CR>', {noremap = false, silent = false})
+vim.keymap.set('n', '<leader>gg', ':LG<CR>', {noremap = false, silent = false})
+-- Lazydocker
+vim.keymap.set('n', '<leader>gg', ':LG<CR>', {noremap = false, silent = false})
 -- Easy-align
 vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
 vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
@@ -40,7 +43,9 @@ vim.keymap.set('n', '<space>s', ':lua vim.lsp.buf.document_symbol()<CR>', {norem
 vim.keymap.set('n', '<leader>sp', ":lua require('spectre').open()<CR>", {noremap = true, silent = false})
 vim.keymap.set('v', '<leader>sp', ":lua require('spectre').open_visual()<CR>", {noremap = true, silent = false})
 vim.keymap.set('n', '<leader>sl', "viw:lua require('spectre').open_file_search()<CR>", {noremap = true, silent = false})
+-- Sad
 vim.keymap.set('n', '<leader>sr', ":lua require('FTerm').run({'fd | sad', vim.fn.input('SEARCH -> '), vim.fn.input('REPLACE -> ')})<CR>", {noremap = true, silent = true})
+-- Ranger
 -- Telescope
 vim.keymap.set('n', '<leader>r', ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>#', ":lua require('telescope.builtin').grep_string()<CR>", {noremap = true, silent = true})
