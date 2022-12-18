@@ -101,7 +101,33 @@ M.my_git_bcommits = function(opts)
 end
 
 M.my_git_status = function(opts)
+  local delta = previewers.new_termopen_previewer {
+    get_command = function(entry)
+      -- this is for status
+      -- You can get the AM things in entry.status. So we are displaying file if entry.status == '??' or 'A '
+      -- just do an if and return a different command
+      if entry.status == ' D' then
+        return
+      end
+
+      if entry.status == '??' then
+        return { 'bat', '--style=plain', '--pager', 'less -R', entry.value }
+      end
+
+      return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value }
+    end
+  }
+
   opts = opts or {}
+  opts.git_icons = {
+    added = "",
+    changed = "",
+    copied = "C",
+    renamed = "",
+    unmerged = "",
+    untracked = "",
+    deleted = "✖",
+  }
   opts.previewer = delta
 
   builtin.git_status(opts)
