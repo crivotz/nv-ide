@@ -39,7 +39,7 @@ telescope.setup{
       preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
       results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
     },
-    path_display = { "truncate" },
+    path_display = { "smart" },
     set_env = { ["COLORTERM"] = "truecolor" },
     mappings = {
       i = { ["<c-t>"] = trouble.open_with_trouble },
@@ -141,6 +141,14 @@ M.project_files = function()
   local opts = {} -- define here if you want to define something
   local ok = pcall(require'telescope.builtin'.git_files, opts)
   if not ok then require'telescope.builtin'.find_files(opts) end
+end
+
+M.my_buffers = function(opts)
+  builtin.buffers {
+    layout_strategy = "vertical",
+    ignore_current_buffer = true,
+    sort_mru = true
+  }
 end
 
 return M
