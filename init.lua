@@ -1,7 +1,7 @@
+require('config.settings')
 -- Lazy
 require('config.lazy')
 --
-require('config.settings')
 require('config.utils')
 require('config.color')
 -- Select theme.lua fix feline and nvim-cokeline
