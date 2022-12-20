@@ -1,90 +1,94 @@
-local actions = require('telescope.actions')
-local trouble = require("trouble.providers.telescope")
-local telescope = require("telescope")
-telescope.setup{
-  defaults = {
-    vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-    },
-    layout_strategy = "horizontal",
-    layout_config = {
-      horizontal = {
-        prompt_position = "bottom",
-        preview_width = 0.55,
-        results_width = 0.8,
-      },
-      vertical = {
-        mirror = false,
-      },
-      width = 0.87,
-      height = 0.80,
-      preview_cutoff = 120,
-    },
-    -- prompt_prefix = "λ -> ",
-    prompt_prefix = "   ",
-    selection_caret = "|> ",
-    winblend = 0,
-    border = {},
-    borderchars = {
-      prompt = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
-      -- preview = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
-      -- results = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
-      -- prompt = {" ", " ", " ", " ", " ", " ", " ", " "},
-      preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
-      results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
-    },
-    path_display = { "smart" },
-    set_env = { ["COLORTERM"] = "truecolor" },
-    mappings = {
-      i = { ["<c-t>"] = trouble.open_with_trouble },
-      n = { ["<c-t>"] = trouble.open_with_trouble },
-    },
+local M = {
+  'nvim-telescope/telescope.nvim',
+  dependencies = {
+    { 'nvim-lua/popup.nvim' },
+    { 'nvim-lua/plenary.nvim' },
+    { 'cljoly/telescope-repo.nvim' },
+    { 'nvim-telescope/telescope-dap.nvim' },
   },
-  extensions = {
-    fzy_native = {
-      override_generic_sorter = false,
-      override_file_sorter = true,
+}
+function M.config()
+  local actions = require('telescope.actions')
+  local trouble = require("trouble.providers.telescope")
+  local telescope = require("telescope")
+  telescope.setup{
+    defaults = {
+      vimgrep_arguments = {
+        "rg",
+        "--color=never",
+        "--no-heading",
+        "--with-filename",
+        "--line-number",
+        "--column",
+        "--smart-case",
+      },
+      layout_strategy = "horizontal",
+      layout_config = {
+        horizontal = {
+          prompt_position = "bottom",
+          preview_width = 0.55,
+          results_width = 0.8,
+        },
+        vertical = {
+          mirror = false,
+        },
+        width = 0.87,
+        height = 0.80,
+        preview_cutoff = 120,
+      },
+      -- prompt_prefix = "λ -> ",
+      prompt_prefix = "   ",
+      selection_caret = "|> ",
+      winblend = 0,
+      border = {},
+      borderchars = {
+        prompt = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
+        -- preview = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
+        -- results = {"━", "┃", "━", "┃", "┏", "┓", "┛", "┗"},
+        -- prompt = {" ", " ", " ", " ", " ", " ", " ", " "},
+        preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+        results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
+      },
+      path_display = { "smart" },
+      set_env = { ["COLORTERM"] = "truecolor" },
+      mappings = {
+        i = { ["<c-t>"] = trouble.open_with_trouble },
+        n = { ["<c-t>"] = trouble.open_with_trouble },
+      },
+    },
+    extensions = {
     }
   }
-}
 
--- Extensions
+  -- Extensions
 
--- telescope.load_extension('octo')
-telescope.load_extension('fzy_native')
-telescope.load_extension('repo')
-telescope.load_extension('neoclip')
-telescope.load_extension('notify')
-telescope.load_extension('dap')
+  telescope.load_extension('repo')
+  telescope.load_extension('neoclip')
+  telescope.load_extension('notify')
+  telescope.load_extension('dap')
 
--- Implement delta as previewer for diffs
+  -- Implement delta as previewer for diffs
 
-local previewers = require('telescope.previewers')
-local builtin = require('telescope.builtin')
-local conf = require('telescope.config')
-local M = {}
+  local previewers = require('telescope.previewers')
+  local builtin = require('telescope.builtin')
+  local conf = require('telescope.config')
 
-local delta = previewers.new_termopen_previewer {
-  get_command = function(entry)
-    -- this is for status
-    -- You can get the AM things in entry.status. So we are displaying file if entry.status == '??' or 'A '
-    -- just do an if and return a different command
-    if entry.status == '??' or 'A ' then
-      return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value }
+  local delta = previewers.new_termopen_previewer {
+    get_command = function(entry)
+      -- this is for status
+      -- You can get the AM things in entry.status. So we are displaying file if entry.status == '??' or 'A '
+      -- just do an if and return a different command
+      if entry.status == '??' or 'A ' then
+        return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value }
+      end
+
+      -- note we can't use pipes
+      -- this command is for git_commits and git_bcommits
+      return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value .. '^!' }
+
     end
-
-    -- note we can't use pipes
-    -- this command is for git_commits and git_bcommits
-    return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value .. '^!' }
-
-  end
-}
+  }
+end
 
 M.my_git_commits = function(opts)
   opts = opts or {}
