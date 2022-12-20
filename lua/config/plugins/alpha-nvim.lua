@@ -22,7 +22,7 @@ local function get_extension(fn)
 end
 
 local function footer()
-  local total_plugins = #vim.tbl_keys(packer_plugins)
+  local total_plugins = require("lazy").stats().count
   local date = os.date("%d-%m-%Y")
   local time = os.date("%H:%M:%S")
   return "[ " .. total_plugins .. " plugins] [ " .. date .. "] [ " .. time .. "]"
@@ -184,7 +184,7 @@ local buttons = {
     dashboard.button("m", "  Show mark", ":Telescope marks"),
     dashboard.button("t", "  Show todo", ":TodoTelescope<CR>"),
     dashboard.button("s", "  NV-IDE plugins", ":e ~/.config/nvim/lua/plugins.lua<CR>"),
-    dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
+    -- dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
     dashboard.button("h", "  Neovim Check health", ":checkhealth<CR>"),
     dashboard.button("q", "  Quit", "<Cmd>qa<CR>")
   },
