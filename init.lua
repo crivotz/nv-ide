@@ -1,18 +1,16 @@
--- Impatient
-local impatient_ok, impatient = pcall(require, "impatient")
-if impatient_ok then impatient.enable_profile() end
--- Packer
-require('plugins')
-require('settings')
-require('settings.utils')
-require('settings.color')
--- Select theme.lua fix feline and nvim-cokeline
-require('settings.gruvbox')
+require('config.settings')
+require('config.color')
+-- Lazy
+require('config.lazy')
 --
-require('settings.font')
-require('settings.completion')
-require('settings.filetype')
+require('config.utils')
+-- Select theme.lua fix feline and nvim-cokeline
+require('config.colorschemes.gruvbox')
+--
+require('config.font')
+require('config.completion')
+require('config.filetype')
 -- LSP Config
-require('lsp')
+require('config.lsp')
 -- Keymap
-require('settings.keymap')
+require('config.mappings')

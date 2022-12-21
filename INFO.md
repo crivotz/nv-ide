@@ -28,14 +28,6 @@ git clone --depth 1 https://github.com/crivotz/nv-ide.git ~/.nv-ide
 cd ~/.config
 ln -s ~/.nv-ide nvim
 nvim
-:PackerInstall
-:PackerSync
-```
-**UPDATE**
-```console
-nvim
-:PackerUpdate
-:PackerSync
 ```
 **DEPENDENCIES**
 
