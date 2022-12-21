@@ -95,7 +95,7 @@ return {
     end,
   },
   'JoosepAlviste/nvim-ts-context-commentstring',
-  'lewis6991/nvim-treesitter-context',
+  'nvim-treesitter/nvim-treesitter-context',
   { 'SmiteshP/nvim-gps',
     config = function()
       require("nvim-gps").setup({
@@ -211,12 +211,11 @@ return {
   },
   'jeffkreeftmeijer/vim-numbertoggle',
   'lambdalisue/suda.vim',
-  { 'wfxr/minimap.vim',
+  { 'gorbit99/codewindow.nvim',
     config = function()
-      vim.g.minimap_width = 10
-      vim.g.minimap_auto_start = 0
-      vim.g.minimap_auto_start_win_enter = 0
-      vim.g.minimap_highlight_range = 1
+      local codewindow = require('codewindow')
+      codewindow.setup()
+        codewindow.apply_default_keybinds()
     end,
   },
   { 'beauwilliams/focus.nvim',

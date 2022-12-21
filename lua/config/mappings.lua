@@ -7,7 +7,6 @@ vim.keymap.set('n', '<F5>', ":Ranger<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<F6>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.keymap.set('t', '<F6>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
 vim.keymap.set('n', '<F7>', ':NvimTreeToggle<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<F8>', ':MinimapToggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = false})
 -- Buffers
 vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = false})
