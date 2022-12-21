@@ -11,4 +11,9 @@ if not vim.loop.fs_stat(lazypath) then
     })
 end
 vim.opt.runtimepath:prepend(lazypath)
-require("lazy").setup("config.plugins")
+require("lazy").setup("config.plugins", {
+  ui = {
+    size = { width = 0.9, height = 0.9 },
+    border = "single"
+  }
+})

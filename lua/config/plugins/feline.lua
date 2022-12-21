@@ -159,6 +159,7 @@ function M.config()
     'NvimTree',
     'dbui',
     'packer',
+    'lazy',
     'startify',
     'fugitive',
     'fugitiveblame'
