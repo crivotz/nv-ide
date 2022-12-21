@@ -5,6 +5,7 @@ function M.config()
   local lsp = require('feline.providers.lsp')
   local vi_mode_utils = require('feline.providers.vi_mode')
   local gps = require("nvim-gps")
+  local lazy = require("lazy.status")
 
   local force_inactive = {
     filetypes = {},
@@ -348,8 +349,18 @@ function M.config()
     },
     right_sep = ' '
   }
-  -- scrollBar
+  -- Lazy.nvim
   components.active[3][8] = {
+    provider = function() return " ﮮ " end,
+    enabled = lazy.has_updates,
+    hl = {
+      fg = 'black',
+      bg = 'orange',
+      style = 'bold'
+    }
+  }
+  -- scrollBar
+  components.active[3][9] = {
     provider = 'scroll_bar',
     hl = {
       fg = 'yellow',
