@@ -1,5 +1,5 @@
 local M = {
-  'numtostr/FTerm.nvim',
+  "numtostr/FTerm.nvim",
 }
 function M.config()
   local fterm = require("FTerm")

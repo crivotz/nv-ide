@@ -1,5 +1,5 @@
 return {
-  'numToStr/Comment.nvim',
+  "numToStr/Comment.nvim",
   config = function()
     require('Comment').setup {
       pre_hook = function(ctx)

@@ -1,10 +1,10 @@
 local M = {
-  'nvim-telescope/telescope.nvim',
+  "nvim-telescope/telescope.nvim",
   dependencies = {
-    { 'nvim-lua/popup.nvim' },
-    { 'nvim-lua/plenary.nvim' },
-    { 'cljoly/telescope-repo.nvim' },
-    { 'nvim-telescope/telescope-dap.nvim' },
+    { "nvim-lua/popup.nvim" },
+    { "nvim-lua/plenary.nvim" },
+    { "cljoly/telescope-repo.nvim" },
+    { "nvim-telescope/telescope-dap.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
   },
 }

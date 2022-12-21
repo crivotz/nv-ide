@@ -1,5 +1,5 @@
 return {
-  'mhartington/formatter.nvim',
+  "mhartington/formatter.nvim",
   config = function()
     require('formatter').setup({
       logging = false,

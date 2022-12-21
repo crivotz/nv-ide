@@ -1,5 +1,5 @@
 return {
-  'nvchad/nvim-colorizer.lua',
+  "nvchad/nvim-colorizer.lua",
   config = function()
     require('colorizer').setup {
       user_default_options = {
