@@ -6,6 +6,7 @@
 I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other  
 The project is constantly changing  
 You can find old no-lua and coc version under branch `old_coc_version`
+You can find old packer version under branch `old_packer`
 
 Thanks to the developers of these plugins/color schemes
 
@@ -36,7 +37,6 @@ nvim
 * [FZF](https://github.com/junegunn/fzf)
 * [ripgrep](https://github.com/BurntSushi/ripgrep): ripgrep recursively searches directories for a regex pattern  
 * [Ripper-tags](https://github.com/tmm1/ripper-tags)
-* [code-minimap](https://github.com/wfxr/code-minimap) for minimap  
 * [prettierd](https://github.com/fsouza/prettierd) for formatter.nvim install via Mason `MasonInstall prettierd`
 * Needed DAP, show `lua/plugins/nvim-dap.lua` install via Mason for `node` with `MasonInstall node-debug2-adapter`
 * Needed LSP, show `lua/lsp/init.lua` installed automatically with Mason
