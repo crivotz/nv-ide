@@ -23,7 +23,7 @@ return {
   { 'williamboman/mason-lspconfig.nvim',
     config =function()
       require("mason-lspconfig").setup({
-      ensure_installed = { "html", "tsserver", "solargraph", "cssls", "dockerls", "jsonls", "yamlls", "vimls", "rust_analyzer" }
+        ensure_installed = { "html", "tsserver", "solargraph", "cssls", "dockerls", "jsonls", "yamlls", "vimls", "rust_analyzer" }
       })
     end,
   },
@@ -84,8 +84,8 @@ return {
   { 'lukas-reineke/indent-blankline.nvim',
     config = function()
       require("indent_blankline").setup {
-        buftype_exclude = {'terminal'},
-        filetype_exclude = {'trouble', 'noice', 'help', 'startify', 'alpha', 'dashboard', 'lazy', 'packer', 'neogitstatus', 'NvimTree', 'mason.nvim'},
+        buftype_exclude = { 'terminal', 'nofile' },
+        filetype_exclude = { 'Trouble', 'trouble', 'noice', 'help', 'startify', 'alpha', 'dashboard', 'lazy', 'packer', 'neogitstatus', 'NvimTree', 'mason.nvim'},
         char = '▏',
         show_current_context = true,
         show_current_context_start = true,  -- underline first line
@@ -187,7 +187,7 @@ return {
   },
 -- General Plugins
   'folke/trouble.nvim',
-  {'folke/todo-comments.nvim',
+  { 'folke/todo-comments.nvim',
     config = function()
       require("todo-comments").setup {}
     end,
@@ -201,7 +201,7 @@ return {
     })
   end,
   },
-  {'airblade/vim-rooter',
+  { 'airblade/vim-rooter',
     config = function()
       vim.g.rooter_silent_chdir = 1
       vim.g.rooter_cd_cmd = 'lcd'
@@ -211,7 +211,7 @@ return {
   },
   'jeffkreeftmeijer/vim-numbertoggle',
   'lambdalisue/suda.vim',
-  {'wfxr/minimap.vim',
+  { 'wfxr/minimap.vim',
     config = function()
       vim.g.minimap_width = 10
       vim.g.minimap_auto_start = 0
@@ -224,13 +224,13 @@ return {
       require("focus").setup({})
     end,
   },
-  {'kevinhwang91/nvim-bqf',
+  { 'kevinhwang91/nvim-bqf',
     config = function()
       require('bqf').setup({
         preview = {
-          border_chars = {'┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█'}
+          border_chars = { '┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█'}
         },
       })
     end,
-  },
+  }
 }
