@@ -188,7 +188,8 @@ return {
         dashboard.button("t", "  Show todo", ":TodoTelescope<CR>"),
         dashboard.button("s", "  NV-IDE plugins", ":e ~/.config/nvim/lua/config/plugins.lua<CR>"),
         -- dashboard.button("u", "  Sync plugins", ":PackerSync<CR>"),
-        dashboard.button("l", "  Lazy", ":Lazy<CR>"),
+        dashboard.button("l", "  Lazy", ":Lazy<CR>"),
+        dashboard.button("u", "  Sync plugins", ":Lazy sync<CR>"),
         dashboard.button("h", "  Neovim Check health", ":checkhealth<CR>"),
         dashboard.button("q", "  Quit", "<Cmd>qa<CR>")
       },
