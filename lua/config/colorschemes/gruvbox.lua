@@ -35,6 +35,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   'hi markid7                            guifg=#fecc7d |' ..
   'hi markid8                            guifg=#eed8b2 |' ..
   'hi markid9                            guifg=#ffedc7 |' ..
-  'hi markid10                           guifg=#cebfaa |'
-})
+  'hi markid10                           guifg=#cebfaa |' ..
+  'hi NvimSeparator                      guifg=#cebfaa guibg=#282828 |' 
+})NvimSeparator
 vim.cmd'colorscheme gruvbox-material'

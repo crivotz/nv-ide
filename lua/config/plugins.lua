@@ -232,5 +232,23 @@ return {
         },
       })
     end,
+  },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = function ()
+      require("colorful-winsep").setup({
+        highlight = {
+          bg = "#282828",
+          fg = "#d8a657",
+        },
+        interval = 30,
+        no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
+        symbols = { "━", "┃", "┏", "┓", "┗", "┛" },
+        close_event = function()
+        end,
+        create_event = function()
+        end,
+      })
+    end
   }
 }
