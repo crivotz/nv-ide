@@ -45,7 +45,6 @@ vim.keymap.set('v', '<leader>sp', ":lua require('spectre').open_visual()<CR>", {
 vim.keymap.set('n', '<leader>sl', "viw:lua require('spectre').open_file_search()<CR>", {noremap = true, silent = false})
 -- Sad
 vim.keymap.set('n', '<leader>sr', ":lua require('FTerm').run({'fd | sad', vim.fn.input('SEARCH -> '), vim.fn.input('REPLACE -> ')})<CR>", {noremap = true, silent = true})
--- Ranger
 -- Telescope
 vim.keymap.set('n', '<leader>r', ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>#', ":lua require('telescope.builtin').grep_string()<CR>", {noremap = true, silent = true})
@@ -59,9 +58,7 @@ vim.keymap.set('n', '<leader>g', ":lua require('config.plugins.telescope').my_gi
 vim.keymap.set('n', '<leader>b', ":lua require('config.plugins.telescope').my_git_bcommits()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ns', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = false})
-vim.keymap.set('n', '<leader>n', ":lua require('config.plugins.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>gc', ':Octo issue create<CR>', {noremap = true, silent = false})
-vim.keymap.set('n', '<leader>i', ':Octo issue list<CR>', {noremap = true, silent = false})
+vim.keymap.set('n', '<leader>n', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>y', ':Telescope neoclip<CR>', {noremap = true, silent = false})
 vim.keymap.set('n', '<leader>ll', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREP -> ') })<CR>", {noremap = true, silent = true})
 -- HlsLens
@@ -73,8 +70,6 @@ vim.keymap.set('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", { noremap
 vim.keymap.set('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
 -- Todo-comments
 vim.keymap.set('n', '<leader>to', ':TodoTelescope<CR>', {noremap = true, silent = false})
--- Copilot
-vim.keymap.set('i', '<C-J>', 'copilot#Accept()', {noremap = true, silent = true, expr = true})
 -- Move.nvim
 vim.keymap.set('n', '<A-j>', ":MoveLine(1)<CR>", { noremap = true, silent = true })
 vim.keymap.set('n', '<A-k>', ":MoveLine(-1)<CR>", { noremap = true, silent = true })

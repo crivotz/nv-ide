@@ -7,6 +7,7 @@ local M = {
     { 'nvim-telescope/telescope-dap.nvim' },
   },
 }
+
 function M.config()
   local actions = require('telescope.actions')
   local trouble = require("trouble.providers.telescope")
@@ -67,44 +68,9 @@ function M.config()
   telescope.load_extension('notify')
   telescope.load_extension('dap')
 
-  -- Implement delta as previewer for diffs
-
-  local previewers = require('telescope.previewers')
-  local builtin = require('telescope.builtin')
+  previewers = require('telescope.previewers')
+  builtin = require('telescope.builtin')
   local conf = require('telescope.config')
-
-  local delta = previewers.new_termopen_previewer {
-    get_command = function(entry)
-      -- this is for status
-      -- You can get the AM things in entry.status. So we are displaying file if entry.status == '??' or 'A '
-      -- just do an if and return a different command
-      if entry.status == '??' or 'A ' then
-        return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value }
-      end
-
-      -- note we can't use pipes
-      -- this command is for git_commits and git_bcommits
-      return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value .. '^!' }
-
-    end
-  }
-end
-
-M.my_git_commits = function(opts)
-  opts = opts or {}
-  opts.previewer = delta
-
-  builtin.git_commits(opts)
-end
-
-M.my_git_bcommits = function(opts)
-  opts = opts or {}
-  opts.previewer = delta
-
-  builtin.git_bcommits(opts)
-end
-
-M.my_git_status = function(opts)
   local delta = previewers.new_termopen_previewer {
     get_command = function(entry)
       -- this is for status
@@ -122,6 +88,23 @@ M.my_git_status = function(opts)
     end
   }
 
+end
+
+function M.my_git_commits(opts)
+  opts = opts or {}
+  opts.previewer = delta
+
+  builtin.git_commits(opts)
+end
+
+function M.my_git_bcommits(opts)
+  opts = opts or {}
+  opts.previewer = delta
+
+  builtin.git_bcommits(opts)
+end
+
+function M.my_git_status(opts)
   opts = opts or {}
   opts.git_icons = {
     added = "",
@@ -136,23 +119,19 @@ M.my_git_status = function(opts)
 
   builtin.git_status(opts)
 end
-
-M.my_note = function(opts)
+function M.my_note(opts)
   builtin.live_grep { prompt_title = ' Note ', cwd = '~/Notes' }
 end
-
-M.project_files = function()
+function M.project_files()
   local opts = {} -- define here if you want to define something
   local ok = pcall(require'telescope.builtin'.git_files, opts)
   if not ok then require'telescope.builtin'.find_files(opts) end
 end
-
-M.my_buffers = function(opts)
+function M.my_buffers(opts)
   builtin.buffers {
     layout_strategy = "vertical",
     ignore_current_buffer = true,
     sort_mru = true
   }
 end
-
 return M

@@ -1,9 +1,9 @@
 require('config.settings')
+require('config.color')
 -- Lazy
 require('config.lazy')
 --
 require('config.utils')
-require('config.color')
 -- Select theme.lua fix feline and nvim-cokeline
 require('config.colorschemes.gruvbox')
 --
