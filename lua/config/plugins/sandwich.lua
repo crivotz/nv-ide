@@ -12,7 +12,7 @@ return {
       omap ass <Plug>(textobj-sandwich-auto-a)
 
       " remap to override again
-      xmap S <Plug>Lightspeed_S
+      " xmap S <Plug>Lightspeed_S
       let g:sandwich#recipes += [
       \   {
       \     'buns':     ['<%= ', ' %>'],

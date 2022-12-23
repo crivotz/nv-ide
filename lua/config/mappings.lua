@@ -3,9 +3,8 @@
 -- <F3> vim-codepainter navigate
 vim.keymap.set('n', '<F3>', ':set relativenumber!<CR>', {noremap = true, silent = false})
 vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = false})
-vim.keymap.set('n', '<F5>', ":Ranger<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<F6>', '<CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
-vim.keymap.set('t', '<F6>', '<C-\\><C-n><CMD>lua require("FTerm").toggle()<CR>', { noremap = true, silent = true })
+-- <F5> da toggleterm
+vim.keymap.set('n', '<F6>', ':FocusToggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<F7>', ':NvimTreeToggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = false})
 -- Buffers
@@ -16,18 +15,9 @@ vim.keymap.set('n', '<leader>bn', '<Plug>(cokeline-focus-next)', {noremap = fals
 vim.keymap.set('n', '<leader>bp', '<Plug>(cokeline-focus-prev)', {noremap = false, silent = false})
 -- Git (Fugitive and Lazygit)
 vim.keymap.set('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = false})
-vim.keymap.set('n', '<leader>gg', ':LG<CR>', {noremap = false, silent = false})
--- Lazydocker
-vim.keymap.set('n', '<leader>gg', ':LG<CR>', {noremap = false, silent = false})
 -- Easy-align
 vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
 vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = false})
--- Lightspeed
-vim.keymap.set('n', 's', '<Plug>Lightspeed_omni_s', {noremap = false, silent = false})
-vim.keymap.set('n', 'f', '<Plug>Lightspeed_f', {noremap = false, silent = false})
-vim.keymap.set('n', 'F', '<Plug>Lightspeed_F', {noremap = false, silent = false})
-vim.keymap.set('n', 't', '<Plug>Lightspeed_t', {noremap = false, silent = false})
-vim.keymap.set('n', 'T', '<Plug>Lightspeed_T', {noremap = false, silent = false})
 -- LSP
 vim.keymap.set('n', '<space>,', ':lua vim.lsp.diagnostic.goto_prev()<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<space>;', ':lua vim.lsp.diagnostic.goto_next()<CR>', {noremap = true, silent = true})
@@ -48,7 +38,7 @@ vim.keymap.set('n', '<leader>sr', ":lua require('FTerm').run({'fd | sad', vim.fn
 vim.keymap.set('n', '<leader>r', ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>#', ":lua require('telescope.builtin').grep_string()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>bb', ":lua require('config.plugins.telescope').my_buffers()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>t', ":lua require('telescope.builtin').treesitter()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>ts', ":lua require('telescope.builtin').treesitter()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>l', ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>f', ":lua require('config.plugins.telescope').project_files()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>p', ":lua require'telescope'.extensions.repo.list{file_ignore_patterns={'/%.cache/', '/%.cargo/', '/%.local/', '/%.asdf/', '/%.zinit/', '/%.tmux/'}}<CR>", {noremap = true, silent = true})

@@ -127,14 +127,17 @@ function M.my_git_status(opts)
 
   builtin.git_status(opts)
 end
+
 function M.my_note(opts)
   builtin.live_grep { prompt_title = ' Note ', cwd = '~/Notes' }
 end
+
 function M.project_files()
   local opts = {} -- define here if you want to define something
   local ok = pcall(require'telescope.builtin'.git_files, opts)
   if not ok then require'telescope.builtin'.find_files(opts) end
 end
+
 function M.my_buffers(opts)
   builtin.buffers {
     layout_strategy = "vertical",
@@ -142,4 +145,5 @@ function M.my_buffers(opts)
     sort_mru = true
   }
 end
+
 return M

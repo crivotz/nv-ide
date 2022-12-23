@@ -62,6 +62,9 @@ return {
         highlight = {
           enable = true,              -- false will disable the whole extension
         },
+        indent = {
+          enable = true,              -- false will disable the whole extension
+        },
         context_commentstring = {
           enable = true,
           enable_autocmd = false,
@@ -109,7 +112,7 @@ return {
       })
     end,
   },
--- Syntax
+  -- Syntax
   "chrisbra/csv.vim",
   "junegunn/vim-easy-align",
   "zdharma-continuum/zinit-vim-syntax",
@@ -134,7 +137,6 @@ return {
       }
     end,
   },
-  "ggandor/lightspeed.nvim",
   { "karb94/neoscroll.nvim",
     config = function()
       require("neoscroll").setup()
@@ -185,7 +187,7 @@ return {
       require("nvim-dap-virtual-text").setup()
     end,
   },
--- General Plugins
+  -- General Plugins
   "folke/trouble.nvim",
   { "folke/todo-comments.nvim",
     config = function()
@@ -193,13 +195,13 @@ return {
     end,
   },
   { "folke/which-key.nvim",
-  config = function()
-    require("which-key").setup({
-      window = {
-        border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
-      },
-    })
-  end,
+    config = function()
+      require("which-key").setup({
+        window = {
+          border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
+        },
+      })
+    end,
   },
   { "airblade/vim-rooter",
     config = function()
@@ -215,12 +217,26 @@ return {
     config = function()
       local codewindow = require("codewindow")
       codewindow.setup()
-        codewindow.apply_default_keybinds()
+      codewindow.apply_default_keybinds()
     end,
   },
   { "beauwilliams/focus.nvim",
     config = function()
-      require("focus").setup({})
+      require("focus").setup({
+        excluded_filetypes = {
+          '', -- Hover popups such as Treesitter syntax investigation popup, lsp popups...
+          'TelescopePrompt',
+          'toggleterm',
+          'term',
+          'fterm',
+          'diffviewfiles',
+        },
+        excluded_buftypes = {
+          'help',
+          'prompt',
+          'popup',
+        },
+      })
     end,
   },
   { "kevinhwang91/nvim-bqf",
