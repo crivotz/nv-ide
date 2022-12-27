@@ -115,7 +115,6 @@ nvim
 * [lambdalisue/suda.vim](https://github.com/lambdalisue/suda.vim): 🥪 An alternative sudo.vim for Vim and Neovim, limited support sudo in Windows  
 * [gorbit99/codewindow.nvim](https://github.com/gorbit99/codewindow.nvim):   
 * [beauwilliams/focus.nvim](https://github.com/beauwilliams/focus.nvim): Auto-Focusing and Auto-Resizing Splits/Windows for Neovim written in Lua. A full suite of window management enhancements. Vim splits on steroids!  
-* [kevinhwang91/nvim-bqf](https://github.com/kevinhwang91/nvim-bqf): Better quickfix window in Neovim, polish old quickfix window.  
 * [nvim-zh/colorful-winsep.nvim](https://github.com/nvim-zh/colorful-winsep.nvim): Make your nvim window separators colorful  
 
 **PLUGINS AS MODULE**  

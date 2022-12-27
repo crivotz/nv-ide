@@ -10,6 +10,7 @@ autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 " autocmd BufRead,BufNewFile *.md setlocal spell
 ]], true)
 
+local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 local cmp = require'cmp'
 local lspkind = require'lspkind'
 
@@ -93,8 +94,8 @@ cmp.setup({
     { name = 'tags' },
     { name = 'rg' },
   }, {
-    { name = 'buffer' },
-  }),
+      { name = 'buffer' },
+    }),
 })
 -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline('/', {
@@ -110,6 +111,11 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources({
     { name = 'path' }
   }, {
-    { name = 'cmdline' }
-  })
+      { name = 'cmdline' }
+    })
 })
+
+cmp.event:on(
+  'confirm_done',
+  cmp_autopairs.on_confirm_done()
+)

@@ -239,15 +239,6 @@ return {
       })
     end,
   },
-  { "kevinhwang91/nvim-bqf",
-    config = function()
-      require("bqf").setup({
-        preview = {
-          border_chars = { '┃', '┃', '━', '━', '┏', '┓', '┗', '┛', '█'}
-        },
-      })
-    end,
-  },
   {
     "nvim-zh/colorful-winsep.nvim",
     config = function ()

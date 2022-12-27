@@ -1,11 +1,11 @@
 return {
   "akinsho/nvim-toggleterm.lua",
-  keys = { '<leader>t', '<leader>gg', '<leader>ld', '<F5>' },
+  keys = { '<leader>x', '<leader>gg', '<leader>ld', '<F5>' },
   config = function()
     require("toggleterm").setup({
       size = 20,
       hide_numbers = true,
-      open_mapping = [[<leader>t]],
+      open_mapping = [[<leader>x]],
       shade_filetypes = {},
       shade_terminals = false,
       shading_factor = 0.1, -- the degree by which to darken to terminal colour, default: 1 for dark backgrounds, 3 for light
@@ -14,6 +14,12 @@ return {
       direction = "horizontal",
       close_on_exit = true,
       highlights = {
+        Normal = {
+          guibg = "#181818",
+        },
+        NormalFloat = {
+          link = '#181818'
+        },
         FloatBorder = {
           guifg = "#ea6962",
           guibg = "#282828",

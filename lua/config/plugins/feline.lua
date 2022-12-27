@@ -8,8 +8,31 @@ function M.config()
   local lazy = require("lazy.status")
 
   local force_inactive = {
-    filetypes = {},
-    buftypes = {},
+    filetypes = {
+      '^NvimTree$',
+      '^packer$',
+      '^startify$',
+      '^fugitive$',
+      '^fugitiveblame$',
+      '^qf$',
+      '^help$',
+      '^dbui$',
+      '^lazy$',
+      '^toggleterm$'
+    },
+    buftypes = {
+      '^terminal$',
+    },
+    bufnames = {}
+  }
+
+  local disabled = {
+    filetypes = {
+      '^toggleterm$'
+    },
+    buftypes = {
+      '^terminal$',
+    },
     bufnames = {}
   }
 
@@ -155,20 +178,6 @@ function M.config()
     end
     return false
   end
-
-  force_inactive.filetypes = {
-    'NvimTree',
-    'dbui',
-    'packer',
-    'lazy',
-    'startify',
-    'fugitive',
-    'fugitiveblame'
-  }
-
-  force_inactive.buftypes = {
-    'terminal'
-  }
 
   -- STATUSLINE
   -- LEFT
@@ -496,11 +505,12 @@ function M.config()
     vi_mode_colors = vi_mode_colors,
     components = components,
     force_inactive = force_inactive,
+    disabled = disabled,
   })
 
   require('feline').winbar.setup({
     components = winbar_components,
-    force_inactive = force_inactive,
+    disabled = disabled,
   })
 end
 

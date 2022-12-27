@@ -1,6 +1,11 @@
 return {
   "lewis6991/gitsigns.nvim",
   config = function()
+    if not package.loaded.trouble then
+      package.preload.trouble = function()
+        return true
+      end
+    end
     require("gitsigns").setup {
       signs = {
         add          = {hl = 'GitSignsAdd'   , text = ' ', numhl='GitSignsAddNr'   , linehl='GitSignsAddLn'},
@@ -65,5 +70,7 @@ return {
         enable = false
       },
     }
+    package.loaded.trouble = nil
+    package.preload.trouble = nil
   end,
 }
