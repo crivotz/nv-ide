@@ -5,6 +5,7 @@ return {
   -- "olimorris/onedarkpro.nvim",
   -- "folke/tokyonight.nvim",
   "MunifTanjim/nui.nvim",
+  "folke/twilight.nvim",
   -- LSP
   { "williamboman/mason.nvim",
     config = function()
@@ -79,7 +80,7 @@ return {
     config = function()
       require'nvim-treesitter.configs'.setup {
         rainbow = {
-          enable = true
+          enable = true,
         }
       }
     end,
@@ -256,5 +257,16 @@ return {
         end,
       })
     end
-  }
+  },
+  {
+    "folke/zen-mode.nvim",
+    cmd = "ZenMode",
+    config = {
+      plugins = {
+        gitsigns = false,
+        tmux = false,
+        twilight = true,
+      },
+    },
+  },
 }
