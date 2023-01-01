@@ -56,7 +56,7 @@ function M.config()
       set_env = { ["COLORTERM"] = "truecolor" },
       mappings = {
         i = { ["<c-t>"] = trouble.open_with_trouble },
-        n = { ["<c-t>"] = trouble.open_with_trouble },
+        --[[ n = { ["<c-t>"] = trouble.open_with_trouble }, ]]
       },
     },
     extensions = {
