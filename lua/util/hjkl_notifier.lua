@@ -1,3 +1,4 @@
+-- Credits to https://github.com/folke/dot
 local id
 for _, key in ipairs({ "h", "j", "k", "l" }) do
   local count = 0

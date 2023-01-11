@@ -55,23 +55,23 @@ return {
   { "nvim-treesitter/nvim-treesitter",
     config = function()
       require'nvim-treesitter.configs'.setup {
-        markid = { 
+        markid = {
           enable = true,
-          colors = false 
+          colors = false
         },
         ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
         highlight = {
-          enable = true,              -- false will disable the whole extension
+          enable = true
         },
         indent = {
-          enable = true,              -- false will disable the whole extension
+          enable = true
         },
         context_commentstring = {
           enable = true,
           enable_autocmd = false,
         },
         matchup = {
-          enable = true  
+          enable = true
         }
       }
     end,
@@ -261,7 +261,7 @@ return {
   {
     "folke/zen-mode.nvim",
     cmd = "ZenMode",
-    config = {
+    opts = {
       plugins = {
         gitsigns = false,
         tmux = false,

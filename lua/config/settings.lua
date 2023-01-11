@@ -26,7 +26,9 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
 vim.opt.laststatus = 3
 vim.opt.timeoutlen = 500
-vim.opt.splitkeep = 'screen'
+if vim.fn.has("nvim-0.9.0") == 1 then
+  vim.opt.splitkeep = 'screen'
+end
 -- Buffer
 vim.opt.fileformat = 'unix'
 vim.opt.tabstop = 2
@@ -34,6 +36,7 @@ vim.opt.spelllang = 'it'
 vim.opt.softtabstop = 2
 vim.opt.swapfile = false
 vim.opt.undofile = false
+vim.opt.smartindent = true
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 2
 -- Window
