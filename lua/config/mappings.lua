@@ -49,7 +49,6 @@ vim.keymap.set('n', '<leader>g', ":lua require('config.plugins.telescope').my_gi
 vim.keymap.set('n', '<leader>b', ":lua require('config.plugins.telescope').my_git_bcommits()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ns', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>n', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>y', ':Telescope neoclip<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ll', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREP -> ') })<CR>", {noremap = true, silent = true})
 -- HlsLens
@@ -70,12 +69,12 @@ vim.keymap.set('v', '<A-l>', ":MoveHBlock(1)<CR>", { noremap = true, silent = tr
 vim.keymap.set('v', '<A-h>', ":MoveHBlock(-1)<CR>", { noremap = true, silent = true })
 -- Trouble
 vim.keymap.set('n', '<leader>to', ':TodoTrouble  keywords=TODO,FIX,FIXME<CR>', {noremap = true, silent = true})
-vim.keymap.set("n", "<leader>t", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>td", "<cmd>Trouble document_diagnostics<cr>", {silent = true, noremap = true})
-vim.keymap.set("n", "<leader>tl", "<cmd>Trouble loclist<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>tll", "<cmd>Trouble loclist<cr>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>tq", "<cmd>Trouble quickfix<cr>", {silent = true, noremap = true})
-vim.keymap.set("n", "<leader>tr", "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
+vim.keymap.set("n", "<leader>tl", "<cmd>Trouble lsp_references<cr>", {silent = true, noremap = true})
 -- Nvim-dap
 vim.keymap.set("n", "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>", {silent = true, noremap = true})
@@ -88,3 +87,8 @@ vim.keymap.set("n", "<leader>dcc", "<cmd>lua require'telescope'.extensions.dap.c
 vim.keymap.set("n", "<leader>dlb", "<cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>dv", "<cmd>lua require'telescope'.extensions.dap.variables{}<CR>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>df", "<cmd>lua require'telescope'.extensions.dap.frames{}<CR>", {silent = true, noremap = true})
+-- Notes & Todo
+vim.keymap.set('n', '<leader>tv', ":lua require('util.scratches').open_scratch_file()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>t', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>n', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})

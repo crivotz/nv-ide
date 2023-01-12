@@ -8,13 +8,14 @@ local M = {
 }
 
 function M.get_scratch_filename()
-	return "~/Notes/notes.md"
+	return "~/Notes/todo.md"
 end
 
 function M.open_scratch_file()
 	vim.api.nvim_command("!mkdir -p ~/Notes")
 	vim.api.nvim_command("vsplit " .. M.get_scratch_filename())
 end
+
 vim.api.nvim_create_user_command("ScratchOpenSplit", M.open_scratch_file, {})
 
 function M.open_scratch_file_floating(opts)

@@ -76,7 +76,7 @@ return {
       }
     end,
   },
-  { "p00f/nvim-ts-rainbow",
+  { "mrjones2014/nvim-ts-rainbow",
     config = function()
       require'nvim-treesitter.configs'.setup {
         rainbow = {
@@ -145,7 +145,6 @@ return {
   },
   "chaoren/vim-wordmotion",
   "windwp/nvim-spectre",
-  "fedepujol/move.nvim",
   -- Tim Pope docet
   "tpope/vim-rails",
   "tpope/vim-abolish",
