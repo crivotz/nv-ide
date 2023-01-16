@@ -211,7 +211,6 @@ return {
       vim.g.rooter_patterns = { '.git', '.git/' }
     end,
   },
-  "jeffkreeftmeijer/vim-numbertoggle",
   "lambdalisue/suda.vim",
   { "gorbit99/codewindow.nvim",
     config = function()

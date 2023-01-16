@@ -1,5 +1,26 @@
 -- Global
--- vim.opt.fillchars = { vert = ' ' }
+vim.opt.fillchars = {
+  fold = " ",
+  foldopen = "",
+  foldclose = "",
+  foldsep = " ",
+  diff = "╱",
+  eob = " ",
+}
+vim.opt.listchars = {
+  tab = ">>>",
+  trail = "·",
+  precedes = "←",
+  extends = "→",eol = "↲",
+  nbsp = "␣",
+}
+vim.o.foldnestmax = 4
+vim.o.foldlevel = 1
+vim.o.foldcolumn = "1"
+vim.o.foldexpr = "nvim_treesitter#foldexpr()"
+vim.o.foldmethod = "expr"
+vim.o.foldlevelstart = 99
+vim.o.foldenable = true
 vim.opt.showtabline = 2
 vim.opt.mouse = 'a'
 vim.opt.backupcopy = 'yes'
@@ -23,7 +44,6 @@ vim.opt.title = true
 vim.opt.encoding = 'UTF-8'
 vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
 vim.opt.clipboard = 'unnamedplus'
-vim.opt.listchars = { tab = ">>>", trail = "·", precedes = "←", extends = "→",eol = "↲", nbsp = "␣" }
 vim.opt.laststatus = 3
 vim.opt.timeoutlen = 500
 if vim.fn.has("nvim-0.9.0") == 1 then
@@ -42,13 +62,9 @@ vim.opt.shiftwidth = 2
 -- Window
 vim.opt.number = true
 vim.opt.colorcolumn = "+1"
-vim.opt.foldmethod = 'indent'
-vim.opt.foldlevel = 1
-vim.opt.list = false
-vim.opt.foldnestmax = 10
-vim.opt.signcolumn = 'yes'
-vim.opt.relativenumber = true
-vim.opt.foldenable = false
+vim.opt.list = true
+vim.opt.signcolumn = 'yes:1'
+vim.opt.relativenumber = false
 vim.opt.cursorline = true
 
 vim.api.nvim_create_autocmd("BufReadPost", {

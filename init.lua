@@ -1,5 +1,6 @@
 require('config.settings')
 require('config.color')
+require('config.statuscolumn')
 -- Lazy
 require('config.lazy')
 --

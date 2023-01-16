@@ -1,7 +1,7 @@
 -- <F1> help
 -- <F2> vim-codepainter
 -- <F3> vim-codepainter navigate
-vim.keymap.set('n', '<F3>', ':set relativenumber!<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<F3>', ':set nu! rnu!<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = true})
 -- <F5> Ranger from toggleterm
 vim.keymap.set('n', '<F6>', ':FocusToggle<CR>', {noremap = false, silent = true})
