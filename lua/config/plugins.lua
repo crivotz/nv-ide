@@ -85,6 +85,15 @@ return {
       }
     end,
   },
+  { "luukvbaal/statuscol.nvim",
+    config = function()
+      require("statuscol").setup({
+        separator = " ",
+        setopt = true,
+        order = "SNsFs"
+      })
+    end
+  },
   { "lukas-reineke/indent-blankline.nvim",
     config = function()
       require("indent_blankline").setup {
@@ -238,6 +247,7 @@ return {
       })
     end,
   },
+  "jeffkreeftmeijer/vim-numbertoggle",
   {
     "nvim-zh/colorful-winsep.nvim",
     config = function ()

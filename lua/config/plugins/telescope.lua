@@ -1,3 +1,8 @@
+--[[ vim.api.nvim_create_autocmd({"FileType"}, { ]]
+--[[   pattern = "TelescopePrompt", ]]
+--[[   command = "setlocal nocursorline" ]]
+--[[ }) ]]
+
 local M = {
   "nvim-telescope/telescope.nvim",
   dependencies = {
