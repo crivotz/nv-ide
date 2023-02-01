@@ -50,13 +50,13 @@ require'lspconfig'.solargraph.setup{
   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
   settings = {
     solargraph = {
-      autoformat = true,
+      -- autoformat = true,
       completion = true,
       diagnostics = true,
-      folding = true,
-      references = true,
-      rename = true,
-      symbols = true
+      -- folding = true,
+      -- references = true,
+      -- rename = true,
+      -- symbols = true
     }
   }
 }
