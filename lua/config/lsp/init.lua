@@ -35,82 +35,82 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
 end
 
-require'lspconfig'.html.setup {
-  on_attach = on_attach,
-  filetypes = {"html"},
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.tsserver.setup{
-  on_attach = on_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.solargraph.setup{
-  on_attach = on_attach,
-  filetypes = {"ruby", "eruby"},
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()),
-  settings = {
-    solargraph = {
-      -- autoformat = true,
-      completion = true,
-      diagnostics = true,
-      -- folding = true,
-      -- references = true,
-      -- rename = true,
-      -- symbols = true
-    }
-  }
-}
-require'lspconfig'.cssls.setup{
-  on_attach = on_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.dockerls.setup{
-  on_attach = on_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.jsonls.setup{
-  on_attach = on_attach,
-  commands = {
-    Format = {
-      function()
-        vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0})
-      end
-    }
-  },
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.yamlls.setup{
-  on_attach = on_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.vimls.setup{
-  on_attach = on_attach,
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
-require'lspconfig'.rust_analyzer.setup {
-  on_attach = on_attach,
-  settings = {
-    ["rust-analyzer"] = {
-      assist = {
-        importMergeBehavior = "last",
-        importPrefix = "by_self",
-      },
-      diagnostics = {
-        disabled = { "unresolved-import" }
-      },
-      cargo = {
-        loadOutDirsFromCheck = true
-      },
-      procMacro = {
-        enable = true
-      },
-      checkOnSave = {
-        command = "clippy"
-      },
-    }
-  },
-  capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-}
+--[[ require'lspconfig'.html.setup { ]]
+--[[   on_attach = on_attach, ]]
+--[[   filetypes = {"html"}, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.tsserver.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.solargraph.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   filetypes = {"ruby", "eruby"}, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()), ]]
+--[[   settings = { ]]
+--[[     solargraph = { ]]
+--[[       -- autoformat = true, ]]
+--[[       completion = true, ]]
+--[[       diagnostics = true, ]]
+--[[       -- folding = true, ]]
+--[[       -- references = true, ]]
+--[[       -- rename = true, ]]
+--[[       -- symbols = true ]]
+--[[     } ]]
+--[[   } ]]
+--[[ } ]]
+--[[ require'lspconfig'.cssls.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.dockerls.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.jsonls.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   commands = { ]]
+--[[     Format = { ]]
+--[[       function() ]]
+--[[         vim.lsp.buf.range_formatting({},{0,0},{vim.fn.line("$"),0}) ]]
+--[[       end ]]
+--[[     } ]]
+--[[   }, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.yamlls.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.vimls.setup{ ]]
+--[[   on_attach = on_attach, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
+--[[ require'lspconfig'.rust_analyzer.setup { ]]
+--[[   on_attach = on_attach, ]]
+--[[   settings = { ]]
+--[[     ["rust-analyzer"] = { ]]
+--[[       assist = { ]]
+--[[         importMergeBehavior = "last", ]]
+--[[         importPrefix = "by_self", ]]
+--[[       }, ]]
+--[[       diagnostics = { ]]
+--[[         disabled = { "unresolved-import" } ]]
+--[[       }, ]]
+--[[       cargo = { ]]
+--[[         loadOutDirsFromCheck = true ]]
+--[[       }, ]]
+--[[       procMacro = { ]]
+--[[         enable = true ]]
+--[[       }, ]]
+--[[       checkOnSave = { ]]
+--[[         command = "clippy" ]]
+--[[       }, ]]
+--[[     } ]]
+--[[   }, ]]
+--[[   capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities()) ]]
+--[[ } ]]
 capabilities.textDocument.foldingRange = {
   dynamicRegistration = false,
   lineFoldingOnly = true
