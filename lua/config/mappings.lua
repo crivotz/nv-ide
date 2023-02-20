@@ -30,7 +30,7 @@ vim.keymap.set('n', '<leader>sl', "viw:lua require('spectre').open_file_search()
 -- Sad
 vim.keymap.set('n', '<leader>sr', ":lua require('FTerm').run({'fd | sad', vim.fn.input('SEARCH -> '), vim.fn.input('REPLACE -> ')})<CR>", {noremap = true, silent = true})
 -- Telescope
-vim.keymap.set('n', '<leader>r', ":lua require('telescope.builtin').live_grep()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>r', ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>#', ":lua require('telescope.builtin').grep_string()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>m', ":lua require('telescope.builtin').marks()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>b', ":lua require('config.plugins.telescope').my_buffers()<CR>", {noremap = true, silent = true})

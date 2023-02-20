@@ -12,6 +12,7 @@ local M = {
     { "nvim-telescope/telescope-dap.nvim" },
     --[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, ]]
     { "nvim-telescope/telescope-fzy-native.nvim" },
+    { "nvim-telescope/telescope-live-grep-args.nvim" },
   },
 }
 
@@ -86,6 +87,7 @@ function M.config()
   telescope.load_extension('dap')
   --[[ telescope.load_extension('fzf') ]]
   telescope.load_extension('fzy_native')
+  telescope.load_extension("live_grep_args")
 
   previewers = require('telescope.previewers')
   builtin = require('telescope.builtin')
@@ -106,7 +108,6 @@ function M.config()
       return { 'git', '-c', 'core.pager=delta', '-c', 'delta.side-by-side=false', 'diff', entry.value }
     end
   }
-
 end
 
 function M.my_git_commits(opts)
