@@ -1,7 +1,6 @@
 local M = {
   "ggandor/leap.nvim",
   event = "VeryLazy",
-
   dependencies = {
     { "ggandor/flit.nvim" },
   },

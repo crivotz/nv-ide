@@ -1,5 +1,6 @@
 return {
   "lewis6991/gitsigns.nvim",
+  event = { "BufReadPre", "BufNewFile" },
   config = function()
     if not package.loaded.trouble then
       package.preload.trouble = function()

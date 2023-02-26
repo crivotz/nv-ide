@@ -1,5 +1,6 @@
 local M = {
-  "famiu/feline.nvim",
+  "freddiehaddad/feline.nvim",
+  lazy = false,
 }
 function M.config()
   local lsp = require('feline.providers.lsp')

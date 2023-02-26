@@ -1,5 +1,6 @@
 return {
   "machakann/vim-sandwich",
+  event = "VeryLazy",
   config = function()
     vim.cmd([[
       runtime macros/sandwich/keymap/surround.vim

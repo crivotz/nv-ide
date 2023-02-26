@@ -1,13 +1,16 @@
 return {
-  -- Colorschema
-  "sainnhe/gruvbox-material",
-  -- "catppuccin/nvim", as = "catppuccin",
-  -- "olimorris/onedarkpro.nvim",
-  -- "folke/tokyonight.nvim",
-  "MunifTanjim/nui.nvim",
-  "folke/twilight.nvim",
-  -- LSP
-  { "williamboman/mason.nvim",
+  {
+    "sainnhe/gruvbox-material",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    priority = 1000,
+  },
+  {
+    "MunifTanjim/nui.nvim",
+    lazy = false,
+  },
+  {
+    "williamboman/mason.nvim",
+    lazy = false,
     config = function()
       require("mason").setup({
         ui = {
@@ -21,43 +24,95 @@ return {
       })
     end,
   },
-  { "williamboman/mason-lspconfig.nvim",
+  {
+    "williamboman/mason-lspconfig.nvim",
+    lazy = false,
     config =function()
       require("mason-lspconfig").setup({
         ensure_installed = { "html", "tsserver", "solargraph", "cssls", "dockerls", "jsonls", "yamlls", "vimls", "rust_analyzer" }
       })
       require("mason-lspconfig").setup_handlers({
-          function (server_name) -- default handler (optional)
-              require("lspconfig")[server_name].setup {}
-          end,
+        function (server_name) -- default handler (optional)
+          require("lspconfig")[server_name].setup {}
+        end,
       })
     end,
   },
-  "neovim/nvim-lspconfig",
-  "onsails/lspkind-nvim",
-  "weilbith/nvim-code-action-menu",
-  -- Autocomplete
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/cmp-buffer",
-  "hrsh7th/cmp-vsnip",
-  "hrsh7th/vim-vsnip",
-  "hrsh7th/cmp-path",
-  "hrsh7th/cmp-calc",
-  "hrsh7th/cmp-cmdline",
-  "ray-x/cmp-treesitter",
-  "lukas-reineke/cmp-rg",
-  "quangnguyen30192/cmp-nvim-tags",
-  "rafamadriz/friendly-snippets",
-  { "windwp/nvim-ts-autotag",
+  {
+    "neovim/nvim-lspconfig",
+    lazy = false,
+  },
+  {
+    "onsails/lspkind-nvim",
+    lazy = false,
+  },
+  {
+    "weilbith/nvim-code-action-menu",
+    lazy = false,
+  },
+  {
+    "hrsh7th/nvim-cmp",
+    priority = 1000,
+    lazy = false,
+  },
+  {
+    "hrsh7th/cmp-nvim-lsp",
+    lazy = false,
+  },
+  {
+    "hrsh7th/cmp-buffer",
+    lazy = false,
+  },
+  {
+    "hrsh7th/cmp-vsnip",
+    lazy = false,
+  },
+  {
+    "hrsh7th/vim-vsnip",
+    lazy = false,
+  },
+  {
+    "hrsh7th/cmp-path",
+    lazy = false,
+  },
+  {
+    "hrsh7th/cmp-calc",
+    lazy = false,
+  },
+  {
+    "hrsh7th/cmp-cmdline",
+    lazy = false,
+  },
+  {
+    "ray-x/cmp-treesitter",
+    lazy = false,
+  },
+  {
+    "lukas-reineke/cmp-rg",
+    lazy = false,
+  },
+  {
+    "quangnguyen30192/cmp-nvim-tags",
+    lazy = false,
+  },
+  {
+    "rafamadriz/friendly-snippets",
+    lazy = false,
+  },
+  {
+    "windwp/nvim-ts-autotag",
+    lazy = false,
     config = function()
       require("nvim-ts-autotag").setup()
     end,
   },
-  "andymass/vim-matchup",
-  -- Treesitter
-  "David-Kunz/markid",
-  { "nvim-treesitter/nvim-treesitter",
+  {
+    "David-Kunz/markid",
+    lazy = false,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
     config = function()
       require'nvim-treesitter.configs'.setup {
         markid = {
@@ -81,7 +136,9 @@ return {
       }
     end,
   },
-  { "mrjones2014/nvim-ts-rainbow",
+  {
+    "mrjones2014/nvim-ts-rainbow",
+    lazy = false,
     config = function()
       require'nvim-treesitter.configs'.setup {
         rainbow = {
@@ -90,7 +147,9 @@ return {
       }
     end,
   },
-  { "luukvbaal/statuscol.nvim",
+  {
+    "luukvbaal/statuscol.nvim",
+    lazy = false,
     config = function()
       require("statuscol").setup({
         separator = " ",
@@ -99,7 +158,9 @@ return {
       })
     end
   },
-  { "lukas-reineke/indent-blankline.nvim",
+  {
+    "lukas-reineke/indent-blankline.nvim",
+    lazy = false,
     config = function()
       require("indent_blankline").setup {
         buftype_exclude = { 'terminal', 'nofile' },
@@ -110,11 +171,18 @@ return {
         use_treesitter = true,
         show_trailing_blankline_indent = false,
       }
-    end,
+    end
   },
-  "JoosepAlviste/nvim-ts-context-commentstring",
-  "nvim-treesitter/nvim-treesitter-context",
-  { "SmiteshP/nvim-gps",
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    lazy = false,
+  },
+  {
+    "nvim-treesitter/nvim-treesitter-context",
+    lazy = false,
+  },
+  {
+    "SmiteshP/nvim-gps",
     config = function()
       require("nvim-gps").setup({
         icons = {
@@ -125,26 +193,17 @@ return {
           ["tag-name"] = '炙'         -- Tags (example: html tags)
         }
       })
-    end,
+    end
   },
-  -- Syntax
-  "chrisbra/csv.vim",
-  "junegunn/vim-easy-align",
-  "zdharma-continuum/zinit-vim-syntax",
-  -- Icons
-  "nvim-tree/nvim-web-devicons",
-  -- Status Line and Bufferline
-  "kazhala/close-buffers.nvim",
-  -- Git
-  "rhysd/committia.vim",
-  -- Registers & clipboard
-  { "AckslD/nvim-neoclip.lua",
+  {
+    "AckslD/nvim-neoclip.lua",
     config = function()
       require("neoclip").setup()
     end
   },
-  -- Move & Search & replace
-  { "nacro90/numb.nvim",
+  {
+    "nacro90/numb.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("numb").setup{
         show_numbers = true, -- Enable 'number' for the window while peeking
@@ -152,16 +211,16 @@ return {
       }
     end,
   },
-  { "karb94/neoscroll.nvim",
+  {
+    "karb94/neoscroll.nvim",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       require("neoscroll").setup()
     end,
   },
-  "chaoren/vim-wordmotion",
-  "windwp/nvim-spectre",
-  -- Tim Pope docet
   {
     "tpope/vim-rails",
+    event = { "BufReadPre", "BufNewFile" },
     config = function()
       -- disable autocmd set filetype=eruby.yaml
       vim.api.nvim_create_autocmd(
@@ -176,20 +235,53 @@ return {
       )
     end
   },
-  "tpope/vim-abolish",
-  "tpope/vim-sleuth",
-  "tpope/vim-bundler",
-  "tpope/vim-capslock",
-  "tpope/vim-repeat",
-  "tpope/vim-endwise",
-  "tpope/vim-dispatch",
-  "tpope/vim-dadbod",
-  "tpope/vim-jdaddy",
-  "tpope/vim-fugitive",
-  -- Tmux
-  "christoomey/vim-tmux-navigator",
-  -- Tags
-  { "ludovicchabant/vim-gutentags",
+  {
+    "tpope/vim-abolish",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-sleuth",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-bundler",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-capslock",
+    lazy = false,
+  },
+  {
+    "tpope/vim-repeat",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-endwise",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-dispatch",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-dadbod",
+    lazy = false,
+  },
+  {
+    "tpope/vim-jdaddy",
+    event = { "BufReadPre", "BufNewFile" },
+  },
+  {
+    "tpope/vim-fugitive",
+    lazy = false
+  },
+  {
+    "christoomey/vim-tmux-navigator",
+    lazy = false,
+  },
+  {
+    "ludovicchabant/vim-gutentags",
+    lazy = false,
     config = function()
       vim.cmd('set tags+=tags,.git/tags')
       vim.g.gutentags_enabled = 1
@@ -205,25 +297,30 @@ return {
       -- vim.g.gutentags_trace = 1
     end,
   },
-  -- Debugger
-  { "rcarriga/nvim-dap-ui",
+  {
+    "rcarriga/nvim-dap-ui",
+    event = 'VeryLazy',
     config = function()
       require("dapui").setup()
     end,
   },
-  { "theHamsta/nvim-dap-virtual-text",
+  {
+    "theHamsta/nvim-dap-virtual-text",
+    event = 'VeryLazy',
     config = function()
       require("nvim-dap-virtual-text").setup()
     end,
   },
-  -- General Plugins
-  "folke/trouble.nvim",
-  { "folke/todo-comments.nvim",
+  {
+    "folke/todo-comments.nvim",
+    event = 'VeryLazy',
     config = function()
       require("todo-comments").setup {}
     end,
   },
-  { "folke/which-key.nvim",
+  {
+    "folke/which-key.nvim",
+    event = 'VeryLazy',
     config = function()
       require("which-key").setup({
         window = {
@@ -232,7 +329,9 @@ return {
       })
     end,
   },
-  { "airblade/vim-rooter",
+  {
+    "airblade/vim-rooter",
+    lazy = false,
     config = function()
       vim.g.rooter_silent_chdir = 1
       vim.g.rooter_cd_cmd = 'lcd'
@@ -240,15 +339,18 @@ return {
       vim.g.rooter_patterns = { '.git', '.git/' }
     end,
   },
-  "lambdalisue/suda.vim",
-  { "gorbit99/codewindow.nvim",
+  {
+    "gorbit99/codewindow.nvim",
+    event = 'VeryLazy',
     config = function()
       local codewindow = require("codewindow")
       codewindow.setup()
       codewindow.apply_default_keybinds()
     end,
   },
-  { "beauwilliams/focus.nvim",
+  {
+    "beauwilliams/focus.nvim",
+    event = 'VeryLazy',
     config = function()
       require("focus").setup({
         excluded_filetypes = {
@@ -267,9 +369,13 @@ return {
       })
     end,
   },
-  "jeffkreeftmeijer/vim-numbertoggle",
+  {
+    "jeffkreeftmeijer/vim-numbertoggle",
+    lazy = false,
+  },
   {
     "nvim-zh/colorful-winsep.nvim",
+    lazy = false,
     config = function ()
       require("colorful-winsep").setup({
         highlight = {
@@ -296,5 +402,42 @@ return {
         twilight = true,
       },
     },
+  },
+  {
+    "lambdalisue/suda.vim",
+    event = 'VeryLazy',
+  },
+  {
+    "andymass/vim-matchup",
+    lazy = false,
+  },
+  {
+    "chrisbra/csv.vim",
+    event = 'VeryLazy',
+  },
+  {
+    "kazhala/close-buffers.nvim",
+    event = 'VeryLazy',
+  },
+  {"folke/twilight.nvim",
+    event = 'VeryLazy',
+  },
+  {"zdharma-continuum/zinit-vim-syntax",
+    event = 'VeryLazy',
+  },
+  {"nvim-tree/nvim-web-devicons",
+    event = 'VeryLazy',
+  },
+  {"rhysd/committia.vim",
+    event = 'VeryLazy',
+  },
+  {"chaoren/vim-wordmotion",
+    event = 'VeryLazy',
+  },
+  {"windwp/nvim-spectre",
+    event = 'VeryLazy',
+  },
+  {"folke/trouble.nvim",
+    event = 'VeryLazy',
   },
 }

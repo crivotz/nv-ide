@@ -1,5 +1,6 @@
 local M = {
   "noib3/nvim-cokeline",
+  lazy = false,
 }
 function M.config()
   local get_hex = require('cokeline/utils').get_hex

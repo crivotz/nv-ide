@@ -1,5 +1,6 @@
 return {
   "kyazdani42/nvim-tree.lua",
+  lazy = false,
   config = function()
     require'nvim-tree'.setup {
       -- disables netrw completely

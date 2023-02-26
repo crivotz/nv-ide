@@ -1,5 +1,6 @@
 local M = {
   "mfussenegger/nvim-dap",
+  event = "VeryLazy",
 }
 function M.config()
   local dap, dapui = require("dap")
