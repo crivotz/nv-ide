@@ -121,7 +121,8 @@ return {
         },
         ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
         highlight = {
-          enable = true
+          enable = true,
+          --[[ disable = { "embedded_template" } ]]
         },
         indent = {
           enable = true
@@ -349,27 +350,6 @@ return {
     end,
   },
   {
-    "beauwilliams/focus.nvim",
-    event = 'VeryLazy',
-    config = function()
-      require("focus").setup({
-        excluded_filetypes = {
-          '', -- Hover popups such as Treesitter syntax investigation popup, lsp popups...
-          'TelescopePrompt',
-          'toggleterm',
-          'term',
-          'fterm',
-          'diffviewfiles',
-        },
-        excluded_buftypes = {
-          'help',
-          'prompt',
-          'popup',
-        },
-      })
-    end,
-  },
-  {
     "jeffkreeftmeijer/vim-numbertoggle",
     lazy = false,
   },
@@ -438,6 +418,9 @@ return {
     event = 'VeryLazy',
   },
   {"folke/trouble.nvim",
+    event = 'VeryLazy',
+  },
+  {"mrbjarksen/neo-tree-diagnostics.nvim",
     event = 'VeryLazy',
   },
 }
