@@ -9,40 +9,6 @@ return {
     lazy = false,
   },
   {
-    "williamboman/mason.nvim",
-    lazy = false,
-    config = function()
-      require("mason").setup({
-        ui = {
-          border = {"┏", "━", "┓", "┃", "┛", "━", "┗", "┃"},
-          icons = {
-            package_installed = "✓",
-            package_pending = "➜",
-            package_uninstalled = "✗"
-          }
-        }
-      })
-    end,
-  },
-  {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
-    config =function()
-      require("mason-lspconfig").setup({
-        ensure_installed = { "html", "tsserver", "solargraph", "cssls", "dockerls", "jsonls", "yamlls", "vimls", "rust_analyzer" }
-      })
-      require("mason-lspconfig").setup_handlers({
-        function (server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup {}
-        end,
-      })
-    end,
-  },
-  {
-    "neovim/nvim-lspconfig",
-    lazy = false,
-  },
-  {
     "onsails/lspkind-nvim",
     lazy = false,
   },
@@ -53,10 +19,6 @@ return {
   {
     "hrsh7th/nvim-cmp",
     priority = 1000,
-    lazy = false,
-  },
-  {
-    "hrsh7th/cmp-nvim-lsp",
     lazy = false,
   },
   {

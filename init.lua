@@ -10,7 +10,5 @@ require('config.colorschemes.gruvbox')
 --
 require('config.font')
 require('config.completion')
--- LSP Config
-require('config.lsp')
 -- Keymap
 require('config.mappings')
