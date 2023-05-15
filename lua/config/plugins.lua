@@ -345,13 +345,23 @@ return {
       },
     },
   },
+  {"AckslD/muren.nvim",
+    event = 'VeryLazy',
+    config = function()
+      require('muren').setup({
+        patterns_width = 50,
+        options_width = 20,
+        preview_height = 15,
+      })
+    end
+  },
   {
     "lambdalisue/suda.vim",
     event = 'VeryLazy',
   },
   {
     "andymass/vim-matchup",
-    lazy = false,
+    event = 'VeryLazy',
   },
   {
     "chrisbra/csv.vim",

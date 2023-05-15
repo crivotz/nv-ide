@@ -16,7 +16,7 @@ function M.config()
   local components = {
     space = {
       text = ' ',
-      truncation = { priority = 1 }
+      truncation = { priority = 1 },
     },
 
     two_spaces = {

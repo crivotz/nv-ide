@@ -1,5 +1,5 @@
 vim.g.gruvbox_material_background = "medium" -- hard, soft, medium
-vim.g.gruvbox_material_palette = "material" -- original, mix, material
+vim.g.gruvbox_material_foreground = "material" -- original, mix, material
 vim.g.gruvbox_material_enable_italic = 1
 vim.g.gruvbox_material_sign_column_background = 'none'
 
@@ -39,6 +39,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   'hi StatusColumnBorder                 guifg=#232323 |' ..
   'hi StatusColumnBuffer                 guibg=#282828 |' ..
   'hi CursorLineNr                       guifg=#d8a657 |' ..
-  'hi CodewindowBorder                   guifg=#ea6962 |'
+  'hi CodewindowBorder                   guifg=#ea6962 |' ..
+  'hi TabLine                            guibg=#282828 |'
 })
 vim.cmd'colorscheme gruvbox-material'
