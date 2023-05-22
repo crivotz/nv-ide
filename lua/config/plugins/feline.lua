@@ -5,7 +5,7 @@ local M = {
 function M.config()
   local lsp = require('feline.providers.lsp')
   local vi_mode_utils = require('feline.providers.vi_mode')
-  local gps = require("nvim-gps")
+  local navic = require("nvim-navic")
   local lazy = require("lazy.status")
 
   local force_inactive = {
@@ -410,10 +410,10 @@ function M.config()
   -- WINBAR
   -- LEFT
 
-  -- nvimGps
+  -- nvim-navic
   winbar_components.active[1][1] = {
-    provider = function() return gps.get_location() end,
-    enabled = function() return gps.is_available() end,
+    provider = function() return navic.get_location() end,
+    enabled = function() return navic.is_available() end,
     hl = {
       fg = 'orange',
       style = 'bold'

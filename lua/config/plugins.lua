@@ -145,20 +145,6 @@ return {
     lazy = false,
   },
   {
-    "SmiteshP/nvim-gps",
-    config = function()
-      require("nvim-gps").setup({
-        icons = {
-          ["class-name"] = ' ',      -- Classes and class-like objects
-          ["function-name"] = ' ',   -- Functions
-          ["method-name"] = ' ',     -- Methods (functions inside class-like objects)
-          ["container-name"] = '⛶ ',  -- Containers (example: lua tables)
-          ["tag-name"] = '炙'         -- Tags (example: html tags)
-        }
-      })
-    end
-  },
-  {
     "AckslD/nvim-neoclip.lua",
     config = function()
       require("neoclip").setup()
