@@ -381,4 +381,7 @@ return {
   {"mrbjarksen/neo-tree-diagnostics.nvim",
     event = 'VeryLazy',
   },
+  {"RRethy/vim-illuminate",
+    event = 'VeryLazy',
+  },
 }
