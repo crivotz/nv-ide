@@ -47,84 +47,18 @@ function M.config()
     inactive = {{}, {}, {}},
   }
 
-  local gruvbox = {
-    bg = '#282828',
-    black = '#282828',
-    yellow = '#d8a657',
-    cyan = '#89b482',
-    oceanblue = '#45707a',
-    green = '#a9b665',
-    orange = '#e78a4e',
-    violet = '#d3869b',
-    magenta = '#c14a4a',
-    white = '#a89984',
-    fg = '#a89984',
-    skyblue = '#7daea3',
-    red = '#ea6962',
-  }
-
-  local catppuccin = {
-    bg = '#1e1e2e',
-    black = '#1e1e2e',
-    yellow = '#f9e2af',
-    cyan = '#94e2d5',
-    oceanblue = '#89b4fa',
-    green = '#a6e3a1',
-    orange = '#fab387',
-    violet = '#cba6f7',
-    magenta = '#eba0ac',
-    white = '#f5e0dc',
-    fg = '#f5e0dc',
-    skyblue = '#74c7ec',
-    red = '#f38ba8',
-  }
-
-  local onedarkpro = {
-    bg = "#282c34",
-    black = "#282c34",
-    yellow = "#e5c07b",
-    cyan = "#56b6c2",
-    oceanblue = "#61afef",
-    green = "#98c379",
-    orange = "#d19a66",
-    violet = "#c678dd",
-    magenta = "#c678dd",
-    white = "#abb2bf",
-    fg = "#abb2bf",
-    skyblue = "#61afef",
-    red = "#e06c75",
-  }
-
-  local tokyonight = {
-    bg = "#1a1b26",
-    black = "#1a1b26",
-    yellow = "#e0af68",
-    cyan = "#7dcfff",
-    oceanblue = "#7aa2f7",
-    green = "#9ece6a",
-    orange = "#e0af68",
-    violet = "#bb9af7",
-    magenta = "#bb9af7",
-    white = "#c0caf5",
-    fg = "#c0caf5",
-    skyblue = "#7dcfff",
-    red = "#f7768e",
-  }
-
-  local tokyonightstorm = {
-    bg = "#24283b",
-    black = "#24283b",
-    yellow = "#e0af68",
-    cyan = "#7dcfff",
-    oceanblue = "#7aa2f7",
-    green = "#9ece6a",
-    orange = "#e0af68",
-    violet = "#bb9af7",
-    magenta = "#bb9af7",
-    white = "#c0caf5",
-    fg = "#c0caf5",
-    skyblue = "#7dcfff",
-    red = "#f7768e",
+  local colors = {
+    bg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg),
+    fg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
+    black = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "EndOfBuffer", link = false }).fg),
+    yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "DiagnosticWarn", link = true }).fg),
+    aqua = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Keyword", link = false }).fg),
+    green = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "String", link = false }).fg),
+    orange = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Constant", link = false }).fg),
+    purple = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Identifier", link = false }).fg),
+    white = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
+    blue = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Comment", link = false }).fg),
+    red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "DiagnosticError", link = false }).fg),
   }
 
   local vi_mode_colors = {
@@ -132,13 +66,13 @@ function M.config()
     OP = 'green',
     INSERT = 'red',
     CONFIRM = 'red',
-    VISUAL = 'skyblue',
-    LINES = 'skyblue',
-    BLOCK = 'skyblue',
-    REPLACE = 'violet',
-    ['V-REPLACE'] = 'violet',
-    ENTER = 'cyan',
-    MORE = 'cyan',
+    VISUAL = 'blue',
+    LINES = 'blue',
+    BLOCK = 'blue',
+    REPLACE = 'purple',
+    ['V-REPLACE'] = 'purple',
+    ENTER = 'aqua',
+    MORE = 'aqua',
     SELECT = 'orange',
     COMMAND = 'green',
     SHELL = 'green',
@@ -314,7 +248,7 @@ function M.config()
     provider = 'file_size',
     enabled = function() return vim.fn.getfsize(vim.fn.expand('%:t')) > 0 end,
     hl = {
-      fg = 'skyblue',
+      fg = 'blue',
       bg = 'bg',
       style = 'bold'
     },
@@ -385,14 +319,14 @@ function M.config()
     provider = 'file_type',
     hl = {
       fg = 'black',
-      bg = 'cyan',
+      bg = 'aqua',
       style = 'bold'
     },
     left_sep = {
       str = ' ',
       hl = {
         fg = 'NONE',
-        bg = 'cyan'
+        bg = 'aqua'
       }
     },
     right_sep = {
@@ -400,7 +334,7 @@ function M.config()
         str = ' ',
         hl = {
           fg = 'NONE',
-          bg = 'cyan'
+          bg = 'aqua'
         }
       },
       ' '
@@ -456,7 +390,7 @@ function M.config()
     provider = 'diagnostic_hints',
     enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.HINT) end,
     hl = {
-      fg = 'cyan',
+      fg = 'aqua',
       style = 'bold'
     }
   }
@@ -465,7 +399,7 @@ function M.config()
     provider = 'diagnostic_info',
     enabled = function() return lsp.diagnostics_exist(vim.diagnostic.severity.INFO) end,
     hl = {
-      fg = 'skyblue',
+      fg = 'blue',
       style = 'bold'
     }
   }
@@ -477,14 +411,14 @@ function M.config()
     provider = 'file_type',
     hl = {
       fg = 'black',
-      bg = 'cyan',
+      bg = 'aqua',
       style = 'bold'
     },
     left_sep = {
       str = ' ',
       hl = {
         fg = 'NONE',
-        bg = 'cyan'
+        bg = 'aqua'
       }
     },
     right_sep = {
@@ -492,7 +426,7 @@ function M.config()
         str = ' ',
         hl = {
           fg = 'NONE',
-          bg = 'cyan'
+          bg = 'aqua'
         }
       },
       ' '
@@ -500,7 +434,7 @@ function M.config()
   }
 
   require('feline').setup({
-    theme = gruvbox,
+    theme = colors,
     default_bg = bg,
     default_fg = fg,
     vi_mode_colors = vi_mode_colors,
