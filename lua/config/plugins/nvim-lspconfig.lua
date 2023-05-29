@@ -41,8 +41,7 @@ end
 function M.config()
   local lspconfig = require("lspconfig")
   local mason_lspconfig = require("mason-lspconfig")
-  --[[ local capabilities = vim.lsp.protocol.make_client_capabilities() ]]
-  local capabilities = require('cmp_nvim_lsp').default_capabilities()
+  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,
@@ -70,7 +69,6 @@ function M.config()
       }
     }
   })
-  require("ufo").setup()
   mason_lspconfig.setup {
     ensure_installed = {
       'html',
@@ -79,7 +77,7 @@ function M.config()
       'cssls',
       'dockerls',
       'jsonls',
-      'yamlls',
+      --[[ 'yamlls', ]]
       'vimls',
       'rust_analyzer',
       'clangd',
@@ -96,6 +94,22 @@ function M.config()
         capabilities,
       }
     end,
+    --[[ ["yamlls"] = function() ]]
+    --[[   lspconfig.yamlls.setup { ]]
+    --[[     on_attach = M.on_attach, ]]
+    --[[     capabilities, ]]
+    --[[     filetypes = { ]]
+    --[[       "yaml", "yaml.ansible", "ansible" ]]
+    --[[     }, ]]
+    --[[     settings = { ]]
+    --[[       yaml = { ]]
+    --[[         hover = true, ]]
+    --[[         completion = true, ]]
+    --[[         validate = true, ]]
+    --[[       }, ]]
+    --[[     }, ]]
+    --[[   } ]]
+    --[[ end, ]]
     ["html"] = function()
       lspconfig.html.setup({
         on_attach = M.on_attach,
@@ -190,6 +204,7 @@ function M.config()
       })
     end,
   }
+  require("ufo").setup()
 end
 
 return M

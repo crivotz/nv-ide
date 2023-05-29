@@ -179,7 +179,6 @@ return {
           callback = function()
             vim.bo.filetype = 'yaml'
           end
-
         }
       )
     end
