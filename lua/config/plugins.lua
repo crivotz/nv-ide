@@ -1,8 +1,9 @@
 return {
+  --[[ COLORSCHEME ]]
   {
     "sainnhe/gruvbox-material",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    enabled = true,
+    lazy = false,
+    enabled = false,
     priority = 1000,
      config = function()
        require('config.colorschemes.gruvbox')
@@ -10,8 +11,8 @@ return {
   },
   {
     "folke/tokyonight.nvim",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
-    enabled = false,
+    lazy = false,
+    enabled = true,
     priority = 1000,
      config = function()
        require('config.colorschemes.tokyonight')
@@ -19,13 +20,14 @@ return {
   },
   {
    "projekt0n/github-nvim-theme",
-    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    lazy = false,
     enabled = false,
     priority = 1000,
      config = function()
        require('config.colorschemes.github')
      end,
   },
+  --
   {
     "MunifTanjim/nui.nvim",
     lazy = false,
