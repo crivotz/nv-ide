@@ -10,8 +10,8 @@ function M.config()
   local errors_fg = get_hex('DiagnosticError', 'fg')
   local warnings_fg = get_hex('DiagnosticWarn', 'fg')
 
-  local red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "DiagnosticError", link = false }).fg)
-  local yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "DiagnosticWarning", link = false }).fg)
+  local red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Error", link = false }).fg)
+  local yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Question", link = false }).fg)
 
   local components = {
     space = {

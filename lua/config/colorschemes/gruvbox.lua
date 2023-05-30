@@ -26,16 +26,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   'hi BqfPreviewBorder                   guifg=#ea6962 guibg=#282828 |' ..
   'hi NormalFloat                        guibg=#282828 |' ..
   'hi IndentBlanklineContextChar         guifg=#d3869b |' ..
-  'hi markid1                            guifg=#ff8f88 |' ..
-  'hi markid2                            guifg=#ffb074 |' ..
-  'hi markid3                            guifg=#cfdc8b |' ..
-  'hi markid4                            guifg=#a3d4c9 |' ..
-  'hi markid5                            guifg=#f9acc1 |' ..
-  'hi markid6                            guifg=#afdaa8 |' ..
-  'hi markid7                            guifg=#fecc7d |' ..
-  'hi markid8                            guifg=#eed8b2 |' ..
-  'hi markid9                            guifg=#ffedc7 |' ..
-  'hi markid10                           guifg=#cebfaa |' ..
   'hi StatusColumnBorder                 guifg=#232323 |' ..
   'hi StatusColumnBuffer                 guibg=#282828 |' ..
   'hi CursorLineNr                       guifg=#d8a657 |' ..

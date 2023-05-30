@@ -32,38 +32,4 @@ require("tokyonight").setup({
   ---@param colors ColorScheme
   on_highlights = function(highlights, colors) end,
 })
-
-grpid = vim.api.nvim_create_augroup('custom_highlights_tokyonight', {})
-vim.api.nvim_create_autocmd('ColorScheme', {
-  group = grpid,
-  pattern = 'tokyonight',
-  command =
-  'hi NvimTreeNormal                     guibg=#16161e |' ..
-  'hi NvimTreeEndOfBuffer                guibg=#16161e |' ..
-  'hi NoiceCmdlinePopupBorderCmdline     guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi TelescopePromptBorder              guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi TelescopePromptNormal              guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi TelescopePromptTitle               guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi TelescopePromptPrefix              guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi TelescopePromptCounter             guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi TelescopePreviewTitle              guifg=#9ece6a guibg=#1a1b26 |' ..
-  'hi TelescopePreviewBorder             guifg=#9ece6a guibg=#1a1b26 |' ..
-  'hi TelescopeResultsTitle              guifg=#9ece6a guibg=#1a1b26 |' ..
-  'hi TelescopeResultsBorder             guifg=#9ece6a guibg=#1a1b26 |' ..
-  'hi TelescopeMatching                  guifg=#e0af68 guibg=#1a1b26 |' ..
-  'hi TelescopeSelection                 guifg=#c0caf5 guibg=#1a1b26 |' ..
-  'hi FloatBorder                        guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi BqfPreviewBorder                   guifg=#f7768e guibg=#1a1b26 |' ..
-  'hi NormalFloat                        guibg=#1a1b26 |' ..
-  'hi markid1                            guifg=#ff90a8 |' ..
-  'hi markid2                            guifg=#ffb87e |' ..
-  'hi markid3                            guifg=#b8e884 |' ..
-  'hi markid4                            guifg=#94bcff |' ..
-  'hi markid5                            guifg=#f56565 |' ..
-  'hi markid6                            guifg=#97e9ff |' ..
-  'hi markid7                            guifg=#fac982 |' ..
-  'hi markid8                            guifg=#d5b4ff |' ..
-  'hi markid9                            guifg=#44ddf8 |' ..
-  'hi markid10                           guifg=#34d6b6 |'
-})
 vim.cmd [[colorscheme tokyonight]]

@@ -51,14 +51,14 @@ function M.config()
     bg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg),
     fg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
     black = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "EndOfBuffer", link = false }).fg),
-    yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "DiagnosticWarn", link = true }).fg),
+    yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Type", link = false }).fg),
     aqua = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Keyword", link = false }).fg),
     green = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "String", link = false }).fg),
-    orange = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Constant", link = false }).fg),
+    orange = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Operator", link = false }).fg),
     purple = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Identifier", link = false }).fg),
     white = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
     blue = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Comment", link = false }).fg),
-    red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "DiagnosticError", link = false }).fg),
+    red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Error", link = false }).fg),
   }
 
   local vi_mode_colors = {
