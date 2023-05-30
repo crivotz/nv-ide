@@ -2,7 +2,29 @@ return {
   {
     "sainnhe/gruvbox-material",
     lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    enabled = true,
     priority = 1000,
+     config = function()
+       require('config.colorschemes.gruvbox')
+     end,
+  },
+  {
+    "folke/tokyonight.nvim",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    enabled = false,
+    priority = 1000,
+     config = function()
+       require('config.colorschemes.tokyonight')
+     end,
+  },
+  {
+   "projekt0n/github-nvim-theme",
+    lazy = false, -- make sure we load this during startup if it is your main colorscheme
+    enabled = false,
+    priority = 1000,
+     config = function()
+       require('config.colorschemes.github')
+     end,
   },
   {
     "MunifTanjim/nui.nvim",
@@ -69,18 +91,10 @@ return {
     end,
   },
   {
-    "David-Kunz/markid",
-    lazy = false,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     config = function()
       require'nvim-treesitter.configs'.setup {
-        markid = {
-          enable = true,
-          colors = false
-        },
         ensure_installed = "all", -- one of "all", "maintained" (parsers with maintainers), or a list of languages
         highlight = {
           enable = true,
