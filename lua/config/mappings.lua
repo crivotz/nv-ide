@@ -9,8 +9,8 @@ vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, s
 vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bn', '<Plug>(cokeline-focus-next)', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bp', '<Plug>(cokeline-focus-prev)', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bn', ':BufferLineMoveNext<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bp', ':BufferLineMovePrev<CR>', {noremap = false, silent = true})
 -- Git (Fugitive and Lazygit)
 vim.keymap.set('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = true})
 -- LSP
@@ -21,8 +21,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {noremap = true, silent = tr
 vim.keymap.set('n', '<leader>sp', ":lua require('spectre').open()<CR>", {noremap = true, silent = true})
 vim.keymap.set('v', '<leader>sp', ":lua require('spectre').open_visual()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>sl', "viw:lua require('spectre').open_file_search()<CR>", {noremap = true, silent = true})
--- Sad
-vim.keymap.set('n', '<leader>sr', ":lua require('FTerm').run({'fd | sad', vim.fn.input('SEARCH -> '), vim.fn.input('REPLACE -> ')})<CR>", {noremap = true, silent = true})
 -- Telescope
 vim.keymap.set('n', '<leader>r', ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>#', ":lua require('telescope.builtin').grep_string()<CR>", {noremap = true, silent = true})
