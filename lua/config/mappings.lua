@@ -1,9 +1,7 @@
 -- <F1> help
-vim.keymap.set('n', '<F2>', ":MurenToggle<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<F3>', ':set nu! rnu!<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = true})
 -- <F5> Ranger from toggleterm
-vim.keymap.set('n', '<F6>', ':Neotree git_status reveal right toggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<F7>', ':Neotree filesystem reveal left toggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<F8>', ':ZenMode<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = true})
@@ -15,9 +13,6 @@ vim.keymap.set('n', '<leader>bn', '<Plug>(cokeline-focus-next)', {noremap = fals
 vim.keymap.set('n', '<leader>bp', '<Plug>(cokeline-focus-prev)', {noremap = false, silent = true})
 -- Git (Fugitive and Lazygit)
 vim.keymap.set('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = true})
--- Easy-align
-vim.keymap.set('x', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = true})
-vim.keymap.set('n', 'ga', '<Plug>(EasyAlign)', {noremap = false, silent = true})
 -- LSP
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, {noremap = true, silent = true})
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {noremap = true, silent = true})
@@ -52,15 +47,6 @@ vim.keymap.set('n', '*', "*<Cmd>lua require('hlslens').start()<CR>", { noremap =
 vim.keymap.set('n', '#', "#<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
 vim.keymap.set('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
 vim.keymap.set('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
--- Move.nvim
-vim.keymap.set('n', '<A-j>', ":MoveLine(1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<A-k>', ":MoveLine(-1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('v', '<A-j>', ":MoveBlock(1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('v', '<A-k>', ":MoveBlock(-1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<A-l>', ":MoveHChar(1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('n', '<A-h>', ":MoveHChar(-1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('v', '<A-l>', ":MoveHBlock(1)<CR>", { noremap = true, silent = true })
-vim.keymap.set('v', '<A-h>', ":MoveHBlock(-1)<CR>", { noremap = true, silent = true })
 -- Trouble
 vim.keymap.set('n', '<leader>to', ':TodoTrouble keywords=TODO,FIX,FIXME<CR>', {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})

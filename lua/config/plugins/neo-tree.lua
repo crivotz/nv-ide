@@ -4,29 +4,30 @@ return {
   enabled = true,
   config = function()
     require'neo-tree'.setup({
+      open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy" },
       close_if_last_window = true, -- Close Neo-tree if it is the last window left in the tab
       -- popup_border_style = { "▄", "▄", "▄", "█", "▀", "▀", "▀", "█" },
       -- popup_border_style = "rounded",
       enable_git_status = true,
       enable_diagnostics = true,
-      sources = {
-        "filesystem",
-        "buffers",
-        "git_status",
-        "diagnostics"
-      },
-      source_selector = {
-        winbar = false,
-        statusline = false, -- toggle to show selector on statusline
-        content_layout = "center",
-        tabs_layout = "equal",
-        sources = {
-          { source = "filesystem", display_name = "" },
-          { source = "buffers", display_name = "" },
-          { source = "git_status", display_name = "" },
-          { source = "diagnostics", display_name = "裂" }
-        },
-      },
+      --[[ sources = { ]]
+      --[[   "filesystem", ]]
+      --[[   "buffers", ]]
+      --[[   "git_status", ]]
+      --[[   "diagnostics" ]]
+      --[[ }, ]]
+      --[[ source_selector = { ]]
+      --[[   winbar = false, ]]
+      --[[   statusline = false, -- toggle to show selector on statusline ]]
+      --[[   content_layout = "center", ]]
+      --[[   tabs_layout = "equal", ]]
+      --[[   sources = { ]]
+      --[[     { source = "filesystem", display_name = "" }, ]]
+      --[[     { source = "buffers", display_name = "" }, ]]
+      --[[     { source = "git_status", display_name = "" }, ]]
+      --[[     { source = "diagnostics", display_name = "裂" } ]]
+      --[[   }, ]]
+      --[[ }, ]]
       default_component_configs = {
         container = {
           enable_character_fade = true,
