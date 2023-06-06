@@ -9,8 +9,8 @@ vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, s
 vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bn', ':BufferLineMoveNext<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bp', ':BufferLineMovePrev<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', {noremap = false, silent = true})
 -- Git (Fugitive and Lazygit)
 vim.keymap.set('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = true})
 -- LSP
