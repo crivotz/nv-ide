@@ -359,6 +359,9 @@ return {
           ft = "toggleterm",
           title = "TERMINAL",
           size = { height = 0.4 },
+          filter = function(buf, win)
+            return vim.api.nvim_win_get_config(win).relative == ""
+          end,
         },
         { ft = "Trouble", title = "TROUBLE" },
         { ft = "qf", title = "QUICKFIX" },
