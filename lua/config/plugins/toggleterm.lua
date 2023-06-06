@@ -13,18 +13,6 @@ return {
       persist_size = true,
       direction = "horizontal",
       close_on_exit = true,
-      highlights = {
-        Normal = {
-          guibg = "#181818",
-        },
-        NormalFloat = {
-          link = '#181818'
-        },
-        FloatBorder = {
-          guifg = "#ea6962",
-          guibg = "#282828",
-        },
-      },
       float_opts = {
         border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
       }

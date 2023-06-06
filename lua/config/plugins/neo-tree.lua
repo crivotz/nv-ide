@@ -16,7 +16,7 @@ return {
         "diagnostics"
       },
       source_selector = {
-        winbar = true,
+        winbar = false,
         statusline = false, -- toggle to show selector on statusline
         content_layout = "center",
         tabs_layout = "equal",

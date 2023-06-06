@@ -177,13 +177,6 @@ return {
     end,
   },
   {
-    "karb94/neoscroll.nvim",
-    event = { "BufReadPre", "BufNewFile" },
-    config = function()
-      require("neoscroll").setup()
-    end,
-  },
-  {
     "tpope/vim-rails",
     event = { "BufReadPre", "BufNewFile" },
     config = function()
@@ -230,10 +223,6 @@ return {
   {
     "tpope/vim-dadbod",
     lazy = false,
-  },
-  {
-    "tpope/vim-jdaddy",
-    event = { "BufReadPre", "BufNewFile" },
   },
   {
     "tpope/vim-fugitive",
@@ -304,36 +293,8 @@ return {
     end,
   },
   {
-    "gorbit99/codewindow.nvim",
-    event = 'VeryLazy',
-    config = function()
-      local codewindow = require("codewindow")
-      codewindow.setup()
-      codewindow.apply_default_keybinds()
-    end,
-  },
-  {
     "jeffkreeftmeijer/vim-numbertoggle",
     lazy = false,
-  },
-  {
-    "nvim-zh/colorful-winsep.nvim",
-    lazy = false,
-    config = function ()
-      require("colorful-winsep").setup({
-        highlight = {
-          bg = "#282828",
-          fg = "#d8a657",
-        },
-        interval = 30,
-        no_exec_files = { "packer", "TelescopePrompt", "mason", "CompetiTest", "NvimTree" },
-        symbols = { "━", "┃", "┏", "┓", "┗", "┛" },
-        close_event = function()
-        end,
-        create_event = function()
-        end,
-      })
-    end
   },
   {
     "folke/zen-mode.nvim",
@@ -345,16 +306,6 @@ return {
         twilight = true,
       },
     },
-  },
-  {"AckslD/muren.nvim",
-    event = 'VeryLazy',
-    config = function()
-      require('muren').setup({
-        patterns_width = 50,
-        options_width = 20,
-        preview_height = 15,
-      })
-    end
   },
   {
     "lambdalisue/suda.vim",
@@ -398,5 +349,72 @@ return {
   },
   {"RRethy/vim-illuminate",
     event = 'VeryLazy',
+  },
+  {
+    "folke/edgy.nvim",
+    event = "VeryLazy",
+    opts = {
+      bottom = {
+        {
+          ft = "toggleterm",
+          title = "TERMINAL",
+          size = { height = 0.4 },
+        },
+        { ft = "Trouble", title = "TROUBLE" },
+        { ft = "qf", title = "QUICKFIX" },
+        {
+          ft = "help",
+          size = { height = 20 },
+          -- only show help buffers
+          filter = function(buf)
+            return vim.bo[buf].buftype == "help"
+          end,
+        },
+        { ft = "spectre_panel", title = "SPECTRE", size = { height = 0.4 } },
+      },
+      left = {
+        {
+          title = "  FILE",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "filesystem"
+          end,
+          size = { height = 0.5 },
+        },
+        {
+          title = "  GIT",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "git_status"
+          end,
+          pinned = true,
+          open = "Neotree position=right git_status",
+        },
+        {
+          title = "  BUFFERS",
+          ft = "neo-tree",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "buffers"
+          end,
+          pinned = true,
+          open = "Neotree position=top buffers",
+        },
+        {
+          ft = "裂 DIAGNOSTICS",
+          filter = function(buf)
+            return vim.b[buf].neo_tree_source == "diagnostics"
+          end,
+          pinned = true,
+          open = "Neotree position=right diagnostics",
+        },
+      },
+    },
+  },
+  {
+    "echasnovski/mini.animate",
+    version = false,
+    config = function ()
+      require('mini.animate').setup()
+    end
   },
 }
