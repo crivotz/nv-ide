@@ -354,6 +354,12 @@ return {
     "folke/edgy.nvim",
     event = "VeryLazy",
     opts = {
+      options = {
+        left = { size = 40 },
+        bottom = { size = 10 },
+        right = { size = 40 },
+        top = { size = 10 },
+      },
       bottom = {
         {
           ft = "toggleterm",
@@ -363,6 +369,7 @@ return {
             return vim.api.nvim_win_get_config(win).relative == ""
           end,
         },
+        { ft = "spectre_panel", title = "SPECTRE", size = { height = 0.4 } },
         { ft = "Trouble", title = "TROUBLE" },
         { ft = "qf", title = "QUICKFIX" },
         {
@@ -373,7 +380,6 @@ return {
             return vim.bo[buf].buftype == "help"
           end,
         },
-        { ft = "spectre_panel", title = "SPECTRE", size = { height = 0.4 } },
       },
       left = {
         {
@@ -382,7 +388,7 @@ return {
           filter = function(buf)
             return vim.b[buf].neo_tree_source == "filesystem"
           end,
-          size = { height = 0.5 },
+          size = { height = 0.7 },
         },
         {
           title = "  GIT",
@@ -410,6 +416,13 @@ return {
           pinned = true,
           open = "Neotree position=right diagnostics",
         },
+        {
+          title = "  OUTLINE",
+          ft = "Outline",
+          pinned = true,
+          open = "SymbolsOutline",
+        },
+        "neo-tree",
       },
     },
   },
@@ -465,5 +478,13 @@ return {
         Offset.edgy = true
       end
     end,
+  },
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    opts = {
+      position = "right",
+    },
   },
 }

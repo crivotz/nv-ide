@@ -46,7 +46,9 @@ vim.keymap.set('n', '#', "#<Cmd>lua require('hlslens').start()<CR>", { noremap =
 vim.keymap.set('n', 'g*', "g*<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
 vim.keymap.set('n', 'g#', "g#<Cmd>lua require('hlslens').start()<CR>", { noremap = true })
 -- Trouble
-vim.keymap.set('n', '<leader>to', ':TodoTrouble keywords=TODO,FIX,FIXME<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>tt', ':TodoTrouble keywords=TODO<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>tf', ':TodoTrouble keywords=FIX,FIXME<CR>', {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>tn', ':TodoTrouble keywords=NOTE<CR>', {noremap = true, silent = true})
 vim.keymap.set("n", "<leader>tr", "<cmd>TroubleToggle<cr>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>", {silent = true, noremap = true})
 vim.keymap.set("n", "<leader>td", "<cmd>Trouble document_diagnostics<cr>", {silent = true, noremap = true})
