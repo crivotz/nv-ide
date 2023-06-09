@@ -69,6 +69,6 @@ vim.keymap.set("n", "<leader>dv", "<cmd>lua require'telescope'.extensions.dap.va
 vim.keymap.set("n", "<leader>df", "<cmd>lua require'telescope'.extensions.dap.frames{}<CR>", {silent = true, noremap = true})
 -- Notes & Todo
 vim.keymap.set('n', '<leader>tv', ":lua require('util.scratches').open_scratch_file()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>t', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>nt', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>n', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
