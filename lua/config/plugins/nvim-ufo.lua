@@ -7,7 +7,7 @@ return {
   keys = {
     { "zR", function() require('ufo').openAllFolds() end, desc = "Open all folds" },
     { "zM", function() require('ufo').closeAllFolds() end, desc = "Close all folds" },
-    { "zZ", function() require('ufo').peekFoldedLinesUnderCursor() end, desc = "Peed folded lines under cursor" },
+    { "zZ", function() require('ufo').peekFoldedLinesUnderCursor() end, desc = "Peek folded lines under cursor" },
   },
   opts = {
     open_fold_hl_timeout = 0,
