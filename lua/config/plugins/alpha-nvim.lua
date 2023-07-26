@@ -1,6 +1,7 @@
 return {
   'goolord/alpha-nvim',
-  lazy = false,
+  event = "VimEnter",
+  dependencies = { 'nvim-tree/nvim-web-devicons' },
   config = function()
     local status_ok, alpha = pcall(require, "alpha")
     if not status_ok then
