@@ -1,15 +1,6 @@
 return {
   --[[ COLORSCHEME ]]
   {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    enabled = false,
-    priority = 1000,
-     config = function()
-       require('config.colorschemes.gruvbox')
-     end,
-  },
-  {
     "folke/tokyonight.nvim",
     lazy = false,
     enabled = true,
@@ -19,25 +10,15 @@ return {
      end,
   },
   {
-   "projekt0n/github-nvim-theme",
-    lazy = false,
-    enabled = false,
-    priority = 1000,
-     config = function()
-       require('config.colorschemes.github')
-     end,
-  },
-  --
-  {
     "MunifTanjim/nui.nvim",
     lazy = false,
   },
   {
-    "onsails/lspkind-nvim",
+    "stevearc/dressing.nvim",
     lazy = false,
   },
   {
-    "weilbith/nvim-code-action-menu",
+    "onsails/lspkind-nvim",
     lazy = false,
   },
   {
@@ -225,10 +206,6 @@ return {
     lazy = false,
   },
   {
-    "tpope/vim-fugitive",
-    lazy = false
-  },
-  {
     "christoomey/vim-tmux-navigator",
     lazy = false,
   },
@@ -313,7 +290,15 @@ return {
   },
   {
     "andymass/vim-matchup",
-    event = 'VeryLazy',
+    event = "BufReadPost",
+    enabled = false,
+    init = function()
+      vim.o.matchpairs = "(:),{:},[:],<:>"
+    end,
+    config = function()
+      vim.g.matchup_matchparen_deferred = 1
+      vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
+    end,
   },
   {
     "chrisbra/csv.vim",
@@ -330,9 +315,6 @@ return {
     event = 'VeryLazy',
   },
   {"nvim-tree/nvim-web-devicons",
-    event = 'VeryLazy',
-  },
-  {"rhysd/committia.vim",
     event = 'VeryLazy',
   },
   {"chaoren/vim-wordmotion",
@@ -493,42 +475,42 @@ return {
   ---@type Flash.Config
   opts = {},
   keys = {
-    {
-      "s",
-      mode = { "n", "x", "o" },
-      function()
-        -- default options: exact mode, multi window, all directions, with a backdrop
-        require("flash").jump()
-      end,
-      desc = "Flash",
+      {
+        "s",
+        mode = { "n", "x", "o" },
+        function()
+          -- default options: exact mode, multi window, all directions, with a backdrop
+          require("flash").jump()
+        end,
+        desc = "Flash",
+      },
+      {
+        "S",
+        mode = { "n", "o", "x" },
+        function()
+          -- show labeled treesitter nodes around the cursor
+          require("flash").treesitter()
+        end,
+        desc = "Flash Treesitter",
+      },
+      {
+        "r",
+        mode = "o",
+        function()
+          -- jump to a remote location to execute the operator
+          require("flash").remote()
+        end,
+        desc = "Remote Flash",
+      },
+      {
+        "R",
+        mode = { "n", "o", "x" },
+        function()
+          -- show labeled treesitter nodes around the search matches
+          require("flash").treesitter_search()
+        end,
+        desc = "Treesitter Search",
+      }
     },
-    {
-      "S",
-      mode = { "n", "o", "x" },
-      function()
-        -- show labeled treesitter nodes around the cursor
-        require("flash").treesitter()
-      end,
-      desc = "Flash Treesitter",
-    },
-    {
-      "r",
-      mode = "o",
-      function()
-        -- jump to a remote location to execute the operator
-        require("flash").remote()
-      end,
-      desc = "Remote Flash",
-    },
-    {
-      "R",
-      mode = { "n", "o", "x" },
-      function()
-        -- show labeled treesitter nodes around the search matches
-        require("flash").treesitter_search()
-      end,
-      desc = "Treesitter Search",
-    }
-  },
-}
+  }
 }
