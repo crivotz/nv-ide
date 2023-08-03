@@ -50,6 +50,8 @@ nvim
 **PLUGINS.LUA**  
 
 * [folke/tokyonight.nvim](https://github.com/folke/tokyonight.nvim): 🏙 A clean, dark Neovim theme written in Lua, with support for lsp, treesitter and lots of plugins. Includes additional themes for Kitty, Alacritty, iTerm and Fish.  
+* [sainnhe/gruvbox-material](https://github.com/sainnhe/gruvbox-material): Gruvbox with Material Palette
+* [projekt0n/github-nvim-theme](https://github.com/projekt0n/github-nvim-theme): Github's Neovim themes
 * [MunifTanjim/nui.nvim](https://github.com/MunifTanjim/nui.nvim): UI Component Library for Neovim.  
 * [stevearc/dressing.nvim](https://github.com/stevearc/dressing.nvim): Neovim plugin to improve the default vim.ui interfaces  
 * [onsails/lspkind-nvim](https://github.com/onsails/lspkind-nvim): vscode-like pictograms for neovim lsp completion items  
@@ -68,7 +70,7 @@ nvim
 * [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter): Nvim Treesitter configurations and abstraction layer  
 * [mrjones2014/nvim-ts-rainbow](https://github.com/mrjones2014/nvim-ts-rainbow): Rainbow parentheses for neovim using tree-sitter.  
 * [luukvbaal/statuscol.nvim](https://github.com/luukvbaal/statuscol.nvim): Status column plugin that provides a configurable 'statuscolumn' and click handlers.  
-* [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim): Indent guides for Neovim  
+* [shellRaining/hlchunk.nvim](https://github.com/shellRaining/hlchunk.nvim): This is the lua implementation of nvim-hlchunk, you can use this neovim plugin to highlight your indent line and the current chunk (context) your cursor stayed  
 * [JoosepAlviste/nvim-ts-context-commentstring](https://github.com/JoosepAlviste/nvim-ts-context-commentstring): Neovim treesitter plugin for setting the commentstring based on the cursor location in a file.  
 * [nvim-treesitter/nvim-treesitter-context](https://github.com/nvim-treesitter/nvim-treesitter-context): Show code context  
 * [AckslD/nvim-neoclip.lua](https://github.com/AckslD/nvim-neoclip.lua): Clipboard manager neovim plugin with telescope integration  
@@ -108,6 +110,7 @@ nvim
 * [akinsho/bufferline.nvim](https://github.com/akinsho/bufferline.nvim): A snazzy bufferline for Neovim  
 * [simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim): A tree like view for symbols in Neovim using the Language Server Protocol. Supports all your favourite languages.  
 * [folke/flash.nvim](https://github.com/folke/flash.nvim): Navigate your code with search labels, enhanced character motions and Treesitter integration  
+* [smoka7/multicursors.nvim](https://github.com/smoka7/multicursors.nvim): A multi cursor plugin for Neovim.  
 
 **PLUGINS AS MODULE**  
 
@@ -122,6 +125,7 @@ nvim
 * [pwntester/octo.nvim](https://github.com/pwntester/octo.nvim): Edit and review GitHub issues and pull requests from the comfort of your favorite editor  
 * [freddiehaddad/feline.nvim](https://github.com/freddiehaddad/feline.nvim): A minimal, stylish and customizable statusline, statuscolumn, and winbar for Neovim  
 * [nvim-neo-tree/neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim): Neovim plugin to manage the file system and other tree like structures.  
+* [/](https://github.com//):   
 * [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify): A fancy, configurable, notification manager for NeoVim  
 * [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim): Git integration for buffers  
 * [mhartington/formatter.nvim](https://github.com/mhartington/formatter.nvim):   

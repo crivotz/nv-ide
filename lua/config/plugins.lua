@@ -10,6 +10,24 @@ return {
      end,
   },
   {
+    "sainnhe/gruvbox-material",
+    lazy = false,
+    enabled = false,
+    priority = 1000,
+     config = function()
+       require('config.colorschemes.gruvbox')
+     end,
+  },
+  {
+   "projekt0n/github-nvim-theme",
+    lazy = false,
+    enabled = false,
+    priority = 1000,
+     config = function()
+       require('config.colorschemes.github')
+     end,
+  },
+  {
     "MunifTanjim/nui.nvim",
     lazy = false,
   },
@@ -118,19 +136,54 @@ return {
       })
     end
   },
-  {
-    "lukas-reineke/indent-blankline.nvim",
-    lazy = false,
+  { "shellRaining/hlchunk.nvim",
+    event = { "UIEnter" },
     config = function()
-      require("indent_blankline").setup {
-        buftype_exclude = { 'terminal', 'nofile' },
-        filetype_exclude = { 'Trouble', 'trouble', 'noice', 'help', 'startify', 'alpha', 'dashboard', 'lazy', 'packer', 'neogitstatus', 'NvimTree', 'mason.nvim'},
-        char = '▏',
-        show_current_context = true,
-        show_current_context_start = true,  -- underline first line
-        use_treesitter = true,
-        show_trailing_blankline_indent = false,
-      }
+      require('hlchunk').setup({
+        chunk = {
+          enable = true,
+          use_treesitter = true,
+          notify = true, -- notify if some situation(like disable chunk mod double time)
+          exclude_filetypes = {
+            aerial = true,
+            dashboard = true,
+          },
+          support_filetypes = {
+            "*.lua",
+            "*.js",
+          },
+          chars = {
+             horizontal_line = "━",
+             vertical_line = "┃",
+             left_top = "┏",
+             left_bottom = "┗",
+             right_arrow = "━",
+          },
+      },
+      indent = {
+        enable = true,
+        use_treesitter = false,
+        chars = {
+          "│",
+        },
+        style = {
+          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") }
+        },
+      },
+      line_num = {
+        enable = true,
+        use_treesitter = false,
+      },
+      blank = {
+        enable = false,
+        chars = {
+          "․",
+        },
+        style = {
+          vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
+        },
+      },
+    })
     end
   },
   {
