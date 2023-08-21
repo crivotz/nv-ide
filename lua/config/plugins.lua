@@ -136,22 +136,12 @@ return {
       })
     end
   },
-  { "shellRaining/hlchunk.nvim",
+  {
+    "shellRaining/hlchunk.nvim",
     event = { "UIEnter" },
     config = function()
       require('hlchunk').setup({
         chunk = {
-          enable = true,
-          use_treesitter = true,
-          notify = true, -- notify if some situation(like disable chunk mod double time)
-          exclude_filetypes = {
-            aerial = true,
-            dashboard = true,
-          },
-          support_filetypes = {
-            "*.lua",
-            "*.js",
-          },
           chars = {
              horizontal_line = "━",
              vertical_line = "┃",
@@ -159,31 +149,11 @@ return {
              left_bottom = "┗",
              right_arrow = "━",
           },
-      },
-      indent = {
-        enable = true,
-        use_treesitter = false,
-        chars = {
-          "│",
         },
-        style = {
-          { fg = vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui") }
+        blank = {
+          enable = false,
         },
-      },
-      line_num = {
-        enable = true,
-        use_treesitter = false,
-      },
-      blank = {
-        enable = false,
-        chars = {
-          "․",
-        },
-        style = {
-          vim.fn.synIDattr(vim.fn.synIDtrans(vim.fn.hlID("Whitespace")), "fg", "gui"),
-        },
-      },
-    })
+      })
     end
   },
   {
