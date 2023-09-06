@@ -132,7 +132,6 @@ return {
       require("statuscol").setup({
         separator = " ",
         setopt = true,
-        order = "SNsFs"
       })
     end
   },
@@ -584,5 +583,10 @@ return {
                 desc = 'Create a selection for selcted text or word under the cursor',
             },
         },
-}
+},
+  {
+    '2kabhishek/co-author.nvim',
+    dependencies = { 'stevearc/dressing.nvim' },
+    cmd = 'GitCoAuthors',
+},
 }

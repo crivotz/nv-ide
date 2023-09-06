@@ -82,6 +82,7 @@ function M.config()
       'rust_analyzer',
       'clangd',
       'pyright',
+      'bashls',
     },
   }
   mason_lspconfig.setup_handlers {
