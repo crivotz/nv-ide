@@ -137,25 +137,63 @@ return {
     end
   },
   {
-    "shellRaining/hlchunk.nvim",
-    event = { "UIEnter" },
-    config = function()
-      require('hlchunk').setup({
-        chunk = {
-          chars = {
-             horizontal_line = "━",
-             vertical_line = "┃",
-             left_top = "┏",
-             left_bottom = "┗",
-             right_arrow = "━",
-          },
+    'lukas-reineke/indent-blankline.nvim',
+    branch = 'v3',
+    event = 'UIEnter',
+    opts = {
+      exclude = {
+        -- stylua: ignore
+        filetypes = {
+          'dbout', 'neo-tree-popup', 'log', 'gitcommit',
+          'txt', 'help', 'NvimTree', 'git', 'flutterToolsOutline',
+          'undotree', 'markdown', 'norg', 'org', 'orgagenda',
         },
-        blank = {
-          enable = false,
+      },
+      indent = {
+        char = '│', -- ▏┆ ┊ 
+        tab_char = '│',
+      },
+      scope = {
+        char = '▎',
+        highlight = {
+          'RainbowDelimiterRed',
+          'RainbowDelimiterYellow',
+          'RainbowDelimiterBlue',
+          'RainbowDelimiterOrange',
+          'RainbowDelimiterGreen',
+          'RainbowDelimiterViolet',
+          'RainbowDelimiterCyan',
         },
-      })
-    end
+      },
+      show_first_indent_level = true,
+    },
+    config = function(_, opts)
+      require('ibl').setup(opts)
+      local hooks = require('ibl.hooks')
+      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
+      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
+    end,
   },
+  --[[ { ]]
+  --[[   "shellRaining/hlchunk.nvim", ]]
+  --[[   event = { "UIEnter" }, ]]
+  --[[   config = function() ]]
+  --[[     require('hlchunk').setup({ ]]
+  --[[       chunk = { ]]
+  --[[         chars = { ]]
+  --[[            horizontal_line = "━", ]]
+  --[[            vertical_line = "┃", ]]
+  --[[            left_top = "┏", ]]
+  --[[            left_bottom = "┗", ]]
+  --[[            right_arrow = "━", ]]
+  --[[         }, ]]
+  --[[       }, ]]
+  --[[       blank = { ]]
+  --[[         enable = false, ]]
+  --[[       }, ]]
+  --[[     }) ]]
+  --[[   end ]]
+  --[[ }, ]]
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
     lazy = false,
