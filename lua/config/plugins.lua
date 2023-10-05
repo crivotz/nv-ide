@@ -165,7 +165,7 @@ return {
           'RainbowDelimiterCyan',
         },
       },
-      show_first_indent_level = true,
+      --[[ show_first_indent_level = true, ]]
     },
     config = function(_, opts)
       require('ibl').setup(opts)
@@ -480,6 +480,7 @@ return {
   {
     "akinsho/bufferline.nvim",
     event = "VeryLazy",
+    enabled = false,
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
     config = function()

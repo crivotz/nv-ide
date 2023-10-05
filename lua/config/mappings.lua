@@ -9,8 +9,8 @@ vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, s
 vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bn', ':BufferLineCycleNext<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bp', ':BufferLineCyclePrev<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bn', ':bnext<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bp', ':bprevious<CR>', {noremap = false, silent = true})
 -- Git (Fugitive and Lazygit)
 vim.keymap.set('n', '<leader>gf', ':20G<CR>', {noremap = false, silent = true})
 -- LSP
@@ -72,4 +72,5 @@ vim.keymap.set('n', '<leader>tv', ":lua require('util.scratches').open_scratch_f
 vim.keymap.set('n', '<leader>nt', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>n', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
+-- ROR
 vim.keymap.set("n", "<Leader>ror", ":lua require('ror.commands').list_commands()<CR>", { silent = true })

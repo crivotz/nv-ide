@@ -147,16 +147,23 @@ function M.config()
   }
   -- filename
   components.active[1][3] = {
-    provider = function()
-      return vim.fn.expand("%:F")
-    end,
+    --[[ provider = function() ]]
+    --[[   return vim.fn.expand("%:F") ]]
+    --[[ end, ]]
+    provider = {
+      name = "file_info",
+      opts = {
+        type = "full-path",
+        file_modified_icon = "",
+      },
+    },
     hl = {
       fg = 'white',
       bg = 'bg',
       style = 'bold'
     }
   }
-  -- MID
+  -- MIDfloppydisk
 
   -- gitBranch
   components.active[2][1] = {
