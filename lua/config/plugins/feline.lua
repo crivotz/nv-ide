@@ -153,7 +153,7 @@ function M.config()
     provider = {
       name = "file_info",
       opts = {
-        type = "full-path",
+        type = "short-path",
         file_modified_icon = "",
       },
     },
