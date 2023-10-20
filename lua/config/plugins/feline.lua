@@ -163,6 +163,19 @@ function M.config()
       style = 'bold'
     }
   }
+  -- hbac
+  components.active[1][4] = {
+    provider = function()
+      local cur_buf = vim.api.nvim_get_current_buf()
+      return require("hbac.state").is_pinned(cur_buf) and " 󰐃" or ""
+    end,
+    hl = {
+      fg = 'red',
+      bg = 'bg',
+
+      style = 'bold'
+    }
+  }
   -- MIDfloppydisk
 
   -- gitBranch

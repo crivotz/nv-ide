@@ -20,6 +20,7 @@ local M = {
 function M.config()
   local actions = require('telescope.actions')
   local trouble = require("trouble.providers.telescope")
+  local actions = require("hbac.telescope.actions")
   local telescope = require("telescope")
   telescope.setup{
     defaults = {
@@ -62,8 +63,27 @@ function M.config()
       --[[ path_display = { "smart" }, ]]
       set_env = { ["COLORTERM"] = "truecolor" },
       mappings = {
-        i = { ["<c-t>"] = trouble.open_with_trouble },
-        --[[ n = { ["<c-t>"] = trouble.open_with_trouble }, ]]
+        i = {
+          ["<c-t>"] = trouble.open_with_trouble,
+          ["<M-c>"] = actions.close_unpinned,
+          ["<M-x>"] = actions.delete_buffer,
+          ["<M-a>"] = actions.pin_all,
+          ["<M-u>"] = actions.unpin_all,
+          ["<M-y>"] = actions.toggle_selections,
+        },
+        n = {
+          --[[ ["<c-t>"] = trouble.open_with_trouble ]]
+          ["<M-c>"] = actions.close_unpinned,
+          ["<M-x>"] = actions.delete_buffer,
+          ["<M-a>"] = actions.pin_all,
+          ["<M-u>"] = actions.unpin_all,
+          ["<M-y>"] = actions.toggle_selections,
+        },
+      },
+      -- Pinned/unpinned icons and their hl groups. Defaults to nerdfont icons
+      pin_icons = {
+        pinned = { "󰐃 ", hl = "DiagnosticOk" },
+        unpinned = { "󰤱 ", hl = "DiagnosticError" },
       },
     },
     extensions = {
@@ -152,11 +172,11 @@ function M.project_files()
 end
 
 function M.my_buffers(opts)
-  builtin.buffers {
+  require("hbac").telescope({
     layout_strategy = "vertical",
-    ignore_current_buffer = true,
+    ignore_current_buffer = false,
     sort_mru = true
-  }
+  })
 end
 
 return M
