@@ -109,6 +109,7 @@ function M.config()
   --[[ telescope.load_extension('fzf') ]]
   telescope.load_extension('fzy_native')
   telescope.load_extension("live_grep_args")
+  telescope.load_extension("hbac")
 
   previewers = require('telescope.previewers')
   builtin = require('telescope.builtin')
@@ -172,7 +173,7 @@ function M.project_files()
 end
 
 function M.my_buffers(opts)
-  require("hbac").telescope({
+  require("telescope").extensions.hbac.buffers({
     layout_strategy = "vertical",
     ignore_current_buffer = false,
     sort_mru = true

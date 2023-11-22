@@ -105,10 +105,6 @@ return {
         indent = {
           enable = true
         },
-        context_commentstring = {
-          enable = true,
-          enable_autocmd = false,
-        },
         matchup = {
           enable = true
         }
@@ -197,6 +193,11 @@ return {
   {
     "JoosepAlviste/nvim-ts-context-commentstring",
     lazy = false,
+    config = function()
+      require('ts_context_commentstring').setup {
+        enable_autocmd = false,
+      }
+    end
   },
   {
     "nvim-treesitter/nvim-treesitter-context",
