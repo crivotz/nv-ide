@@ -86,13 +86,6 @@ return {
     lazy = false,
   },
   {
-    "windwp/nvim-ts-autotag",
-    lazy = false,
-    config = function()
-      require("nvim-ts-autotag").setup()
-    end,
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     config = function()
@@ -107,17 +100,6 @@ return {
         },
         matchup = {
           enable = true
-        }
-      }
-    end,
-  },
-  {
-    "mrjones2014/nvim-ts-rainbow",
-    lazy = false,
-    config = function()
-      require'nvim-treesitter.configs'.setup {
-        rainbow = {
-          enable = true,
         }
       }
     end,
@@ -169,39 +151,6 @@ return {
       hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
       hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
     end,
-  },
-  --[[ { ]]
-  --[[   "shellRaining/hlchunk.nvim", ]]
-  --[[   event = { "UIEnter" }, ]]
-  --[[   config = function() ]]
-  --[[     require('hlchunk').setup({ ]]
-  --[[       chunk = { ]]
-  --[[         chars = { ]]
-  --[[            horizontal_line = "━", ]]
-  --[[            vertical_line = "┃", ]]
-  --[[            left_top = "┏", ]]
-  --[[            left_bottom = "┗", ]]
-  --[[            right_arrow = "━", ]]
-  --[[         }, ]]
-  --[[       }, ]]
-  --[[       blank = { ]]
-  --[[         enable = false, ]]
-  --[[       }, ]]
-  --[[     }) ]]
-  --[[   end ]]
-  --[[ }, ]]
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    lazy = false,
-    config = function()
-      require('ts_context_commentstring').setup {
-        enable_autocmd = false,
-      }
-    end
-  },
-  {
-    "nvim-treesitter/nvim-treesitter-context",
-    lazy = false,
   },
   {
     "AckslD/nvim-neoclip.lua",
@@ -262,10 +211,6 @@ return {
   {
     "tpope/vim-dispatch",
     event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "tpope/vim-dadbod",
-    lazy = false,
   },
   {
     "christoomey/vim-tmux-navigator",
@@ -351,18 +296,6 @@ return {
     event = 'VeryLazy',
   },
   {
-    "andymass/vim-matchup",
-    event = "BufReadPost",
-    enabled = false,
-    init = function()
-      vim.o.matchpairs = "(:),{:},[:],<:>"
-    end,
-    config = function()
-      vim.g.matchup_matchparen_deferred = 1
-      vim.g.matchup_matchparen_offscreen = { method = "status_manual" }
-    end,
-  },
-  {
     "chrisbra/csv.vim",
     event = 'VeryLazy',
   },
@@ -370,28 +303,36 @@ return {
     "kazhala/close-buffers.nvim",
     event = 'VeryLazy',
   },
-  {"folke/twilight.nvim",
+  {
+    "folke/twilight.nvim",
     event = 'VeryLazy',
   },
-  {"zdharma-continuum/zinit-vim-syntax",
+  {
+    "zdharma-continuum/zinit-vim-syntax",
     event = 'VeryLazy',
   },
-  {"nvim-tree/nvim-web-devicons",
+  {
+    "nvim-tree/nvim-web-devicons",
     event = 'VeryLazy',
   },
-  {"chaoren/vim-wordmotion",
+  {
+    "chaoren/vim-wordmotion",
     event = 'VeryLazy',
   },
-  {"windwp/nvim-spectre",
+  {
+    "windwp/nvim-spectre",
     event = 'VeryLazy',
   },
-  {"folke/trouble.nvim",
+  {
+    "folke/trouble.nvim",
     event = 'VeryLazy',
   },
-  {"mrbjarksen/neo-tree-diagnostics.nvim",
+  {
+    "mrbjarksen/neo-tree-diagnostics.nvim",
     event = 'VeryLazy',
   },
-  {"RRethy/vim-illuminate",
+  {
+    "RRethy/vim-illuminate",
     event = 'VeryLazy',
   },
   {
@@ -469,60 +410,6 @@ return {
         "neo-tree",
       },
     },
-  },
-  {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    version = false,
-    config = function ()
-      require("mini.animate").setup()
-    end,
-  },
-  {
-    "akinsho/bufferline.nvim",
-    event = "VeryLazy",
-    enabled = false,
-    version = "*",
-    dependencies = 'nvim-tree/nvim-web-devicons',
-    config = function()
-      require("bufferline").setup({
-        options = {
-          diagnostics = "nvim_lsp",
-          separator_style = "slant",
-          always_show_bufferline = false,
-          diagnostics_indicator = function(count, level, diagnostics_dict, context)
-            local icon = level:match("error") and " " or " "
-              return " " .. icon .. count
-          end
-        }
-      })
-    end,
-    opts = function()
-      local Offset = require("bufferline.offset")
-      if not Offset.edgy then
-        local get = Offset.get
-        Offset.get = function()
-          if package.loaded.edgy then
-            local layout = require("edgy.config").layout
-            local ret = { left = "", left_size = 0, right = "", right_size = 0 }
-            for _, pos in ipairs({ "left", "right" }) do
-              local sb = layout[pos]
-              if sb and #sb.wins > 0 then
-                local title = " SIDEBAR" .. string.rep(" ", sb.bounds.width - 8)
-                ret[pos] = "%#EdgyTitle#" .. title .. "%*" .. "%#WinSeparator#│%*"
-                ret[pos .. "_size"] = sb.bounds.width
-              end
-            end
-            ret.total_size = ret.left_size + ret.right_size
-            if ret.total_size > 0 then
-              return ret
-            end
-          end
-          return get()
-        end
-        Offset.edgy = true
-      end
-    end,
   },
   {
     "simrat39/symbols-outline.nvim",
@@ -629,9 +516,6 @@ return {
     '2kabhishek/co-author.nvim',
     dependencies = { 'stevearc/dressing.nvim' },
     cmd = 'GitCoAuthors',
-  },
-  {
-    'weizheheng/ror.nvim',
   },
   {
     'axkirillov/hbac.nvim',
