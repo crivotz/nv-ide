@@ -133,17 +133,7 @@ return {
       },
       scope = {
         char = '▎',
-        highlight = {
-          'RainbowDelimiterRed',
-          'RainbowDelimiterYellow',
-          'RainbowDelimiterBlue',
-          'RainbowDelimiterOrange',
-          'RainbowDelimiterGreen',
-          'RainbowDelimiterViolet',
-          'RainbowDelimiterCyan',
-        },
       },
-      --[[ show_first_indent_level = true, ]]
     },
     config = function(_, opts)
       require('ibl').setup(opts)
