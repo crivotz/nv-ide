@@ -35,7 +35,6 @@ vim.keymap.set('n', '<leader>c', ":lua require('config.plugins.telescope').my_gi
 vim.keymap.set('n', '<leader>g', ":lua require('config.plugins.telescope').my_git_status()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>bb', ":lua require('config.plugins.telescope').my_git_bcommits()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ns', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>y', ':Telescope neoclip<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ll', ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREP -> ') })<CR>", {noremap = true, silent = true})
 -- HlsLens
@@ -72,3 +71,5 @@ vim.keymap.set('n', '<leader>tv', ":lua require('util.scratches').open_scratch_f
 vim.keymap.set('n', '<leader>nt', ":lua require('util.scratches').open_scratch_file_floating()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>n', ":lua require('config.plugins.telescope').my_note()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
+-- ROR
+vim.keymap.set("n", "<Leader>ror", ":lua require('ror.commands').list_commands()<CR>", { silent = true })

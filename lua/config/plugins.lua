@@ -525,5 +525,8 @@ return {
   close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
       })
     end
+  },
+  {
+    'weizheheng/ror.nvim'
   }
 }
