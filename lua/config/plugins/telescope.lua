@@ -175,7 +175,7 @@ end
 function M.my_buffers(opts)
   require("telescope").extensions.hbac.buffers({
     layout_strategy = "vertical",
-    ignore_current_buffer = false,
+    ignore_current_buffer = true,
     sort_mru = true
   })
 end
