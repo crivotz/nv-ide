@@ -310,7 +310,7 @@ return {
     event = 'VeryLazy',
   },
   {
-    "windwp/nvim-spectre",
+    "nvim-pack/nvim-spectre",
     event = 'VeryLazy',
   },
   {
@@ -327,8 +327,13 @@ return {
   },
   {
     "folke/edgy.nvim",
-    event = "VeryLazy",
+    event = "BufReadPost",
+    init = function()
+      vim.opt.laststatus = 3
+      vim.opt.splitkeep = "screen"
+    end,
     opts = {
+      fix_win_height = vim.fn.has "nvim-0.10.0" == 0,
       options = {
         left = { size = 40 },
         bottom = { size = 10 },
@@ -337,6 +342,11 @@ return {
       },
       bottom = {
         {
+          ft = "spectre_panel",
+          title = "SPECTRE",
+          size = { height = 0.4 },
+        },
+        {
           ft = "toggleterm",
           title = "TERMINAL",
           size = { height = 0.4 },
@@ -344,9 +354,21 @@ return {
             return vim.api.nvim_win_get_config(win).relative == ""
           end,
         },
-        { ft = "spectre_panel", title = "SPECTRE", size = { height = 0.4 } },
-        { ft = "Trouble", title = "TROUBLE" },
+        {
+          ft = "Trouble",
+          title = "TROUBLE",
+          filter = function(buf, win)
+            return vim.api.nvim_win_get_config(win).relative == ""
+          end,
+        },
         { ft = "qf", title = "QUICKFIX" },
+        {
+          ft = "noice",
+          size = { height = 0.4 },
+          filter = function(buf, win)
+            return vim.api.nvim_win_get_config(win).relative == ""
+          end,
+        },
         {
           ft = "help",
           size = { height = 20 },
@@ -391,22 +413,8 @@ return {
           pinned = true,
           open = "Neotree position=right diagnostics",
         },
-        {
-          title = "  OUTLINE",
-          ft = "Outline",
-          pinned = true,
-          open = "SymbolsOutline",
-        },
         "neo-tree",
       },
-    },
-  },
-  {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    opts = {
-      position = "right",
     },
   },
   {
@@ -517,12 +525,12 @@ return {
     config = function ()
       require("hbac").setup({
         autoclose     = true, -- set autoclose to false if you want to close manually
-        threshold     = 10, -- hbac will start closing unedited buffers once that number is reached
+        threshold     = 5, -- hbac will start closing unedited buffers once that number is reached
         close_command = function(bufnr)
           vim.api.nvim_buf_delete(bufnr, {})
           echo "󰃢 Some cleaning!"
         end,
-  close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
+        close_buffers_with_windows = false, -- hbac will close buffers with associated windows if this option is `true`
       })
     end
   },

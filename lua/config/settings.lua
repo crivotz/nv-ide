@@ -1,4 +1,8 @@
+local opt = vim.opt
+
+opt.sidescrolloff = 8 -- Columns of context
 -- Global
+vim.g.autoformat = true
 vim.opt.fillchars = {
   fold = " ",
   foldopen = "",
@@ -14,58 +18,74 @@ vim.opt.listchars = {
   extends = "→",eol = "↲",
   nbsp = "␣",
 }
-vim.o.foldnestmax = 4
-vim.o.foldlevel = 1
-vim.o.foldcolumn = "1"
-vim.o.foldexpr = "nvim_treesitter#foldexpr()"
-vim.o.foldmethod = "expr"
-vim.o.foldlevelstart = 99
-vim.o.foldenable = true
--- vim.opt.showtabline = 2
-vim.opt.mouse = 'a'
-vim.opt.backupcopy = 'yes'
-vim.opt.undolevels = 1000
-vim.opt.shortmess:append { c = true, S = true }
-vim.opt.showmode = false
-vim.opt.hidden = true
-vim.opt.splitright = true
-vim.opt.splitbelow = true
-vim.opt.wrapscan = true
-vim.opt.backup = false
-vim.opt.writebackup = false
-vim.opt.showcmd = true
-vim.opt.showmatch = true
-vim.opt.ignorecase = true
-vim.opt.hlsearch = true
-vim.opt.smartcase = true
-vim.opt.errorbells = false
-vim.opt.joinspaces = false
-vim.opt.title = true
-vim.opt.encoding = 'UTF-8'
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect' }
-vim.opt.clipboard = 'unnamedplus'
-vim.opt.laststatus = 3
-vim.opt.timeoutlen = 500
-if vim.fn.has("nvim-0.9.0") == 1 then
-  vim.opt.splitkeep = 'screen'
-end
--- Buffer
-vim.opt.fileformat = 'unix'
-vim.opt.tabstop = 2
-vim.opt.spelllang = 'it'
-vim.opt.softtabstop = 2
-vim.opt.swapfile = false
-vim.opt.undofile = false
-vim.opt.smartindent = true
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 2
--- Window
-vim.opt.number = true
-vim.opt.colorcolumn = "+1"
-vim.opt.list = true
-vim.opt.signcolumn = 'yes:1'
-vim.opt.relativenumber = false
-vim.opt.cursorline = true
+opt.autowrite = true -- Enable auto write
+opt.foldnestmax = 4
+opt.foldlevel = 1
+opt.foldcolumn = "1"
+opt.foldexpr = "nvim_treesitter#foldexpr()"
+opt.foldmethod = "expr"
+opt.foldlevelstart = 99
+opt.foldenable = true
+-- opt.showtabline = 2
+opt.mouse = 'a'
+opt.backupcopy = 'yes'
+opt.undolevels = 10000
+opt.shortmess:append({ W = true, I = true, c = true, C = true })
+-- opt.shortmess:append { c = true, S = true }
+opt.showmode = false
+opt.hidden = true
+opt.splitright = true
+opt.splitbelow = true
+opt.wrapscan = true
+opt.backup = false
+opt.writebackup = false
+opt.showcmd = true
+opt.showmatch = true
+opt.ignorecase = true
+opt.hlsearch = true
+opt.smartcase = true
+opt.errorbells = false
+opt.joinspaces = false
+opt.title = true
+opt.encoding = 'UTF-8'
+opt.completeopt = { 'menu', 'menuone', 'noselect' }
+opt.clipboard = 'unnamedplus'
+opt.laststatus = 3
+opt.timeoutlen = 500
+opt.splitkeep = 'screen'
+opt.termguicolors = true -- True color support
+opt.timeoutlen = 300
+opt.updatetime = 200 -- Save swap file and trigger CursorHold
+opt.virtualedit = "block" -- Allow cursor to move where there is no text in visual block mode
+opt.wildmode = "longest:full,full" -- Command-line completion mode
+opt.winminwidth = 5 -- Minimum window width
+opt.wrap = false -- Disable line wrap
+opt.fileformat = 'unix'
+opt.tabstop = 2
+opt.spelllang = 'it'
+opt.softtabstop = 2
+opt.swapfile = false
+opt.undofile = false
+opt.smartindent = true
+opt.expandtab = true
+opt.shiftwidth = 2
+opt.number = true
+opt.colorcolumn = "+1"
+opt.list = true
+opt.signcolumn = 'yes:1'
+opt.relativenumber = false
+opt.cursorline = true
+opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
+opt.confirm = true -- Confirm to save changes before exiting modified buffer
+opt.formatoptions = "jcroqlnt" -- tcqj
+opt.grepformat = "%f:%l:%c:%m"
+opt.grepprg = "rg --vimgrep"
+opt.inccommand = "nosplit" -- preview incremental substitute
+opt.pumblend = 10 -- Popup blend
+opt.pumheight = 10 -- Maximum number of entries in a popup
+opt.scrolloff = 4 -- Lines of context
+opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
+opt.shiftround = true -- Round indent
 
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
@@ -81,3 +101,10 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
+--
+-- Fix markdown indentation settings
+vim.g.markdown_recommended_style = 0
+
+if vim.fn.has("nvim-0.10") == 1 then
+  opt.smoothscroll = true
+end
