@@ -20,7 +20,6 @@ local M = {
 function M.config()
   local actions = require('telescope.actions')
   local trouble = require("trouble.providers.telescope")
-  local actions = require("hbac.telescope.actions")
   local telescope = require("telescope")
   telescope.setup{
     defaults = {
@@ -65,25 +64,10 @@ function M.config()
       mappings = {
         i = {
           ["<c-t>"] = trouble.open_with_trouble,
-          ["<M-c>"] = actions.close_unpinned,
-          ["<M-x>"] = actions.delete_buffer,
-          ["<M-a>"] = actions.pin_all,
-          ["<M-u>"] = actions.unpin_all,
-          ["<M-y>"] = actions.toggle_selections,
         },
         n = {
           --[[ ["<c-t>"] = trouble.open_with_trouble ]]
-          ["<M-c>"] = actions.close_unpinned,
-          ["<M-x>"] = actions.delete_buffer,
-          ["<M-a>"] = actions.pin_all,
-          ["<M-u>"] = actions.unpin_all,
-          ["<M-y>"] = actions.toggle_selections,
         },
-      },
-      -- Pinned/unpinned icons and their hl groups. Defaults to nerdfont icons
-      pin_icons = {
-        pinned = { "󰐃 ", hl = "DiagnosticOk" },
-        unpinned = { "󰤱 ", hl = "DiagnosticError" },
       },
     },
     extensions = {
@@ -109,7 +93,6 @@ function M.config()
   --[[ telescope.load_extension('fzf') ]]
   telescope.load_extension('fzy_native')
   telescope.load_extension("live_grep_args")
-  telescope.load_extension("hbac")
 
   previewers = require('telescope.previewers')
   builtin = require('telescope.builtin')
@@ -173,11 +156,11 @@ function M.project_files()
 end
 
 function M.my_buffers(opts)
-  require("telescope").extensions.hbac.buffers({
+   builtin.buffers {
     layout_strategy = "vertical",
     ignore_current_buffer = true,
     sort_mru = true
-  })
+  }
 end
 
 return M
