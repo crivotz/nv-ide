@@ -519,10 +519,12 @@ return {
     'weizheheng/ror.nvim'
   },
   {
-    "DreamMaoMao/yazi.nvim",
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-      "nvim-lua/plenary.nvim",
+    "SR-Mystar/yazi.nvim",
+    lazy = true,
+    cmd = "Yazi",
+    opts = {
+      title = "",
+      border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
     },
     keys = {
       { "<F5>", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
