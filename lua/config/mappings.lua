@@ -1,7 +1,7 @@
 -- <F1> help
 vim.keymap.set('n', '<F3>', ':set nu! rnu!<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = true})
--- <F5> Ranger from toggleterm
+-- <F5> Yazi
 vim.keymap.set('n', '<F7>', ':Neotree filesystem reveal left toggle<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<F8>', ':ZenMode<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = true})
