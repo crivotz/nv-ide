@@ -2,29 +2,20 @@ return {
   --[[ COLORSCHEME ]]
   {
     "folke/tokyonight.nvim",
+    -- "olimorris/onedarkpro.nvim",
+    -- "loctvl842/monokai-pro.nvim",
+    -- "rebelot/kanagawa.nvim",
+    -- "sainnhe/gruvbox-material",
+    -- "projekt0n/github-nvim-theme",
     lazy = false,
-    enabled = true,
     priority = 1000,
      config = function()
        require('config.colorschemes.tokyonight')
-     end,
-  },
-  {
-    "sainnhe/gruvbox-material",
-    lazy = false,
-    enabled = false,
-    priority = 1000,
-     config = function()
-       require('config.colorschemes.gruvbox')
-     end,
-  },
-  {
-   "projekt0n/github-nvim-theme",
-    lazy = false,
-    enabled = false,
-    priority = 1000,
-     config = function()
-       require('config.colorschemes.github')
+       -- require('config.colorschemes.onedarkpro')
+       -- require('config.colorschemes.monokai_pro')
+       -- require('config.colorschemes.kanagawa')
+       -- require('config.colorschemes.gruvbox_material')
+       -- require('config.colorschemes.github_nvim_theme')
      end,
   },
   --[[ END COLORSCHEME ]]
@@ -520,7 +511,7 @@ return {
   },
   {
     "SR-Mystar/yazi.nvim",
-    lazy = true,
+    event = 'VeryLazy',
     cmd = "Yazi",
     opts = {
       title = "",
