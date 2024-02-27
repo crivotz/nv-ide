@@ -8,6 +8,7 @@ function M.config()
   local vi_mode_utils = require('feline.providers.vi_mode')
   local navic = require("nvim-navic")
   local lazy = require("lazy.status")
+  local arrow = require("arrow.statusline")
 
   local force_inactive = {
     filetypes = {
@@ -162,9 +163,20 @@ function M.config()
       fg = 'white',
       bg = 'bg',
       style = 'bold'
+    },
+    right_sep = ' '
+  }
+  -- Arrow
+  components.active[1][4] = {
+    provider = function()
+      return arrow.text_for_statusline_with_icons()
+    end,
+    hl = {
+      fg = 'red',
+      bg = 'bg',
+      style = 'bold'
     }
   }
-  -- MIDfloppydisk
 
   -- gitBranch
   components.active[2][1] = {

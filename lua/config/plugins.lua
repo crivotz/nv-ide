@@ -297,8 +297,25 @@ return {
     event = 'VeryLazy',
   },
   {
-    "chaoren/vim-wordmotion",
+    "chrisgrieser/nvim-spider",
     event = 'VeryLazy',
+    keys = {
+      {
+        "w",
+        "<cmd>lua require('spider').motion('w')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "e",
+        "<cmd>lua require('spider').motion('e')<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "b",
+        "<cmd>lua require('spider').motion('b')<CR>",
+        mode = { "n", "o", "x" },
+      },
+		},
   },
   {
     "nvim-pack/nvim-spectre",
@@ -520,5 +537,17 @@ return {
     keys = {
       { "<F5>", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
     },
-  }
+  },
+  {
+  "otavioschwanck/arrow.nvim",
+    event = 'VeryLazy',
+    opts = {
+      show_icons = true,
+      leader_key = '-'
+    }
+  },
+  {
+    "ton/vim-bufsurf",
+    event = 'VeryLazy'
+  },
 }
