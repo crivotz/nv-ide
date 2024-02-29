@@ -1,7 +1,7 @@
 local M = {
   "freddiehaddad/feline.nvim",
   lazy = false,
-  enabled = true
+  enabled = false
 }
 function M.config()
   local lsp = require('feline.providers.lsp')
