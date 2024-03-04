@@ -12,7 +12,7 @@ local M = {
     { "cljoly/telescope-repo.nvim" },
     { "nvim-telescope/telescope-dap.nvim" },
     --[[ { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, ]]
-    { "nvim-telescope/telescope-fzy-native.nvim" },
+    -- { "nvim-telescope/telescope-fzy-native.nvim" },
     { "nvim-telescope/telescope-live-grep-args.nvim" },
   },
 }
@@ -71,10 +71,10 @@ function M.config()
       },
     },
     extensions = {
-      fzy = {
-        override_generic_sorter = false,
-        override_file_sorter = true,
-      }
+      -- fzy = {
+      --   override_generic_sorter = false,
+      --   override_file_sorter = true,
+      -- }
     },
     --[[ fzf = { ]]
     --[[   fuzzy = true, -- false will only do exact matching ]]
@@ -91,7 +91,7 @@ function M.config()
   telescope.load_extension('notify')
   telescope.load_extension('dap')
   --[[ telescope.load_extension('fzf') ]]
-  telescope.load_extension('fzy_native')
+  -- telescope.load_extension('fzy_native')
   telescope.load_extension("live_grep_args")
 
   previewers = require('telescope.previewers')
