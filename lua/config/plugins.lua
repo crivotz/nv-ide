@@ -550,4 +550,15 @@ return {
     "ton/vim-bufsurf",
     event = 'VeryLazy'
   },
+  {
+    "brenoprata10/nvim-highlight-colors",
+    event = 'VeryLazy',
+    config = function()
+      require('nvim-highlight-colors').setup({})
+    end
+  },
+  {
+    'pteroctopus/faster.nvim',
+    lazy = false
+  }
 }
