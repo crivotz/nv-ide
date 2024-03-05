@@ -7,8 +7,11 @@ return {
     "MunifTanjim/nui.nvim",
     -- "3rd/image.nvim", -- Optional image support in preview window: See `# Preview Mode` for more information
   },
+  keys = {
+    { "<F7>", "<cmd>Neotree filesystem reveal left toggle<cr>", desc = "Neotree" },
+  },
   event = 'VeryLazy',
-  enabled = true,
+  enabled = false,
   config = function()
     require'neo-tree'.setup({
       open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "edgy" },

@@ -1,13 +1,12 @@
 local M = {
   "stevearc/oil.nvim",
-  enabled = true,
+  enabled = false,
   dependencies = {
     { "nvim-tree/nvim-web-devicons" },
     { "SirZenith/oil-vcs-status" },
   },
   keys = {
-    { "<leader>o", "<cmd>Oil<cr>", desc = "Oil" },
-    { "<leader>of", "<cmd>Oil --float<cr>", desc = "Oil (float)" },
+    { "<F5>", "<cmd>Oil<cr>", desc = "Oil" },
   }
 }
 

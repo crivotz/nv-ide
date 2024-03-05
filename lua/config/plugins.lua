@@ -535,7 +535,7 @@ return {
       border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
     },
     keys = {
-      { "<F5>", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
+      { "<leader>ff", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
     },
   },
   {
