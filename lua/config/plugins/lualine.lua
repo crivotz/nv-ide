@@ -5,7 +5,38 @@ local M = {
 }
 function M.config()
   local arrow = require("arrow.statusline")
-  local navic = require("nvim-navic")
+  local navic = require("nvim-navic").setup({
+    highlight = true,
+    icons = {
+      File = ' ',
+      Module = ' ',
+      Namespace = ' ',
+      Package = ' ',
+      Class = ' ',
+      Method = ' ',
+      Property = ' ',
+      Field = ' ',
+      Constructor = ' ',
+      Enum = ' ',
+      Interface = ' ',
+      Function = ' ',
+      Variable = ' ',
+      Constant = ' ',
+      String = ' ',
+      Number = ' ',
+      Boolean = ' ',
+      Array = ' ',
+      Object = ' ',
+      Key = ' ',
+      Null = ' ',
+      EnumMember = ' ',
+      Struct = ' ',
+      Event = ' ',
+      Operator = ' ',
+      TypeParameter = ' '
+    },
+  })
+
   local lazy = require("lazy.status")
   local colors = require("tokyonight.colors").setup({ transform = true })
   -- local colors = {
@@ -89,8 +120,8 @@ function M.config()
       component_separators = { left = '', right = ''},
       section_separators = { left = '', right = ''},
       disabled_filetypes = {
-        statusline = { "neo-tree", "alpha" },
-        winbar = {},
+        statusline = { "alpha" },
+        winbar = { "alpha", "edgy", "toggleterm", "Trouble", "spectre_panel", "qf", "noice" },
       },
       ignore_focus = {},
       always_divide_middle = true,
@@ -104,8 +135,8 @@ function M.config()
     extension = {
       "mason",
       "lazy",
-      "neo-tree",
-      "oil",
+      -- "neo-tree",
+      -- "oil",
       "quickfix",
       "toggleterm",
       "trouble",

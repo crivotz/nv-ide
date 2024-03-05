@@ -336,10 +336,6 @@ return {
   {
     "folke/edgy.nvim",
     event = "BufReadPost",
-    init = function()
-      vim.opt.laststatus = 3
-      vim.opt.splitkeep = "screen"
-    end,
     opts = {
       fix_win_height = vim.fn.has "nvim-0.10.0" == 0,
       options = {
@@ -386,43 +382,43 @@ return {
           end,
         },
       },
-      left = {
-        {
-          title = "  FILE",
-          ft = "neo-tree",
-          filter = function(buf)
-            return vim.b[buf].neo_tree_source == "filesystem"
-          end,
-          size = { height = 0.7 },
-        },
-        {
-          title = "  GIT",
-          ft = "neo-tree",
-          filter = function(buf)
-            return vim.b[buf].neo_tree_source == "git_status"
-          end,
-          pinned = true,
-          open = "Neotree position=right git_status",
-        },
-        {
-          title = "  BUFFERS",
-          ft = "neo-tree",
-          filter = function(buf)
-            return vim.b[buf].neo_tree_source == "buffers"
-          end,
-          pinned = true,
-          open = "Neotree position=top buffers",
-        },
-        {
-          ft = "裂 DIAGNOSTICS",
-          filter = function(buf)
-            return vim.b[buf].neo_tree_source == "diagnostics"
-          end,
-          pinned = true,
-          open = "Neotree position=right diagnostics",
-        },
-        "neo-tree",
-      },
+      -- left = {
+      --   {
+      --     title = "  FILE",
+      --     ft = "neo-tree",
+      --     filter = function(buf)
+      --       return vim.b[buf].neo_tree_source == "filesystem"
+      --     end,
+      --     size = { height = 0.7 },
+      --   },
+      --   {
+      --     title = "  GIT",
+      --     ft = "neo-tree",
+      --     filter = function(buf)
+      --       return vim.b[buf].neo_tree_source == "git_status"
+      --     end,
+      --     pinned = true,
+      --     open = "Neotree position=right git_status",
+      --   },
+      --   {
+      --     title = "  BUFFERS",
+      --     ft = "neo-tree",
+      --     filter = function(buf)
+      --       return vim.b[buf].neo_tree_source == "buffers"
+      --     end,
+      --     pinned = true,
+      --     open = "Neotree position=top buffers",
+      --   },
+      --   {
+      --     ft = "裂 DIAGNOSTICS",
+      --     filter = function(buf)
+      --       return vim.b[buf].neo_tree_source == "diagnostics"
+      --     end,
+      --     pinned = true,
+      --     open = "Neotree position=right diagnostics",
+      --   },
+      --   "neo-tree",
+      -- },
     },
   },
   {
@@ -560,5 +556,12 @@ return {
   {
     'pteroctopus/faster.nvim',
     lazy = false
+  },
+  {
+    "FabijanZulj/blame.nvim",
+    event = 'VeryLazy',
+    keys = {
+      { "<leader>bl", "<cmd>ToggleBlame virtual<CR>", desc = "Git blame" },
+    },
   }
 }
