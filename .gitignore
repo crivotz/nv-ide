@@ -8,3 +8,5 @@ plug.vim.old
 .netrwhist
 pack/
 plugin/
+db_ui
+db_ui/

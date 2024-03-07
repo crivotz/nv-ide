@@ -11,11 +11,11 @@ return {
     priority = 1000,
      config = function()
        require('config.colorschemes.tokyonight')
-       -- require('config.colorschemes.onedarkpro')
+       -- vim.cmd [[colorscheme onedark]]
        -- require('config.colorschemes.monokai_pro')
        -- require('config.colorschemes.kanagawa')
        -- require('config.colorschemes.gruvbox_material')
-       -- require('config.colorschemes.github_nvim_theme')
+       -- vim.cmd [[colorscheme github_dark_dimmed]]
      end,
   },
   --[[ END COLORSCHEME ]]
@@ -527,6 +527,9 @@ return {
     event = 'VeryLazy',
     cmd = "Yazi",
     opts = {
+      command_args = {
+       open_dir = vim.api.nvim_buf_get_name(0),
+      },
       title = "",
       border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
     },
@@ -561,7 +564,21 @@ return {
     "FabijanZulj/blame.nvim",
     event = 'VeryLazy',
     keys = {
-      { "<leader>bl", "<cmd>ToggleBlame virtual<CR>", desc = "Git blame" },
+      { "<leader>gb", "<cmd>ToggleBlame virtual<CR>", desc = "Git blame" },
     },
+  },
+  {
+    "sindrets/diffview.nvim",
+    lazy = true,
+    cmd = { "DiffviewOpen", "DiffviewClose" },
+    config = function()
+      require("diffview").setup({
+        view = {
+          file_history = {
+            layout = "diff2_vertical",
+          },
+        },
+      })
+    end
   }
 }

@@ -38,20 +38,24 @@ function M.config()
   })
 
   local lazy = require("lazy.status")
-  local colors = require("tokyonight.colors").setup({ transform = true })
-  -- local colors = {
-  --   bg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg),
-  --   fg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
-  --   black = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "EndOfBuffer", link = false }).fg),
-  --   white = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
-  --   red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Error", link = false }).fg),
-  --   green = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "String", link = false }).fg),
-  --   blue = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Folded", link = false }).fg),
-  --   yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "TSRainbowYellow", link = false }).fg),
-  --   cyan = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Keyword", link = false }).fg),
-  --   orange = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "MatchParen", link = false }).fg),
-  --   purple = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "IblScope", link = false }).fg),
-  -- }
+  local colors = {}
+  if package.loaded["tokyonight"] then
+    colors = require("tokyonight.colors").setup({ transform = true })
+  else
+    colors = {
+      bg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg),
+      fg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
+      black = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "EndOfBuffer", link = false }).fg),
+      white = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
+      red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Error", link = false }).fg),
+      green = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "String", link = false }).fg),
+      blue = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Question", link = false }).fg),
+      yellow = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Type", link = false }).fg),
+      cyan = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Keyword", link = false }).fg),
+      orange = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Title", link = false }).fg),
+      purple = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Todo", link = false }).fg),
+    }
+  end
   local filename_with_icon = require("lualine.components.filename"):extend()
   filename_with_icon.apply_icon = require("lualine.components.filetype").apply_icon
   filename_with_icon.icon_hl_cache = {}
@@ -121,7 +125,7 @@ function M.config()
       section_separators = { left = '', right = ''},
       disabled_filetypes = {
         statusline = { "alpha" },
-        winbar = { "alpha", "edgy", "toggleterm", "Trouble", "spectre_panel", "qf", "noice" },
+        winbar = { "alpha", "edgy", "toggleterm", "Trouble", "spectre_panel", "qf", "noice", "dbui" },
       },
       ignore_focus = {},
       always_divide_middle = true,
