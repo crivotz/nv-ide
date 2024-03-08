@@ -369,6 +369,9 @@ function M.config()
               }
             end
           end,
+          on_click = function()
+            vim.cmd("DiffviewOpen")
+          end,
           color = { bg = colors.bg }
         },
       }
