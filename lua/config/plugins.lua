@@ -523,21 +523,6 @@ return {
     'weizheheng/ror.nvim'
   },
   {
-    "SR-Mystar/yazi.nvim",
-    event = 'VeryLazy',
-    cmd = "Yazi",
-    opts = {
-      command_args = {
-       open_dir = vim.api.nvim_buf_get_name(0),
-      },
-      title = "",
-      border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
-    },
-    keys = {
-      { "<leader>ff", "<cmd>Yazi<CR>", desc = "Toggle Yazi" },
-    },
-  },
-  {
   "otavioschwanck/arrow.nvim",
     event = 'VeryLazy',
     opts = {

@@ -1,8 +1,6 @@
 -- <F1> help
 vim.keymap.set('n', '<F3>', ':set nu! rnu!<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = true})
--- <F5> yazi
--- <F7> Oil or Neo-tree
 vim.keymap.set('n', '<F8>', ':ZenMode<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = true})
 -- Buffers
@@ -29,7 +27,7 @@ vim.keymap.set('n', '<leader>m', ":lua require('telescope.builtin').marks()<CR>"
 vim.keymap.set('n', '<leader>b', ":lua require('config.plugins.telescope').my_buffers()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>ts', ":lua require('telescope.builtin').treesitter()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>l', ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>f', ":lua require('telescope.builtin').find_files()<CR>", {noremap = true, silent = true})
+vim.keymap.set('n', '<leader>f', ":lua require('telescope.builtin').find_files({hidden=true})<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>fp', ":lua require('config.plugins.telescope').project_files()<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>p', ":lua require'telescope'.extensions.repo.list{file_ignore_patterns={'/%.cache/', '/%.cargo/', '/%.local/', '/%.asdf/', '/%.zinit/', '/%.tmux/'}}<CR>", {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>c', ":lua require('config.plugins.telescope').my_git_commits()<CR>", {noremap = true, silent = true})
