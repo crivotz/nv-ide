@@ -1,6 +1,6 @@
 local M = {
   "stevearc/oil.nvim",
-  enabled = true,
+  enabled = false,
   dependencies = {
     { "nvim-tree/nvim-web-devicons" },
     { "SirZenith/oil-vcs-status" },
