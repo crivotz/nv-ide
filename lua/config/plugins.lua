@@ -2,20 +2,22 @@ return {
   --[[ COLORSCHEME ]]
   {
     "folke/tokyonight.nvim",
-    -- "olimorris/onedarkpro.nvim",
     -- "loctvl842/monokai-pro.nvim",
     -- "rebelot/kanagawa.nvim",
     -- "sainnhe/gruvbox-material",
+    -- "olimorris/onedarkpro.nvim",
     -- "projekt0n/github-nvim-theme",
+    -- "Shatur/neovim-ayu",
     lazy = false,
     priority = 1000,
      config = function()
        require('config.colorschemes.tokyonight')
-       -- vim.cmd [[colorscheme onedark]]
        -- require('config.colorschemes.monokai_pro')
        -- require('config.colorschemes.kanagawa')
        -- require('config.colorschemes.gruvbox_material')
-       -- vim.cmd [[colorscheme github_dark_dimmed]]
+       -- vim.cmd [[colorscheme onedark]]
+       -- vim.cmd [[colorscheme github_dark_dimmed]],
+       -- vim.cmd [[colorscheme ayu-dark]]
      end,
   },
   --[[ END COLORSCHEME ]]

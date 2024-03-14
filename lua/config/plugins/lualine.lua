@@ -41,6 +41,9 @@ function M.config()
   local colors = {}
   if package.loaded["tokyonight"] then
     colors = require("tokyonight.colors").setup({ transform = true })
+  elseif package.loaded["neovim-ayu"] then
+    colors = require("ayu.colors")
+    colors.generate()
   else
     colors = {
       bg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg),
