@@ -218,6 +218,10 @@ return {
     end,
   },
   {
+    "nvim-neotest/nvim-nio",
+    event = 'VeryLazy'
+  },
+  {
     "rcarriga/nvim-dap-ui",
     event = 'VeryLazy',
     config = function()
