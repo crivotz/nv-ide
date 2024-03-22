@@ -16,7 +16,7 @@ return {
        -- require('config.colorschemes.kanagawa')
        -- require('config.colorschemes.gruvbox_material')
        -- vim.cmd [[colorscheme onedark]]
-       -- vim.cmd [[colorscheme github_dark_dimmed]],
+       -- vim.cmd [[colorscheme github_dark_dimmed]]
        -- vim.cmd [[colorscheme ayu-dark]]
      end,
   },
