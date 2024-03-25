@@ -72,3 +72,7 @@ vim.keymap.set('n', '<leader>n', ":lua require('config.plugins.telescope').my_no
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
 -- ROR
 vim.keymap.set("n", "<Leader>ror", ":lua require('ror.commands').list_commands()<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>obr", ":! overmind restart backend<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>ofr", ":! overmind restart frontend<CR>", { silent = true })
+vim.keymap.set("n", "<Leader>or", ":! overmind restart<CR>", { silent = true })
+
