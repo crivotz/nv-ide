@@ -6,6 +6,7 @@ return {
     { "<leader>ld", "<cmd>lua _lazydocker_toggle()<CR>", desc = "Lazydocker" },
     { "<leader>ob", "<cmd>lua _overmind_backend_toggle()<CR>", desc = "Overmind backend" },
     { "<leader>of", "<cmd>lua _overmind_frontend_toggle()<CR>", desc = "Overmind frontend" },
+    { "<leader>oc", "<cmd>lua _overmind_console_toggle()<CR>", desc = "Overmind console" },
   },
   config = function()
     require("toggleterm").setup({
@@ -33,6 +34,7 @@ return {
     local lazydocker = Terminal:new({ cmd = "lazydocker", hidden = true, direction = "float", close_on_exit = true })
     local overmind_frontend = Terminal:new({ cmd = "overmind connect frontend", hidden = true, direction = "vertical", close_on_exit = true })
     local overmind_backend = Terminal:new({ cmd = "overmind connect backend", hidden = true, direction = "vertical", close_on_exit = true })
+    local overmind_console = Terminal:new({ cmd = "overmind connect console", hidden = true, direction = "vertical", close_on_exit = true })
 
     function _lazygit_toggle()
       lazygit:toggle()
@@ -48,6 +50,10 @@ return {
 
     function _overmind_backend_toggle()
       overmind_backend:toggle()
+    end
+
+    function _overmind_console_toggle()
+      overmind_console:toggle()
     end
 
   end,
