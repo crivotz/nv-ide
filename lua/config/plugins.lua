@@ -108,34 +108,6 @@ return {
     end
   },
   {
-    'lukas-reineke/indent-blankline.nvim',
-    main = 'ibl',
-    event = 'UIEnter',
-    opts = {
-      exclude = {
-        -- stylua: ignore
-        filetypes = {
-          'dbout', 'neo-tree-popup', 'log', 'gitcommit',
-          'txt', 'help', 'NvimTree', 'git', 'flutterToolsOutline',
-          'undotree', 'markdown', 'norg', 'org', 'orgagenda',
-        },
-      },
-      indent = {
-        char = '│', -- ▏┆ ┊ 
-        tab_char = '│',
-      },
-      scope = {
-        char = '▎',
-      },
-    },
-    config = function(_, opts)
-      require('ibl').setup(opts)
-      local hooks = require('ibl.hooks')
-      hooks.register(hooks.type.SCOPE_HIGHLIGHT, hooks.builtin.scope_highlight_from_extmark)
-      hooks.register(hooks.type.WHITESPACE, hooks.builtin.hide_first_space_indent_level)
-    end,
-  },
-  {
     "AckslD/nvim-neoclip.lua",
     config = function()
       require("neoclip").setup()
@@ -250,6 +222,9 @@ return {
         window = {
           border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
         },
+        triggers_blacklist = {
+          n = { "d", "y" }
+        }
       })
     end,
   },
@@ -573,6 +548,35 @@ return {
           },
         },
       })
+    end
+  },
+  {
+    "gen740/SmoothCursor.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("smoothcursor").setup({
+      disable_float_win = true,
+      disabled_filetypes = { "TelescopePrompt", "NvimTree" },
+      cursor = "",
+      texthl = "String",
+      })
+    end
+  },
+  {
+    "mvllow/modes.nvim",
+    tag = "v0.2.0",
+    event = "VeryLazy",
+    config = function()
+      require("modes").setup({
+        ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'alpha' }
+      })
+    end,
+  },
+  {
+    "chentoast/marks.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("marks").setup({})
     end
   }
 }

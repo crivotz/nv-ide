@@ -379,7 +379,20 @@ function M.config()
         },
       }
     },
-    inactive_winbar = {},
+    inactive_winbar = {
+      lualine_a = {},
+      lualine_b = {},
+      lualine_c = {
+        {
+          function()
+            return "%="
+          end,
+        },
+      },
+      lualine_x = {},
+      lualine_y = {},
+      lualine_z = {}
+    },
     extensions = {}
   }
 end
