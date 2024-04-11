@@ -214,7 +214,7 @@ function M.config()
           cond = conditions.buffer_not_empty,
           colored = true,
           color = function()
-            if arrow.in_on_arrow_file() then
+            if arrow.is_on_arrow_file() then
               return { fg = colors.green, gui='bold' }
             else
               return { fg = colors.yellow, gui='bold' }

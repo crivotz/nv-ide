@@ -26,10 +26,6 @@ return {
     lazy = false,
   },
   {
-    "stevearc/dressing.nvim",
-    lazy = false,
-  },
-  {
     "onsails/lspkind-nvim",
     lazy = false,
   },
@@ -150,10 +146,6 @@ return {
   {
     "tpope/vim-bundler",
     event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "tpope/vim-capslock",
-    lazy = false,
   },
   {
     "tpope/vim-repeat",
@@ -307,10 +299,6 @@ return {
     event = 'VeryLazy',
   },
   {
-    "mrbjarksen/neo-tree-diagnostics.nvim",
-    event = 'VeryLazy',
-  },
-  {
     "RRethy/vim-illuminate",
     event = 'VeryLazy',
   },
@@ -363,43 +351,6 @@ return {
           end,
         },
       },
-      -- left = {
-      --   {
-      --     title = "  FILE",
-      --     ft = "neo-tree",
-      --     filter = function(buf)
-      --       return vim.b[buf].neo_tree_source == "filesystem"
-      --     end,
-      --     size = { height = 0.7 },
-      --   },
-      --   {
-      --     title = "  GIT",
-      --     ft = "neo-tree",
-      --     filter = function(buf)
-      --       return vim.b[buf].neo_tree_source == "git_status"
-      --     end,
-      --     pinned = true,
-      --     open = "Neotree position=right git_status",
-      --   },
-      --   {
-      --     title = "  BUFFERS",
-      --     ft = "neo-tree",
-      --     filter = function(buf)
-      --       return vim.b[buf].neo_tree_source == "buffers"
-      --     end,
-      --     pinned = true,
-      --     open = "Neotree position=top buffers",
-      --   },
-      --   {
-      --     ft = "裂 DIAGNOSTICS",
-      --     filter = function(buf)
-      --       return vim.b[buf].neo_tree_source == "diagnostics"
-      --     end,
-      --     pinned = true,
-      --     open = "Neotree position=right diagnostics",
-      --   },
-      --   "neo-tree",
-      -- },
     },
   },
   {
@@ -496,11 +447,6 @@ return {
     },
   },
   {
-    '2kabhishek/co-author.nvim',
-    dependencies = { 'stevearc/dressing.nvim' },
-    cmd = 'GitCoAuthors',
-  },
-  {
     'weizheheng/ror.nvim'
   },
   {
@@ -521,10 +467,6 @@ return {
     config = function()
       require('nvim-highlight-colors').setup({})
     end
-  },
-  {
-    'pteroctopus/faster.nvim',
-    lazy = false
   },
   {
     "FabijanZulj/blame.nvim",
@@ -556,7 +498,7 @@ return {
     config = function()
       require("smoothcursor").setup({
       disable_float_win = true,
-      disabled_filetypes = { "TelescopePrompt", "NvimTree" },
+      disabled_filetypes = { "TelescopePrompt" },
       cursor = "",
       texthl = "String",
       })
@@ -578,5 +520,16 @@ return {
     config = function()
       require("marks").setup({})
     end
+  },
+  {
+    "gabrielpoca/replacer.nvim",
+    opts = { rename_files = false },
+    keys = {
+      {
+        "<leader>h",
+        function() require('replacer').run() end,
+        desc = "run replacer.nvim"
+      }
+    }
   }
 }

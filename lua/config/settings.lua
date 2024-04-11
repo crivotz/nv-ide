@@ -101,7 +101,7 @@ vim.api.nvim_create_autocmd("TextYankPost", {
     vim.highlight.on_yank()
   end,
 })
---
+
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0
 
