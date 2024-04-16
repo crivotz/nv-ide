@@ -2,7 +2,7 @@ return {
   'lukas-reineke/indent-blankline.nvim',
   main = 'ibl',
   event = 'UIEnter',
-  enabled = false,
+  enabled = true,
   opts = {
     exclude = {
       -- stylua: ignore
