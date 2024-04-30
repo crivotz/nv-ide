@@ -41,6 +41,8 @@ function M.config()
   local colors = {}
   if package.loaded["tokyonight"] then
     colors = require("tokyonight.colors").setup({ transform = true })
+  elseif package.loaded["cyberdream"] then
+    colors = require("cyberdream.colors")
   elseif package.loaded["neovim-ayu"] then
     colors = require("ayu.colors")
     colors.generate()

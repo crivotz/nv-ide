@@ -8,6 +8,7 @@ return {
     -- "olimorris/onedarkpro.nvim",
     -- "projekt0n/github-nvim-theme",
     -- "Shatur/neovim-ayu",
+    -- "scottmckendry/cyberdream.nvim",
     lazy = false,
     priority = 1000,
      config = function()
@@ -15,6 +16,7 @@ return {
        -- require('config.colorschemes.monokai_pro')
        -- require('config.colorschemes.kanagawa')
        -- require('config.colorschemes.gruvbox_material')
+       -- require('config.colorschemes.cyberdream')
        -- vim.cmd [[colorscheme onedark]]
        -- vim.cmd [[colorscheme github_dark_dimmed]]
        -- vim.cmd [[colorscheme ayu-dark]]
@@ -442,10 +444,13 @@ return {
   },
   {
     "FabijanZulj/blame.nvim",
-    event = 'VeryLazy',
+    lazy = false,
     keys = {
-      { "<leader>gb", "<cmd>ToggleBlame virtual<CR>", desc = "Git blame" },
+      { "<leader>gb", "<cmd>BlameToggle virtual<CR>", desc = "Git blame" },
     },
+    config = function()
+      require("blame").setup()
+    end
   },
   {
     "sindrets/diffview.nvim",

@@ -59,11 +59,11 @@ function M.config()
         preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
         results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
       },
-      path_display = {
-        filename_first = {
-          reverse_directories = false
-        }
-      },
+      -- path_display = {
+      --   filename_first = {
+      --     reverse_directories = false
+      --   }
+      -- },
       set_env = { ["COLORTERM"] = "truecolor" },
       mappings = {
         i = {
