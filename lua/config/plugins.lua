@@ -9,6 +9,7 @@ return {
     -- "projekt0n/github-nvim-theme",
     -- "Shatur/neovim-ayu",
     -- "scottmckendry/cyberdream.nvim",
+    -- "e-q/okcolors.nvim", name = "okcolors",
     lazy = false,
     priority = 1000,
      config = function()
@@ -20,6 +21,7 @@ return {
        -- vim.cmd [[colorscheme onedark]]
        -- vim.cmd [[colorscheme github_dark_dimmed]]
        -- vim.cmd [[colorscheme ayu-dark]]
+       -- vim.cmd [[colorscheme okcolors-sharp]]
      end,
   },
   --[[ END COLORSCHEME ]]
