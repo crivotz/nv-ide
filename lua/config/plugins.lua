@@ -1,7 +1,7 @@
 return {
   --[[ COLORSCHEME ]]
   {
-    -- "folke/tokyonight.nvim",
+    "folke/tokyonight.nvim",
     -- "loctvl842/monokai-pro.nvim",
     -- "rebelot/kanagawa.nvim",
     -- "sainnhe/gruvbox-material",
@@ -9,11 +9,11 @@ return {
     -- "projekt0n/github-nvim-theme",
     -- "Shatur/neovim-ayu",
     -- "scottmckendry/cyberdream.nvim",
-    "e-q/okcolors.nvim", name = "okcolors",
+    -- "e-q/okcolors.nvim", name = "okcolors",
     lazy = false,
     priority = 1000,
      config = function()
-       -- require('config.colorschemes.tokyonight')
+       require('config.colorschemes.tokyonight')
        -- require('config.colorschemes.monokai_pro')
        -- require('config.colorschemes.kanagawa')
        -- require('config.colorschemes.gruvbox_material')
@@ -21,7 +21,7 @@ return {
        -- vim.cmd [[colorscheme onedark]]
        -- vim.cmd [[colorscheme github_dark_dimmed]]
        -- vim.cmd [[colorscheme ayu-dark]]
-       vim.cmd [[colorscheme okcolors-smooth]]
+       -- vim.cmd [[colorscheme okcolors-smooth]]
      end,
   },
   --[[ END COLORSCHEME ]]
@@ -499,16 +499,5 @@ return {
     config = function()
       require("marks").setup({})
     end
-  },
-  {
-    "gabrielpoca/replacer.nvim",
-    opts = { rename_files = false },
-    keys = {
-      {
-        "<leader>h",
-        function() require('replacer').run() end,
-        desc = "run replacer.nvim"
-      }
-    }
   }
 }
