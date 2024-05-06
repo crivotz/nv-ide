@@ -1,17 +1,28 @@
---[[ vim.api.nvim_create_autocmd({"FileType"}, { ]]
---[[   pattern = "TelescopePrompt", ]]
---[[   command = "setlocal nocursorline" ]]
---[[ }) ]]
-
 local M = {
   "nvim-telescope/telescope.nvim",
   lazy = false,
+  enabled = false,
+    keys = {
+      { "<leader>r", ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", noremap = true, silent = true, desc = "RG" },
+      { "<leader>#", ":lua require('telescope.builtin').grep_string()<CR>", noremap = true, silent = true, desc = "Grep string" },
+      { "<leader>ts", ":lua require('telescope.builtin').treesitter()<CR>", noremap = true, silent = true, desc = "Treesitter" },
+      { "<leader>m", ":lua require('telescope.builtin').marks()<CR>", noremap = true, silent = true, desc = "Marks" },
+      { "<leader>b", ":lua require('config.plugins.telescope').my_buffers()<CR>", noremap = true, silent = true, desc = "Buffers" },
+      { "<leader>l", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", noremap = true, silent = true, desc = "Search line buffer" },
+      { "<leader>f", ":lua require('telescope.builtin').find_files({hidden=true})<CR>", noremap = true, silent = true, desc = "Find files" },
+      { "<leader>fp", ":lua require('config.plugins.telescope').project_files()<CR>", noremap = true, silent = true, desc = "Project files" },
+      { "<leader>p", ":lua require'telescope'.extensions.repo.list{file_ignore_patterns={'/%.cache/', '/%.cargo/', '/%.local/', '/%.asdf/', '/%.zinit/', '/%.tmux/'}}<CR>", noremap = true, silent = true, desc = "Projects" },
+      { "<leader>g", ":lua require('config.plugins.telescope').my_git_status()<CR>", noremap = true, silent = true, desc = "Git status" },
+      { "<leader>ns", ":lua require('config.plugins.telescope').my_note()<CR>", noremap = true, silent = true, desc = "Note" },
+      { "<leader>y", ":Telescope neoclip<CR>", noremap = true, silent = true, desc = "Neoclip" },
+      { "<leader>ll", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREP -> ') })<CR>", noremap = true, silent = true, desc = "Grep string" },
+    },
   dependencies = {
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "cljoly/telescope-repo.nvim" },
     { "nvim-telescope/telescope-dap.nvim" },
-    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
     -- { "nvim-telescope/telescope-fzy-native.nvim" },
     { "nvim-telescope/telescope-live-grep-args.nvim" },
   },
@@ -59,11 +70,11 @@ function M.config()
         preview = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
         results = {"─", "│", "─", "│", "┌", "┐", "┘", "└"},
       },
-      -- path_display = {
-      --   filename_first = {
-      --     reverse_directories = false
-      --   }
-      -- },
+      path_display = {
+        filename_first = {
+          reverse_directories = false
+        }
+      },
       set_env = { ["COLORTERM"] = "truecolor" },
       mappings = {
         i = {
@@ -80,12 +91,12 @@ function M.config()
       --   override_file_sorter = true,
       -- }
     },
-    fzf = {
-      fuzzy = true, -- false will only do exact matching
-      override_generic_sorter = true, -- override the generic sorter
-      override_file_sorter = true, -- override the file sorter
-      case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-    },
+    -- fzf = {
+    --   fuzzy = true, -- false will only do exact matching
+    --   override_generic_sorter = true, -- override the generic sorter
+    --   override_file_sorter = true, -- override the file sorter
+    --   case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+    -- },
   }
 
   -- Extensions
@@ -94,7 +105,7 @@ function M.config()
   telescope.load_extension('neoclip')
   telescope.load_extension('notify')
   telescope.load_extension('dap')
-  telescope.load_extension('fzf')
+  -- telescope.load_extension('fzf')
   -- telescope.load_extension('fzy_native')
   telescope.load_extension("live_grep_args")
 
