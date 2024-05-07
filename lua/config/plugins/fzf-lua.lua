@@ -1,7 +1,7 @@
 return {
   "ibhagwan/fzf-lua",
   lazy = false,
-  enabled = true,
+  enabled = false,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     { "<leader>r", ":FzfLua live_grep<CR>", noremap = true, silent = true, desc = "Live grep" },
@@ -12,6 +12,7 @@ return {
     { "<leader>f", ":FzfLua files<CR>", noremap = true, silent = true, desc = "Files" },
     { "<leader>ts", ":FzfLua lsp_document_symbols<CR>", noremap = true, silent = true, desc = "Files" },
     { "<leader>fp", ":FzfLua git_files<CR>", noremap = true, silent = true, desc = "Git files" },
+    { "<leader>p", ":GitProjects<CR>", noremap = true, silent = true, desc = "Git files" },
     { "<leader>g", ":FzfLua git_status<CR>", noremap = true, silent = true, desc = "Git status" },
     { "<leader>ll", ":FzfLua grep { search = vim.fn.input('GREP -> ') }<CR>", noremap = true, silent = true, desc = "Grep a word" },
     { "<leader>y", ":lua require('neoclip.fzf')()<CR>", noremap = true, silent = true, desc = "Neoclip" },
@@ -19,13 +20,32 @@ return {
   },
   config = function()
     require("fzf-lua").setup({
-      "telescope",
+      -- "telescope",
       defaults = {
-        formatter = 'path.filename_first',
+        -- formatter = 'path.filename_first',
       },
       winopts = {
         border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃"},
       }
     })
+    _G.fzf_dirs = function(opts)
+      local fzf_lua = require'fzf-lua'
+      opts = opts or {}
+      opts.prompt = "Git projects❯ "
+      opts.fn_transform = function(x)
+        return fzf_lua.utils.ansi_codes.magenta(x)
+      end
+      opts.actions = {
+        ['default'] = function(selected)
+          fzf_lua.files({ cwd = selected[1] })
+        end
+      }
+      if (vim.fn.executable 'plocate' == 1) then
+        fzf_lua.fzf_exec("plocate '.git' | sed 's/\\/.git//'", opts)
+      end
+    end
+
+    vim.cmd([[command! -nargs=* GitProjects lua _G.fzf_dirs()]])
+
   end,
 }

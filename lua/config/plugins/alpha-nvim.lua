@@ -207,6 +207,7 @@ return {
           dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
           dashboard.button("o", "ﭯ  Recently opened files", ":FzfLua oldfiles<CR>"),
           dashboard.button("f", "  Find file", ":FzfLua files<CR>"),
+          dashboard.button("p", "  Find project", ":GitProjects<CR>"),
           dashboard.button("r", "  Find word", ":FzfLua live_grep<CR>"),
           dashboard.button("g", "  Find modified file", ":FzfLua git_status<CR>"),
           dashboard.button("m", "  Show mark", ":FzfLua marks<CR>"),
