@@ -21,6 +21,7 @@ return {
   config = function()
     require("fzf-lua").setup({
       -- "telescope",
+      fzf_opts = { ['--layout'] = 'reverse-list' },
       defaults = {
         -- formatter = 'path.filename_first',
       },

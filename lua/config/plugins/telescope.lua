@@ -3,7 +3,7 @@ local M = {
   lazy = false,
   enabled = true,
     keys = {
-      { "<leader>r", ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", noremap = true, silent = true, desc = "RG" },
+      { "<leader>r", ":lua require'telescope'.extensions.egrepify.egrepify {}<CR>", noremap = true, silent = true, desc = "RG" },
       { "<leader>#", ":lua require('telescope.builtin').grep_string()<CR>", noremap = true, silent = true, desc = "Grep string" },
       { "<leader>ts", ":lua require('telescope.builtin').treesitter()<CR>", noremap = true, silent = true, desc = "Treesitter" },
       { "<leader>m", ":lua require('telescope.builtin').marks()<CR>", noremap = true, silent = true, desc = "Marks" },
@@ -16,15 +16,16 @@ local M = {
       { "<leader>ns", ":lua require('config.plugins.telescope').my_note()<CR>", noremap = true, silent = true, desc = "Note" },
       { "<leader>y", ":Telescope neoclip<CR>", noremap = true, silent = true, desc = "Neoclip" },
       { "<leader>ll", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREP -> ') })<CR>", noremap = true, silent = true, desc = "Grep string" },
+      { "<leader>z", ":lua require('telescope').extensions.zoxide.list<CR>", noremap = true, silent = true, desc = "Zoxide" },
     },
   dependencies = {
     { "nvim-lua/popup.nvim" },
     { "nvim-lua/plenary.nvim" },
     { "cljoly/telescope-repo.nvim" },
     { "nvim-telescope/telescope-dap.nvim" },
-    -- { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    -- { "nvim-telescope/telescope-fzy-native.nvim" },
-    { "nvim-telescope/telescope-live-grep-args.nvim" },
+    { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
+    { "fdschmidt93/telescope-egrepify.nvim" },
+    { "jvgrootveld/telescope-zoxide" },
   },
 }
 
@@ -54,7 +55,7 @@ function M.config()
           mirror = false,
         },
         width = 0.87,
-        height = 0.80,
+        height = 0.95,
         preview_cutoff = 120,
       },
       -- prompt_prefix = "λ -> ",
@@ -86,16 +87,12 @@ function M.config()
       },
     },
     extensions = {
-      -- fzy = {
-      --   override_generic_sorter = false,
-      --   override_file_sorter = true,
-      -- }
-      -- fzf = {
-      --   fuzzy = true, -- false will only do exact matching
-      --   override_generic_sorter = true, -- override the generic sorter
-      --   override_file_sorter = true, -- override the file sorter
-      --   case_mode = "smart_case", -- or "ignore_case" or "respect_case"
-      -- },
+      fzf = {
+        fuzzy = true, -- false will only do exact matching
+        override_generic_sorter = true, -- override the generic sorter
+        override_file_sorter = true, -- override the file sorter
+        case_mode = "smart_case", -- or "ignore_case" or "respect_case"
+      },
     },
   }
 
@@ -105,9 +102,9 @@ function M.config()
   telescope.load_extension('neoclip')
   telescope.load_extension('notify')
   telescope.load_extension('dap')
-  -- telescope.load_extension('fzf')
-  -- telescope.load_extension('fzy_native')
-  telescope.load_extension("live_grep_args")
+  telescope.load_extension('fzf')
+  telescope.load_extension('zoxide')
+  telescope.load_extension("egrepify")
 
   previewers = require('telescope.previewers')
   builtin = require('telescope.builtin')
