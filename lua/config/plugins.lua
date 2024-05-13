@@ -305,6 +305,20 @@ return {
     event = 'VeryLazy',
   },
   {
+    'MagicDuck/grug-far.nvim',
+    event = 'VeryLazy',
+    config = function()
+      require('grug-far').setup({
+        keymaps = {
+          replace = '<leader>r',
+          qflist = '<C-q>',
+          gotoLocation = '<enter>',
+          close = '<C-x>'
+        },
+      });
+    end
+  },
+  {
     "folke/trouble.nvim",
     event = 'VeryLazy',
   },
@@ -501,5 +515,16 @@ return {
     config = function()
       require("marks").setup({})
     end
+  },
+  {
+    "NeogitOrg/neogit",
+    branch = "nightly",
+    event = "VeryLazy",
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "sindrets/diffview.nvim",
+      "nvim-telescope/telescope.nvim",
+    },
+    config = true
   }
 }
