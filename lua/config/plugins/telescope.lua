@@ -16,7 +16,7 @@ local M = {
       { "<leader>ns", ":lua require('config.plugins.telescope').my_note()<CR>", noremap = true, silent = true, desc = "Note" },
       { "<leader>y", ":Telescope neoclip<CR>", noremap = true, silent = true, desc = "Neoclip" },
       { "<leader>ll", ":lua require('telescope.builtin').grep_string({ search = vim.fn.input('GREP -> ') })<CR>", noremap = true, silent = true, desc = "Grep string" },
-      { "<leader>z", ":lua require('telescope').extensions.zoxide.list<CR>", noremap = true, silent = true, desc = "Zoxide" },
+      { "<leader>z", ":Telescope zoxide list<CR>", noremap = true, silent = true, desc = "Zoxide" },
     },
   dependencies = {
     { "nvim-lua/popup.nvim" },

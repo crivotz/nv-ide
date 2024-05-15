@@ -547,7 +547,7 @@ return {
     config = function()
       require("supermaven-nvim").setup({
          keymaps = {
-            accept_suggestion = "<C-l>",
+            accept_suggestion = "<C-Tab>",
             clear_suggestion = "<C-]>",
           },
       })
