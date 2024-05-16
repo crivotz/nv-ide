@@ -538,19 +538,11 @@ return {
       "nvim-tree/nvim-web-devicons",
     },
     config = function ()
-      require"octo".setup()
-    end
-  },
-  {
-    "supermaven-inc/supermaven-nvim",
-    event = "VeryLazy",
-    config = function()
-      require("supermaven-nvim").setup({
-         keymaps = {
-            accept_suggestion = "<C-Tab>",
-            clear_suggestion = "<C-]>",
-          },
+      require"octo".setup({
+        suppress_missing_scope = {
+          projects_v2 = true,
+        }
       })
-    end,
-  },
+    end
+  }
 }

@@ -27,10 +27,11 @@ return {
     end
 
     local function footer()
-      local total_plugins = require("lazy").stats().count
+      local stats = require("lazy").stats()
+      local ms = math.floor(stats.startuptime * 100 + 0.5) / 100
       local date = os.date("%d-%m-%Y")
       local time = os.date("%H:%M:%S")
-      return "[ " .. total_plugins .. " plugins] [ " .. date .. "] [ " .. time .. "]"
+      return "[  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. stats.startuptime .. "ms] [ " .. date .. "] [ " .. time .. "]"
     end
 
     local function icon(fn)
