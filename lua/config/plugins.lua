@@ -25,8 +25,15 @@ return {
      end,
   },
   --[[ END COLORSCHEME ]]
-  { "nvim-lua/popup.nvim" },
-  { "nvim-lua/plenary.nvim" },
+  --[[ UI ]]
+  {
+    "nvim-lua/popup.nvim",
+    lazy = false,
+  },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = false,
+  },
   {
     "MunifTanjim/nui.nvim",
     lazy = false,
@@ -39,50 +46,23 @@ return {
     "onsails/lspkind-nvim",
     lazy = false,
   },
+  --[[ END UI ]]
   {
     "hrsh7th/nvim-cmp",
     priority = 1000,
     lazy = false,
-  },
-  {
-    "hrsh7th/cmp-buffer",
-    lazy = false,
-  },
-  {
-    "hrsh7th/cmp-vsnip",
-    lazy = false,
-  },
-  {
-    "hrsh7th/vim-vsnip",
-    lazy = false,
-  },
-  {
-    "hrsh7th/cmp-path",
-    lazy = false,
-  },
-  {
-    "hrsh7th/cmp-calc",
-    lazy = false,
-  },
-  {
-    "hrsh7th/cmp-cmdline",
-    lazy = false,
-  },
-  {
-    "ray-x/cmp-treesitter",
-    lazy = false,
-  },
-  {
-    "lukas-reineke/cmp-rg",
-    lazy = false,
-  },
-  {
-    "quangnguyen30192/cmp-nvim-tags",
-    lazy = false,
-  },
-  {
-    "rafamadriz/friendly-snippets",
-    lazy = false,
+    dependencies = {
+      "hrsh7th/cmp-buffer",
+      "hrsh7th/cmp-vsnip",
+      "hrsh7th/vim-vsnip",
+      "hrsh7th/cmp-path",
+      "hrsh7th/cmp-calc",
+      "hrsh7th/cmp-cmdline",
+      "ray-x/cmp-treesitter",
+      "lukas-reineke/cmp-rg",
+      "quangnguyen30192/cmp-nvim-tags",
+      "rafamadriz/friendly-snippets",
+    }
   },
   {
     "nvim-treesitter/nvim-treesitter",
@@ -130,8 +110,17 @@ return {
     end,
   },
   {
+    'weizheheng/ror.nvim'
+  },
+  {
     "tpope/vim-rails",
     event = { "BufReadPre", "BufNewFile" },
+    dependencies = {
+      "tpope/vim-abolish",
+      "tpope/vim-bundler",
+      "tpope/vim-endwise",
+      "tpope/vim-dispatch",
+    },
     config = function()
       -- disable autocmd set filetype=eruby.yaml
       vim.api.nvim_create_autocmd(
@@ -146,27 +135,11 @@ return {
     end
   },
   {
-    "tpope/vim-abolish",
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
     "tpope/vim-sleuth",
     event = { "BufReadPre", "BufNewFile" },
   },
   {
-    "tpope/vim-bundler",
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
     "tpope/vim-repeat",
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "tpope/vim-endwise",
-    event = { "BufReadPre", "BufNewFile" },
-  },
-  {
-    "tpope/vim-dispatch",
     event = { "BufReadPre", "BufNewFile" },
   },
   {
@@ -189,24 +162,6 @@ return {
       vim.g.gutentags_ctags_executable_ruby = 'ripper-tags'
       vim.g.gutentags_ctags_extra_args_ruby = { '--ignore-unsupported-options', '--recursive' }
       -- vim.g.gutentags_trace = 1
-    end,
-  },
-  {
-    "nvim-neotest/nvim-nio",
-    event = 'VeryLazy'
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    event = 'VeryLazy',
-    config = function()
-      require("dapui").setup()
-    end,
-  },
-  {
-    "theHamsta/nvim-dap-virtual-text",
-    event = 'VeryLazy',
-    config = function()
-      require("nvim-dap-virtual-text").setup()
     end,
   },
   {
@@ -344,6 +299,11 @@ return {
           size = { height = 0.4 },
         },
         {
+          ft = "grug-far",
+          title = "GRUG-FAR",
+          size = { height = 0.4 },
+        },
+        {
           ft = "toggleterm",
           title = "TERMINAL",
           size = { height = 0.4 },
@@ -439,9 +399,6 @@ return {
     },
   },
   {
-    'weizheheng/ror.nvim'
-  },
-  {
   "otavioschwanck/arrow.nvim",
     event = 'VeryLazy',
     opts = {
@@ -458,16 +415,6 @@ return {
     event = 'VeryLazy',
     config = function()
       require('nvim-highlight-colors').setup({})
-    end
-  },
-  {
-    "FabijanZulj/blame.nvim",
-    lazy = false,
-    keys = {
-      { "<leader>gb", "<cmd>BlameToggle virtual<CR>", desc = "Git blame" },
-    },
-    config = function()
-      require("blame").setup()
     end
   },
   {
