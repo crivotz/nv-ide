@@ -10,6 +10,7 @@ return {
     -- "Shatur/neovim-ayu",
     -- "scottmckendry/cyberdream.nvim",
     -- "e-q/okcolors.nvim", name = "okcolors",
+    -- enabled = false,
     lazy = false,
     priority = 1000,
      config = function()
@@ -414,7 +415,13 @@ return {
     "brenoprata10/nvim-highlight-colors",
     event = 'VeryLazy',
     config = function()
-      require('nvim-highlight-colors').setup({})
+      require('nvim-highlight-colors').setup({
+        render = "virtual",
+        virtual_symbol = '■',
+        -- virtual_symbol = '',
+        -- virtual_symbol = '',
+        -- virtual_symbol = '󰉦',
+      })
     end
   },
   {
@@ -465,7 +472,6 @@ return {
   },
   {
     "NeogitOrg/neogit",
-    branch = "nightly",
     event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
