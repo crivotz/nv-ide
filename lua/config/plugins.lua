@@ -442,28 +442,6 @@ return {
     end
   },
   {
-    "gen740/SmoothCursor.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("smoothcursor").setup({
-      disable_float_win = true,
-      disabled_filetypes = { "TelescopePrompt" },
-      cursor = "",
-      texthl = "String",
-      })
-    end
-  },
-  {
-    "mvllow/modes.nvim",
-    tag = "v0.2.0",
-    event = "VeryLazy",
-    config = function()
-      require("modes").setup({
-        ignore_filetypes = { 'NvimTree', 'TelescopePrompt', 'alpha' }
-      })
-    end,
-  },
-  {
     "chentoast/marks.nvim",
     event = "VeryLazy",
     config = function()
