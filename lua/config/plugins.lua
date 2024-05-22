@@ -257,7 +257,7 @@ return {
 		},
     config = function()
       require("spider").setup {
-        skipInsignificantPunctuation = false,
+        skipInsignificantPunctuation = true,
       }
     end
   },
