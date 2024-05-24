@@ -480,5 +480,16 @@ return {
         }
       })
     end
+  },
+  {
+    "m4xshen/hardtime.nvim",
+    dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+    lazy = false,
+    enabled = true,
+    config = function ()
+      require("hardtime").setup({
+        disable_mouse = false
+      })
+    end
   }
 }

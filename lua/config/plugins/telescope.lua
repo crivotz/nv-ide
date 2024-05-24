@@ -60,7 +60,7 @@ function M.config()
       },
       -- prompt_prefix = "λ -> ",
       prompt_prefix = "   ",
-      selection_caret = "|> ",
+      selection_caret = "▷ ",
       winblend = 0,
       border = {},
       borderchars = {
