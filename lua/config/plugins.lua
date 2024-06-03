@@ -495,5 +495,17 @@ return {
         disable_mouse = false
       })
     end
+  },
+  {
+    "gen740/SmoothCursor.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("smoothcursor").setup({
+      disable_float_win = true,
+      disabled_filetypes = { "TelescopePrompt" },
+      cursor = "",
+      texthl = "String",
+      })
+    end
   }
 }
