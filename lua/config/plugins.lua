@@ -507,5 +507,15 @@ return {
       texthl = "String",
       })
     end
-  }
+  },
+  {
+    "FabijanZulj/blame.nvim",
+    lazy = false,
+    keys = {
+      { "<leader>gb", "<cmd>BlameToggle virtual<CR>", desc = "Git blame" },
+    },
+    config = function()
+      require("blame").setup()
+    end
+  },
 }
