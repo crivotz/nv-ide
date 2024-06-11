@@ -469,23 +469,6 @@ return {
     config = true
   },
   {
-    "pwntester/octo.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim",
-      -- "ibhagwan/fzf-lua",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function ()
-      require"octo".setup({
-        suppress_missing_scope = {
-          projects_v2 = true,
-        }
-      })
-    end
-  },
-  {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     lazy = false,

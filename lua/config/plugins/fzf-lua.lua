@@ -21,9 +21,12 @@ return {
   config = function()
     require("fzf-lua").setup({
       -- "telescope",
-      fzf_opts = { ['--layout'] = 'reverse-list' },
+      fzf_opts = {
+        ['--layout'] = 'reverse-list',
+        ['--with-nth'] = '2..,-1',
+      },
       defaults = {
-        -- formatter = 'path.filename_first',
+        formatter = 'path.filename_first',
       },
       winopts = {
         border = { "┏", "━", "┓", "┃", "┛", "━", "┗", "┃"},
