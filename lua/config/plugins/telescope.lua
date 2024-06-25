@@ -3,7 +3,7 @@ local M = {
   lazy = false,
   enabled = true,
     keys = {
-      { "<leader>r", ":lua require'telescope'.extensions.egrepify.egrepify {}<CR>", noremap = true, silent = true, desc = "RG" },
+      { "<leader>r", ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", noremap = true, silent = true, desc = "RG" },
       { "<leader>#", ":lua require('telescope.builtin').grep_string()<CR>", noremap = true, silent = true, desc = "Grep string" },
       { "<leader>ts", ":lua require('telescope.builtin').treesitter()<CR>", noremap = true, silent = true, desc = "Treesitter" },
       { "<leader>m", ":lua require('telescope.builtin').marks()<CR>", noremap = true, silent = true, desc = "Marks" },
@@ -24,7 +24,7 @@ local M = {
     { "cljoly/telescope-repo.nvim" },
     { "nvim-telescope/telescope-dap.nvim" },
     { "nvim-telescope/telescope-fzf-native.nvim", build = "make" },
-    { "fdschmidt93/telescope-egrepify.nvim" },
+    { "nvim-telescope/telescope-live-grep-args.nvim" },
     { "jvgrootveld/telescope-zoxide" },
   },
 }
@@ -104,7 +104,7 @@ function M.config()
   telescope.load_extension('dap')
   telescope.load_extension('fzf')
   telescope.load_extension('zoxide')
-  telescope.load_extension("egrepify")
+  telescope.load_extension("live_grep_args")
 
   previewers = require('telescope.previewers')
   builtin = require('telescope.builtin')

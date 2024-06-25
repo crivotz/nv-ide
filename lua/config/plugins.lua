@@ -302,15 +302,25 @@ return {
         right = { size = 40 },
         top = { size = 10 },
       },
+      right = {
+        {
+          ft = "grug-far",
+          title = "GRUG-FAR",
+          size = {
+          width = function()
+                if vim.o.columns < 180 then
+                  return 0.5
+                end
+
+                return 120
+              end,
+          },
+        },
+      },
       bottom = {
         {
           ft = "spectre_panel",
           title = "SPECTRE",
-          size = { height = 0.4 },
-        },
-        {
-          ft = "grug-far",
-          title = "GRUG-FAR",
           size = { height = 0.4 },
         },
         {
@@ -475,7 +485,8 @@ return {
     enabled = true,
     config = function ()
       require("hardtime").setup({
-        disable_mouse = false
+        disable_mouse = false,
+        disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "grug-far", "dbui" },
       })
     end
   },

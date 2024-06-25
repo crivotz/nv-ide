@@ -1,29 +1,22 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system({
-    "git",
-    "clone",
-    "--filter=blob:none",
-    "https://github.com/folke/lazy.nvim.git",
-    "--branch=stable", -- latest stable release
-    lazypath,
-  })
+
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
+  -- bootstrap lazy.nvim
+  -- stylua: ignore
+  vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable", lazypath })
 end
-vim.opt.runtimepath:prepend(lazypath)
+vim.opt.rtp:prepend(lazypath)
+
 require("lazy").setup("config.plugins", {
-  defaults = { lazy = true },
+  defaults = {
+    lazy = true,
+    version = false,
+  },
   performance = {
-    cache = {
-      enabled = true,
-      -- disable_events = {},
-    },
     rtp = {
       disabled_plugins = {
         "gzip",
-        --[[ "matchit", ]]
-        --[[ "matchparen", ]]
         "netrwPlugin",
-        "rplugin",
         "tarPlugin",
         "tohtml",
         "tutor",
@@ -36,7 +29,6 @@ require("lazy").setup("config.plugins", {
     border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
   },
   checker = {
-    -- automatically check for plugin updates
-    enabled = false,
+    enabled = true,
   },
 })
