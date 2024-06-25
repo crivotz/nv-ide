@@ -1,12 +1,12 @@
 require('config.settings')
 require('config.color')
--- Lazy
+require('config.font')
+-- LAZY
 require('config.lazy')
---
+-- UTIL
 -- require('util.hjkl_notifier')
 require('util.new_note')
---
-require('config.font')
+-- COMPLETION
 require('config.completion')
--- Keymap
+-- KEYMAP
 require('config.mappings')
