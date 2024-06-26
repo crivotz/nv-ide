@@ -109,6 +109,10 @@ function M.config()
     local curr_line = vim.api.nvim_win_get_cursor(0)[1]
     local lines = vim.api.nvim_buf_line_count(0)
 
+    if lines == 0 or curr_line > lines then
+      return ''
+    end
+
     if self.options.reverse then
       return string.rep(scroll_bar_blocks[8 - math.floor(curr_line / lines * 7)], 2)
     else
