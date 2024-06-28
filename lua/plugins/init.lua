@@ -468,17 +468,6 @@ return {
     end
   },
   {
-    "NeogitOrg/neogit",
-    event = "VeryLazy",
-    dependencies = {
-      "nvim-lua/plenary.nvim",
-      "sindrets/diffview.nvim",
-      "nvim-telescope/telescope.nvim",
-      -- "ibhagwan/fzf-lua",
-    },
-    config = true
-  },
-  {
     "m4xshen/hardtime.nvim",
     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
     lazy = false,
