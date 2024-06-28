@@ -486,7 +486,7 @@ return {
     config = function ()
       require("hardtime").setup({
         disable_mouse = false,
-        disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "grug-far", "dbui" },
+        disabled_filetypes = { "qf", "netrw", "NvimTree", "lazy", "mason", "oil", "grug-far", "dbui", "Trouble", "trouble" },
       })
     end
   },
@@ -511,5 +511,17 @@ return {
     config = function()
       require("blame").setup()
     end
+  },
+  {
+    "chrisgrieser/nvim-rip-substitute",
+    lazy = "VeryLazy",
+    keys = {
+      {
+        "<leader>fs",
+          function() require("rip-substitute").sub() end,
+          mode = { "n", "x" },
+          desc = " rip substitute",
+      },
+    },
   },
 }
