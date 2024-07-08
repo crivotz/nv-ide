@@ -108,3 +108,13 @@ vim.g.markdown_recommended_style = 0
 if vim.fn.has("nvim-0.10") == 1 then
   opt.smoothscroll = true
 end
+
+vim.api.nvim_create_autocmd("User", {
+  pattern = "OilEnter",
+  callback = vim.schedule_wrap(function(args)
+    local oil = require("oil")
+    if vim.api.nvim_get_current_buf() == args.data.buf and oil.get_cursor_entry() then
+      oil.open_preview()
+    end
+  end),
+})
