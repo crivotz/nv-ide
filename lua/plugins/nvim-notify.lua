@@ -1,20 +1,27 @@
-local M = {
+return {
   "rcarriga/nvim-notify",
   lazy = false,
-}
-
-function M.config()
-  require("notify").setup({
+  keys = {
+    {
+      "<leader>un",
+      function()
+        require("notify").dismiss({ silent = true, pending = true })
+      end,
+      desc = "Dismiss All Notifications",
+    },
+  },
+  opts = {
+    stages = "static",
     timeout = 3000,
-    level = vim.log.levels.INFO,
-    fps = 20,
+    top_down = false,
     max_height = function()
       return math.floor(vim.o.lines * 0.75)
     end,
     max_width = function()
       return math.floor(vim.o.columns * 0.75)
     end,
-  })
-end
-
-return M
+    on_open = function(win)
+      vim.api.nvim_win_set_config(win, { zindex = 100 })
+    end,
+  },
+}

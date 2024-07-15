@@ -177,12 +177,10 @@ return {
     event = 'VeryLazy',
     config = function()
       require("which-key").setup({
-        window = {
+        delay = 500,
+        win = {
           border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
         },
-        triggers_blacklist = {
-          n = { "d", "y" }
-        }
       })
     end,
   },
@@ -257,13 +255,14 @@ return {
 		},
     config = function()
       require("spider").setup {
-        skipInsignificantPunctuation = true,
+        skipInsignificantPunctuation = false,
       }
     end
   },
   {
     "nvim-pack/nvim-spectre",
     event = 'VeryLazy',
+    enabled = false
   },
   {
     'MagicDuck/grug-far.nvim',
@@ -360,7 +359,13 @@ return {
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-    opts = {},
+    opts = {
+      modes = {
+        search = {
+          enabled = true,
+        }
+      }
+    },
     keys = {
       { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
       { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },

@@ -28,7 +28,7 @@ return {
       cmdline = {
         view = "cmdline_popup", -- view for rendering the cmdline. Change to `cmdline` to get a classic cmdline at the bottom
         format = {
-          cmdline = { pattern = "^:", icon = "|>", lang = "vim", title = "" },
+          cmdline = { pattern = "^:", icon = "▷", lang = "vim", title = "" },
         }
       },
       views = {

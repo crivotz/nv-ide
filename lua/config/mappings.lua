@@ -17,9 +17,9 @@ vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, {noremap = true, sile
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {noremap = true, silent = true})
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {noremap = true, silent = true})
 -- Spectre
-vim.keymap.set('n', '<leader>sp', ":lua require('spectre').open()<CR>", {noremap = true, silent = true})
-vim.keymap.set('v', '<leader>sp', ":lua require('spectre').open_visual()<CR>", {noremap = true, silent = true})
-vim.keymap.set('n', '<leader>sl', "viw:lua require('spectre').open_file_search()<CR>", {noremap = true, silent = true})
+-- vim.keymap.set('n', '<leader>sp', ":lua require('spectre').open()<CR>", {noremap = true, silent = true})
+-- vim.keymap.set('v', '<leader>sp', ":lua require('spectre').open_visual()<CR>", {noremap = true, silent = true})
+-- vim.keymap.set('n', '<leader>sl', "viw:lua require('spectre').open_file_search()<CR>", {noremap = true, silent = true})
 -- Trouble
 vim.keymap.set('n', '<leader>tt', ':Trouble todo filter = { tag = {TODO} }<CR>', {noremap = true, silent = true})
 vim.keymap.set('n', '<leader>tf', ':Trouble todo filter = { tag = {FIX,FIXME} }<CR>', {noremap = true, silent = true})
