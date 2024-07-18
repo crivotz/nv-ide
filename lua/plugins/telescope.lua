@@ -30,7 +30,6 @@ local M = {
 }
 
 function M.config()
-  local actions = require('telescope.actions')
   local trouble = require("trouble.sources.telescope")
   local telescope = require("telescope")
   telescope.setup{

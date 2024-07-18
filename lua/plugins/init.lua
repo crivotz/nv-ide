@@ -260,21 +260,29 @@ return {
     end
   },
   {
-    "nvim-pack/nvim-spectre",
-    event = 'VeryLazy',
-    enabled = false
-  },
-  {
     'MagicDuck/grug-far.nvim',
     event = 'VeryLazy',
+    keys = {
+      {
+        "<leader>sr",
+        "<cmd>lua require('grug-far').toggle_instance({ instanceName='far', staticTitle='Search and Replace' })<CR>",
+        mode = { "n", "o", "x" },
+      },
+      {
+        "<leader>srw",
+        "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand('<cword>') } })<CR>",
+        mode = { "n", "o", "x" },
+      },
+      -- I use nvim-rip-substitute for file search and replace
+      -- {
+      --   "<leader>srf",
+      --   "<cmd>lua require('grug-far').grug_far({ prefills = { flags = vim.fn.expand('%') } })<CR>",
+      --   mode = { "n", "o", "x" },
+      -- },
+    },
     config = function()
       require('grug-far').setup({
-        keymaps = {
-          replace = '<leader>r',
-          qflist = '<C-q>',
-          gotoLocation = '<enter>',
-          close = '<C-x>'
-        },
+        -- startInInsertMode = false,
       });
     end
   },
@@ -302,19 +310,6 @@ return {
         top = { size = 10 },
       },
       right = {
-        {
-          ft = "grug-far",
-          title = "GRUG-FAR",
-          size = {
-          width = function()
-                if vim.o.columns < 180 then
-                  return 0.5
-                end
-
-                return 120
-              end,
-          },
-        },
       },
       bottom = {
         {
@@ -511,7 +506,7 @@ return {
     lazy = "VeryLazy",
     keys = {
       {
-        "<leader>fs",
+        "<leader>srf",
           function() require("rip-substitute").sub() end,
           mode = { "n", "x" },
           desc = " rip substitute",
