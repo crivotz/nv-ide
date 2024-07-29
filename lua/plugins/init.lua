@@ -514,33 +514,4 @@ return {
       },
     },
   },
-{
-  'JohanChane/wsnavigator.nvim',
-    lazy = "VeryLazy",
-    keys = {
-      {
-        "<leader>-",
-          function() require("wsnavigator").create_win() end,
-          mode = { "n", "x" },
-          desc = "WS Navigator",
-      }
-    },
-    config = function()
-      require('wsnavigator').setup{
-        ui = {
-          float = {
-            border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
-            blend     = 0,                -- see ':h winblend'
-            height    = 0.4,              -- Num from 0 - 1 for measurements
-            width     = 0.5,
-            x         = 1,              -- X and Y Axis of Window
-            y         = 1
-          },
-        },
-        jumplist = {
-          buf_only = true
-        }
-      }
-    end,
-  },
 }
