@@ -72,12 +72,11 @@ function M.config()
   mason_lspconfig.setup {
     ensure_installed = {
       'html',
-      'tsserver',
+      'ts_ls',
       'solargraph',
       'cssls',
       'dockerls',
       'jsonls',
-      --[[ 'yamlls', ]]
       'vimls',
       'rust_analyzer',
       'clangd',
@@ -95,22 +94,6 @@ function M.config()
         capabilities,
       }
     end,
-    --[[ ["yamlls"] = function() ]]
-    --[[   lspconfig.yamlls.setup { ]]
-    --[[     on_attach = M.on_attach, ]]
-    --[[     capabilities, ]]
-    --[[     filetypes = { ]]
-    --[[       "yaml", "yaml.ansible", "ansible" ]]
-    --[[     }, ]]
-    --[[     settings = { ]]
-    --[[       yaml = { ]]
-    --[[         hover = true, ]]
-    --[[         completion = true, ]]
-    --[[         validate = true, ]]
-    --[[       }, ]]
-    --[[     }, ]]
-    --[[   } ]]
-    --[[ end, ]]
     ["html"] = function()
       lspconfig.html.setup({
         on_attach = M.on_attach,
@@ -139,32 +122,6 @@ function M.config()
         }
       })
     end,
-    --[[ ["lua_ls"] = function() ]]
-    --[[   lspconfig.lua_ls.setup({ ]]
-    --[[ on_attach, ]]
-    --[[ capabilities, ]]
-    --[[     settings = { ]]
-    --[[       Lua = { ]]
-    --[[         runtime = { ]]
-    --[[           -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim) ]]
-    --[[           version = 'LuaJIT', ]]
-    --[[         }, ]]
-    --[[         diagnostics = { ]]
-    --[[           -- Get the language server to recognize the `vim` global ]]
-    --[[           globals = {'vim'}, ]]
-    --[[         }, ]]
-    --[[         workspace = { ]]
-    --[[           -- Make the server aware of Neovim runtime files ]]
-    --[[           library = vim.api.nvim_get_runtime_file("", true), ]]
-    --[[         }, ]]
-    --[[         -- Do not send telemetry data containing a randomized but unique identifier ]]
-    --[[         telemetry = { ]]
-    --[[           enable = false, ]]
-    --[[         }, ]]
-    --[[       }, ]]
-    --[[     } ]]
-    --[[   }) ]]
-    --[[ end, ]]
     ["rust_analyzer"] = function(server_name)
       lspconfig.rust_analyzer.setup({
         on_attach = M.on_attach,
