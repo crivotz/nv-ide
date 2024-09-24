@@ -177,8 +177,6 @@ return {
     event = 'VeryLazy',
     config = function()
       require("which-key").setup({
-        timeoutlen = 500,
-        delay = 500,
         win = {
           border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
         },
