@@ -7,7 +7,7 @@ local M = {
       { "<leader>#", ":lua require('telescope.builtin').grep_string()<CR>", noremap = true, silent = true, desc = "Grep string" },
       { "<leader>ts", ":lua require('telescope.builtin').treesitter()<CR>", noremap = true, silent = true, desc = "Treesitter" },
       { "<leader>m", ":lua require('telescope.builtin').marks()<CR>", noremap = true, silent = true, desc = "Marks" },
-      { "<leader>b", ":lua require('plugins.telescope').my_buffers()<CR>", noremap = true, silent = true, desc = "Buffers" },
+      { "<leader>bb", ":lua require('plugins.telescope').my_buffers()<CR>", noremap = true, silent = true, desc = "Buffers" },
       { "<leader>l", ":lua require('telescope.builtin').current_buffer_fuzzy_find()<CR>", noremap = true, silent = true, desc = "Search line buffer" },
       { "<leader>f", ":lua require('telescope.builtin').find_files({hidden=true})<CR>", noremap = true, silent = true, desc = "Find files" },
       { "<leader>fp", ":lua require('plugins.telescope').project_files()<CR>", noremap = true, silent = true, desc = "Project files" },

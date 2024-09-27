@@ -226,11 +226,6 @@ return {
   {
     "kazhala/close-buffers.nvim",
     event = 'VeryLazy',
-    keys = {
-      { "<leader>bd", ":BDelete this<CR>", mode = { "n" }, desc = "Delete actual buffer", },
-      { "<leader>bda", ":BDelete! all<CR>", mode = { "n" }, desc = "Delete all buffers", },
-      { "<leader>bdh", ":BDelete! hidden<CR>", mode = { "n" }, desc = "Delete hidden buffers", },
-    }
   },
   {
     "folke/twilight.nvim",
@@ -391,11 +386,6 @@ return {
   {
     "ton/vim-bufsurf",
     event = 'VeryLazy',
-    keys = {
-      { "<leader>bn", ":BufSurfForward<CR>", mode = { "n" }, desc = "Surf forward", },
-      { "<leader>bp", ":BufSurfBack<CR>", mode = { "n" }, desc = "Surf back", },
-      { "<leader>bl", ":BufSurfList<CR>", mode = { "n" }, desc = "Surf list", },
-    }
   },
   {
     "brenoprata10/nvim-highlight-colors",

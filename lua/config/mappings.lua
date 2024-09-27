@@ -5,6 +5,13 @@ vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = t
 vim.keymap.set('n', '<F8>', ':ZenMode<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = true})
 -- Buffers
+vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bn', ':BufSurfForward<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bp', ':BufSurfBack<CR>', {noremap = false, silent = true})
+vim.keymap.set('n', '<leader>bl', ':BufSurfList<CR>', {noremap = false, silent = true})
+-- Diff
 vim.keymap.set('n', '<leader>dd', ':windo diffthis<CR>', {noremap = false, silent = true})
 -- LSP
 vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, {noremap = true, silent = true})
@@ -39,7 +46,5 @@ vim.keymap.set('n', '<leader>n', ":lua require('plugins.telescope').my_note()<CR
 vim.keymap.set('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true, silent = true})
 -- ROR
 vim.keymap.set("n", "<Leader>ror", ":lua require('ror.commands').list_commands()<CR>", { silent = true })
-vim.keymap.set("n", "<Leader>obr", ":! overmind restart backend<CR>", { silent = true })
-vim.keymap.set("n", "<Leader>ofr", ":! overmind restart frontend<CR>", { silent = true })
 vim.keymap.set("n", "<Leader>or", ":! overmind restart<CR>", { silent = true })
 
