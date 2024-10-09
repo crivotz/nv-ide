@@ -2,6 +2,7 @@ return {
   --[[ COLORSCHEME ]]
   {
     "folke/tokyonight.nvim",
+    -- "rose-pine/neovim", name = "rose-pine",
     -- "loctvl842/monokai-pro.nvim",
     -- "rebelot/kanagawa.nvim",
     -- "sainnhe/gruvbox-material",
@@ -15,6 +16,7 @@ return {
     priority = 1000,
      config = function()
        require('config.colorschemes.tokyonight')
+       -- require('config.colorschemes.rosepine')
        -- require('config.colorschemes.monokai_pro')
        -- require('config.colorschemes.kanagawa')
        -- require('config.colorschemes.gruvbox_material')
