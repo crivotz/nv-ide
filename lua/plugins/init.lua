@@ -1,7 +1,7 @@
 return {
   --[[ COLORSCHEME ]]
   {
-    -- "folke/tokyonight.nvim",
+    "folke/tokyonight.nvim",
     -- "rose-pine/neovim", name = "rose-pine",
     -- "loctvl842/monokai-pro.nvim",
     -- "rebelot/kanagawa.nvim",
@@ -10,12 +10,12 @@ return {
     -- "projekt0n/github-nvim-theme",
     -- "Shatur/neovim-ayu",
     -- "scottmckendry/cyberdream.nvim",
-    "e-q/okcolors.nvim", name = "okcolors",
+    -- "e-q/okcolors.nvim", name = "okcolors",
     -- enabled = false,
     lazy = false,
     priority = 1000,
      config = function()
-       -- require('config.colorschemes.tokyonight')
+       require('config.colorschemes.tokyonight')
        -- require('config.colorschemes.rosepine')
        -- require('config.colorschemes.monokai_pro')
        -- require('config.colorschemes.kanagawa')
@@ -24,7 +24,7 @@ return {
        -- vim.cmd [[colorscheme onedark]]
        -- vim.cmd [[colorscheme github_dark_dimmed]]
        -- vim.cmd [[colorscheme ayu-dark]]
-       vim.cmd [[colorscheme okcolors-smooth]]
+       -- vim.cmd [[colorscheme okcolors-smooth]]
      end,
   },
   --[[ END COLORSCHEME ]]
@@ -480,6 +480,10 @@ return {
     version = false, -- set this if you want to always pull the latest change
     opts = {
       provider = "copilot",
+      copilot = {
+        model = "claude-3.5-sonnet",
+        -- max_tokens = 4096,
+      },
       auto_suggestions_provider = "copilot",
       behaviour = {
         auto_suggestions = false,
