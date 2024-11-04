@@ -473,64 +473,51 @@ return {
     },
   },
   {
-    "yetone/avante.nvim",
-    event = "VeryLazy",
-    enabled = true,
+    "CopilotC-Nvim/CopilotChat.nvim",
     lazy = false,
-    version = false, -- set this if you want to always pull the latest change
-    opts = {
-      provider = "copilot",
-      copilot = {
-        model = "claude-3.5-sonnet",
-        -- max_tokens = 4096,
-      },
-      auto_suggestions_provider = "copilot",
-      behaviour = {
-        auto_suggestions = false,
-      },
-    },
-    -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
-    build = "make",
+    branch = "canary",
     dependencies = {
-      "stevearc/dressing.nvim",
-      "nvim-lua/plenary.nvim",
-      "MunifTanjim/nui.nvim",
-      --- The below dependencies are optional,
-      "nvim-tree/nvim-web-devicons", -- or echasnovski/mini.icons
-      "nvim-web-devicons", -- or echasnovski/mini.icons
+      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
+      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
+    },
+    build = "make tiktoken", -- Only on MacOS or Linux
+    opts = {
+      debug = false, -- Enable debugging
+      model = "claude-3.5-sonnet",
+      question_header = '## User ', -- Header to use for user questions
+      answer_header = '## Copilot ', -- Header to use for AI answers
+      error_header = '## Error ', -- Header to use for errors
+    },
+    keys = {
+      { "<leader>c", ":CopilotChatToggle<CR>", desc = "Copilot toggle" },
       {
-        "zbirenbaum/copilot.lua", -- for providers='copilot'
-        cmd = "Copilot",
-        event = "InsertEnter",
-        config = function()
-          require("copilot").setup({})
+        "<leader>cs",
+        function()
+          local input = vim.fn.input("Quick Chat: ")
+          if input ~= "" then
+            require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
+          end
         end,
+        desc = "CopilotChat - Quick chat selected",
+        mode = { "v" },
       },
       {
-        -- support for image pasting
-        "HakonHarnes/img-clip.nvim",
-        event = "VeryLazy",
-        opts = {
-          -- recommended settings
-          default = {
-            embed_image_as_base64 = false,
-            prompt_for_file_name = false,
-            drag_and_drop = {
-              insert_mode = true,
-            },
-            -- required for Windows users
-            use_absolute_path = true,
-          },
-        },
+        "<leader>cch",
+        function()
+          local actions = require("CopilotChat.actions")
+          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
+        end,
+        desc = "CopilotChat - Help actions",
       },
+  -- Show prompts actions with telescope
       {
-        -- Make sure to set this up properly if you have lazy=true
-        'MeanderingProgrammer/render-markdown.nvim',
-        opts = {
-          file_types = { "markdown", "Avante" },
-        },
-        ft = { "markdown", "Avante" },
+        "<leader>ccp",
+        function()
+          local actions = require("CopilotChat.actions")
+          require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
+        end,
+        desc = "CopilotChat - Prompt actions",
       },
     },
-  }
+  },
 }
