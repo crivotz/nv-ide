@@ -10,6 +10,7 @@ vim.g.maplocalleader = "\\\\"
 
 require("lazy").setup({
   spec = {
+    { import = "plugins.colorschemes.tokyonight" },
     { import = "plugins" },
   },
   defaults = {

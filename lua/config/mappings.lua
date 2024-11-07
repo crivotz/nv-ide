@@ -5,9 +5,6 @@ vim.keymap.set('n', '<F4>', ':set list! list?<CR>', {noremap = false, silent = t
 vim.keymap.set('n', '<F8>', ':ZenMode<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>nm', ':Dispatch npm start<CR>', {noremap = false, silent = true})
 -- Buffers
-vim.keymap.set('n', '<leader>bd', ':BDelete this<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bda', ':BDelete! all<CR>', {noremap = false, silent = true})
-vim.keymap.set('n', '<leader>bdh', ':BDelete! hidden<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bn', ':BufSurfForward<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bp', ':BufSurfBack<CR>', {noremap = false, silent = true})
 vim.keymap.set('n', '<leader>bl', ':BufSurfList<CR>', {noremap = false, silent = true})

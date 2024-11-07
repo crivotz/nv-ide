@@ -1,5 +1,6 @@
 return {
   "akinsho/nvim-toggleterm.lua",
+  enabled = false,
   keys = {
     { "<leader>x", desc = "Terminal" },
     { "<leader>gg", "<cmd>lua _lazygit_toggle()<CR>", desc = "Lazygit" },

@@ -162,7 +162,7 @@ function M.config()
       })
     end,
   }
-  require("ufo").setup()
+  -- require("ufo").setup()
 end
 
 return M

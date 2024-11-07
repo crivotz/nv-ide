@@ -1,34 +1,4 @@
 return {
-  --[[ COLORSCHEME ]]
-  {
-    "folke/tokyonight.nvim",
-    -- "rose-pine/neovim", name = "rose-pine",
-    -- "loctvl842/monokai-pro.nvim",
-    -- "rebelot/kanagawa.nvim",
-    -- "sainnhe/gruvbox-material",
-    -- "olimorris/onedarkpro.nvim",
-    -- "projekt0n/github-nvim-theme",
-    -- "Shatur/neovim-ayu",
-    -- "scottmckendry/cyberdream.nvim",
-    -- "e-q/okcolors.nvim", name = "okcolors",
-    -- enabled = false,
-    lazy = false,
-    priority = 1000,
-     config = function()
-       require('config.colorschemes.tokyonight')
-       -- require('config.colorschemes.rosepine')
-       -- require('config.colorschemes.monokai_pro')
-       -- require('config.colorschemes.kanagawa')
-       -- require('config.colorschemes.gruvbox_material')
-       -- require('config.colorschemes.cyberdream')
-       -- vim.cmd [[colorscheme onedark]]
-       -- vim.cmd [[colorscheme github_dark_dimmed]]
-       -- vim.cmd [[colorscheme ayu-dark]]
-       -- vim.cmd [[colorscheme okcolors-smooth]]
-     end,
-  },
-  --[[ END COLORSCHEME ]]
-  --[[ UI ]]
   {
     "nvim-lua/popup.nvim",
     lazy = false,
@@ -49,7 +19,6 @@ return {
     "onsails/lspkind-nvim",
     lazy = false,
   },
-  --[[ END UI ]]
   {
     "hrsh7th/nvim-cmp",
     priority = 1000,
@@ -85,16 +54,6 @@ return {
         }
       }
     end,
-  },
-  {
-    "luukvbaal/statuscol.nvim",
-    lazy = false,
-    config = function()
-      require("statuscol").setup({
-        separator = " ",
-        setopt = true,
-      })
-    end
   },
   {
     "AckslD/nvim-neoclip.lua",
@@ -226,10 +185,6 @@ return {
     event = 'VeryLazy',
   },
   {
-    "kazhala/close-buffers.nvim",
-    event = 'VeryLazy',
-  },
-  {
     "folke/twilight.nvim",
     event = 'VeryLazy',
   },
@@ -281,12 +236,6 @@ return {
         "<cmd>lua require('grug-far').grug_far({ prefills = { search = vim.fn.expand('<cword>') } })<CR>",
         mode = { "n", "o", "x" },
       },
-      -- I use nvim-rip-substitute for file search and replace
-      -- {
-      --   "<leader>srf",
-      --   "<cmd>lua require('grug-far').grug_far({ prefills = { flags = vim.fn.expand('%') } })<CR>",
-      --   mode = { "n", "o", "x" },
-      -- },
     },
     config = function()
       require('grug-far').setup({
@@ -450,16 +399,16 @@ return {
       })
     end
   },
-  {
-    "FabijanZulj/blame.nvim",
-    lazy = false,
-    keys = {
-      { "<leader>gb", "<cmd>BlameToggle virtual<CR>", desc = "Git blame" },
-    },
-    config = function()
-      require("blame").setup()
-    end
-  },
+  -- {
+  --   "FabijanZulj/blame.nvim",
+  --   lazy = false,
+  --   keys = {
+  --     { "<leader>gb", "<cmd>BlameToggle virtual<CR>", desc = "Git blame" },
+  --   },
+  --   config = function()
+  --     require("blame").setup()
+  --   end
+  -- },
   {
     "chrisgrieser/nvim-rip-substitute",
     lazy = "VeryLazy",
@@ -469,54 +418,6 @@ return {
           function() require("rip-substitute").sub() end,
           mode = { "n", "x" },
           desc = " rip substitute",
-      },
-    },
-  },
-  {
-    "CopilotC-Nvim/CopilotChat.nvim",
-    lazy = false,
-    branch = "canary",
-    dependencies = {
-      { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
-      { "nvim-lua/plenary.nvim" }, -- for curl, log wrapper
-    },
-    build = "make tiktoken", -- Only on MacOS or Linux
-    opts = {
-      debug = false, -- Enable debugging
-      model = "claude-3.5-sonnet",
-      question_header = '## User ', -- Header to use for user questions
-      answer_header = '## Copilot ', -- Header to use for AI answers
-      error_header = '## Error ', -- Header to use for errors
-    },
-    keys = {
-      { "<leader>c", ":CopilotChatToggle<CR>", desc = "Copilot toggle" },
-      {
-        "<leader>cs",
-        function()
-          local input = vim.fn.input("Quick Chat: ")
-          if input ~= "" then
-            require("CopilotChat").ask(input, { selection = require("CopilotChat.select").visual })
-          end
-        end,
-        desc = "CopilotChat - Quick chat selected",
-        mode = { "v" },
-      },
-      {
-        "<leader>cch",
-        function()
-          local actions = require("CopilotChat.actions")
-          require("CopilotChat.integrations.telescope").pick(actions.help_actions())
-        end,
-        desc = "CopilotChat - Help actions",
-      },
-  -- Show prompts actions with telescope
-      {
-        "<leader>ccp",
-        function()
-          local actions = require("CopilotChat.actions")
-          require("CopilotChat.integrations.telescope").pick(actions.prompt_actions())
-        end,
-        desc = "CopilotChat - Prompt actions",
       },
     },
   },
