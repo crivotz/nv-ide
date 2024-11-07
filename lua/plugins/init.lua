@@ -137,9 +137,9 @@ return {
     "folke/which-key.nvim",
     event = 'VeryLazy',
     opts = {
-        win = {
-          border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
-        },
+      win = {
+        border = { "┏", "━", "┓", "┃", "┛","━", "┗", "┃" },
+      },
     },
     keys = {
       {
@@ -215,7 +215,7 @@ return {
         "<cmd>lua require('spider').motion('b')<CR>",
         mode = { "n", "o", "x" },
       },
-		},
+    },
     config = function()
       require("spider").setup {
         skipInsignificantPunctuation = false,
@@ -270,11 +270,6 @@ return {
       },
       bottom = {
         {
-          ft = "spectre_panel",
-          title = "SPECTRE",
-          size = { height = 0.4 },
-        },
-        {
           ft = "toggleterm",
           title = "TERMINAL",
           size = { height = 0.4 },
@@ -327,7 +322,7 @@ return {
     },
   },
   {
-  "otavioschwanck/arrow.nvim",
+    "otavioschwanck/arrow.nvim",
     event = 'VeryLazy',
     opts = {
       show_icons = true,
@@ -392,32 +387,22 @@ return {
     event = "VeryLazy",
     config = function()
       require("smoothcursor").setup({
-      disable_float_win = true,
-      disabled_filetypes = { "TelescopePrompt" },
-      cursor = "",
-      texthl = "String",
+        disable_float_win = true,
+        disabled_filetypes = { "TelescopePrompt" },
+        cursor = "",
+        texthl = "String",
       })
     end
   },
-  -- {
-  --   "FabijanZulj/blame.nvim",
-  --   lazy = false,
-  --   keys = {
-  --     { "<leader>gb", "<cmd>BlameToggle virtual<CR>", desc = "Git blame" },
-  --   },
-  --   config = function()
-  --     require("blame").setup()
-  --   end
-  -- },
   {
     "chrisgrieser/nvim-rip-substitute",
     lazy = "VeryLazy",
     keys = {
       {
         "<leader>srf",
-          function() require("rip-substitute").sub() end,
-          mode = { "n", "x" },
-          desc = " rip substitute",
+        function() require("rip-substitute").sub() end,
+        mode = { "n", "x" },
+        desc = " rip substitute",
       },
     },
   },
