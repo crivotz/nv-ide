@@ -16,6 +16,10 @@
     },
     keys = {
       { "<leader>c", ":CopilotChatToggle<CR>", desc = "Copilot toggle" },
+      { "<leader>cc", ":CopilotChatCommitStaged<CR>", desc = "Copilot create staged" },
+      { "<leader>co", ":CopilotChatOptimize<CR>", desc = "Copilot create staged" },
+      { "<leader>cr", ":CopilotChatReview<CR>", desc = "Copilot create staged" },
+      { "<leader>ce", ":CopilotChatExplain<CR>", desc = "Copilot create staged" },
       {
         "<leader>cs",
         function()
