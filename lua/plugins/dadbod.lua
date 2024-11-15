@@ -1,8 +1,8 @@
 return {
 	"tpope/vim-dadbod",
 	dependencies = {
-		"kristijanhusak/vim-dadbod-ui",
-		"kristijanhusak/vim-dadbod-completion",
+		{ "kristijanhusak/vim-dadbod-ui" },
+    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
 	},
 	opts = {
 		db_competion = function()
@@ -19,17 +19,6 @@ return {
 				"sql",
 			},
 			command = [[setlocal omnifunc=vim_dadbod_completion#omni]],
-		})
-
-		vim.api.nvim_create_autocmd("FileType", {
-			pattern = {
-				"sql",
-				"mysql",
-				"plsql",
-			},
-			callback = function()
-				vim.schedule(opts.db_completion)
-			end,
 		})
 	end,
 	keys = {

@@ -9,7 +9,7 @@
     build = "make tiktoken", -- Only on MacOS or Linux
     opts = {
       debug = false, -- Enable debugging
-      model = "claude-3.5-sonnet",
+      -- model = "claude-3.5-sonnet",
       question_header = '## User ', -- Header to use for user questions
       answer_header = '## Copilot ', -- Header to use for AI answers
       error_header = '## Error ', -- Header to use for errors
