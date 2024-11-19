@@ -1,7 +1,7 @@
 local M = {
   "nvim-telescope/telescope.nvim",
   lazy = false,
-  enabled = true,
+  enabled = false,
     keys = {
       { "<leader>r", ":lua require'telescope'.extensions.live_grep_args.live_grep_args()<CR>", noremap = true, silent = true, desc = "RG" },
       { "<leader>#", ":lua require('telescope.builtin').grep_string()<CR>", noremap = true, silent = true, desc = "Grep string" },

@@ -25,7 +25,67 @@ return {
       notification = {
         wo = { wrap = true } -- Wrap notifications
       }
-    }
+    },
+    dashboard = {
+      preset = {
+        keys = {
+          { icon = " ", key = "e", desc = "New file", action = ":ene | startinsert" },
+          { icon = "ﭯ ", key = "o", desc = "Recently opened files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
+          { icon = " ", key = "f", desc = "Find file", action = ":lua Snacks.dashboard.pick('files')" },
+          { icon = " ", key = "r", desc = "Find word", action = ":lua Snacks.dashboard.pick('live_grep')" },
+          { icon = " ", key = "g", desc = "Find modified file", action = ":lua Snacks.dashboard.pick('git_status')"  },
+          { icon = " ", key = "p", desc = "Find project", action = ":Telescope repo list", enabled = package.loaded["telescope"] ~= nil },
+          { icon = " ", key = "p", desc = "Find project", action = ":GitProjects", enabled = package.loaded["fzflua"] ~= nil },
+          { icon = " ", key = "m", desc = "Show mark", action =":lua Snacks.dashboard.pick('marks')"  },
+          { icon = " ", key = "t", desc = "Show todo", action = ":TodoTrouble" },
+          { icon = " ", key = "s", desc = "NV-IDE plugins", action = ":e ~/.config/nvim/lua/plugins/init.lua" },
+          { icon = " ", key = "z", desc = "ZSH", action = ":e ~/.zshrc" },
+          { icon = "󰒲 ", key = "u", desc = "Lazy sync", action = ":Lazy sync", enabled = package.loaded.lazy ~= nil },
+          { icon = " ", key = "q", desc = "Quit", action = ":qa" },
+        },
+        header = [[
+    ███╗   ██╗██╗   ██╗      ██╗██████╗ ███████╗
+    ████╗  ██║██║   ██║      ██║██╔══██╗██╔════╝
+   ██╔██╗ ██║██║   ██║█████╗██║██║  ██║█████╗
+   ██║╚██╗██║╚██╗ ██╔╝╚════╝██║██║  ██║██╔══╝
+    ██║ ╚████║ ╚████╔╝       ██║██████╔╝███████╗
+    ╚═╝  ╚═══╝  ╚═══╝        ╚═╝╚═════╝ ╚══════╝
+    ]]
+      },
+      sections = {
+        { section = "header" },
+        { section = "keys", gap = 1, padding = 1 },
+        { section = "startup", padding = 1 },
+        -- {
+        --   pane = 2,
+        --   section = "terminal",
+        --   cmd = "tty-clock -c -C 4 -r -D",
+        --   height = 7,
+        --   padding = 1,
+        -- },
+        {
+          pane = 2,
+          section = "terminal",
+          cmd = "fastfetch --config ~/.config/fastfetch/config.jsonc",
+          height = 6,
+          padding = 1,
+        },
+        { pane = 2, icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
+        { pane = 2, icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
+        {
+          pane = 2,
+          icon = " ",
+          title = "Git Status",
+          section = "terminal",
+          enabled = vim.fn.isdirectory(".git") == 1,
+          cmd = "git status --short --branch --renames",
+          height = 5,
+          padding = 1,
+          ttl = 5 * 60,
+          indent = 3,
+        },
+      },
+    },
   },
   keys = {
     { "<leader>un", function() Snacks.notifier.hide() end, desc = "Dismiss All Notifications" },

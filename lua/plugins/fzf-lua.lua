@@ -1,7 +1,7 @@
 return {
   "ibhagwan/fzf-lua",
   lazy = false,
-  enabled = false,
+  enabled = true,
   dependencies = { "nvim-tree/nvim-web-devicons" },
   keys = {
     { "<leader>r", ":FzfLua live_grep<CR>", noremap = true, silent = true, desc = "Live grep" },
