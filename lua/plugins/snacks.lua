@@ -84,6 +84,24 @@ return {
           ttl = 5 * 60,
           indent = 3,
         },
+        {
+          pane = 3,
+          icon = " ",
+          title = "GH Issues",
+          section = "terminal",
+          cmd = "gh issue list",
+          padding = 1,
+          height = 15
+        },
+        {
+          pane = 3,
+          icon = " ",
+          title = "GH Pull Requests",
+          section = "terminal",
+          cmd = "gh pr list",
+          padding = 1,
+          height = 15
+        },
       },
     },
   },
