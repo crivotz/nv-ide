@@ -126,6 +126,8 @@ return {
     { "<leader>gic", function() local issue_number = vim.fn.input('Issue Number -> ') Snacks.terminal("gh issue close " .. issue_number) end, },
     { "]]",         function() Snacks.words.jump(vim.v.count1) end, desc = "Next Reference" },
     { "[[",         function() Snacks.words.jump(-vim.v.count1) end, desc = "Prev Reference" },
+    { "<leader>.",  function() Snacks.scratch() end, desc = "Toggle Scratch Buffer" },
+    { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
   },
   init = function()
     vim.api.nvim_create_autocmd("User", {
