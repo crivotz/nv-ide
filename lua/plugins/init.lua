@@ -166,26 +166,11 @@ return {
     lazy = false,
   },
   {
-    "folke/zen-mode.nvim",
-    cmd = "ZenMode",
-    opts = {
-      plugins = {
-        gitsigns = false,
-        tmux = false,
-        twilight = true,
-      },
-    },
-  },
-  {
     "lambdalisue/suda.vim",
     event = 'VeryLazy',
   },
   {
     "chrisbra/csv.vim",
-    event = 'VeryLazy',
-  },
-  {
-    "folke/twilight.nvim",
     event = 'VeryLazy',
   },
   {
@@ -286,8 +271,21 @@ return {
     event = 'VeryLazy',
   },
   {
+    'eero-lehtinen/oklch-color-picker.nvim',
+    event = 'VeryLazy',
+    enabled = true,
+    config = function()
+      require('oklch-color-picker').setup {}
+      -- One handed keymaps recommended, you will be using the mouse
+      vim.keymap.set('n', '<leader>v', function()
+        require('oklch-color-picker').pick_under_cursor()
+      end, { desc = 'Color pick under cursor' })
+    end,
+  },
+  {
     "brenoprata10/nvim-highlight-colors",
     event = 'VeryLazy',
+    enabled = false,
     config = function()
       require('nvim-highlight-colors').setup({
         render = "virtual",
@@ -352,8 +350,8 @@ return {
     -- ft = "markdown" -- If you decide to lazy-load anyway
 
     dependencies = {
-        "nvim-treesitter/nvim-treesitter",
-        "nvim-tree/nvim-web-devicons"
+      "nvim-treesitter/nvim-treesitter",
+      "nvim-tree/nvim-web-devicons"
     }
-}
+  }
 }
