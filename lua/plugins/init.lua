@@ -57,6 +57,9 @@ return {
   },
   {
     "AckslD/nvim-neoclip.lua",
+    requires = {
+      { 'ibhagwan/fzf-lua' }
+    },
     config = function()
       require("neoclip").setup()
     end
@@ -347,8 +350,7 @@ return {
   {
     "OXY2DEV/markview.nvim",
     lazy = false,      -- Recommended
-    -- ft = "markdown" -- If you decide to lazy-load anyway
-
+    ft = { "markdown", "Avante" }, -- If you decide to lazy-load anyway
     dependencies = {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons"

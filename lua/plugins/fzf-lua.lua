@@ -15,7 +15,7 @@ return {
     { "<leader>p", ":GitProjects<CR>", noremap = true, silent = true, desc = "Git files" },
     { "<leader>g", ":FzfLua git_status<CR>", noremap = true, silent = true, desc = "Git status" },
     { "<leader>ll", ":FzfLua grep { search = vim.fn.input('GREP -> ') }<CR>", noremap = true, silent = true, desc = "Grep a word" },
-    { "<leader>y", ":lua require('neoclip.fzf')()<CR>", noremap = true, silent = true, desc = "Neoclip" },
+    { "<leader>y", ":lua require('neoclip.fzf')('a')<CR>", noremap = true, silent = true, desc = "Neoclip" },
     { "<leader>ns", ":FzfLua live_grep({ prompt='Note', cwd = '~/Notes'})<CR>", noremap = true, silent = true, desc = "Note" },
   },
   config = function()
