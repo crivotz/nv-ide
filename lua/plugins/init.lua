@@ -278,26 +278,16 @@ return {
     event = 'VeryLazy',
     enabled = true,
     config = function()
-      require('oklch-color-picker').setup {}
+      require('oklch-color-picker').setup {
+        highlight = {
+          style = 'virtual_left'
+        }
+      }
       -- One handed keymaps recommended, you will be using the mouse
       vim.keymap.set('n', '<leader>v', function()
         require('oklch-color-picker').pick_under_cursor()
       end, { desc = 'Color pick under cursor' })
     end,
-  },
-  {
-    "brenoprata10/nvim-highlight-colors",
-    event = 'VeryLazy',
-    enabled = false,
-    config = function()
-      require('nvim-highlight-colors').setup({
-        render = "virtual",
-        virtual_symbol = '■',
-        -- virtual_symbol = '',
-        -- virtual_symbol = '',
-        -- virtual_symbol = '󰉦',
-      })
-    end
   },
   {
     "sindrets/diffview.nvim",
