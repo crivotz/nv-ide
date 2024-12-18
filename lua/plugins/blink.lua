@@ -6,8 +6,6 @@ return {
     "rafamadriz/friendly-snippets",
     "giuxtaposition/blink-cmp-copilot",
     "mikavilpas/blink-ripgrep.nvim",
-    "quangnguyen30192/cmp-nvim-tags",
-    sou
   },
 
   version = "v0.*",
