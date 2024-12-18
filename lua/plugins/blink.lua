@@ -4,7 +4,6 @@ return {
   -- optional: provides snippets for the snippet source
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "saghen/blink.compat",
     "giuxtaposition/blink-cmp-copilot",
     "mikavilpas/blink-ripgrep.nvim",
     "quangnguyen30192/cmp-nvim-tags",
@@ -55,7 +54,9 @@ return {
       },
     },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep", "tags" },
+      completion = {
+        enabled_providers = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep" },
+      },
       cmdline = {},
       providers = {
         dadbod = {
@@ -85,15 +86,6 @@ return {
             context_size = 5,
             max_filesize = "1M",
             additional_rg_options = {},
-          },
-        },
-        tags = {
-          name = "tags",
-          module = "blink.compat.source",
-          score_offset = 1,
-          opts = {
-            exact_match = true,
-            current_buffer_only = true,
           },
         },
       },
