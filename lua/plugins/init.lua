@@ -20,23 +20,6 @@ return {
     lazy = false,
   },
   {
-    "hrsh7th/nvim-cmp",
-    priority = 1000,
-    lazy = false,
-    dependencies = {
-      "hrsh7th/cmp-buffer",
-      "hrsh7th/cmp-vsnip",
-      "hrsh7th/vim-vsnip",
-      "hrsh7th/cmp-path",
-      "hrsh7th/cmp-calc",
-      "hrsh7th/cmp-cmdline",
-      "ray-x/cmp-treesitter",
-      "lukas-reineke/cmp-rg",
-      "quangnguyen30192/cmp-nvim-tags",
-      "rafamadriz/friendly-snippets",
-    }
-  },
-  {
     "nvim-treesitter/nvim-treesitter",
     lazy = false,
     config = function()

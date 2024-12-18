@@ -4,8 +4,7 @@ local M = {
   dependencies = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
-    { "hrsh7th/cmp-nvim-lsp" },
-    { "hrsh7th/cmp-nvim-lsp" },
+    { "saghen/blink.cmp" },
     { "SmiteshP/nvim-navic" },
   },
 }
@@ -41,7 +40,7 @@ end
 function M.config()
   local lspconfig = require("lspconfig")
   local mason_lspconfig = require("mason-lspconfig")
-  local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  local capabilities = require('blink.cmp').get_lsp_capabilities(vim.lsp.protocol.make_client_capabilities())
   capabilities.textDocument.completion.completionItem.snippetSupport = true
   capabilities.textDocument.foldingRange = {
     dynamicRegistration = false,

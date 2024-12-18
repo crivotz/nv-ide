@@ -5,10 +5,6 @@ return {
     { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
 	},
 	opts = {
-		db_competion = function()
-			---@diagnostic disable-next-line
-			require("cmp").setup.buffer { sources = { { name = "vim-dadbod-completion" } } }
-		end,
 	},
 	config = function(_, opts)
     vim.g.db_ui_use_nerd_fonts = 1
