@@ -1,7 +1,6 @@
 return {
   "saghen/blink.cmp",
   lazy = false, -- lazy loading handled internally
-  -- optional: provides snippets for the snippet source
   dependencies = {
     "rafamadriz/friendly-snippets",
     "giuxtaposition/blink-cmp-copilot",
@@ -51,11 +50,21 @@ return {
         TypeParameter = '󰬛',
       },
     },
+    completion = {
+      menu = {
+        border = "single",
+      },
+      documentation = {
+        window = {
+          border = "single",
+        }
+      }
+    },
     sources = {
       completion = {
         enabled_providers = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep" },
       },
-      cmdline = {},
+      -- cmdline = {},
       providers = {
         dadbod = {
           name = "Dadbod",
@@ -88,5 +97,9 @@ return {
         },
       },
     },
+  },
+  opts_extend = {
+    "sources.default",
+    "sources.providers",
   },
 }
