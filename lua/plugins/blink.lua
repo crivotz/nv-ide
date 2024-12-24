@@ -14,13 +14,7 @@ return {
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
     keymap = {
-      preset = "default",
-      ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
-      ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
-      ["<CR>"] = { "accept", "fallback" },
-      ["<Esc>"] = { "hide", "fallback" },
-      ["<PageUp>"] = { "scroll_documentation_up", "fallback" },
-      ["<PageDown>"] = { "scroll_documentation_down", "fallback" },
+      preset = "super-tab",
       ['<A-1>'] = { function(cmp) cmp.accept({ index = 1 }) end },
       ['<A-2>'] = { function(cmp) cmp.accept({ index = 2 }) end },
       ['<A-3>'] = { function(cmp) cmp.accept({ index = 3 }) end },
