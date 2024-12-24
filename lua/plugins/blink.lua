@@ -3,6 +3,7 @@ return {
   lazy = false, -- lazy loading handled internally
   dependencies = {
     "rafamadriz/friendly-snippets",
+    "zbirenbaum/copilot.lua",
     "giuxtaposition/blink-cmp-copilot",
     "mikavilpas/blink-ripgrep.nvim",
   },
@@ -12,7 +13,25 @@ return {
     -- 'default' for mappings similar to built-in completion
     -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
     -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
-    keymap = { preset = "enter" },
+    keymap = {
+      preset = "default",
+      ["<S-Tab>"] = { "select_prev", "snippet_backward", "fallback" },
+      ["<Tab>"] = { "select_next", "snippet_forward", "fallback" },
+      ["<CR>"] = { "accept", "fallback" },
+      ["<Esc>"] = { "hide", "fallback" },
+      ["<PageUp>"] = { "scroll_documentation_up", "fallback" },
+      ["<PageDown>"] = { "scroll_documentation_down", "fallback" },
+      ['<A-1>'] = { function(cmp) cmp.accept({ index = 1 }) end },
+      ['<A-2>'] = { function(cmp) cmp.accept({ index = 2 }) end },
+      ['<A-3>'] = { function(cmp) cmp.accept({ index = 3 }) end },
+      ['<A-4>'] = { function(cmp) cmp.accept({ index = 4 }) end },
+      ['<A-5>'] = { function(cmp) cmp.accept({ index = 5 }) end },
+      ['<A-6>'] = { function(cmp) cmp.accept({ index = 6 }) end },
+      ['<A-7>'] = { function(cmp) cmp.accept({ index = 7 }) end },
+      ['<A-8>'] = { function(cmp) cmp.accept({ index = 8 }) end },
+      ['<A-9>'] = { function(cmp) cmp.accept({ index = 9 }) end },
+      ['<A-0>'] = { function(cmp) cmp.accept({ index = 10 }) end },
+    },
     appearance = {
       use_nvim_cmp_as_default = true,
       nerd_font_variant = "mono",
@@ -53,6 +72,16 @@ return {
     completion = {
       menu = {
         border = "single",
+        -- highlight = 'VertSplit',
+        draw = {
+          columns = { { 'item_idx' }, { 'kind_icon' }, { 'label', 'label_description', gap = 1 } },
+          components = {
+            item_idx = {
+              text = function(ctx) return ctx.idx == 10 and '0' or ctx.idx >= 10 and ' ' or tostring(ctx.idx) end,
+              highlight = 'Constant' -- optional, only if you want to change its color
+            }
+          }
+        }
       },
       documentation = {
         window = {
@@ -60,11 +89,20 @@ return {
         }
       }
     },
+    signature = { window = { border = 'single' } },
     sources = {
-      completion = {
-        enabled_providers = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep" },
-      },
-      -- cmdline = {},
+      default = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep" },
+      cmdline = function()
+        local type = vim.fn.getcmdtype()
+        if type == "/" or type == "?" then
+          return { "buffer" }
+        end
+        --                                           -- Commands
+        if type == ":" then
+          return { "cmdline" }
+        end
+        return {}
+      end,
       providers = {
         dadbod = {
           name = "Dadbod",

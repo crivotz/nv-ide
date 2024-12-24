@@ -23,6 +23,7 @@ return {
       -- "telescope",
       fzf_opts = {
         ['--layout'] = 'default',
+        ['--cycle'] = true,
         -- ['--with-nth'] = '2..,-1',
       },
       defaults = {
