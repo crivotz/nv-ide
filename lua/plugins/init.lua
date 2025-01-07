@@ -328,5 +328,9 @@ return {
       "nvim-treesitter/nvim-treesitter",
       "nvim-tree/nvim-web-devicons"
     }
+  },
+  {
+    "xzbdmw/colorful-menu.nvim",
+    lazy = false
   }
 }
