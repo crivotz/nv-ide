@@ -5,7 +5,20 @@ local M = {
     "nvim-neotest/nvim-nio",
     "rcarriga/nvim-dap-ui",
     "theHamsta/nvim-dap-virtual-text",
-  }
+  },
+  keys = {
+    { "<leader>dc", "<cmd>lua require'dap'.continue()<CR>", desc="DAP continue" },
+    { "<leader>ds", "<cmd>lua require'dap'.step_over()<CR>", desc="DAP step over" },
+    { "<leader>dsi", "<cmd>lua require'dap'.step_into()<CR>", desc=" DAP step into" },
+    { "<leader>dso", "<cmd>lua require'dap'.step_out()<CR>", desc="DAP step out" },
+    { "<leader>db", "<cmd>lua require'dap'.toggle_breakpoint()<CR>", desc="DAP toggle breakpoint" },
+    { "<leader>dui", ":lua require('dapui').toggle()<cr>", desc="DAP toggle" },
+    { "<leader>dro", "<cmd>lua require'dap'.repl.open()<CR>", desc="DAP replace" },
+    { "<leader>dcc", "<cmd>lua require'telescope'.extensions.dap.commands{}<CR>", desc="DAP commands" },
+    { "<leader>dlb", "<cmd>lua require'telescope'.extensions.dap.list_breakpoints{}<CR>", desc="DAP list breakpoint" },
+    { "<leader>dv", "<cmd>lua require'telescope'.extensions.dap.variables{}<CR>", desc="DAP variables" },
+    { "<leader>df", "<cmd>lua require'telescope'.extensions.dap.frames{}<CR>", desc="DAP frames" },
+  },
 }
 function M.config()
   local dap, dapui = require("dap")
