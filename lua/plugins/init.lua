@@ -48,16 +48,6 @@ return {
     lazy = false,
   },
   {
-    "folke/todo-comments.nvim",
-    lazy = false,
-    opts = {},
-    keys = {
-      { "<leader>tT", function () Snacks.picker.todo_comments({ keywords = { "TODO" } }) end, desc = "Todo" },
-      { "<leader>tF", function () Snacks.picker.todo_comments({ keywords = { "FIX", "FIXME" } }) end, desc = "Fix/Fixme" },
-      { "<leader>tN", function () Snacks.picker.todo_comments({ keywords = { "NOTE" } }) end, desc = "Note" },
-    },
-  },
-  {
     "jeffkreeftmeijer/vim-numbertoggle",
     lazy = false,
   },
@@ -67,10 +57,6 @@ return {
   },
   {
     "chrisbra/csv.vim",
-    event = 'VeryLazy',
-  },
-  {
-    "zdharma-continuum/zinit-vim-syntax",
     event = 'VeryLazy',
   },
   {
