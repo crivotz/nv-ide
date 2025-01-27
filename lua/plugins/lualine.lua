@@ -5,38 +5,6 @@ local M = {
 }
 function M.config()
   local arrow = require("arrow.statusline")
-  local navic = require("nvim-navic").setup({
-    highlight = true,
-    icons = {
-      File = ' ',
-      Module = ' ',
-      Namespace = ' ',
-      Package = ' ',
-      Class = ' ',
-      Method = ' ',
-      Property = ' ',
-      Field = ' ',
-      Constructor = ' ',
-      Enum = ' ',
-      Interface = ' ',
-      Function = ' ',
-      Variable = ' ',
-      Constant = ' ',
-      String = ' ',
-      Number = ' ',
-      Boolean = ' ',
-      Array = ' ',
-      Object = ' ',
-      Key = ' ',
-      Null = ' ',
-      EnumMember = ' ',
-      Struct = ' ',
-      Event = ' ',
-      Operator = ' ',
-      TypeParameter = ' '
-    },
-  })
-
   local lazy = require("lazy.status")
   local colors = {}
   if package.loaded["tokyonight"] then
@@ -338,9 +306,9 @@ function M.config()
     winbar = {
       lualine_a = {
         {
-          function() return require("nvim-navic").get_location() end,
-          cond = function() return package.loaded["nvim-navic"] and require("nvim-navic").is_available() end,
-          color = { fg = colors.blue },
+          function()
+            return dropbar()
+          end,
         },
       },
       lualine_b = {},

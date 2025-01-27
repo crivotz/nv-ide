@@ -125,7 +125,6 @@ nvim
 * [williamboman/mason.nvim](https://github.com/williamboman/mason.nvim): Portable package manager for Neovim that runs everywhere Neovim runs. Easily install and manage LSP servers, DAP servers, linters, and formatters.  
 * [williamboman/mason-lspconfig.nvim](https://github.com/williamboman/mason-lspconfig.nvim): Extension to mason.nvim that makes it easier to use lspconfig with mason.nvim.  
 * [saghen/blink.cmp](https://github.com/saghen/blink.cmp): Performant, batteries-included completion plugin for Neovim  
-* [SmiteshP/nvim-navic](https://github.com/SmiteshP/nvim-navic): Simple winbar/statusline plugin that shows your current code context  
 * [rcarriga/nvim-notify](https://github.com/rcarriga/nvim-notify): A fancy, configurable, notification manager for NeoVim  
 * [stevearc/oil.nvim](https://github.com/stevearc/oil.nvim): Neovim file explorer: edit your filesystem like a buffer  
 * [nvim-tree/nvim-web-devicons](https://github.com/nvim-tree/nvim-web-devicons): Provides Nerd Font icons (glyphs) for use by neovim plugins  

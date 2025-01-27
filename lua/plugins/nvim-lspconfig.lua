@@ -5,12 +5,10 @@ local M = {
     { "williamboman/mason.nvim" },
     { "williamboman/mason-lspconfig.nvim" },
     { "saghen/blink.cmp" },
-    { "SmiteshP/nvim-navic" },
   },
 }
 
 function M.on_attach(client, bufnr)
-  local navic = require("nvim-navic")
   -- Enable completion triggered by <c-x><c-o>
   vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
 
@@ -32,9 +30,6 @@ function M.on_attach(client, bufnr)
   vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
-  if client.server_capabilities.documentSymbolProvider then
-    navic.attach(client, bufnr)
-  end
 end
 
 function M.config()
