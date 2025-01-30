@@ -1,7 +1,7 @@
 return {
   "CopilotC-Nvim/CopilotChat.nvim",
   lazy = false,
-  enabled = true,
+  enabled = false,
   branch = "main",
   dependencies = {
     { "zbirenbaum/copilot.lua" }, -- or github/copilot.vim
