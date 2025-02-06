@@ -85,6 +85,7 @@ opt.pumheight = 10 -- Maximum number of entries in a popup
 opt.scrolloff = 4 -- Lines of context
 opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize", "help", "globals", "skiprtp", "folds" }
 opt.shiftround = true -- Round indent
+opt.diffopt = "internal,filler,closeoff,linematch:60"
 
 vim.api.nvim_create_autocmd("BufReadPost", {
   callback = function()
