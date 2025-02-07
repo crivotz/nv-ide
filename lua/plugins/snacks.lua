@@ -18,33 +18,16 @@ return {
       timeout = 3000,
     },
     picker = {
-      -- layout = {
-      --   reverse = true,
-      --   layout = {
-      --     box = "horizontal",
-      --     backdrop = false,
-      --     width = 0.8,
-      --     height = 0.9,
-      --     border = "none",
-      --     {
-      --       box = "vertical",
-      --       { win = "list", title = " Results ", title_pos = "center", border = "rounded" },
-      --       { win = "input", height = 1, border = "rounded", title = "{source} {live}", title_pos = "center" },
-      --     },
-      --     {
-      --       win = "preview",
-      --       width = 0.45,
-      --       border = "rounded",
-      --       title = " Preview ",
-      --       title_pos = "center",
-      --     },
-      --   },
-      -- },
       sources = {
         explorer = {
           focus = "input",
         },
       },
+      formatters = {
+        file = {
+          truncate = 100, -- truncate the file path to (roughly) this length
+        }
+      }
     },
     quickfile = { },
     rename = { enabled = false },
@@ -179,7 +162,7 @@ return {
     { "<leader>S",  function() Snacks.scratch.select() end, desc = "Select Scratch Buffer" },
     { "<F8>",  function() Snacks.zen() end, desc = "ZEN" },
     -- PICKER
-    { "<leader>b", function() Snacks.picker.buffers() end, desc = "Buffers" },
+    { "<leader>b", function() Snacks.picker.buffers({layout = {preset = "vscode"}}) end, desc = "Buffers" },
     { "<leader>e", function() Snacks.picker.explorer() end, desc = "Explorer" },
     { "<leader>r", function() Snacks.picker.grep() end, desc = "Grep" },
     { "<leader>f", function() Snacks.picker.files() end, desc = "Find Files" },
@@ -188,11 +171,11 @@ return {
     { "<leader>l", function() Snacks.picker.lines() end, desc = "Buffer Lines" },
     { "<leader>rb", function() Snacks.picker.grep_buffers() end, desc = "Grep Open Buffers" },
     { "<leader>#", function() Snacks.picker.grep_word() end, desc = "Visual selection or word", mode = { "n", "x" } },
-    { "<leader>y", function() Snacks.picker.registers() end, desc = "Registers" },
-    { "<leader>sj", function() Snacks.picker.jumps() end, desc = "Jumps" },
-    { "<leader>m", function() Snacks.picker.marks() end, desc = "Marks" },
+    { "<leader>y", function() Snacks.picker.registers({layout = {preset = "vscode"}}) end, desc = "Registers" },
+    { "<leader>sj", function() Snacks.picker.jumps({layout = {preset = "vscode"}}) end, desc = "Jumps" },
+    { "<leader>m", function() Snacks.picker.marks({layout = {preset = "vscode"}}) end, desc = "Marks" },
     { "<leader>p", function() Snacks.picker.projects() end, desc = "Projects" },
-    { "<leader>ss", function() Snacks.picker.lsp_symbols() end, desc = "LSP Symbols" },
+    { "<leader>ss", function() Snacks.picker.lsp_symbols({layout = {preset = "vscode", preview = "main"}}) end, desc = "LSP Symbols" },
     { "<leader>z", function() Snacks.picker.zoxide() end, desc = "Zoxide" },
   },
   init = function()
