@@ -12,10 +12,6 @@ return {
     lazy = false,
   },
   {
-    "stevearc/dressing.nvim",
-    lazy = false,
-  },
-  {
     "onsails/lspkind-nvim",
     lazy = false,
   },
