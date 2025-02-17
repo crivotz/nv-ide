@@ -92,19 +92,9 @@ return {
       }
     },
     signature = { window = { border = 'single' } },
+    cmdline = { enabled = true },
     sources = {
       default = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep" },
-      cmdline = function()
-        local type = vim.fn.getcmdtype()
-        if type == "/" or type == "?" then
-          return { "buffer" }
-        end
-        --                                           -- Commands
-        if type == ":" then
-          return { "cmdline" }
-        end
-        return {}
-      end,
       providers = {
         dadbod = {
           name = "Dadbod",
