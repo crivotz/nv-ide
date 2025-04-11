@@ -94,7 +94,7 @@ return {
     signature = { window = { border = 'single' } },
     cmdline = { enabled = true },
     sources = {
-      default = { "lsp", "path", "snippets", "buffer", "dadbod", "copilot", "ripgrep" },
+      default = {  "snippets", "lsp", "path", "buffer", "dadbod", "copilot", "ripgrep" },
       providers = {
         dadbod = {
           name = "Dadbod",
