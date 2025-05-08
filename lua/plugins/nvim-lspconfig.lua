@@ -2,8 +2,8 @@ local M = {
   "neovim/nvim-lspconfig",
   lazy = false,
   dependencies = {
-    { "williamboman/mason.nvim" },
-    { "williamboman/mason-lspconfig.nvim" },
+    { "mason-org/mason.nvim", version = "1.11.0" },
+    { "mason-org/mason-lspconfig.nvim", version = "1.32.0" },
     { "saghen/blink.cmp" },
   },
 }
@@ -58,7 +58,7 @@ function M.config()
       'dockerls',
       'jsonls',
       'vimls',
-      'rust_analyzer',
+      -- 'rust_analyzer',
       'clangd',
       'pyright',
       'bashls',
@@ -102,32 +102,32 @@ function M.config()
         }
       })
     end,
-    ["rust_analyzer"] = function(server_name)
-      lspconfig.rust_analyzer.setup({
-        on_attach = M.on_attach,
-        capabilities,
-        settings = {
-          ["rust-analyzer"] = {
-            assist = {
-              importMergeBehavior = "last",
-              importPrefix = "by_self",
-            },
-            diagnostics = {
-              disabled = { "unresolved-import" }
-            },
-            cargo = {
-              loadOutDirsFromCheck = true
-            },
-            procMacro = {
-              enable = true
-            },
-            checkOnSave = {
-              command = "clippy"
-            },
-          }
-        }
-      })
-    end,
+    -- ["rust_analyzer"] = function(server_name)
+    --   lspconfig.rust_analyzer.setup({
+    --     on_attach = M.on_attach,
+    --     capabilities,
+    --     settings = {
+    --       ["rust-analyzer"] = {
+    --         assist = {
+    --           importMergeBehavior = "last",
+    --           importPrefix = "by_self",
+    --         },
+    --         diagnostics = {
+    --           disabled = { "unresolved-import" }
+    --         },
+    --         cargo = {
+    --           loadOutDirsFromCheck = true
+    --         },
+    --         procMacro = {
+    --           enable = true
+    --         },
+    --         checkOnSave = {
+    --           command = "clippy"
+    --         },
+    --       }
+    --     }
+    --   })
+    -- end,
     ["jsonls"] = function(server_name)
       lspconfig.jsonls.setup({
         on_attach = M.on_attach,
