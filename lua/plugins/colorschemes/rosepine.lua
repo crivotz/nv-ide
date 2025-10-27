@@ -6,6 +6,7 @@ return {
     config = function()
       require("rose-pine").setup({
         variant = "moon",
+        -- variant = "dawn",
       })
       vim.cmd("colorscheme rose-pine")
     end,
