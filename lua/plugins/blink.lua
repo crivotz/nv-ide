@@ -71,65 +71,68 @@ return {
         draw = {
           -- columns = { { 'item_idx' }, { 'kind_icon' }, { 'label', 'label_description', gap = 1 } },
           -- components = {
-          --   item_idx = {
-          --     text = function(ctx) return ctx.idx == 10 and '0' or ctx.idx >= 10 and ' ' or tostring(ctx.idx) end,
-          --     highlight = 'Constant' -- optional, only if you want to change its color
-          --   }
-          -- }
-          columns = { { "kind_icon" }, { "label", gap = 1 } },
-          components = {
-            label = {
-              text = require("colorful-menu").blink_components_text,
-              highlight = require("colorful-menu").blink_components_highlight,
+            --   item_idx = {
+              --     text = function(ctx) return ctx.idx == 10 and '0' or ctx.idx >= 10 and ' ' or tostring(ctx.idx) end,
+              --     highlight = 'Constant' -- optional, only if you want to change its color
+              --   }
+              -- }
+              columns = { { "kind_icon" }, { "label", gap = 1 } },
+              components = {
+                label = {
+                  text = require("colorful-menu").blink_components_text,
+                  highlight = require("colorful-menu").blink_components_highlight,
+                },
+              },
+            }
+          },
+          documentation = {
+            window = {
+              border = "single",
+            }
+          }
+        },
+        signature = { window = { border = 'single' } },
+        cmdline = { enabled = true },
+        sources = {
+          per_filetype = {
+            codecompanion = { "codecompanion" },
+          },
+          default = {  "snippets", "lsp", "path", "buffer", "dadbod", "copilot", "ripgrep" },
+          providers = {
+            dadbod = {
+              name = "Dadbod",
+              module = "vim_dadbod_completion.blink"
+            },
+            copilot = {
+              name = "copilot",
+              module = "blink-cmp-copilot",
+              score_offset = 100,
+              async = true,
+              transform_items = function(_, items)
+                local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
+                local kind_idx = #CompletionItemKind + 1
+                CompletionItemKind[kind_idx] = "Copilot"
+                for _, item in ipairs(items) do
+                  item.kind = kind_idx
+                end
+                return items
+              end,
+            },
+            ripgrep = {
+              module = "blink-ripgrep",
+              name = "Ripgrep",
+              opts = {
+                -- prefix_min_len = 3,
+                -- context_size = 5,
+                -- max_filesize = "1M",
+                -- additional_rg_options = {},
+              },
             },
           },
-        }
-      },
-      documentation = {
-        window = {
-          border = "single",
-        }
-      }
-    },
-    signature = { window = { border = 'single' } },
-    cmdline = { enabled = true },
-    sources = {
-      default = {  "snippets", "lsp", "path", "buffer", "dadbod", "copilot", "ripgrep" },
-      providers = {
-        dadbod = {
-          name = "Dadbod",
-          module = "vim_dadbod_completion.blink"
-        },
-        copilot = {
-          name = "copilot",
-          module = "blink-cmp-copilot",
-          score_offset = 100,
-          async = true,
-          transform_items = function(_, items)
-            local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-            local kind_idx = #CompletionItemKind + 1
-            CompletionItemKind[kind_idx] = "Copilot"
-            for _, item in ipairs(items) do
-              item.kind = kind_idx
-            end
-            return items
-          end,
-        },
-        ripgrep = {
-          module = "blink-ripgrep",
-          name = "Ripgrep",
-          opts = {
-            -- prefix_min_len = 3,
-            -- context_size = 5,
-            -- max_filesize = "1M",
-            -- additional_rg_options = {},
-          },
         },
       },
-    },
-  },
-  opts_extend = {
-    "sources.default",
-    "sources.providers",
-  },
-}
+      opts_extend = {
+        "sources.default",
+        "sources.providers",
+      },
+    }
