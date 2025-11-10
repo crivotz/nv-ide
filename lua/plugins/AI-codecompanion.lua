@@ -41,7 +41,7 @@ return {
       mode = { "n", "x" },
       desc = "[A]I CodeCompanion [a]ctions",
     },
-    { "<Leader>ac", open_chat, desc = "[A]I CodeCompanion [c]hat" },
+    { "<Leader>Ac", open_chat, desc = "[A]I CodeCompanion [c]hat" },
     {
       "<Leader>Ac",
       "<Cmd>CodeCompanionChat Add<CR>",
