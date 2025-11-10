@@ -8,6 +8,7 @@
   "codecompanion-spinner.nvim": { "branch": "main", "commit": "c1fa2a84ea1aed687aaed60df65e347c280f4f22" },
   "codecompanion.nvim": { "branch": "main", "commit": "ca87f13b7559257f5aa91e4fcd1326a61311be13" },
   "colorful-menu.nvim": { "branch": "master", "commit": "932d589a55816063051ad9e599516a6e70a1c63f" },
+  "copilot-lsp": { "branch": "main", "commit": "884034b23c3716d55b417984ad092dc2b011115b" },
   "copilot.lua": { "branch": "master", "commit": "5bde2cfe01f049f522eeb8b52c5c723407db8bdf" },
   "csv.vim": { "branch": "master", "commit": "78be83fec47de100abfe7cc1c4c26768fc892d7e" },
   "difft.nvim": { "branch": "main", "commit": "cabc1d56e8ce9647973039c65c71608583f700a0" },
