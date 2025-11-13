@@ -1,19 +1,22 @@
 return {
   "folke/sidekick.nvim",
   opts = {
-    -- add any options here
+    nes = { enabled = false },
     cli = {
+      prompts = {
+        commit = "Please propose a commit message for staged files",
+      },
       mux = {
         backend = "tmux",
         enabled = true,
       },
-     tools = {
-      opencode = {
-        cmd = { "opencode" },
-        -- HACK: https://github.com/sst/opencode/issues/445
-        env = { OPENCODE_THEME = "tokyonight" },
+      tools = {
+        opencode = {
+          cmd = { "opencode" },
+          -- HACK: https://github.com/sst/opencode/issues/445
+          env = { OPENCODE_THEME = "tokyonight" },
+        },
       },
-    },
     },
   },
   keys = {
@@ -77,7 +80,7 @@ return {
     -- Example of a keybinding to open Claude directly
     {
       "<leader>ac",
-      function() require("sidekick.cli").toggle({ name = "copilot", focus = true }) end,
+      function() require("sidekick.cli").toggle({ name = "opencode", focus = true }) end,
       desc = "Sidekick Toggle Opencode",
     },
   },
