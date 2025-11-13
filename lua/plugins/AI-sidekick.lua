@@ -1,7 +1,6 @@
 return {
   "folke/sidekick.nvim",
   opts = {
-    nes = { enabled = false },
     cli = {
       prompts = {
         commit = "Please propose a commit message for staged files",
