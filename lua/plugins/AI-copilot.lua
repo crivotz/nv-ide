@@ -23,17 +23,17 @@ return {
           accept = false,
           -- next = "<c-j>",
           -- prev = "<c-k>",
+          dismiss = "<c-e>",
+        },
+      },
+      nes = {
+        enabled = true,
+        keymap = {
+          accept_and_goto = "<m-l>",
+          accept = false,
           dismiss = "<Esc>",
         },
       },
-      -- nes = {
-      --   enabled = true,
-      --   keymap = {
-      --     accept_and_goto = "<m-l>",
-      --     accept = false,
-      --     dismiss = "<Esc>",
-      --   },
-      -- },
       filetypes = {
         -- yaml = true,
         -- markdown = true,
