@@ -11,7 +11,7 @@ return {
       },
       tools = {
         opencode = {
-          cmd = { "opencode" },
+          cmd = { "copilot" },
           -- HACK: https://github.com/sst/opencode/issues/445
           env = { OPENCODE_THEME = "tokyonight" },
         },
@@ -79,8 +79,8 @@ return {
     -- Example of a keybinding to open Claude directly
     {
       "<leader>ac",
-      function() require("sidekick.cli").toggle({ name = "opencode", focus = true }) end,
-      desc = "Sidekick Toggle Opencode",
+      function() require("sidekick.cli").toggle({ name = "copilot", focus = true }) end,
+      desc = "Sidekick Toggle Copilot",
     },
   },
 }
