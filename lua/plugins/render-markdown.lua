@@ -1,6 +1,6 @@
 return {
-  "OXY2DEV/markview.nvim",
-  enabled = false,
+  "MeanderingProgrammer/render-markdown.nvim",
+  enabled = true,
   lazy = false,      -- Recommended
   ft = { "markdown", "codecompanion", "Avante" }, -- If you decide to lazy-load anyway
   dependencies = {
@@ -8,6 +8,6 @@ return {
     "nvim-tree/nvim-web-devicons"
   },
   opts = {
-    experimental = { check_rtp_message = false }
+    completions = { lsp = { enabled = true } },
   }
 }
