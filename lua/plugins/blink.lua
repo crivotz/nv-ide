@@ -3,8 +3,6 @@ return {
   lazy = false, -- lazy loading handled internally
   dependencies = {
     "rafamadriz/friendly-snippets",
-    -- "zbirenbaum/copilot.lua",
-    -- "giuxtaposition/blink-cmp-copilot",
     "fang2hou/blink-copilot",
     "mikavilpas/blink-ripgrep.nvim",
     "xzbdmw/colorful-menu.nvim",

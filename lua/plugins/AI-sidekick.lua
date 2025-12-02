@@ -10,9 +10,6 @@ return {
         enabled = true,
       },
     },
-    nes = {
-      enabled = true,
-    }
   },
   keys = {
     {
