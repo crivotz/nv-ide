@@ -1,7 +1,11 @@
 local M = {
   "nvim-lualine/lualine.nvim",
   lazy = false,
-  enabled = true
+  enabled = true,
+  dependencies = {
+    'nvim-tree/nvim-web-devicons',
+    'folke/sidekick.nvim',
+  }
 }
 function M.config()
   local codecompanion = require("lualine.component"):extend()

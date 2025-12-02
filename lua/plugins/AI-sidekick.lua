@@ -9,14 +9,10 @@ return {
         backend = "tmux",
         enabled = true,
       },
-      tools = {
-        opencode = {
-          cmd = { "copilot" },
-          -- HACK: https://github.com/sst/opencode/issues/445
-          env = { OPENCODE_THEME = "tokyonight" },
-        },
-      },
     },
+    nes = {
+      enabled = true,
+    }
   },
   keys = {
     {
@@ -60,6 +56,21 @@ return {
       desc = "Send This",
     },
     {
+      "<leader>ar",
+      function() require("sidekick.cli").send({ msg = "{range}" }) end,
+      desc = "Send Range",
+    },
+    {
+      "<leader>ab",
+      function() require("sidekick.cli").send({ msg = "{buffers}" }) end,
+      desc = "Send Buffers",
+    },
+    {
+      "<leader>al",
+      function() require("sidekick.cli").send({ msg = "{line}" }) end,
+      desc = "Send Line",
+    },
+    {
       "<leader>af",
       function() require("sidekick.cli").send({ msg = "{file}" }) end,
       desc = "Send File",
@@ -76,7 +87,7 @@ return {
       mode = { "n", "x" },
       desc = "Sidekick Select Prompt",
     },
-    -- Example of a keybinding to open Claude directly
+    -- Example of a keybinding to open Copilot directly
     {
       "<leader>ac",
       function() require("sidekick.cli").toggle({ name = "copilot", focus = true }) end,

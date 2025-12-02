@@ -3,8 +3,9 @@ return {
   lazy = false, -- lazy loading handled internally
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "zbirenbaum/copilot.lua",
-    "giuxtaposition/blink-cmp-copilot",
+    -- "zbirenbaum/copilot.lua",
+    -- "giuxtaposition/blink-cmp-copilot",
+    "fang2hou/blink-copilot",
     "mikavilpas/blink-ripgrep.nvim",
     "xzbdmw/colorful-menu.nvim",
   },
@@ -26,22 +27,11 @@ return {
       ['<A-8>'] = { function(cmp) cmp.accept({ index = 8 }) end },
       ['<A-9>'] = { function(cmp) cmp.accept({ index = 9 }) end },
       ['<A-0>'] = { function(cmp) cmp.accept({ index = 10 }) end },
-      -- ["<Tab>"] = {
-      --   "snippet_forward",
-      --   function() -- sidekick next edit suggestion
-      --     return require("sidekick").nes_jump_or_apply()
-      --   end,
-      --   function() -- if you are using Neovim's native inline completions
-      --     return vim.lsp.inline_completion.get()
-      --   end,
-      --   "fallback",
-      -- }
     },
     appearance = {
       use_nvim_cmp_as_default = true,
       nerd_font_variant = "mono",
       kind_icons = {
-        Copilot = "",
         Text = '󰉿',
         Method = '󰊕',
         Function = '󰊕',
@@ -104,33 +94,21 @@ return {
         signature = { window = { border = 'single' } },
         cmdline = { enabled = true },
         sources = {
-          per_filetype = {
-            codecompanion = { "codecompanion" },
-          },
-          default = {  "snippets", "lsp", "path", "buffer", "dadbod", "copilot", "ripgrep" },
+          default = {  "lsp", "path", "snippets", "buffer", "copilot", "dadbod", "ripgrep" },
           providers = {
+            copilot = {
+              name = "copilot",
+              module = "blink-copilot",
+              async = true,
+            },
             dadbod = {
               name = "Dadbod",
               module = "vim_dadbod_completion.blink"
             },
-            copilot = {
-              name = "copilot",
-              module = "blink-cmp-copilot",
-              score_offset = 100,
-              async = true,
-              transform_items = function(_, items)
-                local CompletionItemKind = require("blink.cmp.types").CompletionItemKind
-                local kind_idx = #CompletionItemKind + 1
-                CompletionItemKind[kind_idx] = "Copilot"
-                for _, item in ipairs(items) do
-                  item.kind = kind_idx
-                end
-                return items
-              end,
-            },
             ripgrep = {
               module = "blink-ripgrep",
               name = "Ripgrep",
+
               opts = {
                 -- prefix_min_len = 3,
                 -- context_size = 5,

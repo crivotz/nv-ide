@@ -14,10 +14,12 @@ return {
       'clangd',
       'pyright',
       'bashls',
+      'copilot',
+      'prettierd',
     }
   },
   dependencies = {
     { "mason-org/mason.nvim", opts = {} },
-    "neovim/nvim-lspconfig",
+      "neovim/nvim-lspconfig",
   },
 }

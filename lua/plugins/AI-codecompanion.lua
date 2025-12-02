@@ -13,6 +13,7 @@ end
 return {
   "olimorris/codecompanion.nvim",
   event = "VeryLazy",
+  enabled = false,
   cmd = "CodeCompanion",
   dependencies = {
     {
