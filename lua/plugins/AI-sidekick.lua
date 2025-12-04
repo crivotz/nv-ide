@@ -4,13 +4,18 @@ return {
     cli = {
       prompts = {
         commit = "Please propose a commit message for staged files",
+        refactor = "Please propose a refactor for the attached file {file}",
       },
       mux = {
         backend = "tmux",
         enabled = true,
       },
     },
-  },
+    nes = {
+      enabled = true,
+      debounce = 100
+     },
+ },
   keys = {
     {
       "<tab>",

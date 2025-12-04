@@ -1,63 +1,71 @@
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "BlinkCmpMenuOpen",
+--   callback = function()
+--     vim.b.copilot_suggestion_hidden = true
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd("User", {
+--   pattern = "BlinkCmpMenuClose",
+--   callback = function()
+--     vim.b.copilot_suggestion_hidden = false
+--   end,
+-- })
 return {
   "zbirenbaum/copilot.lua",
-  dependencies = { "copilotlsp-nvim/copilot-lsp" },
+  -- requires = {
+  --   "copilotlsp-nvim/copilot-lsp",
+  --   init = function()
+  --     vim.g.copilot_nes_debounce = 500
+  --   end,
   enabled = false,
   cmd = "Copilot",
   event = "InsertEnter",
-  config = function()
-    require("copilot").setup({
+    opts = {
       panel = {
-        keymap = {
-          -- jump_next = "<c-j>",
-          -- jump_prev = "<c-k>",
-          -- accept = "<tab>",
-          refresh = "r",
-          open = "<M-CR>",
-
-        },
+        enabled = false,
       },
       suggestion = {
-        enabled = true,
-        auto_trigger = true,
+        -- enabled = true,
+        auto_trigger = false, -- Automatically show suggestions. If false, use keymap accept, next or prev to trigger suggestion.
         keymap = {
-          -- accept = "<c-l>",
-          accept = false,
-          -- next = "<c-j>",
-          -- prev = "<c-k>",
-          dismiss = "<c-e>",
+          accept = false, -- Use custom keymap in keys section instead '<Tab>'.
+          accept_word = '<C-f>',
+          accept_line = '<C-F>',
+          next = '<C-g>', -- '<M-]>'
+          prev = '<C-G>', -- '<M-[>'
+          dismiss = '<C-e>',
         },
       },
       nes = {
-        enabled = true,
-        keymap = {
-          accept_and_goto = "<m-l>",
-          accept = false,
-          dismiss = "<Esc>",
-        },
+        enabled = false,
       },
-      filetypes = {
-        -- yaml = true,
-        -- markdown = true,
-        -- help = false,
-        -- gitcommit = false,
-        -- gitrebase = false,
-        -- cvs = false,
-        -- ["."] = false,
+    },
+    keys = {
+      {
+        '<Leader>taa',
+        function()
+          if require('copilot.client').is_disabled() then
+            require('copilot.command').enable()
+            vim.notify('Copilot enabled')
+          else
+            require('copilot.command').disable()
+            vim.notify('Copilot disabled')
+          end
+        end,
+        desc = 'Toggle Copilot',
       },
-      copilot_node_command = "node",
-    })
-
-    local opts = { noremap = true, silent = true }
-    vim.api.nvim_set_keymap("n", "<c-s>", ":lua require('copilot.suggestion').toggle_auto_trigger()<CR>", opts)
-
-    vim.keymap.set("i", "<tab>", function()
-      if require("copilot.suggestion").is_visible() then
-        require("copilot.suggestion").accept()
-        return "<Ignore>"
-      end
-      return "<tab>"
-    end, { expr = true, noremap = true })
-
-    -- vim.g.copilot_nes_debounce = 100
-  end,
-}
+      {
+        '<Tab>',
+        function()
+          if require('copilot.suggestion').is_visible() then
+            require('copilot.suggestion').accept()
+            return
+          end
+          return '<Tab>' -- Fallback to normal tab.
+        end,
+        mode = { 'i' },
+        desc = 'Copilot: Accept',
+        expr = true,
+      },
+    },
+  }
