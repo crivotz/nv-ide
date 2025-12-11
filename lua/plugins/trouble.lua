@@ -5,14 +5,12 @@ return {
     { "<leader>tt", ":Trouble todo filter = { tag = {TODO} }<CR>", desc="Trouble TODO" },
     { "<leader>tf", ":Trouble todo filter = { tag = {FIX,FIXME} }<CR>", desc="Trouble FIX" },
     { "<leader>tn", ":Trouble todo filter = { tag = {NOTE} }<CR>", desc="Trouble NOTE" },
-    { "<leader>tr", "<cmd>TroubleToggle<cr>", desc="Trouble" },
-    { "<leader>tw", "<cmd>Trouble workspace_diagnostics<cr>", desc="Trouble WS Diagnostics" },
-    { "<leader>td", "<cmd>Trouble document_diagnostics<cr>", desc="Trouble diagnostics" },
-    { "<leader>tll", "<cmd>Trouble loclist<cr>", desc="Trouble loclist" },
-    { "<leader>tq", "<cmd>Trouble quickfix<cr>", desc="Trouble quickfix" },
-    { "<leader>tl", "<cmd>Trouble lsp_references<cr>", desc="Trouble lsp" }
+    { "<leader>td", ":Trouble diagnostics<cr>", desc = "Diagnostics (Trouble)", },
+    { "<leader>tl", ":Trouble lsp toggle focus=false win.position=right<cr>", desc = "LSP Definitions / references / ... (Trouble)", },
+    { "<leader>tq", ":Trouble qflist toggle<cr>", desc = "Quickfix List (Trouble)", },
   },
-  opts = {},
+  opts = {
+  },
   specs = {
     "folke/snacks.nvim",
     opts = function(_, opts)
