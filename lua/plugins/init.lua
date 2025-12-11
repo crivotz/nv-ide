@@ -67,8 +67,4 @@ return {
     "chentoast/marks.nvim",
     event = "VeryLazy",
   },
-  {
-    "xzbdmw/colorful-menu.nvim",
-    lazy = false
-  }
 }

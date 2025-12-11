@@ -14,6 +14,7 @@ local servers = {
   "eslint",
    "rubocop",
    "copilot",
+   "ruby_lsp",
 }
 
 return {

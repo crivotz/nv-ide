@@ -6,9 +6,6 @@ require('config.lsp')
 require('config.lazy')
 -- UTIL
 require('util.hjkl_notifier')
-require('util.diagnostics').setup();
-require('util.beacon').setup();
-require('util.highlights').setup();
 -- COMPLETION
 require('config.completion')
 -- KEYMAP
