@@ -2,6 +2,7 @@
 
 return {
   "ahkohd/difft.nvim",
+  enabled = false,
   keys = {
     {
       "<leader>d",
