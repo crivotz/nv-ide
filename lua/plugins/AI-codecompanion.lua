@@ -1,7 +1,7 @@
 -- Credits to https://github.com/franco-ruggeri
 -- If available, open the last chat, otherwise open a new chat
 local function open_chat()
-  local chat = require("codecompanion.strategies.chat").last_chat()
+  local chat = require("codecompanion.interactions.chat").last_chat()
   if chat then
     chat.ui:open()
     vim.api.nvim_set_current_win(chat.ui.winnr)
@@ -13,27 +13,15 @@ end
 return {
   "olimorris/codecompanion.nvim",
   event = "VeryLazy",
-  enabled = false,
+  enabled = true,
   cmd = "CodeCompanion",
   dependencies = {
     {
       "nvim-lua/plenary.nvim",
       version = false,
     },
-    "ravitemer/mcphub.nvim",
     "nvim-treesitter/nvim-treesitter",
-    "ravitemer/codecompanion-history.nvim",
-    { "franco-ruggeri/codecompanion-spinner.nvim" },
-  },
-  opts = {
-    strategies = {
-      chat = {
-        adapter = "copilot",
-      },
-      inline = {
-        adapter = "copilot",
-      },
-    }
+    "franco-ruggeri/codecompanion-spinner.nvim",
   },
   keys = {
     {
@@ -67,17 +55,15 @@ return {
       mode = { "n", "x" },
       desc = "[A]I CodeCompanion [N]eovim command",
     },
-    { "<Leader>Ah", "<Cmd>CodeCompanionHistory<CR>", desc = "[A]I CodeCompanion chat [h]istory" },
   },
   cmd = {
     "CodeCompanionActions",
     "CodeCompanionChat",
     "CodeCompanionCmd",
     "CodeCompanion",
-    "CodeCompanionHistory",
   },
   opts = {
-    strategies = {
+    interactions = {
       chat = {
         roles = { -- make rendered roles nicer
           llm = function(adapter)
@@ -85,34 +71,15 @@ return {
           end,
           user = " User",
         },
+        adapter = "copilot",
+      },
+      inline = {
+        adapter = "copilot",
       },
     },
     extensions = {
-      history = {
-        opts = {
-          expiration_days = 7,
-          chat_filter = function(chat_data) -- only chats for the cwd
-            return chat_data.cwd == vim.fn.getcwd()
-          end,
-          -- WARNING: The models used for titles and summaries default to the models used in the chats.
-          -- So, it is crucial to set them, in order not to waste requests potentially from premium models.
-          -- ====================
-          title_generation_opts = {
-            adapter = "copilot",
-            model = "gpt-4.1",
-          },
-          summary = {
-            generation_opts = {
-              adapter = "copilot",
-              model = "gpt-4.1",
-            },
-          },
-          -- ====================
-        },
-      },
       spinner = {
       },
-      mcphub = { callback = "mcphub.extensions.codecompanion" },
     },
   },
   config = function(_, opts)
