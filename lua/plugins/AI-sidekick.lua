@@ -5,6 +5,12 @@ return {
       prompts = {
         commit = "Please propose a commit message for staged files",
         refactor = "Please propose a refactor for the attached file {file}",
+        haunt_all = function()
+          return require("haunt.sidekick").get_locations()
+        end,
+        haunt_buffer = function()
+          return require("haunt.sidekick").get_locations({ current_buffer = true })
+        end,
       },
       mux = {
         backend = "tmux",
@@ -14,8 +20,8 @@ return {
     nes = {
       enabled = true,
       debounce = 100
-     },
- },
+    },
+  },
   keys = {
     {
       "<tab>",

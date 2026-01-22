@@ -47,7 +47,6 @@ function M.config()
       return nil
     end
   end
-  local arrow = require("arrow.statusline")
   local lazy = require("lazy.status")
   local colors = {}
   if package.loaded["tokyonight"] then
@@ -232,20 +231,7 @@ function M.config()
           shorting_target = 40,
           cond = conditions.buffer_not_empty,
           colored = true,
-          color = function()
-            if arrow.is_on_arrow_file() then
-              return { fg = colors.green, gui='bold' }
-            else
-              return { fg = colors.yellow, gui='bold' }
-            end
-          end,
         },
-        {
-          function()
-            return arrow.text_for_statusline_with_icons()
-          end,
-          color = { fg = colors.red }
-        }
       },
       lualine_c = {
         {

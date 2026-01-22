@@ -12,10 +12,6 @@ return {
     lazy = false,
   },
   {
-    "onsails/lspkind-nvim",
-    lazy = false,
-  },
-  {
     "tpope/vim-abolish",
     event = { "BufReadPre", "BufNewFile" },
   },
@@ -62,9 +58,5 @@ return {
   {
     "RRethy/vim-illuminate",
     event = 'VeryLazy',
-  },
-  {
-    "chentoast/marks.nvim",
-    event = "VeryLazy",
   },
 }
