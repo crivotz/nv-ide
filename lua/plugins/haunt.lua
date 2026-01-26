@@ -51,7 +51,7 @@ return {
     end, { desc = "Next bookmark" })
 
     -- picker
-    map("n", prefix .. "l", function()
+    map("n", "m", function()
       haunt_picker.show()
     end, { desc = "Show Picker" })
 
