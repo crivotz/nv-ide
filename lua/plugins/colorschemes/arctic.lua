@@ -1,5 +1,5 @@
 return {
-  "rockyzhang24/arctic.nvim",
+  "shadowy-pycoder/arctic.nvim",
   dependencies = { "rktjmp/lush.nvim" },
   lazy = false,
   name = "arctic",
