@@ -62,7 +62,7 @@ function M.config()
     colors = {
       bg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).bg),
       fg = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
-      black = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "EndOfBuffer", link = false }).fg),
+      black = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
       white = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Normal", link = false }).fg),
       red = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "Error", link = false }).fg),
       green = string.format('#%06x', vim.api.nvim_get_hl(0, { name = "String", link = false }).fg),
