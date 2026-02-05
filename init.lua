@@ -6,6 +6,8 @@ require('config.lsp')
 require('config.lazy')
 -- UTIL
 require('util.hjkl_notifier')
+require('util.notes')
+require('util.scratches')
 -- COMPLETION
 require('config.completion')
 -- KEYMAP
