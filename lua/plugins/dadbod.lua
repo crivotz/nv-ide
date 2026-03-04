@@ -4,11 +4,10 @@ return {
     { "kristijanhusak/vim-dadbod-ui" },
     { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
   },
-  opts = {
-  },
+  opts = {},
   config = function(_, opts)
     vim.g.db_ui_use_nerd_fonts = 1
-    vim.g.db_ui_save_location = vim.fn.stdpath "config" .. require("plenary.path").path.sep .. "db_ui"
+    vim.g.db_ui_save_location = vim.fn.stdpath("config") .. require("plenary.path").path.sep .. "db_ui"
 
     vim.api.nvim_create_autocmd("FileType", {
       pattern = {
@@ -18,9 +17,9 @@ return {
     })
   end,
   keys = {
-    { "<leader>dt", "<cmd>DBUIToggle<cr>",        desc = "Toggle UI" },
-    { "<leader>df", "<cmd>DBUIFindBuffer<cr>",    desc = "Find Buffer" },
-    { "<leader>dr", "<cmd>DBUIRenameBuffer<cr>",  desc = "Rename Buffer" },
-    { "<leader>dq", "<cmd>DBUILastQueryInfo<cr>", desc = "Last Query Info" },
+    { "<leader>dt", "<cmd>DBUIToggle<cr>", desc = "Dadbod Toggle UI" },
+    { "<leader>df", "<cmd>DBUIFindBuffer<cr>", desc = "Dadbod Find Buffer" },
+    { "<leader>dr", "<cmd>DBUIRenameBuffer<cr>", desc = "Dadbod Rename Buffer" },
+    { "<leader>dq", "<cmd>DBUILastQueryInfo<cr>", desc = "Dadbod Last Query Info" },
   },
 }

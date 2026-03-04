@@ -1,3 +1,11 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
 tags*
 Session.vim
 plugged/*
