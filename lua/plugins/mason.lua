@@ -12,9 +12,9 @@ local servers = {
   "yamlls",
   "graphql",
   "eslint",
-   "rubocop",
-   "copilot",
-   "ruby_lsp",
+  "rubocop",
+  "copilot",
+  "ruby_lsp",
 }
 
 return {
