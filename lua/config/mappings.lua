@@ -12,6 +12,7 @@ vim.api.nvim_set_keymap('n', '<leader>nn', ":lua NewNote()<CR>", {noremap = true
 -- vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, {noremap = true, silent = true})
 -- vim.keymap.set('n', ']d', vim.diagnostic.goto_next, {noremap = true, silent = true})
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, {noremap = true, silent = true})
+vim.keymap.set('n', 'wd', ":windo diffthis<CR>", {noremap = true, silent = true})
 -- ROR
 vim.keymap.set("n", "<Leader>or", ":! overmind restart<CR>", { silent = true })
 
