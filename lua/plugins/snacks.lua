@@ -134,6 +134,13 @@ return {
   },
   keys = {
     {
+      "<leader>,",
+      function()
+        Snacks.picker.buffers({ layout = "vscode" })
+      end,
+      desc = "Buffers",
+    },
+    {
       "<leader>ob",
       function()
         Snacks.terminal("overmind connect backend")
@@ -154,13 +161,6 @@ return {
         Snacks.picker.lines()
       end,
       desc = "Buffer Lines",
-    },
-    {
-      "<leader>rb",
-      function()
-        Snacks.picker.grep_buffers()
-      end,
-      desc = "Grep Open Buffers",
     },
     {
       "<leader>#",
