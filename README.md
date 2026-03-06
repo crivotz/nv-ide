@@ -2,6 +2,8 @@
   <img src="https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/NV-IDE.svg?raw=true"/>
 </p>
 
+**In the near future, branch `move_to_lazyvim` will become the official `main` branch, while `nv_ide_original` will retain the original version without LazyVim as its core.**
+
 [Neovim](https://neovim.io/) LUA configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
 I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other  
 The project is constantly changing  
