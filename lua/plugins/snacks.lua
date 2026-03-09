@@ -1,33 +1,6 @@
 return {
   "folke/snacks.nvim",
   opts = {
-    picker = {
-      actions = {
-        sidekick_send = function(...)
-          return require("sidekick.cli.picker.snacks").send(...)
-        end,
-      },
-      win = {
-        input = {
-          keys = {
-            ["<a-a>"] = {
-              "sidekick_send",
-              mode = { "n", "i" },
-            },
-          },
-        },
-      },
-      sources = {
-        explorer = {
-          focus = "input",
-        },
-      },
-      formatters = {
-        file = {
-          truncate = 100, -- truncate the file path to (roughly) this length
-        },
-      },
-    },
     dashboard = {
       preset = {
         keys = {
@@ -71,13 +44,6 @@ return {
         { icon = " ", title = "Recent Files", section = "recent_files", indent = 2, padding = 1 },
         { icon = " ", title = "Projects", section = "projects", indent = 2, padding = 1 },
         { section = "startup", padding = 1 },
-        -- {
-        --   pane = 2,
-        --   section = "terminal",
-        --   cmd = "tty-clock -c -C 4 -r -D",
-        --   height = 7,
-        --   padding = 1,
-        -- },
         {
           pane = 2,
           icon = " ",
