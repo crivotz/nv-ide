@@ -100,6 +100,137 @@ return {
   },
   keys = {
     {
+      "<leader>gC",
+      function()
+        Snacks.input({
+          prompt = "Issue title: ",
+          icon = " ",
+        }, function(title)
+          if not title or title == "" then
+            return
+          end
+
+          Snacks.input({
+            prompt = "Labels (comma separated, optional): ",
+            icon = "🏷️  ",
+          }, function(labels)
+            Snacks.input({
+              prompt = "Assignees (comma separated, optional): ",
+              icon = " ",
+            }, function(assignees)
+              local scratch = Snacks.scratch({
+                ft = "markdown",
+                name = "New GitHub Issue",
+                icon = " ",
+              })
+
+              -- Template
+              vim.api.nvim_buf_set_lines(scratch.buf, 0, -1, false, {
+                "<!-- :w to submit, q to cancel -->",
+                "",
+                "## Description",
+                "",
+                "",
+                "## Steps to reproduce",
+                "",
+                "1. ",
+                "2. ",
+                "3. ",
+                "",
+                "## Expected behavior",
+                "",
+                "",
+                "## Actual behavior",
+                "",
+                "",
+                "## Additional context",
+                "",
+                "",
+              })
+
+              -- Funzione per creare l'issue
+              local function create_issue()
+                local body_lines = vim.api.nvim_buf_get_lines(scratch.buf, 0, -1, false)
+                scratch:close()
+
+                local tmpfile = vim.fn.tempname()
+                vim.fn.writefile(body_lines, tmpfile)
+
+                local cmd_parts = {
+                  "gh issue create",
+                  "--title " .. vim.fn.shellescape(title),
+                  "--body-file " .. vim.fn.shellescape(tmpfile),
+                }
+
+                if labels and labels ~= "" then
+                  local label_list = vim.split(labels, ",", { trimempty = true })
+                  for i, label in ipairs(label_list) do
+                    label_list[i] = vim.trim(label)
+                  end
+                  cmd_parts[#cmd_parts + 1] = "--label " .. table.concat(label_list, ",")
+                end
+
+                if assignees and assignees ~= "" then
+                  local assignee_list = vim.split(assignees, ",", { trimempty = true })
+                  for i, assignee in ipairs(assignee_list) do
+                    assignee_list[i] = vim.trim(assignee)
+                  end
+                  cmd_parts[#cmd_parts + 1] = "--assignee " .. table.concat(assignee_list, ",")
+                end
+
+                local final_cmd = table.concat(cmd_parts, " ")
+
+                Snacks.notify.info("Creating issue...", { title = "GitHub" })
+
+                vim.fn.jobstart(final_cmd, {
+                  on_stdout = function(_, data)
+                    if data and #data > 0 then
+                      for _, line in ipairs(data) do
+                        if line ~= "" and line:match("^https://") then
+                          Snacks.notify.info(line, { title = "Issue Created" })
+                        end
+                      end
+                    end
+                  end,
+                  on_exit = function(_, code)
+                    vim.fn.delete(tmpfile)
+                    if code == 0 then
+                      Snacks.notify.info("Issue created successfully", { title = "GitHub" })
+                    else
+                      Snacks.notify.error("Failed to create issue", { title = "GitHub" })
+                    end
+                  end,
+                })
+              end
+
+              -- Intercetta :w con autocmd
+              vim.api.nvim_create_autocmd("BufWriteCmd", {
+                buffer = scratch.buf,
+                callback = create_issue,
+                once = true,
+              })
+
+              -- Keymap per cancellare con q
+              vim.api.nvim_buf_set_keymap(scratch.buf, "n", "q", "", {
+                noremap = true,
+                silent = true,
+                callback = function()
+                  scratch:close()
+                  Snacks.notify.warn("Issue creation cancelled", { title = "GitHub" })
+                end,
+                desc = "Cancel",
+              })
+
+              -- Posiziona cursore
+              vim.api.nvim_win_set_cursor(0, { 4, 0 })
+              vim.cmd("startinsert")
+            end)
+          end)
+        end)
+      end,
+      desc = "Create GitHub issue",
+    },
+    {
       "<leader>,",
       function()
         Snacks.picker.buffers({ layout = "vscode" })
