@@ -18,3 +18,5 @@ pack/
 plugin/
 db_ui
 db_ui/
+.grip
+.grip/
