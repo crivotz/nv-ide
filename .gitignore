@@ -20,3 +20,5 @@ db_ui
 db_ui/
 grip
 grip/
+.grip
+.grip/
