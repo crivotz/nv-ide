@@ -5,7 +5,9 @@ return {
   cmd = "CodeDiff",
   keys = {
     {
-      "<leader>d", "<cmd>CodeDiff<CR>", desc = "Toggle VSCode diff",
+      "<leader>gc",
+      "<cmd>CodeDiff<CR>",
+      desc = "Toggle VSCode diff",
     },
   },
 }

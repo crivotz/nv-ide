@@ -1,3 +1,11 @@
+tt.*
+.tests
+doc/tags
+debug
+.repro
+foo.*
+*.log
+data
 tags*
 Session.vim
 plugged/*
@@ -10,3 +18,7 @@ pack/
 plugin/
 db_ui
 db_ui/
+grip
+grip/
+.grip
+.grip/

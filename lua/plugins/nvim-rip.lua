@@ -4,7 +4,9 @@ return {
   keys = {
     {
       "<leader>srf",
-      function() require("rip-substitute").sub() end,
+      function()
+        require("rip-substitute").sub()
+      end,
       mode = { "n", "x" },
       desc = " rip substitute",
     },
