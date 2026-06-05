@@ -2,18 +2,17 @@
   <img src="https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/NV-IDE.svg?raw=true"/>
 </p>
 
-**In the near future, branch `move_to_lazyvim` will become the official `main` branch, while `nv_ide_original` will retain the original version without LazyVim as its core.**
+**Moved on [LazyVim](https://github.com/LazyVim/LazyVim) as core, you can find old original `nv-ide` under branch `nv_ide_original`.**
 
 [Neovim](https://neovim.io/) LUA configuration, oriented for web developers (rails, ruby, php, html, css, SCSS, javascript).  
-I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other  
+I use this repository mainly to keep track of the changes that I made on my Neovim configuration, but I hope that it will be useful to other.  
+
 The project is constantly changing  
 Moved to [LazyVim](https://github.com/LazyVim/LazyVim) as core
 
 - You can find old independent version on the branch `nv_ide_original`
-- You can find old no-lua and coc version under branch `old_coc_version`
-- You can find old packer version under branch `old_packer`
 
-Thanks to Folke and to the developers of these amazing plugins/colors
+Thanks to [Folke](https://github.com/folke) and to the developers of these amazing plugins/colors
 
 ![nv-ide](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_0.png)
 ![nv-ide + terminal](https://raw.githubusercontent.com/crivotz/nv-ide/master/screenshots/nv-ide_screenshot_1.png)
