@@ -13,65 +13,44 @@ return {
       edit_annotation = { key = "a", mode = { "n" } },
     },
   },
-  -- recommended keymaps, with a helpful prefix alias
   init = function()
+    local wk = require("which-key")
     local haunt = require("haunt.api")
     local haunt_picker = require("haunt.picker")
-    local map = vim.keymap.set
-    local prefix = "<leader>h"
 
-    -- annotations
-    map("n", prefix .. "a", function()
-      haunt.annotate()
-    end, { desc = "Annotate" })
+    wk.add({
+      { "<leader>h", group = "Haunt", icon = "󱙝" },
 
-    map("n", prefix .. "t", function()
-      haunt.toggle_annotation()
-    end, { desc = "Toggle annotation" })
+      { "<leader>ha", mode = "n", haunt.annotate, desc = "Annotate", icon = "" },
+      { "<leader>ht", mode = "n", haunt.toggle_annotation, desc = "Toggle annotation" },
+      { "<leader>hT", mode = "n", haunt.toggle_all_lines, desc = "Toggle all annotations" },
+      { "<leader>hd", mode = "n", haunt.delete, desc = "Delete bookmark", icon = "" },
+      { "<leader>hC", mode = "n", haunt.clear_all, desc = "Delete all bookmarks", icon = "" },
 
-    map("n", prefix .. "T", function()
-      haunt.toggle_all_lines()
-    end, { desc = "Toggle all annotations" })
+      { "<leader>hp", mode = "n", haunt.prev, desc = "Previous bookmark", icon = "" },
+      { "<leader>hn", mode = "n", haunt.next, desc = "Next bookmark", icon = "" },
 
-    map("n", prefix .. "c", function()
-      haunt.delete()
-    end, { desc = "Delete bookmark" })
+      { "<leader>hl", mode = "n", haunt_picker.show, desc = "Picker" },
 
-    map("n", prefix .. "C", function()
-      haunt.clear_all()
-    end, { desc = "Delete all bookmarks" })
+      { "<leader>hq", mode = "n", haunt.to_quickfix, desc = "Quickfix (all)" },
+      {
+        "<leader>hQ",
+        mode = "n",
+        function()
+          haunt.to_quickfix({ current_buffer = true })
+        end,
+        desc = "Quickfix (buffer)",
+      },
 
-    -- move
-    map("n", prefix .. "p", function()
-      haunt.prev()
-    end, { desc = "Previous bookmark" })
-
-    map("n", prefix .. "n", function()
-      haunt.next()
-    end, { desc = "Next bookmark" })
-
-    -- picker
-    map("n", "m", function()
-      haunt_picker.show()
-    end, { desc = "Show Picker" })
-
-    -- quickfix
-    map("n", prefix .. "q", function()
-       haunt.to_quickfix()
-    end, { desc = "Send Hauntings to QF Lix (buffer)" })
-
-    map("n", prefix .. "Q", function()
-      haunt.to_quickfix({ current_buffer = true })
-    end, { desc = "Send Hauntings to QF Lix (all)" })
-
-    -- yank
-    map("n", prefix .. "y", function()
-      haunt.yank_locations({current_buffer = true})
-    end, { desc = "Send Hauntings to Clipboard (buffer)" })
-
-    map("n", prefix .. "Y", function()
-      haunt.yank_locations()
-    end, { desc = "Send Hauntings to Clipboard (all)" })
-
+      {
+        "<leader>hy",
+        mode = "n",
+        function()
+          haunt.yank_locations({ current_buffer = true })
+        end,
+        desc = "Yank locations (buffer)",
+      },
+      { "<leader>hY", mode = "n", haunt.yank_locations, desc = "Yank locations (all)", icon = "" },
+    })
   end,
 }
